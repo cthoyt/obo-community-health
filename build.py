@@ -2,16 +2,25 @@ import datetime
 import pathlib
 from typing import Iterable
 
+import click
 import dateparser
 import pandas as pd
 import pystow
 import requests
 import yaml
+from jinja2 import Environment, FileSystemLoader
+from more_click import force_option, verbose_option
 from tqdm import tqdm
 
 HERE = pathlib.Path(__file__).parent.resolve()
-DATA = HERE.joinpath("_data")
-DATA.mkdir(exist_ok=True, parents=True)
+TEMPLATES = HERE.joinpath('templates')
+DOCS = HERE.joinpath('docs')
+DOCS.mkdir(exist_ok=True, parents=True)
+DATA = HERE.joinpath("data.tsv")
+INDEX = DOCS.joinpath('index.html')
+
+environment = Environment(autoescape=True, loader=FileSystemLoader(TEMPLATES), trim_blocks=False)
+index_template = environment.get_template('index.html')
 
 URL = "https://raw.githubusercontent.com/OBOFoundry/OBOFoundry.github.io/master/_config.yml"
 PREFIX = "https://github.com/"
@@ -81,19 +90,23 @@ def iterate_repos() -> Iterable[tuple[str, str]]:
         # have GitHub, but not all. Don't consider the non-GitHub
         # ones
         if not tracker or not tracker.startswith(PREFIX):
+            tqdm.write(f'no tracker for {record["id"]}')
             continue
 
         # Since we assume it's a github link, slice out the prefix then
         # parse the owner and repository out of the path
-        owner, repo, *_ = tracker[len(PREFIX) :].split("/")
-        yield owner, repo
+        owner, repo, *_ = tracker[len(PREFIX):].split("/")
+        yield record["id"], record["title"], owner, repo
 
 
-def main(force: bool = False) -> None:
+def get_data(force: bool = False) -> pd.DataFrame:
+    if DATA.is_file() and not force:
+        return pd.read_csv(DATA, sep='\t', dtype={'license': str})
+
     repos = sorted(iterate_repos())
-    rv = []
+    rows = []
     repos = tqdm(repos, desc="Repositories")
-    for owner, repo in repos:
+    for prefix, title, owner, repo in repos:
         repos.set_postfix(repo=f"{owner}/{repo}")
         info = get_info(owner, repo)
         description = info["description"]
@@ -121,8 +134,12 @@ def main(force: bool = False) -> None:
             last_close_last_year = False
 
         # when was the last issue closed?
-        rv.append(
+        rows.append(
             dict(
+                prefix=prefix,
+                title=title,
+                owner=owner,
+                repo=repo,
                 description=description,
                 stars=stars,
                 license=license["key"] if license else None,
@@ -136,9 +153,23 @@ def main(force: bool = False) -> None:
                 last_close_last_year=last_close_last_year,
             )
         )
-    pd.DataFrame(rv).to_csv(DATA.joinpath("data.tsv"), sep="\t", index=False)
-    with DATA.joinpath("data.yml").open("w") as file:
-        yaml.safe_dump(rv, file)
+
+    # Output as an easily accessible TSV file
+    df = pd.DataFrame(rows).sort_values('stars', ascending=False)
+    df.to_csv(DATA, sep="\t", index=False)
+    return df
+
+
+@click.command()
+@force_option
+@verbose_option
+def main(force: bool):
+    df = get_data(force=force)
+    df.license = df.license.map(lambda x: '' if pd.isna(x) else x)
+
+    index_html = index_template.render(df=df)
+    with INDEX.open('w') as file:
+        print(index_html, file=file)
 
 
 if __name__ == "__main__":
