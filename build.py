@@ -1,6 +1,7 @@
 import datetime
 import json
 import pathlib
+import pickle
 from operator import itemgetter
 from typing import Iterable, Union
 
@@ -18,6 +19,7 @@ HERE = pathlib.Path(__file__).parent.resolve()
 TEMPLATES = HERE.joinpath("templates")
 DOCS = HERE.joinpath("docs")
 DOCS.mkdir(exist_ok=True, parents=True)
+PATH_PICKLE = HERE.joinpath("data.pkl")
 PATH_TSV = HERE.joinpath("data.tsv")
 PATH_JSON = HERE.joinpath("data.json")
 INDEX = DOCS.joinpath("index.html")
@@ -135,8 +137,9 @@ def iterate_repos() -> Iterable[
 
 
 def get_data(force: bool = False, test: bool = False):
-    if PATH_TSV.is_file() and not force and not test:
-        return pd.read_csv(PATH_TSV, sep="\t", dtype={"license": str})
+    if PATH_PICKLE.is_file() and not force and not test:
+        with PATH_PICKLE.open('rb') as file:
+            return pickle.load(file)
 
     repos = sorted(iterate_repos())
     if test:
@@ -151,9 +154,6 @@ def get_data(force: bool = False, test: bool = False):
         if owner is None:
             rows.append(dict(prefix=prefix, title=title, stars=0))
             continue
-
-        # sad rate limit
-        # time.sleep(1)
 
         info = get_info(owner, repo)
         description = info["description"]
@@ -251,12 +251,12 @@ def get_data(force: bool = False, test: bool = False):
 
     rows = sorted(rows, key=itemgetter("stars"), reverse=True)
 
+    pd.DataFrame(rows).to_csv(PATH_TSV, sep="\t", index=False)
+    with PATH_PICKLE.open('wb') as file:
+        pickle.dump(rows, file)
     with PATH_JSON.open("w") as file:
         json.dump(rows, file, indent=2, default=str)
 
-    # Output as an easily accessible TSV file
-    df = pd.DataFrame(rows)
-    df.to_csv(PATH_TSV, sep="\t", index=False)
     return rows
 
 
@@ -265,7 +265,7 @@ def get_data(force: bool = False, test: bool = False):
 @verbose_option
 @click.option("--test", is_flag=True)
 def main(force: bool, test: bool):
-    rows = get_data(force=True, test=test)
+    rows = get_data(force=force, test=test)
 
     index_html = index_template.render(rows=rows)
     with INDEX.open("w") as file:

@@ -56,13 +56,13 @@
             {% if row.owner %}
             <td>
                 <a href="https://github.com/{{ row.owner }}/{{ row.repo }}">
-                    Yes
+                    GitHub+
                 </a>
             </td>
             <td align="right">{{ row.stars }}</td>
             <td align="right">{{ row.open_issues }}</td>
-            <td>{{ row.has_obofoundry_topic }}</td>
-            <td>{{ row.has_odk }}</td>
+            <td>topic{% if row.has_obofoundry_topic %}+{% else %}-{% endif %}</td>
+            <td>odk{% if row.has_odk %}+{% else %}-{% endif %}</td>
             <td>{% if row.pushed_at %}{{ row.pushed_at.strftime("%Y-%m-%d") }}{% endif %}</td>
             <td>{% if row.most_recent_datetime %}{{ row.most_recent_datetime.strftime("%Y-%m-%d") }}{% endif %}</td>
             {% if row.last_year_total_contributions > 0 %}
@@ -92,7 +92,7 @@
             {% endif %}
             <td>{% if row.license %}{{ row.license }}{% endif %}</td>
             {% else %}
-            <td>No</td>
+            <td>GitHub-</td>
             <td></td>
             <td></td>
             <td></td>
