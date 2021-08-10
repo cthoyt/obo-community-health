@@ -7,7 +7,8 @@
 <script>
     $(document).ready(function () {
         $("#table-ontologies").DataTable({
-            "order": [[3, "desc"]]
+            "order": [[3, "desc"]],
+            "scrollX": true
         });
     })
 </script>
@@ -21,22 +22,27 @@
         given to users. It was generated using the GitHub API with scripts at
         <a href="https://github.com/cthoyt/obo-community-health">https://github.com/cthoyt/obo-community-health</a>.
     </p>
+
     <table class="table table-striped table-hover" id="table-ontologies">
         <thead>
         <tr style="text-align: right;">
             <th>ID</th>
             <th>Name</th>
-            <th>Repository</th>
+            <th>GitHub</th>
             <th>Stars</th>
             <th>Open Issues</th>
             <th>OBO Topic</th>
-            <th>License</th>
             <th>Recently Pushed</th>
             <th>Recently Interacted</th>
+            <th>Last Year Total Contributions</th>
+            <th>Top Last Year Contributor</th>
+            <th>Lifetime Total Contributions</th>
+            <th>Top Lifetime Contributor</th>
+            <th>License</th>
         </tr>
         </thead>
         <tbody>
-        {% for _, row in df.iterrows() %}
+        {% for row in rows %}
         <tr>
             <td>
                 <a href="http://www.obofoundry.org/ontology/{{ row.prefix }}">
@@ -44,17 +50,52 @@
                 </a>
             </td>
             <td>{{ row.title }}</td>
+            {% if row.owner %}
             <td>
                 <a href="https://github.com/{{ row.owner }}/{{ row.repo }}">
-                    {{ row.owner }}/{{ row.repo }}
+                    Yes
                 </a>
             </td>
             <td align="right">{{ row.stars }}</td>
             <td align="right">{{ row.open_issues }}</td>
             <td>{{ row.has_obofoundry_topic }}</td>
+            <td>{% if row.pushed_at %}{{ row.pushed_at.strftime("%Y-%m-%d") }}{% endif %}</td>
+            <td>{% if row.most_recent_datetime %}{{ row.most_recent_datetime.strftime("%Y-%m-%d") }}{% endif %}</td>
+            {% if row.last_year_total_contributions > 0 %}
+            <td align="right">{{ row.last_year_total_contributions }}</td>
+            <td>
+                <a href="https://github.com/{{ row.top_last_year_contributor }}">@{{ row.top_last_year_contributor
+                    }}</a>
+                ({{ row.top_last_year_contributions }})
+            </td>
+            {% else %}
+            <td></td>
+            <td></td>
+            {% endif %}
+            {% if row.lifetime_total_contributions %}
+            <td align="right">{{ row.lifetime_total_contributions }}</td>
+            <td>
+                <a href="https://github.com/{{ row.top_lifetime_contributor }}">@{{ row.top_lifetime_contributor }}</a>
+                ({{ row.top_lifetime_contributions }})
+            </td>
+            {% else %}
+            <td></td>
+            <td></td>
+            {% endif %}
             <td>{% if row.license %}{{ row.license }}{% endif %}</td>
-            <td>{% if row.pushed_last_year %}{{ row.pushed_last_year }}{% endif %}</td>
-            <td>{% if row.last_close_last_year %}{{ row.last_close_last_year }}{% endif %}</td>
+            {% else %}
+            <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            {% endif %}
         </tr>
         {% endfor %}
         </tbody>
