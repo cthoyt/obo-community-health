@@ -32,12 +32,15 @@
             <th>Stars</th>
             <th>Open Issues</th>
             <th>OBO Topic</th>
+            <th>ODK Config</th>
             <th>Recently Pushed</th>
             <th>Recently Interacted</th>
             <th>Last Year Total Contributions</th>
-            <th>Top Last Year Contributor</th>
+            <th>Last Year Unique Contributors</th>
+            <th>Last Year Top Contributor</th>
             <th>Lifetime Total Contributions</th>
-            <th>Top Lifetime Contributor</th>
+            <th>Lifetime Unique Contributors</th>
+            <th>Lifetime Top Contributor</th>
             <th>License</th>
         </tr>
         </thead>
@@ -59,10 +62,12 @@
             <td align="right">{{ row.stars }}</td>
             <td align="right">{{ row.open_issues }}</td>
             <td>{{ row.has_obofoundry_topic }}</td>
+            <td>{{ row.has_odk }}</td>
             <td>{% if row.pushed_at %}{{ row.pushed_at.strftime("%Y-%m-%d") }}{% endif %}</td>
             <td>{% if row.most_recent_datetime %}{{ row.most_recent_datetime.strftime("%Y-%m-%d") }}{% endif %}</td>
             {% if row.last_year_total_contributions > 0 %}
             <td align="right">{{ row.last_year_total_contributions }}</td>
+            <td align="right">{{ row.last_year_unique_contributors }}</td>
             <td>
                 <a href="https://github.com/{{ row.top_last_year_contributor }}">@{{ row.top_last_year_contributor
                     }}</a>
@@ -71,9 +76,11 @@
             {% else %}
             <td></td>
             <td></td>
+            <td></td>
             {% endif %}
             {% if row.lifetime_total_contributions %}
             <td align="right">{{ row.lifetime_total_contributions }}</td>
+            <td align="right">{{ row.lifetime_unique_contributors }}</td>
             <td>
                 <a href="https://github.com/{{ row.top_lifetime_contributor }}">@{{ row.top_lifetime_contributor }}</a>
                 ({{ row.top_lifetime_contributions }})
@@ -81,10 +88,14 @@
             {% else %}
             <td></td>
             <td></td>
+            <td></td>
             {% endif %}
             <td>{% if row.license %}{{ row.license }}{% endif %}</td>
             {% else %}
             <td>No</td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

@@ -89,6 +89,17 @@ def get_topics(owner, repo):
     return rv["names"]
 
 
+def has_odk_config(owner, repo) -> bool:
+    rv = get_github(
+        f"https://api.github.com/search/code?q=repo:{owner}/{repo}+filename:src/ontology/ontid-odk.yaml",
+    )
+    try:
+        return 0 < rv["total_count"]
+    except KeyError:
+        print(f"failed to search ODK config for {owner}/{repo}:", rv)
+        return False
+
+
 def get_github(url, accept=None, params=None):
     headers = {
         "Authorization": f"token {TOKEN}",
@@ -119,7 +130,7 @@ def iterate_repos() -> Iterable[
         else:
             # Since we assume it's a github link, slice out the prefix then
             # parse the owner and repository out of the path
-            owner, repo, *_ = tracker[len(PREFIX) :].split("/")
+            owner, repo, *_ = tracker[len(PREFIX):].split("/")
             yield record["id"], record["title"], owner, repo
 
 
@@ -140,6 +151,9 @@ def get_data(force: bool = False, test: bool = False):
         if owner is None:
             rows.append(dict(prefix=prefix, title=title, stars=0))
             continue
+
+        # sad rate limit
+        # time.sleep(1)
 
         info = get_info(owner, repo)
         description = info["description"]
@@ -177,6 +191,7 @@ def get_data(force: bool = False, test: bool = False):
         else:
             top_lifetime_contributor, top_lifetime_contributions = None, None
         lifetime_total_contributions = sum(lifetime_contributions.values())
+        lifetime_unique_contributors = len(lifetime_contributions)
 
         last_year_contributions = {
             entry["author"]["login"]: sum(
@@ -193,6 +208,8 @@ def get_data(force: bool = False, test: bool = False):
             )
         else:
             top_last_year_contributor, top_last_year_contributions = None, None
+        last_year_unique_contributors = len(last_year_contributions)
+
         # last year contributions
         # https://docs.github.com/en/rest/reference/repos#get-the-last-year-of-commit-activity
         last_year_contributions = get_last_year_contributions(owner, repo)
@@ -218,10 +235,15 @@ def get_data(force: bool = False, test: bool = False):
                 most_recent_datetime=most_recent_datetime,
                 most_recent_number=most_recent_updated_number,
                 most_recent_last_year=update_last_year,
+                has_odk=has_odk_config(owner, repo),
+                # lifetime
                 lifetime_total_contributions=lifetime_total_contributions,
+                lifetime_unique_contributors=lifetime_unique_contributors,
                 top_lifetime_contributor=top_lifetime_contributor,
                 top_lifetime_contributions=top_lifetime_contributions,
+                # last year
                 last_year_total_contributions=last_year_total_contributions,
+                last_year_unique_contributors=last_year_unique_contributors,
                 top_last_year_contributor=top_last_year_contributor,
                 top_last_year_contributions=top_last_year_contributions,
             )
@@ -243,8 +265,7 @@ def get_data(force: bool = False, test: bool = False):
 @verbose_option
 @click.option("--test", is_flag=True)
 def main(force: bool, test: bool):
-    force = True
-    rows = get_data(force=force, test=test)
+    rows = get_data(force=True, test=test)
 
     index_html = index_template.render(rows=rows)
     with INDEX.open("w") as file:
