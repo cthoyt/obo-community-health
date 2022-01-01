@@ -312,6 +312,11 @@ class GithubResult(Result):
         else:  # Reward using well-recognized licenses.
             score += 1
 
+        description_len = self.description.count(" ") if self.description else 0
+        if description_len < 8:
+            score -= 1
+            errors.append("description too short")
+
         stars = self.stars
         if not stars:
             score += fslog10(stars, 2)
@@ -463,7 +468,7 @@ def get_data(
             )
         )
 
-    rows = sorted(rows, key=lambda row: row.get_score()[0], reverse=True)
+    rows = sorted(rows, key=_row_key, reverse=True)
 
     pd.DataFrame(rows).to_csv(PATH_TSV, sep="\t", index=False)
     with PATH_PICKLE.open("wb") as file:
@@ -472,6 +477,11 @@ def get_data(
     #     json.dump(rows, file)
 
     return rows
+
+
+def _row_key(row: Result):
+    score, errors = row.get_score()
+    return score, -len(errors), row.prefix
 
 
 @click.command()
