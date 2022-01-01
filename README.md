@@ -9,3 +9,10 @@ following lines in your shell:
 $ pip install tox
 $ tox
 ```
+
+## Scores
+
+This repository implements a highly opinionated scoring system. Here's a summary
+of the distribution of scores across the OBO Foundry
+
+![Scores](docs/score_histogram.png)
