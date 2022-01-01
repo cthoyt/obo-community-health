@@ -10,6 +10,9 @@ $ pip install tox
 $ tox
 ```
 
+For a non-standard build using a bleeding edge build of the OBO Foundry config,
+use: `python build.py --force --path ~/dev/OBOFoundry.github.io/_config.yml`.
+
 ## Scores
 
 This repository implements a highly opinionated scoring system. Here's a summary

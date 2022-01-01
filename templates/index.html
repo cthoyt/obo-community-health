@@ -44,10 +44,14 @@
             <th>Lifetime Unique Contributors</th>
             <th>Lifetime Top Contributor</th>
             <th>License</th>
+            <th>Messages</th>
         </tr>
         </thead>
         <tbody>
         {% for row in rows %}
+        {% set score_tup = row.get_score() %}
+        {% set score = score_tup[0] %}
+        {% set messages = score_tup[1] %}
         <tr>
             <td>
                 <a href="http://www.obofoundry.org/ontology/{{ row.prefix }}">
@@ -60,7 +64,7 @@
                 <a href="https://github.com/{{ row.contact_github }}">@{{ row.contact_github }}</a>
                 {% endif %}
             </td>
-            <td>{{ row.get_score()[0] }}</td>
+            <td>{{ score }}</td>
             {% if row.owner %}
             <td>
                 <a href="https://github.com/{{ row.owner }}/{{ row.repo }}">
@@ -115,6 +119,7 @@
             <td></td>
             <td></td>
             {% endif %}
+            <td>{{ messages|join(", ") }}</td>
         </tr>
         {% endfor %}
         </tbody>

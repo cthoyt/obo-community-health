@@ -1,9 +1,10 @@
 import datetime
 import math
-import pathlib
 import pickle
 from dataclasses import dataclass
-from operator import itemgetter, methodcaller
+from functools import lru_cache
+from operator import itemgetter
+from pathlib import Path
 from typing import Iterable, Optional, TypeVar, Union
 
 import click
@@ -20,7 +21,7 @@ from more_click import force_option, verbose_option
 from ratelimit import rate_limited
 from tqdm import tqdm
 
-HERE = pathlib.Path(__file__).parent.resolve()
+HERE = Path(__file__).parent.resolve()
 TEMPLATES = HERE.joinpath("templates")
 
 DOCS = HERE.joinpath("docs")
@@ -55,11 +56,17 @@ GITHUB_BONUS = 3
 Issue = TypeVar("Issue")
 SOFTWARE_LICENSES = {"mit", "bsd-3-clause", "apache-2.0"}  # TODO
 
-# List of ontologies and associated metadata from OBO Foundry
-ONTOLOGIES = {
-    entry["id"]: entry
-    for entry in yaml.safe_load(requests.get(URL).content)["ontologies"]
-}
+
+@lru_cache
+def get_ontologies() -> dict[str, dict[str, any]]:
+    # List of ontologies and associated metadata from OBO Foundry
+    res = requests.get(URL)
+    return _get_ontology_helper(res.content)
+
+
+def _get_ontology_helper(content):
+    parsed_res = yaml.safe_load(content)
+    return {entry["id"]: entry for entry in parsed_res["ontologies"]}
 
 
 def floor(x: float) -> int:
@@ -76,13 +83,19 @@ def fslog10(x: float, m: float = 1.0) -> int:
 
 
 def adjust(
-    score: int, decision: bool, errors: list[str], msg: str, *, weight: int = 1
+    score: int,
+    decision: bool,
+    errors: list[str],
+    msg: str,
+    *,
+    reward: int = 1,
+    punishment: int = 0,
 ) -> int:
     """Adjust the score based on a given decision."""
     if decision:
-        score += weight
+        score += reward
     else:
-        # score -= weight
+        score -= punishment
         errors.append(msg)
     return score
 
@@ -165,10 +178,10 @@ def get_github(
     return requests.get(url, headers=headers, params=params).json()
 
 
-def iterate_repos() -> Iterable[
-    Union[tuple[str, str, str, str], tuple[str, str, None, None]]
-]:
-    for obo_id, record in tqdm(sorted(ONTOLOGIES.items()), desc="Processing OBO conf"):
+def iterate_repos(
+    ontologies,
+) -> Iterable[Union[tuple[str, str, str, str], tuple[str, str, None, None]]]:
+    for obo_id, record in tqdm(sorted(ontologies.items()), desc="Processing OBO conf"):
         if record.get("is_obsolete") or record.get("activity_status") != "active":
             continue
 
@@ -204,6 +217,8 @@ def iterate_repos() -> Iterable[
 class Result:
     prefix: str
     title: str
+    contact_label: str
+    contact_email: str
     contact_github: Optional[str]
 
     def get_score(self) -> tuple[int, list[str]]:
@@ -230,7 +245,12 @@ class Result:
             score += 5
 
         score += adjust(
-            score, self.contact_github is not None, errors, "missing github contact"
+            score,
+            self.contact_github is not None,
+            errors,
+            "missing github contact",
+            # without this annotation, it's not possible to get in touch on GitHub programmatically
+            punishment=5,
         )
         return score, errors
 
@@ -272,6 +292,7 @@ class GithubResult(Result):
             self.has_obofoundry_topic,
             errors=errors,
             msg="missing obofoundry github topic",
+            punishment=5,  # severe - means no engagement with community
         )
         score = adjust(
             score, self.pushed_last_year, errors=errors, msg="not recently pushed"
@@ -279,15 +300,15 @@ class GithubResult(Result):
         # rv = j(rv, self.has_odk)
 
         # License
-        if license is None:
+        if self.license is None:
             score -= 2
-            errors.append("no license given")
-        elif license == "other":
+            errors.append("no LICENSE on GitHub")
+        elif self.license == "other":
             score -= 1
-            errors.append("non-standard license given")
-        elif license in SOFTWARE_LICENSES:
+            errors.append("non-standard LICENSE given on GitHub")
+        elif self.license in SOFTWARE_LICENSES:
             score -= 1
-            errors.append("inappropriate software license given")
+            errors.append("inappropriate software LICENSE given on GitHub")
         else:  # Reward using well-recognized licenses.
             score += 1
 
@@ -306,12 +327,20 @@ class GithubResult(Result):
         return score, errors
 
 
-def get_data(force: bool = False, test: bool = False) -> list[Result]:
+def get_data(
+    force: bool = False, test: bool = False, path: Optional[Path] = None
+) -> list[Result]:
     if PATH_PICKLE.is_file() and not force and not test:
         with PATH_PICKLE.open("rb") as file:
             return pickle.load(file)
 
-    repos = sorted(iterate_repos())
+    if path is None:
+        ontologies = get_ontologies()
+    else:
+        with path.open() as file:
+            ontologies = _get_ontology_helper(file)
+
+    repos = sorted(iterate_repos(ontologies))
     if test:
         c = 0
         repos = [
@@ -321,11 +350,20 @@ def get_data(force: bool = False, test: bool = False) -> list[Result]:
     repos = tqdm(repos, desc="Repositories")
     for prefix, title, owner, repo in repos:
         repos.set_postfix(repo=f"{owner}/{repo}")
-        contact_github = ONTOLOGIES[prefix].get("contact", {}).get("github")
+        contact = ontologies[prefix].get("contact", {})
+        contact_github = contact.get("github")
+        contact_label = contact.get("label")
+        contact_email = contact.get("email")
 
         if owner is None:
             rows.append(
-                Result(prefix=prefix, title=title, contact_github=contact_github)
+                Result(
+                    prefix=prefix,
+                    title=title,
+                    contact_github=contact_github,
+                    contact_email=contact_email,
+                    contact_label=contact_label,
+                )
             )
             continue
         info = get_info(owner, repo)
@@ -396,6 +434,8 @@ def get_data(force: bool = False, test: bool = False) -> list[Result]:
                 prefix=prefix,
                 title=title,
                 contact_github=contact_github,
+                contact_email=contact_email,
+                contact_label=contact_label,
                 owner=owner,
                 repo=repo,
                 description=description,
@@ -423,7 +463,7 @@ def get_data(force: bool = False, test: bool = False) -> list[Result]:
             )
         )
 
-    rows = sorted(rows, key=methodcaller("score"), reverse=True)
+    rows = sorted(rows, key=lambda row: row.get_score()[0], reverse=True)
 
     pd.DataFrame(rows).to_csv(PATH_TSV, sep="\t", index=False)
     with PATH_PICKLE.open("wb") as file:
@@ -438,8 +478,9 @@ def get_data(force: bool = False, test: bool = False) -> list[Result]:
 @force_option
 @verbose_option
 @click.option("--test", is_flag=True)
-def main(force: bool, test: bool):
-    rows = get_data(force=force, test=test)
+@click.option("--path", help="Path to local metadata", type=Path)
+def main(force: bool, test: bool, path):
+    rows = get_data(force=force, test=test, path=path)
 
     scores = [row.get_score()[0] for row in rows]
     fig, ax = plt.subplots(figsize=(8, 3))
