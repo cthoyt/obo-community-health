@@ -211,14 +211,20 @@ class Result:
         errors = []
         # Bad naming
         if f"({self.prefix.lower()})" in self.title.lower():
+            score -= 5
             errors.append("title contains prefix")
         elif f"{self.prefix.lower()}:" in self.title.lower():
+            score -= 5
             errors.append("title contains prefix")
         elif f"{self.prefix.lower()} -" in self.title.lower():
+            score -= 5
             errors.append("title contains prefix")
+            score -= 5
         elif f"{self.prefix.lower} ontology" == self.title.lower():
+            score -= 5
             errors.append("title is redundant of prefix")
-        elif self.title.casefold() == self.title.lower():
+        elif self.prefix.casefold() == self.title.casefold():
+            score -= 5
             errors.append("title is redundant of prefix")
         else:
             score += 5
@@ -464,7 +470,7 @@ def main(force: bool, test: bool):
 
     # for row in rows:
     #     ontology_html = ontology_template.render(row=row)
-    #     directory = DOCS.joinpath(row["prefix"])
+    #     directory = DOCS.joinpath(row.prefix)
     #     directory.mkdir(exist_ok=True, parents=True)
     #     with directory.joinpath("index.html").open("w") as file:
     #         print(ontology_html, file=file)
