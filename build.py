@@ -93,7 +93,7 @@ def get_topics(owner, repo):
 
 def has_odk_config(owner, repo) -> bool:
     rv = get_github(
-        f"https://api.github.com/search/code?q=repo:{owner}/{repo}+filename:src/ontology/ontid-odk.yaml",
+        f"https://api.github.com/search/code?q=repo:{owner}/{repo}+filename:odk.yaml",
     )
     try:
         return 0 < rv["total_count"]
