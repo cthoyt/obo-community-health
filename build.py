@@ -118,22 +118,32 @@ def iterate_repos() -> Iterable[
     res = yaml.safe_load(res.content)
 
     for record in tqdm(res["ontologies"], desc="Processing OBO conf"):
+        repository = record.get("repository")
         tracker = record.get("tracker")
 
-        # All active ontologies have trackers. Most of them
-        # have GitHub, but not all. Don't consider the non-GitHub
-        # ones
-        if not tracker:
-            tqdm.write(f'no tracker for {record["id"]}')
-            yield record["id"], record["title"], None, None
-        elif not tracker.startswith(PREFIX):
-            tqdm.write(f'no github tracker for {record["id"]}: {tracker}')
-            yield record["id"], record["title"], None, None
+        if repository is not None:
+            if repository.startswith(PREFIX):
+                owner, repo, *_ = repository[len(PREFIX) :].split("/")
+                yield record["id"], record["title"], owner, repo
+            else:
+                tqdm.write(f'no github repository for {record["id"]}: {tracker}')
+                yield record["id"], record["title"], None, None
         else:
-            # Since we assume it's a github link, slice out the prefix then
-            # parse the owner and repository out of the path
-            owner, repo, *_ = tracker[len(PREFIX):].split("/")
-            yield record["id"], record["title"], owner, repo
+            # All active ontologies have trackers. Most of them
+            # have GitHub, but not all. Don't consider the non-GitHub
+            # ones
+            if not tracker:
+                tqdm.write(f'no tracker for {record["id"]}')
+                yield record["id"], record["title"], None, None
+            elif not tracker.startswith(PREFIX):
+                tqdm.write(f'no github tracker for {record["id"]}: {tracker}')
+                yield record["id"], record["title"], None, None
+            else:
+                # Since we assume it's a GitHub link, slice out the prefix then
+                # parse the owner and repository out of the path
+                owner, repo, *_ = tracker[len(PREFIX) :].split("/")
+                yield record["id"], record["title"], owner, repo
+
 
 
 def get_data(force: bool = False, test: bool = False):
