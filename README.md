@@ -58,13 +58,17 @@ For a non-standard build using a bleeding edge build of the OBO Foundry config,
 use:
 
 ```shell
-python build_contacts.py
-python build.py --force --path ~/dev/OBOFoundry.github.io/_config.yml
+python build_contacts.py --path ~/dev/OBOFoundry.github.io/_config.yml
+python build.py --path ~/dev/OBOFoundry.github.io/_config.yml --force 
 ```
 
-## Scores
+## Charts
 
 This repository implements a highly opinionated scoring system. Here's a summary
 of the distribution of scores across the OBO Foundry
 
 ![Scores](docs/score_histogram.png)
+
+How divided is responsibility across all ontologies?
+
+![Responsibilities](docs/responsibility_histogram.png)

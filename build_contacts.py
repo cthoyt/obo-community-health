@@ -3,16 +3,20 @@
 from collections import Counter, defaultdict
 from datetime import datetime
 from functools import lru_cache
+from pathlib import Path
 from textwrap import dedent
 from typing import Optional
 
+import click
 import dateparser
 import pandas as pd
 import yaml
 from tqdm import tqdm
 
-from utils import (CONTACTS_TSV_PATH, CONTACTS_YAML_PATH, ONE_YEAR_AGO,
-                   get_github, get_ontologies, query_wikidata)
+from utils import (
+    CONTACTS_TSV_PATH, CONTACTS_YAML_PATH, ONE_YEAR_AGO,
+    get_github, get_ontologies, query_wikidata,
+)
 
 
 @lru_cache(maxsize=None)
@@ -52,12 +56,14 @@ def get_last_event(user: str) -> Optional[datetime]:
         return None
 
 
-def main():
+@click.command()
+@click.option("--path", help="Path to local metadata", type=Path)
+def main(path: Optional[Path]):
     """Generate the contact table."""
     counter = Counter()
     data = {}
     ontologies = defaultdict(list)
-    it = tqdm(sorted(get_ontologies().items()))
+    it = tqdm(sorted(get_ontologies(path=path).items()))
     for obo_id, record in it:
         if record.get("is_obsolete") or record.get("activity_status") != "active":
             continue

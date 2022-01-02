@@ -556,8 +556,10 @@ def main(force: bool, test: bool, path):
         else:
             responsible_multiple += 1
             responsible_multiple_sum += count
+
+    print(f"Number of responsible people: {len(counts)}")
     print(
-        f"Number people that are responsible for a single ontology:"
+        f"Number of people that are responsible for only a single ontology:"
         f" {responsible_one}/{len(counts)} ({responsible_one/len(counts):.2%})"
     )
     print(
@@ -565,7 +567,10 @@ def main(force: bool, test: bool, path):
         f" {responsible_multiple}/{len(counts)} ({responsible_multiple/len(counts):.2%})"
     )
     print(
-        f"Ontologies with a responsible person who is responsible for a"
+        f"Number of non-inactive, non-obsolete, non-orphaned ontologies whose"
+        f" responsible person has a GitHub handle: {len(rows)}")
+    print(
+        f"Ontologies with a responsible person who is only responsible for a"
         f" single ontology: {responsible_one}/{sum(counts)} ({responsible_one/sum(counts):.2%})"
     )
     print(
