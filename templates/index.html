@@ -11,6 +11,9 @@
             "scrollX": true
         });
     })
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 </script>
 {% endblock %}
 
@@ -46,6 +49,7 @@
             <th>License</th>
             <th>Bioregistry</th>
             <th>Bioportal</th>
+            <th>OLS</th>
             <th>Messages</th>
         </tr>
         </thead>
@@ -56,17 +60,21 @@
         {% set messages = score_tup[1] %}
         <tr>
             <td>
-                <a href="http://www.obofoundry.org/ontology/{{ row.prefix }}">
+                <a href="http://www.obofoundry.org/ontology/{{ row.prefix }}"
+                   data-toggle="tooltip" data-html="true" title="{{ row.title }}<br /><br />{{ row.description }}">
                     {{ row.prefix }}
                 </a>
             </td>
-            <td>{{ row.title }}</td>
+            <td style="min-width: 200px;">{{ row.title }}</td>
             <td>
                 {% if row.contact_github %}
-                <a href="https://github.com/{{ row.contact_github }}">@{{ row.contact_github }}</a>
+                <a href="https://github.com/{{ row.contact_github }}"
+                   data-toggle="tooltip" data-html="true" title="{{ row.contact_label }}<br />{{ row.contact_email }}">
+                    @{{ row.contact_github }}
+                </a>
                 {% endif %}
             </td>
-            <td>{{ score }}</td>
+            <td align="right">{{ score }}</td>
             {% if row.owner %}
             <td>
                 <a href="https://github.com/{{ row.owner }}/{{ row.repo }}">
@@ -123,7 +131,14 @@
             {% endif %}
             <td>{% if row.bioregistry_prefix %}<a href="https://bioregistry.io/{{ row.bioregistry_prefix }}">{{ row.bioregistry_prefix }}</a>{% endif %}</td>
             <td>{% if row.bioportal_prefix %}<a href="https://bioportal.bioontology.org/ontologies/{{ row.bioportal_prefix }}">{{ row.bioportal_prefix }}</a>{% endif %}</td>
-            <td>{{ messages|join(", ") }}</td>
+            <td>{% if row.ols_prefix %}<a href="https://www.ebi.ac.uk/ols/ontologies/{{ row.ols_prefix }}">{{ row.ols_prefix }}</a>{% endif %}</td>
+            <td style="min-width: 300px;">
+                <ul style="margin-bottom: 0">
+                    {% for message in messages %}
+                    <li>{{ message|capitalize }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
         </tr>
         {% endfor %}
         </tbody>

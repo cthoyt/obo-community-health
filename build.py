@@ -15,7 +15,8 @@ import pystow
 import requests
 import seaborn as sns
 import yaml
-from bioregistry import get_bioportal_prefix, get_registry_invmap
+from bioregistry import (get_bioportal_prefix, get_ols_prefix,
+                         get_registry_invmap)
 from dataclasses_json import dataclass_json
 from jinja2 import Environment, FileSystemLoader
 from more_click import force_option, verbose_option
@@ -227,11 +228,13 @@ class Result:
     prefix: str
     title: str
     description: str
+    homepage: Optional[str]
     contact_label: str
     contact_email: str
     contact_github: Optional[str]
     bioregistry_prefix: str
     bioportal_prefix: Optional[str]
+    ols_prefix: Optional[str]
 
     def get_score(self) -> tuple[int, list[str]]:
         score = 0
@@ -266,17 +269,31 @@ class Result:
         )
         score = adjust(
             score,
+            self.homepage is not None,
+            errors,
+            "missing homepage",
+            punishment=3,  # seriously?
+        )
+        score = adjust(
+            score,
             self.bioregistry_prefix is not None,
             errors,
-            "missing bioregistry mapping",
+            "missing Bioregistry mapping",
             # without this annotation, the bioregistry isn't doing its job
             punishment=5,
-            )
+        )
         score = adjust(
             score,
             self.bioportal_prefix is not None,
             errors,
-            "missing bioportal mapping",
+            "missing BioPortal mapping",
+            punishment=1,
+        )
+        score = adjust(
+            score,
+            self.ols_prefix is not None,
+            errors,
+            "missing OLS mapping",
             punishment=1,
         )
         return score, errors
@@ -291,7 +308,7 @@ class GithubResult(Result):
     stars: int
     license: str
     open_issues: int
-    homepage: str
+    repo_homepage: str
     pushed_at: datetime.datetime
     pushed_last_year: bool
     has_obofoundry_topic: bool
@@ -318,7 +335,7 @@ class GithubResult(Result):
             score,
             self.has_obofoundry_topic,
             errors=errors,
-            msg="missing obofoundry github topic",
+            msg="missing obofoundry GitHub topic",
             punishment=5,  # severe - means no engagement with community
         )
         score = adjust(
@@ -372,6 +389,7 @@ def get_data(
     for prefix, title, (owner, repo), record in repos:
         repos.set_postfix(repo=f"{owner}/{repo}")
         description = record["description"]
+        homepage = record.get("homepage")
         contact = record["contact"]
         contact_github = contact.get("github")
         contact_label = contact["label"]
@@ -383,8 +401,10 @@ def get_data(
         if bioregistry_prefix is None:
             tqdm.write(f"No bioregistry prefix for {pp}")
             bioportal_prefix = None
+            ols_prefix = None
         else:
             bioportal_prefix = get_bioportal_prefix(bioregistry_prefix)
+            ols_prefix = get_ols_prefix(bioregistry_prefix)
 
         if owner is None:
             rows.append(
@@ -392,11 +412,13 @@ def get_data(
                     prefix=prefix,
                     title=title,
                     description=description,
+                    homepage=homepage,
                     contact_github=contact_github,
                     contact_email=contact_email,
                     contact_label=contact_label,
                     bioregistry_prefix=bioregistry_prefix,
                     bioportal_prefix=bioportal_prefix,
+                    ols_prefix=ols_prefix,
                 )
             )
             continue
@@ -405,7 +427,7 @@ def get_data(
         stars = info["stargazers_count"]
         license = info["license"]
         open_issues = info["open_issues"]
-        homepage = info["homepage"]
+        repo_homepage = info["homepage"]
         pushed_at = dateparser.parse(info["pushed_at"]).replace(tzinfo=None)
         pushed_last_year = ONE_YEAR_AGO < pushed_at
         topics = get_topics(owner, repo)
@@ -468,18 +490,20 @@ def get_data(
                 prefix=prefix,
                 title=title,
                 description=description,
+                homepage=homepage,
                 contact_github=contact_github,
                 contact_email=contact_email,
                 contact_label=contact_label,
                 bioregistry_prefix=bioregistry_prefix,
                 bioportal_prefix=bioportal_prefix,
+                ols_prefix=ols_prefix,
                 owner=owner,
                 repo=repo,
                 repo_description=repo_description,
                 stars=stars,
                 license=license["key"] if license else None,
                 open_issues=open_issues,
-                homepage=homepage,
+                repo_homepage=repo_homepage,
                 pushed_at=pushed_at,
                 pushed_last_year=pushed_last_year,
                 has_obofoundry_topic=has_obofoundry_topic,
