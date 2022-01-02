@@ -17,7 +17,7 @@ appropriate metadata.
 
 ### Contact View
 
-The [contacts view](https://cthoyt.github.io/obo-community-health/contacts/)
+The [contacts view](https://cthoyt.github.io/obo-community-health/contacts)
 gives insight into who is responsible for each OBO Foundry ontology, how easy
 they are to get in contact with, and whether they are actually actively
 participating in GitHub (e.g., this shows there are several people who have

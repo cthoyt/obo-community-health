@@ -1,4 +1,5 @@
 import datetime
+import json
 import math
 import pickle
 from dataclasses import dataclass
@@ -33,7 +34,9 @@ CONTACTS_PATH = DOCS.joinpath("contacts.html")
 PATH_PICKLE = DATA.joinpath("data.pkl")
 PATH_TSV = DATA.joinpath("data.tsv")
 PATH_JSON = DATA.joinpath("data.json")
+CONTACT_TRIVIA_PATH = DATA.joinpath("contacts_trivia.yaml")
 PATH_HIST = DOCS.joinpath("score_histogram.png")
+RESPONSIBILITY_HIST = DOCS.joinpath("responsibility_histogram.png")
 ISSUE_SCATTER = DOCS.joinpath("score_issue_scatter.png")
 
 environment = Environment(
@@ -544,6 +547,76 @@ def main(force: bool, test: bool, path):
 
     rows = get_data(contacts=contacts, force=force, test=test, path=path)
 
+    # Author responsiblity histogram
+    counts = [contact["count"] for contact in contacts.values()]
+    responsible_one, responsible_multiple, responsible_multiple_sum = 0, 0, 0
+    for count in counts:
+        if count == 1:
+            responsible_one += 1
+        else:
+            responsible_multiple += 1
+            responsible_multiple_sum += count
+    print(
+        f"Number people that are responsible for a single ontology:"
+        f" {responsible_one}/{len(counts)} ({responsible_one/len(counts):.2%})"
+    )
+    print(
+        f"Number people that are responsible for multiple ontologies:"
+        f" {responsible_multiple}/{len(counts)} ({responsible_multiple/len(counts):.2%})"
+    )
+    print(
+        f"Ontologies with a responsible person who is responsible for a"
+        f" single ontology: {responsible_one}/{sum(counts)} ({responsible_one/sum(counts):.2%})"
+    )
+    print(
+        f"Ontologies with a responsible person who is responsible for"
+        f" multiple ontologies: {responsible_multiple_sum}/{sum(counts)} ({responsible_multiple_sum/sum(counts):.2%})"
+    )
+
+    active_contacts = sum(
+        contact["last_active_recent"] for contact in contacts.values()
+    )
+    inactive_contacts = len(contacts) - active_contacts
+    active_ontologies = sum(
+        len(contact["ontologies"])
+        for contact in contacts.values()
+        if contact["last_active_recent"]
+    )
+    inactive_ontologies = sum(counts) - active_ontologies
+    print(
+        f"Number of responsible people that are inactive on GitHub (last year):"
+        f" {inactive_contacts}/{len(contacts)} ({inactive_contacts/len(contacts):.2%})"
+    )
+    print(
+        f"Number of ontologies with responsible people that are inactive on GitHub (last year):"
+        f" {inactive_ontologies}/{len(rows)} ({inactive_contacts/len(rows):.2%})"
+    )
+
+    CONTACT_TRIVIA_PATH.write_text(
+        yaml.dump(
+            {
+                "number_responsibles": len(counts),
+                "single_responsibles": responsible_one,
+                "multiple_responsibles": responsible_multiple,
+                "number_ontologies": sum(counts),
+                "single_ontologies": responsible_one,
+                "multiple_ontologies": responsible_multiple_sum,
+                "active_responsibles": active_contacts,
+                "inactive_responeibles": len(contacts) - active_contacts,
+                "active_ontologies": active_ontologies,
+                "inactive_ontologies": inactive_ontologies,
+            }
+        )
+    )
+
+    fig, ax = plt.subplots(figsize=(8, 3))
+    sns.histplot(counts, ax=ax)
+    ax.set_xlabel("Number Responsible Ontologies")
+    ax.set_yscale("log")
+    fig.tight_layout()
+    fig.savefig(RESPONSIBILITY_HIST, dpi=300)
+
+    # Score histogram
     scores = [row.get_score()[0] for row in rows]
     fig, ax = plt.subplots(figsize=(8, 3))
     sns.histplot(scores, ax=ax)
