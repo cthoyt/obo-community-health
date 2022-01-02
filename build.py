@@ -15,6 +15,7 @@ import pystow
 import requests
 import seaborn as sns
 import yaml
+from bioregistry import get_bioportal_prefix, get_registry_invmap
 from dataclasses_json import dataclass_json
 from jinja2 import Environment, FileSystemLoader
 from more_click import force_option, verbose_option
@@ -217,7 +218,7 @@ def iterate_repos(
                 # Since we assume it's a GitHub link, slice out the prefix then
                 # parse the owner and repository out of the path
                 owner, repo, *_ = tracker[len(PREFIX) :].split("/")
-                yield obo_id, record["title"], owner, repo, record
+                yield obo_id, record["title"], (owner, repo), record
 
 
 @dataclass_json
@@ -229,6 +230,8 @@ class Result:
     contact_label: str
     contact_email: str
     contact_github: Optional[str]
+    bioregistry_prefix: str
+    bioportal_prefix: Optional[str]
 
     def get_score(self) -> tuple[int, list[str]]:
         score = 0
@@ -253,17 +256,28 @@ class Result:
         else:
             score += 5
 
-        if self.description.count(" ") < 8:
-            score -= 1
-            errors.append("description too short")
-
-        score += adjust(
+        score = adjust(
             score,
             self.contact_github is not None,
             errors,
             "missing github contact",
             # without this annotation, it's not possible to get in touch on GitHub programmatically
             punishment=5,
+        )
+        score = adjust(
+            score,
+            self.bioregistry_prefix is not None,
+            errors,
+            "missing bioregistry mapping",
+            # without this annotation, the bioregistry isn't doing its job
+            punishment=5,
+            )
+        score = adjust(
+            score,
+            self.bioportal_prefix is not None,
+            errors,
+            "missing bioportal mapping",
+            punishment=1,
         )
         return score, errors
 
@@ -363,6 +377,15 @@ def get_data(
         contact_label = contact["label"]
         contact_email = contact["email"]
 
+        # External
+        pp = record["preferredPrefix"]
+        bioregistry_prefix = get_registry_invmap("obofoundry").get(pp)
+        if bioregistry_prefix is None:
+            tqdm.write(f"No bioregistry prefix for {pp}")
+            bioportal_prefix = None
+        else:
+            bioportal_prefix = get_bioportal_prefix(bioregistry_prefix)
+
         if owner is None:
             rows.append(
                 Result(
@@ -372,6 +395,8 @@ def get_data(
                     contact_github=contact_github,
                     contact_email=contact_email,
                     contact_label=contact_label,
+                    bioregistry_prefix=bioregistry_prefix,
+                    bioportal_prefix=bioportal_prefix,
                 )
             )
             continue
@@ -446,6 +471,8 @@ def get_data(
                 contact_github=contact_github,
                 contact_email=contact_email,
                 contact_label=contact_label,
+                bioregistry_prefix=bioregistry_prefix,
+                bioportal_prefix=bioportal_prefix,
                 owner=owner,
                 repo=repo,
                 repo_description=repo_description,
@@ -508,7 +535,7 @@ def main(force: bool, test: bool, path):
             if isinstance(row, GithubResult)
         )
     )
-    sns.scatterplot(x, y, ax=ax)
+    sns.scatterplot(x=x, y=y, ax=ax)
     ax.set_xlabel("Score")
     ax.set_ylabel("Open Issues")
     ax.set_yscale("log")

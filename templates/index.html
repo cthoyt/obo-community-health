@@ -44,6 +44,8 @@
             <th>Lifetime Unique Contributors</th>
             <th>Lifetime Top Contributor</th>
             <th>License</th>
+            <th>Bioregistry</th>
+            <th>Bioportal</th>
             <th>Messages</th>
         </tr>
         </thead>
@@ -119,6 +121,8 @@
             <td></td>
             <td></td>
             {% endif %}
+            <td>{% if row.bioregistry_prefix %}<a href="https://bioregistry.io/{{ row.bioregistry_prefix }}">{{ row.bioregistry_prefix }}</a>{% endif %}</td>
+            <td>{% if row.bioportal_prefix %}<a href="https://bioportal.bioontology.org/ontologies/{{ row.bioportal_prefix }}">{{ row.bioportal_prefix }}</a>{% endif %}</td>
             <td>{{ messages|join(", ") }}</td>
         </tr>
         {% endfor %}
