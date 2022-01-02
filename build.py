@@ -3,7 +3,7 @@ import math
 import pickle
 from dataclasses import dataclass
 from functools import lru_cache
-from operator import itemgetter
+from operator import attrgetter, itemgetter
 from pathlib import Path
 from typing import Iterable, Optional, TypeVar, Union
 
@@ -179,8 +179,16 @@ def get_github(
 
 
 def iterate_repos(
-    ontologies,
-) -> Iterable[Union[tuple[str, str, str, str], tuple[str, str, None, None]]]:
+    path: Optional[Path] = None,
+) -> Iterable[
+    tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, any]]
+]:
+    if path is None:
+        ontologies = get_ontologies()
+    else:
+        with path.open() as file:
+            ontologies = _get_ontology_helper(file)
+
     for obo_id, record in tqdm(sorted(ontologies.items()), desc="Processing OBO conf"):
         if record.get("is_obsolete") or record.get("activity_status") != "active":
             continue
@@ -191,25 +199,25 @@ def iterate_repos(
         if repository is not None:
             if repository.startswith(PREFIX):
                 owner, repo, *_ = repository[len(PREFIX) :].split("/")
-                yield obo_id, record["title"], owner, repo
+                yield obo_id, record["title"], (owner, repo), record
             else:
                 tqdm.write(f'no github repository for {record["id"]}: {tracker}')
-                yield obo_id, record["title"], None, None
+                yield obo_id, record["title"], (None, None), record
         else:
             # All active ontologies have trackers. Most of them
             # have GitHub, but not all. Don't consider the non-GitHub
             # ones
             if not tracker:
                 tqdm.write(f'no tracker for {record["id"]}')
-                yield obo_id, record["title"], None, None
+                yield obo_id, record["title"], (None, None), record
             elif not tracker.startswith(PREFIX):
                 tqdm.write(f'no github tracker for {record["id"]}: {tracker}')
-                yield obo_id, record["title"], None, None
+                yield obo_id, record["title"], (None, None), record
             else:
                 # Since we assume it's a GitHub link, slice out the prefix then
                 # parse the owner and repository out of the path
                 owner, repo, *_ = tracker[len(PREFIX) :].split("/")
-                yield obo_id, record["title"], owner, repo
+                yield obo_id, record["title"], owner, repo, record
 
 
 @dataclass_json
@@ -217,6 +225,7 @@ def iterate_repos(
 class Result:
     prefix: str
     title: str
+    description: str
     contact_label: str
     contact_email: str
     contact_github: Optional[str]
@@ -244,6 +253,10 @@ class Result:
         else:
             score += 5
 
+        if self.description.count(" ") < 8:
+            score -= 1
+            errors.append("description too short")
+
         score += adjust(
             score,
             self.contact_github is not None,
@@ -260,7 +273,7 @@ class Result:
 class GithubResult(Result):
     owner: str
     repo: str
-    description: str
+    repo_description: str
     stars: int
     license: str
     open_issues: int
@@ -312,11 +325,6 @@ class GithubResult(Result):
         else:  # Reward using well-recognized licenses.
             score += 1
 
-        description_len = self.description.count(" ") if self.description else 0
-        if description_len < 8:
-            score -= 1
-            errors.append("description too short")
-
         stars = self.stars
         if not stars:
             score += fslog10(stars, 2)
@@ -339,13 +347,7 @@ def get_data(
         with PATH_PICKLE.open("rb") as file:
             return pickle.load(file)
 
-    if path is None:
-        ontologies = get_ontologies()
-    else:
-        with path.open() as file:
-            ontologies = _get_ontology_helper(file)
-
-    repos = sorted(iterate_repos(ontologies))
+    repos = sorted(iterate_repos(path=path))
     if test:
         c = 0
         repos = [
@@ -353,18 +355,20 @@ def get_data(
         ]
     rows: list[Result] = []
     repos = tqdm(repos, desc="Repositories")
-    for prefix, title, owner, repo in repos:
+    for prefix, title, (owner, repo), record in repos:
         repos.set_postfix(repo=f"{owner}/{repo}")
-        contact = ontologies[prefix].get("contact", {})
+        description = record["description"]
+        contact = record["contact"]
         contact_github = contact.get("github")
-        contact_label = contact.get("label")
-        contact_email = contact.get("email")
+        contact_label = contact["label"]
+        contact_email = contact["email"]
 
         if owner is None:
             rows.append(
                 Result(
                     prefix=prefix,
                     title=title,
+                    description=description,
                     contact_github=contact_github,
                     contact_email=contact_email,
                     contact_label=contact_label,
@@ -372,7 +376,7 @@ def get_data(
             )
             continue
         info = get_info(owner, repo)
-        description = info["description"]
+        repo_description = info["description"]
         stars = info["stargazers_count"]
         license = info["license"]
         open_issues = info["open_issues"]
@@ -438,12 +442,13 @@ def get_data(
             GithubResult(
                 prefix=prefix,
                 title=title,
+                description=description,
                 contact_github=contact_github,
                 contact_email=contact_email,
                 contact_label=contact_label,
                 owner=owner,
                 repo=repo,
-                description=description,
+                repo_description=repo_description,
                 stars=stars,
                 license=license["key"] if license else None,
                 open_issues=open_issues,
@@ -468,7 +473,7 @@ def get_data(
             )
         )
 
-    rows = sorted(rows, key=_row_key, reverse=True)
+    rows = sorted(rows, key=attrgetter("prefix"))
 
     pd.DataFrame(rows).to_csv(PATH_TSV, sep="\t", index=False)
     with PATH_PICKLE.open("wb") as file:
@@ -477,11 +482,6 @@ def get_data(
     #     json.dump(rows, file)
 
     return rows
-
-
-def _row_key(row: Result):
-    score, errors = row.get_score()
-    return score, -len(errors), row.prefix
 
 
 @click.command()
