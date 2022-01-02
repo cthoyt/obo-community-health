@@ -69,7 +69,7 @@
             <td>
                 {% if row.contact_github %}
                 <a href="https://github.com/{{ row.contact_github }}"
-                   data-toggle="tooltip" data-html="true" title="{{ row.contact_label }}<br />{{ row.contact_email }}">
+                   data-toggle="tooltip" data-html="true" title="{{ row.contact_label }}<br />{{ row.contact_email }}{% if row.contact_wikidata %}<br />{{ row.contact_wikidata }}{% endif %}{% if row.contact_orcid %}<br />{{ row.contact_orcid }}{% endif %}">
                     @{{ row.contact_github }}
                 </a>
                 {% endif %}

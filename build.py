@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from operator import attrgetter, itemgetter
 from pathlib import Path
+from textwrap import dedent
 from typing import Iterable, Optional, TypeVar, Union
 
 import click
@@ -58,6 +59,9 @@ GITHUB_BONUS = 3
 Issue = TypeVar("Issue")
 SOFTWARE_LICENSES = {"mit", "bsd-3-clause", "apache-2.0"}  # TODO
 
+#: WikiData SPARQL endpoint. See https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service#Interfacing
+WIKIDATA_SPARQL = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
+
 
 @lru_cache
 def get_ontologies() -> dict[str, dict[str, any]]:
@@ -100,6 +104,41 @@ def adjust(
         score -= punishment
         errors.append(msg)
     return score
+
+
+HEADERS = {
+    "User-Agent": f"obo-community-health/1.0",
+}
+
+
+@lru_cache(maxsize=None)
+def get_wikidata(username: str):
+    query = dedent(
+        f"""\
+        SELECT ?item ?orcid 
+        WHERE 
+        {{
+            ?item wdt:P2037 "{username}" .
+            OPTIONAL {{ ?item wdt:P496 ?orcid }} .
+        }}
+    """
+    )
+    res = query_wikidata(query)
+    if not res:
+        return None, None
+    d = res[0]
+    wikidata_id = d["item"]["value"]
+    orcid_id = d["orcid"]["value"]
+    return wikidata_id, orcid_id
+
+
+def query_wikidata(query: str):
+    res = requests.get(
+        WIKIDATA_SPARQL, params={"query": query, "format": "json"}, headers=HEADERS
+    )
+    res.raise_for_status()
+    res_json = res.json()
+    return res_json["results"]["bindings"]
 
 
 def get_most_recent_updated_issue(owner: str, repo: str) -> Optional[Issue]:
@@ -232,6 +271,8 @@ class Result:
     contact_label: str
     contact_email: str
     contact_github: Optional[str]
+    contact_wikidata: Optional[str]
+    contact_orcid: Optional[str]
     bioregistry_prefix: str
     bioportal_prefix: Optional[str]
     ols_prefix: Optional[str]
@@ -263,9 +304,21 @@ class Result:
             score,
             self.contact_github is not None,
             errors,
-            "missing github contact",
+            "missing contact's GitHub handle",
             # without this annotation, it's not possible to get in touch on GitHub programmatically
             punishment=5,
+        )
+        score = adjust(
+            score,
+            self.contact_wikidata is not None,
+            errors,
+            "could not look up contact on WikiData via GitHub",
+        )
+        score = adjust(
+            score,
+            self.contact_orcid is not None,
+            errors,
+            "could not look up contact ORCID via WikiData",
         )
         score = adjust(
             score,
@@ -394,6 +447,10 @@ def get_data(
         contact_github = contact.get("github")
         contact_label = contact["label"]
         contact_email = contact["email"]
+        if contact_github:
+            contact_wikidata, contact_orcid = get_wikidata(contact_github)
+        else:
+            contact_wikidata, contact_orcid = None, None
 
         # External
         pp = record["preferredPrefix"]
@@ -416,6 +473,8 @@ def get_data(
                     contact_github=contact_github,
                     contact_email=contact_email,
                     contact_label=contact_label,
+                    contact_wikidata=contact_wikidata,
+                    contact_orcid=contact_orcid,
                     bioregistry_prefix=bioregistry_prefix,
                     bioportal_prefix=bioportal_prefix,
                     ols_prefix=ols_prefix,
@@ -494,6 +553,8 @@ def get_data(
                 contact_github=contact_github,
                 contact_email=contact_email,
                 contact_label=contact_label,
+                contact_wikidata=contact_wikidata,
+                contact_orcid=contact_orcid,
                 bioregistry_prefix=bioregistry_prefix,
                 bioportal_prefix=bioportal_prefix,
                 ols_prefix=ols_prefix,
