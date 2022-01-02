@@ -1,0 +1,810 @@
+- count: 9
+  email: yongqunh@med.umich.edu
+  github: yongqunh
+  label: Yongqunh He
+  last_active: 2021-12-23 23:14:00
+  last_active_recent: true
+  ontologies:
+  - cido
+  - ico
+  - ino
+  - oae
+  - ogg
+  - ohmi
+  - opmi
+  - ovae
+  - vo
+  orcid: null
+  wikidata: null
+- count: 7
+  email: frederic.bastian@unil.ch
+  github: fbastian
+  label: Frédéric Bastian
+  last_active: 2021-12-24 14:47:56
+  last_active_recent: true
+  ontologies:
+  - cio
+  - hom
+  - hsapdv
+  - mmusdv
+  - ncbitaxon
+  - olatdv
+  - pdumdv
+  orcid: null
+  wikidata: null
+- count: 6
+  email: cjmungall@lbl.gov
+  github: cmungall
+  label: Chris Mungall
+  last_active: 2021-12-30 07:31:34
+  last_active_recent: true
+  ontologies:
+  - bspo
+  - cteno
+  - oba
+  - omo
+  - ro
+  - uberon
+  orcid: 0000-0002-6601-2165
+  wikidata: Q20746118
+- count: 4
+  email: balhoff@renci.org
+  github: balhoff
+  label: Jim Balhoff
+  last_active: 2021-12-28 15:52:55
+  last_active_recent: true
+  ontologies:
+  - cdao
+  - taxrank
+  - tto
+  - vto
+  orcid: null
+  wikidata: null
+- count: 4
+  email: cp390@cam.ac.uk
+  github: Clare72
+  label: Clare Pilgrim
+  last_active: 2021-12-21 16:44:43
+  last_active_recent: true
+  ontologies:
+  - dpo
+  - fbbt
+  - fbcv
+  - fbdv
+  orcid: null
+  wikidata: null
+- count: 3
+  email: rlwalls2008@gmail.com
+  github: ramonawalls
+  label: Ramona Walls
+  last_active: 2022-01-01 22:54:46
+  last_active_recent: true
+  ontologies:
+  - bco
+  - pco
+  - ppo
+  orcid: null
+  wikidata: null
+- count: 3
+  email: vasilevs@ohsu.edu
+  github: nicolevasilevsky
+  label: Nicole Vasilevsky
+  last_active: 2021-12-30 20:55:47
+  last_active_recent: true
+  ontologies:
+  - chiro
+  - mondo
+  - upheno
+  orcid: 0000-0001-5208-3432
+  wikidata: Q42763131
+- count: 3
+  email: batchelorc@rsc.org
+  github: batchelorc
+  label: Colin Batchelor
+  last_active: 2021-12-16 16:28:42
+  last_active_recent: true
+  ontologies:
+  - chmo
+  - mop
+  - rxno
+  orcid: null
+  wikidata: null
+- count: 3
+  email: hoganwr@gmail.com
+  github: hoganwr
+  label: Bill Hogan
+  last_active: 2021-11-28 16:36:18
+  last_active_recent: true
+  ontologies:
+  - dron
+  - geo
+  - omrse
+  orcid: null
+  wikidata: null
+- count: 3
+  email: mjyoder@illinois.edu
+  github: mjy
+  label: Matt Yoder
+  last_active: 2021-12-28 01:39:07
+  last_active_recent: true
+  ontologies:
+  - hao
+  - nomen
+  - oarcs
+  orcid: null
+  wikidata: null
+- count: 2
+  email: haendel@ohsu.edu
+  github: mellybelly
+  label: Melissa Haendel
+  last_active: 2021-11-13 20:14:00
+  last_active_recent: true
+  ontologies:
+  - caro
+  - ncit
+  orcid: null
+  wikidata: null
+- count: 2
+  email: lagonzalezmo@unal.edu.co
+  github: luis-gonzalez-m
+  label: Luis A. Gonzalez-Montana
+  last_active: 2021-12-15 14:54:44
+  last_active_recent: true
+  ontologies:
+  - clao
+  - lepao
+  orcid: null
+  wikidata: null
+- count: 2
+  email: bpeters@lji.org
+  github: bpeters42
+  label: Bjoern Peters
+  last_active: 2021-12-20 19:37:04
+  last_active_recent: true
+  ontologies:
+  - cob
+  - mro
+  orcid: null
+  wikidata: null
+- count: 2
+  email: alpha.tom.kodamullil@scai.fraunhofer.de
+  github: akodamullil
+  label: Alpha Tom Kodamullil
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - cto
+  - epio
+  orcid: null
+  wikidata: null
+- count: 2
+  email: pfey@northwestern.edu
+  github: pfey03
+  label: Petra Fey
+  last_active: 2021-12-14 00:51:59
+  last_active_recent: true
+  ontologies:
+  - ddanat
+  - ddpheno
+  orcid: null
+  wikidata: null
+- count: 2
+  email: mbrochhausen@uams.edu
+  github: mbrochhausen
+  label: Mathias Brochhausen
+  last_active: 2021-12-08 13:35:34
+  last_active_recent: true
+  ontologies:
+  - dideo
+  - mpio
+  orcid: null
+  wikidata: null
+- count: 2
+  email: lynn.schriml@gmail.com
+  github: lschriml
+  label: Lynn Schriml
+  last_active: 2021-12-15 21:13:44
+  last_active_recent: true
+  ontologies:
+  - disdriv
+  - doid
+  orcid: 0000-0001-8910-9851
+  wikidata: Q28913673
+- count: 2
+  email: p.buttigieg@gmail.com
+  github: pbuttigieg
+  label: Pier Luigi Buttigieg
+  last_active: 2021-12-16 10:53:23
+  last_active_recent: true
+  ontologies:
+  - ecocore
+  - envo
+  orcid: null
+  wikidata: null
+- count: 2
+  email: Terry.Hayamizu@jax.org
+  github: tfhayamizu
+  label: Terry Hayamizu
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - emapa
+  - ma
+  orcid: null
+  wikidata: null
+- count: 2
+  email: vw253@cam.ac.uk
+  github: ValWood
+  label: Val Wood
+  last_active: 2022-01-01 19:14:06
+  last_active_recent: true
+  ontologies:
+  - fao
+  - fypo
+  orcid: null
+  wikidata: null
+- count: 2
+  email: janna.hastings@gmail.com
+  github: jannahastings
+  label: Janna Hastings
+  last_active: 2021-12-26 14:17:26
+  last_active_recent: true
+  ontologies:
+  - mf
+  - mfoem
+  orcid: 0000-0002-3469-4923
+  wikidata: Q27902110
+- count: 2
+  email: g.gkoutos@gmail.com
+  github: gkoutos
+  label: George Gkoutos
+  last_active: 2021-12-13 16:25:08
+  last_active_recent: true
+  ontologies:
+  - nbo
+  - pato
+  orcid: 0000-0002-2061-091X
+  wikidata: Q54303216
+- count: 2
+  email: smr@stowers.org
+  github: srobb1
+  label: Sofia Robb
+  last_active: 2021-12-08 16:14:54
+  last_active_recent: true
+  ontologies:
+  - plana
+  - planp
+  orcid: null
+  wikidata: null
+- count: 2
+  email: esegerd3@gmail.com
+  github: seger
+  label: Erik Segerdell
+  last_active: 2021-11-19 21:08:28
+  last_active_recent: true
+  ontologies:
+  - xao
+  - xpo
+  orcid: 0000-0002-9611-1279
+  wikidata: Q54303422
+- count: 2
+  email: ybradford@zfin.org
+  github: ybradford
+  label: Yvonne Bradford
+  last_active: 2021-12-09 21:38:54
+  last_active_recent: true
+  ontologies:
+  - zeco
+  - zp
+  orcid: null
+  wikidata: null
+- count: 1
+  email: m.a.laporte@cgiar.org
+  github: marieALaporte
+  label: Marie-Angélique Laporte
+  last_active: 2021-12-16 11:58:19
+  last_active_recent: true
+  ontologies:
+  - agro
+  orcid: null
+  wikidata: null
+- count: 1
+  email: stacia@stanford.edu
+  github: srengel
+  label: Stacia R Engel
+  last_active: 2021-12-14 17:32:32
+  last_active_recent: true
+  ontologies:
+  - apo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: mcarthua@mcmaster.ca
+  github: agmcarthur
+  label: Andrew G. McArthur
+  last_active: 2021-12-15 15:28:25
+  last_active_recent: true
+  ontologies:
+  - aro
+  orcid: null
+  wikidata: null
+- count: 1
+  email: phismith@buffalo.edu
+  github: phismith
+  label: Barry Smith
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - bfo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: l.andres.hernandez.18@student.scu.edu.au
+  github: LilyAndres
+  label: Liliana Andres Hernandez
+  last_active: 2021-10-21 08:09:29
+  last_active_recent: true
+  ontologies:
+  - cdno
+  orcid: null
+  wikidata: null
+- count: 1
+  email: amalik@ebi.ac.uk
+  github: amalik01
+  label: Adnan Malik
+  last_active: 2021-12-08 12:22:00
+  last_active_recent: true
+  ontologies:
+  - chebi
+  orcid: null
+  wikidata: null
+- count: 1
+  email: egon.willighagen@gmail.com
+  github: egonw
+  label: Egon Willighagen
+  last_active: 2022-01-02 18:37:01
+  last_active_recent: true
+  ontologies:
+  - cheminf
+  orcid: 0000-0001-7542-0286
+  wikidata: Q20895241
+- count: 1
+  email: addiehl@buffalo.edu
+  github: addiehl
+  label: Alexander Diehl
+  last_active: 2021-12-21 17:51:22
+  last_active_recent: true
+  ontologies:
+  - cl
+  orcid: null
+  wikidata: null
+- count: 1
+  email: lucas.leclere@obs-vlfr.fr
+  github: L-Leclere
+  label: Lucas Leclere
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - clyh
+  orcid: null
+  wikidata: null
+- count: 1
+  email: entiminae@gmail.com
+  github: JCGiron
+  label: Jennifer C. Giron
+  last_active: 2021-12-17 13:46:26
+  last_active_recent: true
+  ontologies:
+  - colao
+  orcid: null
+  wikidata: null
+- count: 1
+  email: whimar@ohsu.edu
+  github: marijane
+  label: Marijane White
+  last_active: 2021-12-27 19:54:38
+  last_active_recent: true
+  ontologies:
+  - cro
+  orcid: null
+  wikidata: null
+- count: 1
+  email: mcourtot@gmail.com
+  github: mcourtot
+  label: Melanie Courtot
+  last_active: 2021-12-02 15:37:43
+  last_active_recent: true
+  ontologies:
+  - duo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: ettensohn@cmu.edu
+  github: ettensohn
+  label: Charles Ettensohn
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - ecao
+  orcid: null
+  wikidata: null
+- count: 1
+  email: mgiglio@som.umaryland.edu
+  github: mgiglio99
+  label: Michelle Giglio
+  last_active: 2021-12-22 18:39:41
+  last_active_recent: true
+  ontologies:
+  - eco
+  orcid: null
+  wikidata: null
+- count: 1
+  email: annethessen@gmail.com
+  github: diatomsRcool
+  label: Anne Thessen
+  last_active: 2021-12-14 17:31:02
+  last_active_recent: true
+  ontologies:
+  - ecto
+  orcid: null
+  wikidata: null
+- count: 1
+  email: stoeckrt@pennmedicine.upenn.edu
+  github: cstoeckert
+  label: Chris Stoeckert
+  last_active: 2021-12-23 14:24:12
+  last_active_recent: true
+  ontologies:
+  - eupath
+  orcid: null
+  wikidata: null
+- count: 1
+  email: cjgrondin@ncsu.edu
+  github: cjgrondin
+  label: Cynthia Grondin
+  last_active: 2021-11-16 14:17:33
+  last_active_recent: true
+  ontologies:
+  - exo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: georgeta.bordea@u-bordeaux.fr
+  github: getbordea
+  label: Georgeta Bordea
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - fideo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: robert.hoehndorf@kaust.edu.sa
+  github: leechuck
+  label: Robert Hoehndorf
+  last_active: 2021-12-08 04:40:57
+  last_active_recent: true
+  ontologies:
+  - flopo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: polcaes@gmail.com
+  github: pcastellanoescuder
+  label: Pol Castellano Escuder
+  last_active: 2021-12-20 22:49:36
+  last_active_recent: true
+  ontologies:
+  - fobi
+  orcid: null
+  wikidata: null
+- count: 1
+  email: damion_dooley@sfu.ca
+  github: ddooley
+  label: Damion Dooley
+  last_active: 2021-12-28 19:43:35
+  last_active_recent: true
+  ontologies:
+  - foodon
+  orcid: null
+  wikidata: null
+- count: 1
+  email: rlwalls2008@gmail.com
+  github: https://github.com/futres/fovt
+  label: FuTRES Ontology of Vertebrate Traits
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - fovt
+  orcid: null
+  wikidata: null
+- count: 1
+  email: rbca.jackson@gmail.com
+  github: beckyjackson
+  label: Rebecca Jackson
+  last_active: 2022-01-02 02:07:51
+  last_active_recent: true
+  ontologies:
+  - gecko
+  orcid: null
+  wikidata: null
+- count: 1
+  email: mhb120@gmail.com
+  github: mbrush
+  label: Matthew Brush
+  last_active: 2021-11-04 20:43:52
+  last_active_recent: true
+  ontologies:
+  - geno
+  orcid: null
+  wikidata: null
+- count: 1
+  email: nje5@georgetown.edu
+  github: edwardsnj
+  label: Nathan Edwards
+  last_active: 2022-01-01 19:46:01
+  last_active_recent: true
+  ontologies:
+  - gno
+  orcid: null
+  wikidata: null
+- count: 1
+  email: kronkcj@mail.uc.edu
+  github: Superraptor
+  label: Clair Kronk
+  last_active: 2021-12-22 21:09:55
+  last_active_recent: true
+  ontologies:
+  - gsso
+  orcid: null
+  wikidata: null
+- count: 1
+  email: dr.sebastian.koehler@gmail.com
+  github: drseb
+  label: Sebastian Koehler
+  last_active: 2021-10-22 05:19:06
+  last_active_recent: true
+  ontologies:
+  - hp
+  orcid: 0000-0002-5316-1399
+  wikidata: Q52804485
+- count: 1
+  email: fernanda.dorea@sva.se
+  github: nandadorea
+  label: Fernanda Dorea
+  last_active: 2021-12-28 18:32:11
+  last_active_recent: true
+  ontologies:
+  - hso
+  orcid: 0000-0001-8638-8525
+  wikidata: Q55475730
+- count: 1
+  email: jiezheng@pennmedicine.upenn.edu
+  github: zhengj2007
+  label: Jie Zheng
+  last_active: 2021-12-23 20:12:04
+  last_active_recent: true
+  ontologies:
+  - iao
+  orcid: null
+  wikidata: null
+- count: 1
+  email: Lindsay.Cowell@utsouthwestern.edu
+  github: lgcowell
+  label: Lindsay Cowell
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - ido
+  orcid: null
+  wikidata: null
+- count: 1
+  email: karr@mssm.edu
+  github: jonrkarr
+  label: Jonathan Karr
+  last_active: 2022-01-02 01:04:10
+  last_active_recent: true
+  ontologies:
+  - kisao
+  orcid: null
+  wikidata: null
+- count: 1
+  email: Leigh.Carmody@jax.org
+  github: LCCarmody
+  label: Leigh Carmody
+  last_active: 2021-11-29 19:20:13
+  last_active_recent: true
+  ontologies:
+  - maxo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: druzinsk@uic.edu
+  github: RDruzinsky
+  label: Robert Druzinsky
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - mfmo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: hilmar.lapp@duke.edu
+  github: hlapp
+  label: Hilmar Lapp
+  last_active: 2021-12-15 00:20:03
+  last_active_recent: true
+  ontologies:
+  - miapa
+  orcid: null
+  wikidata: null
+- count: 1
+  email: carrine.blank@umontana.edu
+  github: carrineblank
+  label: Carrine Blank
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - micro
+  orcid: null
+  wikidata: null
+- count: 1
+  email: huang@southalabama.edu
+  github: Huang-OMIT
+  label: Jingshan Huang
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - ncro
+  orcid: null
+  wikidata: null
+- count: 1
+  email: linikujp@gmail.com
+  github: linikujp
+  label: Asiyah Yu Lin
+  last_active: 2021-12-03 00:20:52
+  last_active_recent: true
+  ontologies:
+  - ogsf
+  orcid: null
+  wikidata: null
+- count: 1
+  email: alanruttenberg@gmail.com
+  github: alanruttenberg
+  label: Alan Ruttenberg
+  last_active: 2022-01-02 01:07:29
+  last_active_recent: true
+  ontologies:
+  - ohd
+  orcid: null
+  wikidata: null
+- count: 1
+  email: chen.yang@ugent.be
+  github: cyang0128
+  label: Chen Yang
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - one
+  orcid: null
+  wikidata: null
+- count: 1
+  email: francesco.vitali@ibba.cnr.it
+  github: FrancescoVit
+  label: Francesco Vitali
+  last_active: 2021-12-02 14:30:07
+  last_active_recent: true
+  ontologies:
+  - ons
+  orcid: null
+  wikidata: null
+- count: 1
+  email: fortuna@ebd.csic.es
+  github: miguelfortuna
+  label: Miguel A. Fortuna
+  last_active: 2021-12-02 10:22:16
+  last_active_recent: true
+  ontologies:
+  - ontoavida
+  orcid: null
+  wikidata: null
+- count: 1
+  email: paul.fabry@usherbrooke.ca
+  github: pfabry
+  label: Paul Fabry
+  last_active: 2021-11-04 14:56:58
+  last_active_recent: true
+  ontologies:
+  - pdro
+  orcid: null
+  wikidata: null
+- count: 1
+  email: jaiswalp@science.oregonstate.edu
+  github: jaiswalp
+  label: Pankaj Jaiswal
+  last_active: 2021-11-04 18:02:12
+  last_active_recent: true
+  ontologies:
+  - po
+  orcid: null
+  wikidata: null
+- count: 1
+  email: dan5@georgetown.edu
+  github: nataled
+  label: Darren Natale
+  last_active: 2021-12-22 14:55:42
+  last_active_recent: true
+  ontologies:
+  - pr
+  orcid: null
+  wikidata: null
+- count: 1
+  email: zachll@umich.edu
+  github: zachll
+  label: Zach Landis-Lewis
+  last_active: 2021-12-28 15:05:48
+  last_active_recent: true
+  ontologies:
+  - psdo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: daniel.c.berrios@nasa.gov
+  github: DanBerrios
+  label: Daniel C. Berrios
+  last_active: 2021-12-30 21:45:05
+  last_active_recent: true
+  ontologies:
+  - rbo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: sheriff@ebi.ac.uk
+  github: rsmsheriff
+  label: Rahuman Sheriff
+  last_active: 2021-11-25 16:32:40
+  last_active_recent: true
+  ontologies:
+  - sbo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: giant.plankton@gmail.com
+  github: JadeHotchkiss
+  label: Jade Hotchkiss
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - scdo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: allyson.lister@oerc.ox.ac.uk
+  github: allysonlister
+  label: Allyson Lister
+  last_active: 2021-12-21 08:52:16
+  last_active_recent: true
+  ontologies:
+  - swo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: y-yamagata@nibiohn.go.jp
+  github: txpo-ontology
+  label: Yuki Yamagata
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - txpo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: van_slyke@zfin.org
+  github: cerivs
+  label: Ceri Van Slyke
+  last_active: 2021-12-09 18:17:17
+  last_active_recent: true
+  ontologies:
+  - zfa
+  orcid: null
+  wikidata: null

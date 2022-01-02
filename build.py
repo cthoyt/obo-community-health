@@ -2,18 +2,14 @@ import datetime
 import math
 import pickle
 from dataclasses import dataclass
-from functools import lru_cache
 from operator import attrgetter, itemgetter
 from pathlib import Path
-from textwrap import dedent
 from typing import Iterable, Optional, TypeVar, Union
 
 import click
 import dateparser
 import matplotlib.pyplot as plt
 import pandas as pd
-import pystow
-import requests
 import seaborn as sns
 import yaml
 from bioregistry import (get_bioportal_prefix, get_ols_prefix,
@@ -21,8 +17,10 @@ from bioregistry import (get_bioportal_prefix, get_ols_prefix,
 from dataclasses_json import dataclass_json
 from jinja2 import Environment, FileSystemLoader
 from more_click import force_option, verbose_option
-from ratelimit import rate_limited
 from tqdm import tqdm
+
+from utils import (CONTACTS_YAML_PATH, DATA, ONE_YEAR_AGO, get_github,
+                   get_ontologies)
 
 HERE = Path(__file__).parent.resolve()
 TEMPLATES = HERE.joinpath("templates")
@@ -30,9 +28,8 @@ TEMPLATES = HERE.joinpath("templates")
 DOCS = HERE.joinpath("docs")
 DOCS.mkdir(exist_ok=True, parents=True)
 INDEX = DOCS.joinpath("index.html")
+CONTACTS_PATH = DOCS.joinpath("contacts.html")
 
-DATA = HERE.joinpath("data")
-DATA.mkdir(exist_ok=True, parents=True)
 PATH_PICKLE = DATA.joinpath("data.pkl")
 PATH_TSV = DATA.joinpath("data.tsv")
 PATH_JSON = DATA.joinpath("data.json")
@@ -43,36 +40,15 @@ environment = Environment(
     autoescape=True, loader=FileSystemLoader(TEMPLATES), trim_blocks=False
 )
 index_template = environment.get_template("index.html")
+contacts_template = environment.get_template("contacts.html")
 # ontology_template = environment.get_template("ontology.html")
 
-URL = "https://raw.githubusercontent.com/OBOFoundry/OBOFoundry.github.io/master/_config.yml"
 PREFIX = "https://github.com/"
 TITLE = "Add obofoundry topic to repo metadata"
 
-# Load the GitHub access token via PyStow. We'll
-# need it so we don't hit the rate limit
-TOKEN = pystow.get_config("github", "token", raise_on_missing=True)
-
-NOW = datetime.datetime.now()
-ONE_YEAR_AGO = NOW - datetime.timedelta(weeks=52)
 GITHUB_BONUS = 3
 Issue = TypeVar("Issue")
 SOFTWARE_LICENSES = {"mit", "bsd-3-clause", "apache-2.0"}  # TODO
-
-#: WikiData SPARQL endpoint. See https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service#Interfacing
-WIKIDATA_SPARQL = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
-
-
-@lru_cache
-def get_ontologies() -> dict[str, dict[str, any]]:
-    # List of ontologies and associated metadata from OBO Foundry
-    res = requests.get(URL)
-    return _get_ontology_helper(res.content)
-
-
-def _get_ontology_helper(content):
-    parsed_res = yaml.safe_load(content)
-    return {entry["id"]: entry for entry in parsed_res["ontologies"]}
 
 
 def floor(x: float) -> int:
@@ -104,41 +80,6 @@ def adjust(
         score -= punishment
         errors.append(msg)
     return score
-
-
-HEADERS = {
-    "User-Agent": f"obo-community-health/1.0",
-}
-
-
-@lru_cache(maxsize=None)
-def get_wikidata(username: str):
-    query = dedent(
-        f"""\
-        SELECT ?item ?orcid 
-        WHERE 
-        {{
-            ?item wdt:P2037 "{username}" .
-            OPTIONAL {{ ?item wdt:P496 ?orcid }} .
-        }}
-    """
-    )
-    res = query_wikidata(query)
-    if not res:
-        return None, None
-    d = res[0]
-    wikidata_id = d["item"]["value"]
-    orcid_id = d["orcid"]["value"]
-    return wikidata_id, orcid_id
-
-
-def query_wikidata(query: str):
-    res = requests.get(
-        WIKIDATA_SPARQL, params={"query": query, "format": "json"}, headers=HEADERS
-    )
-    res.raise_for_status()
-    res_json = res.json()
-    return res_json["results"]["bindings"]
 
 
 def get_most_recent_updated_issue(owner: str, repo: str) -> Optional[Issue]:
@@ -207,28 +148,12 @@ def has_odk_config(owner: str, repo: str) -> bool:
         return False
 
 
-@rate_limited(calls=5_000, period=60 * 60)
-def get_github(
-    url: str, accept: Optional[str] = None, params: Optional[dict[str, any]] = None
-):
-    headers = {
-        "Authorization": f"token {TOKEN}",
-    }
-    if accept:
-        headers["Accept"] = accept
-    return requests.get(url, headers=headers, params=params).json()
-
-
 def iterate_repos(
     path: Optional[Path] = None,
 ) -> Iterable[
     tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, any]]
 ]:
-    if path is None:
-        ontologies = get_ontologies()
-    else:
-        with path.open() as file:
-            ontologies = _get_ontology_helper(file)
+    ontologies = get_ontologies(path=path)
 
     for obo_id, record in tqdm(sorted(ontologies.items()), desc="Processing OBO conf"):
         if record.get("is_obsolete") or record.get("activity_status") != "active":
@@ -273,6 +198,7 @@ class Result:
     contact_github: Optional[str]
     contact_wikidata: Optional[str]
     contact_orcid: Optional[str]
+    contact_recent: bool
     bioregistry_prefix: str
     bioportal_prefix: Optional[str]
     ols_prefix: Optional[str]
@@ -308,6 +234,14 @@ class Result:
             # without this annotation, it's not possible to get in touch on GitHub programmatically
             punishment=5,
         )
+        if self.contact_github is not None:
+            score = adjust(
+                score,
+                self.contact_recent,
+                errors,
+                "contact is inactive",
+                punishment=3,
+            )
         score = adjust(
             score,
             self.contact_wikidata is not None,
@@ -425,7 +359,7 @@ class GithubResult(Result):
 
 
 def get_data(
-    force: bool = False, test: bool = False, path: Optional[Path] = None
+    contacts, force: bool = False, test: bool = False, path: Optional[Path] = None
 ) -> list[Result]:
     if PATH_PICKLE.is_file() and not force and not test:
         with PATH_PICKLE.open("rb") as file:
@@ -447,10 +381,11 @@ def get_data(
         contact_github = contact.get("github")
         contact_label = contact["label"]
         contact_email = contact["email"]
-        if contact_github:
-            contact_wikidata, contact_orcid = get_wikidata(contact_github)
-        else:
-            contact_wikidata, contact_orcid = None, None
+        contact_wikidata = contacts.get(contact_github, {}).get("wikidata")
+        contact_orcid = contacts.get(contact_github, {}).get("orcid")
+        contact_recent = contacts.get(contact_github, {}).get(
+            "last_active_recent", False
+        )
 
         # External
         pp = record["preferredPrefix"]
@@ -475,6 +410,7 @@ def get_data(
                     contact_label=contact_label,
                     contact_wikidata=contact_wikidata,
                     contact_orcid=contact_orcid,
+                    contact_recent=contact_recent,
                     bioregistry_prefix=bioregistry_prefix,
                     bioportal_prefix=bioportal_prefix,
                     ols_prefix=ols_prefix,
@@ -555,6 +491,7 @@ def get_data(
                 contact_label=contact_label,
                 contact_wikidata=contact_wikidata,
                 contact_orcid=contact_orcid,
+                contact_recent=contact_recent,
                 bioregistry_prefix=bioregistry_prefix,
                 bioportal_prefix=bioportal_prefix,
                 ols_prefix=ols_prefix,
@@ -602,7 +539,10 @@ def get_data(
 @click.option("--test", is_flag=True)
 @click.option("--path", help="Path to local metadata", type=Path)
 def main(force: bool, test: bool, path):
-    rows = get_data(force=force, test=test, path=path)
+    with CONTACTS_YAML_PATH.open() as file:
+        contacts = {record["github"]: record for record in yaml.safe_load(file)}
+
+    rows = get_data(contacts=contacts, force=force, test=test, path=path)
 
     scores = [row.get_score()[0] for row in rows]
     fig, ax = plt.subplots(figsize=(8, 3))
@@ -630,6 +570,9 @@ def main(force: bool, test: bool, path):
     index_html = index_template.render(rows=rows)
     with INDEX.open("w") as file:
         print(index_html, file=file)
+
+    contacts_html = contacts_template.render(rows=list(contacts.values()))
+    CONTACTS_PATH.write_text(contacts_html)
 
     # for row in rows:
     #     ontology_html = ontology_template.render(row=row)
