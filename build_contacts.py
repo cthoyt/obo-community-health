@@ -13,10 +13,8 @@ import pandas as pd
 import yaml
 from tqdm import tqdm
 
-from utils import (
-    CONTACTS_TSV_PATH, CONTACTS_YAML_PATH, ONE_YEAR_AGO,
-    get_github, get_ontologies, query_wikidata,
-)
+from utils import (CONTACTS_TSV_PATH, CONTACTS_YAML_PATH, ONE_YEAR_AGO,
+                   get_github, get_ontologies, query_wikidata)
 
 
 @lru_cache(maxsize=None)

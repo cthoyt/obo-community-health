@@ -568,7 +568,8 @@ def main(force: bool, test: bool, path):
     )
     print(
         f"Number of non-inactive, non-obsolete, non-orphaned ontologies whose"
-        f" responsible person has a GitHub handle: {len(rows)}")
+        f" responsible person has a GitHub handle: {len(rows)}"
+    )
     print(
         f"Ontologies with a responsible person who is only responsible for a"
         f" single ontology: {responsible_one}/{sum(counts)} ({responsible_one/sum(counts):.2%})"
