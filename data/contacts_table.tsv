@@ -1,34 +1,34 @@
 count	github	label	email	wikidata	orcid	last_active	last_active_recent
-9	yongqunh	Yongqunh He	yongqunh@med.umich.edu			2022-01-17 03:41:06	True
-7	fbastian	Frédéric Bastian	frederic.bastian@unil.ch			2022-01-17 11:50:08	True
+9	yongqunh	Yongqunh He	yongqunh@med.umich.edu	Q30512667	0000-0001-9189-9661	2022-01-17 03:41:06	True
+7	fbastian	Frédéric Bastian	frederic.bastian@unil.ch	Q96209982	0000-0002-9415-5104	2022-01-17 11:50:08	True
 6	cmungall	Chris Mungall	cjmungall@lbl.gov	Q20746118	0000-0002-6601-2165	2022-01-16 20:09:22	True
 4	Clare72	Clare Pilgrim	cp390@cam.ac.uk			2022-01-17 09:23:49	True
-4	balhoff	Jim Balhoff	balhoff@renci.org			2022-01-14 21:19:12	True
+4	balhoff	Jim Balhoff	balhoff@renci.org	Q37649212	0000-0002-8688-6599	2022-01-14 21:19:12	True
 4	lschriml	Lynn Schriml	lynn.schriml@gmail.com	Q28913673	0000-0001-8910-9851	2022-01-14 21:32:21	True
-4	mbrochhausen	Mathias Brochhausen	mbrochhausen@gmail.com			2021-12-08 13:35:34	True
-3	batchelorc	Colin Batchelor	batchelorc@rsc.org			2021-12-16 16:28:42	True
-3	bpeters42	Bjoern Peters	bpeters@lji.org			2022-01-15 17:14:24	True
+4	mbrochhausen	Mathias Brochhausen	mbrochhausen@gmail.com	Q57161944	0000-0003-1834-3856	2021-12-08 13:35:34	True
+3	batchelorc	Colin Batchelor	batchelorc@rsc.org	Q28923515	0000-0001-5985-7429	2021-12-16 16:28:42	True
+3	bpeters42	Bjoern Peters	bpeters@lji.org	Q60541156	0000-0002-8457-6693	2022-01-15 17:14:24	True
 3	gkoutos	George Gkoutos	g.gkoutos@gmail.com	Q54303216	0000-0002-2061-091X	2021-12-13 16:25:08	True
 3	hoganwr	Bill Hogan	hoganwr@gmail.com			2022-01-05 18:55:15	True
-3	jaiswalp	Pankaj Jaiswal	jaiswalp@science.oregonstate.edu			2021-11-04 18:02:12	True
+3	jaiswalp	Pankaj Jaiswal	jaiswalp@science.oregonstate.edu	Q41294868	0000-0002-1005-8383	2021-11-04 18:02:12	True
 3	jannahastings	Janna Hastings	janna.hastings@gmail.com	Q27902110	0000-0002-3469-4923	2022-01-12 17:47:47	True
 3	jrsjrs	Jennifer Smith	jrsmith@mcw.edu			2021-12-17 01:00:20	True
 3	mjy	Matt Yoder	mjyoder@illinois.edu			2022-01-14 23:40:02	True
 3	nicolevasilevsky	Nicole Vasilevsky	vasilevs@ohsu.edu	Q42763131	0000-0001-5208-3432	2022-01-15 01:04:16	True
-3	pfabry	Paul Fabry	paul.fabry@usherbrooke.ca			2021-11-04 14:56:58	True
-3	ramonawalls	Ramona Walls	rlwalls2008@gmail.com			2022-01-11 04:42:33	True
+3	pfabry	Paul Fabry	paul.fabry@usherbrooke.ca	Q108555457		2021-11-04 14:56:58	True
+3	ramonawalls	Ramona Walls	rlwalls2008@gmail.com	Q63240627	0000-0001-8815-0078	2022-01-11 04:42:33	True
 3	zhengj2007	Jie Zheng	jiezheng@pennmedicine.upenn.edu			2022-01-16 23:28:41	True
 2	Huang-OMIT	Jingshan Huang	huang@southalabama.edu				False
-2	JCGiron	Jennifer C. Giron	entiminae@gmail.com			2022-01-04 01:05:35	True
-2	ValWood	Val Wood	vw253@cam.ac.uk			2022-01-17 12:17:25	True
+2	JCGiron	Jennifer C. Giron	entiminae@gmail.com	Q28859986	0000-0002-0851-6883	2022-01-04 01:05:35	True
+2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2022-01-17 12:53:49	True
 2	akodamullil	Alpha Tom Kodamullil	alpha.tom.kodamullil@scai.fraunhofer.de				False
 2	cerivs	Ceri Van Slyke	van_slyke@zfin.org			2021-12-09 18:17:17	True
 2	chris-grove	Chris Grove	cgrove@caltech.edu			2022-01-13 13:49:26	True
-2	ddooley	Damion Dooley	damion_dooley@sfu.ca			2022-01-14 22:27:22	True
+2	ddooley	Damion Dooley	damion_dooley@sfu.ca	Q91868864	0000-0002-8844-9165	2022-01-14 22:27:22	True
 2	germa	Gerhard Mayer	gerhard.mayer@rub.de				False
 2	luis-gonzalez-m	Luis A. Gonzalez-Montana	lagonzalezmo@unal.edu.co			2021-12-15 14:54:44	True
 2	mbrush	Matthew Brush	mhb120@gmail.com			2022-01-13 20:13:39	True
-2	mellybelly	Melissa Haendel	haendel@ohsu.edu			2021-11-13 20:14:00	True
+2	mellybelly	Melissa Haendel	haendel@ohsu.edu	Q28368079	0000-0001-9114-8737	2021-11-13 20:14:00	True
 2	pbuttigieg	Pier Luigi Buttigieg	p.buttigieg@gmail.com			2021-12-16 10:53:23	True
 2	pfey03	Petra Fey	pfey@northwestern.edu			2022-01-15 00:20:48	True
 2	seger	Erik Segerdell	esegerd3@gmail.com	Q54303422	0000-0002-9611-1279	2021-11-19 21:08:28	True
@@ -36,7 +36,7 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 2	tfhayamizu	Terry Hayamizu	Terry.Hayamizu@jax.org				False
 2	ybradford	Yvonne Bradford	ybradford@zfin.org			2021-12-09 21:38:54	True
 1	BAevermann	Brian Aevermann	baeverma@jcvi.org			2022-01-07 18:47:13	True
-1	CuzickA	Alayne Cuzick	alayne.cuzick@rothamsted.ac.uk			2022-01-10 12:02:14	True
+1	CuzickA	Alayne Cuzick	alayne.cuzick@rothamsted.ac.uk	Q92917957	0000-0001-8941-3984	2022-01-10 12:02:14	True
 1	DanBerrios	Daniel C. Berrios	daniel.c.berrios@nasa.gov			2022-01-14 23:10:08	True
 1	FernandaFarinelli	Fernanda Farinelli	fernanda.farinelli@gmail.com			2021-11-15 22:15:38	True
 1	FrancescoVit	Francesco Vitali	francesco.vitali@ibba.cnr.it			2022-01-11 13:20:20	True
@@ -52,8 +52,8 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 1	aellenhicks	Amanda Hicks	aellenhicks@gmail.com				False
 1	agbeltran	Alejandra Gonzalez-Beltran	alejandra.gonzalez.beltran@gmail.com	Q27824575	0000-0003-3499-8262	2022-01-17 10:03:41	True
 1	agmcarthur	Andrew G. McArthur	mcarthua@mcmaster.ca			2021-12-15 15:28:25	True
-1	alanruttenberg	Alan Ruttenberg	alanruttenberg@gmail.com			2022-01-17 01:49:35	True
-1	allysonlister	Allyson Lister	allyson.lister@oerc.ox.ac.uk			2022-01-14 15:00:44	True
+1	alanruttenberg	Alan Ruttenberg	alanruttenberg@gmail.com	Q30508557	0000-0002-1604-3078	2022-01-17 01:49:35	True
+1	allysonlister	Allyson Lister	allyson.lister@oerc.ox.ac.uk			2022-01-17 13:39:28	True
 1	amalik01	Adnan Malik	amalik@ebi.ac.uk			2022-01-17 09:10:23	True
 1	beckyjackson	Rebecca Jackson	rbca.jackson@gmail.com			2022-01-15 16:11:35	True
 1	bobthacker	Bob Thacker	robert.thacker@stonybrook.edu				False

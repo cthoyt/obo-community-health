@@ -14,8 +14,8 @@
   - opmi
   - ovae
   - vo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9189-9661
+  wikidata: Q30512667
 - count: 7
   email: frederic.bastian@unil.ch
   github: fbastian
@@ -30,8 +30,8 @@
   - ncbitaxon
   - olatdv
   - pdumdv
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9415-5104
+  wikidata: Q96209982
 - count: 6
   email: cjmungall@lbl.gov
   github: cmungall
@@ -58,8 +58,8 @@
   - dideo
   - mpio
   - oostt
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-1834-3856
+  wikidata: Q57161944
 - count: 4
   email: balhoff@renci.org
   github: balhoff
@@ -71,8 +71,8 @@
   - taxrank
   - tto
   - vto
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8688-6599
+  wikidata: Q37649212
 - count: 4
   email: lynn.schriml@gmail.com
   github: lschriml
@@ -109,8 +109,8 @@
   - bco
   - pco
   - ppo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-8815-0078
+  wikidata: Q63240627
 - count: 3
   email: vasilevs@ohsu.edu
   github: nicolevasilevsky
@@ -133,8 +133,8 @@
   - chmo
   - mop
   - rxno
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-5985-7429
+  wikidata: Q28923515
 - count: 3
   email: jrsmith@mcw.edu
   github: jrsjrs
@@ -157,8 +157,8 @@
   - cob
   - mro
   - obi
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8457-6693
+  wikidata: Q60541156
 - count: 3
   email: paul.fabry@usherbrooke.ca
   github: pfabry
@@ -170,7 +170,7 @@
   - labo
   - pdro
   orcid: null
-  wikidata: null
+  wikidata: Q108555457
 - count: 3
   email: hoganwr@gmail.com
   github: hoganwr
@@ -241,8 +241,8 @@
   - peco
   - po
   - to
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1005-8383
+  wikidata: Q41294868
 - count: 2
   email: entiminae@gmail.com
   github: JCGiron
@@ -252,8 +252,8 @@
   ontologies:
   - aism
   - colao
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-0851-6883
+  wikidata: Q28859986
 - count: 2
   email: haendel@ohsu.edu
   github: mellybelly
@@ -263,8 +263,8 @@
   ontologies:
   - caro
   - ncit
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9114-8737
+  wikidata: Q28368079
 - count: 2
   email: lagonzalezmo@unal.edu.co
   github: luis-gonzalez-m
@@ -324,13 +324,13 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-17 12:17:25
+  last_active: 2022-01-17 12:53:49
   last_active_recent: true
   ontologies:
   - fao
   - fypo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-6330-7526
+  wikidata: Q41048908
 - count: 2
   email: damion_dooley@sfu.ca
   github: ddooley
@@ -340,8 +340,8 @@
   ontologies:
   - foodon
   - genepio
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8844-9165
+  wikidata: Q91868864
 - count: 2
   email: mhb120@gmail.com
   github: mbrush
@@ -888,8 +888,8 @@
   last_active_recent: true
   ontologies:
   - ohd
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1604-3078
+  wikidata: Q30508557
 - count: 1
   email: edong@umich.edu
   github: e4ong1031
@@ -968,8 +968,8 @@
   last_active_recent: true
   ontologies:
   - phipo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-8941-3984
+  wikidata: Q92917957
 - count: 1
   email: robert.thacker@stonybrook.edu
   github: bobthacker
@@ -1094,7 +1094,7 @@
   email: allyson.lister@oerc.ox.ac.uk
   github: allysonlister
   label: Allyson Lister
-  last_active: 2022-01-14 15:00:44
+  last_active: 2022-01-17 13:39:28
   last_active_recent: true
   ontologies:
   - swo

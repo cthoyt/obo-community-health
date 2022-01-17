@@ -18,8 +18,8 @@ from utils import (CONTACTS_TSV_PATH, CONTACTS_YAML_PATH, ONE_YEAR_AGO,
 
 
 @lru_cache(maxsize=None)
-def get_wikidata_from_github(github_id: str):
-    """Lookup bibliometric data from Wikidata using a github handle."""
+def get_wikidata_from_github(github_id: str) -> tuple[str, Optional[str]]:
+    """Lookup bibliometric data from Wikidata using a GitHub handle."""
     query = dedent(
         f"""\
         SELECT ?item ?orcid 
@@ -37,7 +37,9 @@ def get_wikidata_from_github(github_id: str):
     wikidata_id = record["item"]["value"].removeprefix(
         "http://www.wikidata.org/entity/"
     )
-    orcid_id = record["orcid"]["value"]
+    orcid_id = record.get("orcid", {}).get("value")
+    if orcid_id is None:
+        print(f"No ORCID for https://bioregistry.io/wikidata:{wikidata_id}")
     return wikidata_id, orcid_id
 
 
