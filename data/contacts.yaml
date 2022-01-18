@@ -36,7 +36,7 @@
   email: cjmungall@lbl.gov
   github: cmungall
   label: Chris Mungall
-  last_active: 2022-01-16 20:09:22
+  last_active: 2022-01-17 16:01:00
   last_active_recent: true
   ontologies:
   - bspo
@@ -97,13 +97,13 @@
   - fbbt
   - fbcv
   - fbdv
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1373-1705
+  wikidata: Q91739788
 - count: 3
   email: rlwalls2008@gmail.com
   github: ramonawalls
   label: Ramona Walls
-  last_active: 2022-01-11 04:42:33
+  last_active: 2022-01-18 01:17:55
   last_active_recent: true
   ontologies:
   - bco
@@ -115,7 +115,7 @@
   email: vasilevs@ohsu.edu
   github: nicolevasilevsky
   label: Nicole Vasilevsky
-  last_active: 2022-01-15 01:04:16
+  last_active: 2022-01-17 17:57:20
   last_active_recent: true
   ontologies:
   - chiro
@@ -151,7 +151,7 @@
   email: bpeters@lji.org
   github: bpeters42
   label: Bjoern Peters
-  last_active: 2022-01-15 17:14:24
+  last_active: 2022-01-18 01:09:16
   last_active_recent: true
   ontologies:
   - cob
@@ -169,7 +169,7 @@
   - cvdo
   - labo
   - pdro
-  orcid: null
+  orcid: 0000-0002-3336-2476
   wikidata: Q108555457
 - count: 3
   email: hoganwr@gmail.com
@@ -181,8 +181,8 @@
   - dron
   - geo
   - omrse
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9881-1017
+  wikidata: Q56590169
 - count: 3
   email: mjyoder@illinois.edu
   github: mjy
@@ -193,13 +193,13 @@
   - hao
   - nomen
   - oarcs
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-5640-5491
+  wikidata: Q90728410
 - count: 3
   email: jiezheng@pennmedicine.upenn.edu
   github: zhengj2007
   label: Jie Zheng
-  last_active: 2022-01-16 23:28:41
+  last_active: 2022-01-18 03:22:14
   last_active_recent: true
   ontologies:
   - iao
@@ -285,8 +285,8 @@
   ontologies:
   - cto
   - epio
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9896-3531
+  wikidata: Q30002211
 - count: 2
   email: pfey@northwestern.edu
   github: pfey03
@@ -296,8 +296,8 @@
   ontologies:
   - ddanat
   - ddpheno
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-4532-2703
+  wikidata: Q71564910
 - count: 2
   email: p.buttigieg@gmail.com
   github: pbuttigieg
@@ -307,8 +307,8 @@
   ontologies:
   - ecocore
   - envo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-4366-3088
+  wikidata: Q41566750
 - count: 2
   email: Terry.Hayamizu@jax.org
   github: tfhayamizu
@@ -324,7 +324,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-17 12:53:49
+  last_active: 2022-01-18 08:57:34
   last_active_recent: true
   ontologies:
   - fao
@@ -335,7 +335,7 @@
   email: damion_dooley@sfu.ca
   github: ddooley
   label: Damion Dooley
-  last_active: 2022-01-14 22:27:22
+  last_active: 2022-01-18 05:55:15
   last_active_recent: true
   ontologies:
   - foodon
@@ -351,8 +351,8 @@
   ontologies:
   - geno
   - sepio
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1048-5019
+  wikidata: Q88110949
 - count: 2
   email: gerhard.mayer@rub.de
   github: germa
@@ -395,8 +395,8 @@
   ontologies:
   - wbls
   - wbphenotype
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9076-6015
+  wikidata: Q55915095
 - count: 2
   email: esegerd3@gmail.com
   github: seger
@@ -428,8 +428,8 @@
   ontologies:
   - zfa
   - zfs
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-2244-7917
+  wikidata: Q58034214
 - count: 1
   email: m.a.laporte@cgiar.org
   github: marieALaporte
@@ -468,8 +468,8 @@
   last_active_recent: true
   ontologies:
   - aro
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1142-3063
+  wikidata: Q47503094
 - count: 1
   email: phismith@buffalo.edu
   github: phismith
@@ -478,8 +478,8 @@
   last_active_recent: false
   ontologies:
   - bfo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-1384-116X
+  wikidata: Q809101
 - count: 1
   email: l.andres.hernandez.18@student.scu.edu.au
   github: LilyAndres
@@ -504,7 +504,7 @@
   email: egon.willighagen@gmail.com
   github: egonw
   label: Egon Willighagen
-  last_active: 2022-01-17 07:21:23
+  last_active: 2022-01-18 10:33:20
   last_active_recent: true
   ontologies:
   - cheminf
@@ -514,7 +514,7 @@
   email: addiehl@buffalo.edu
   github: addiehl
   label: Alexander Diehl
-  last_active: 2022-01-12 19:10:41
+  last_active: 2022-01-17 18:43:51
   last_active_recent: true
   ontologies:
   - cl
@@ -588,13 +588,13 @@
   last_active_recent: true
   ontologies:
   - ecto
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-2908-3327
+  wikidata: Q47503085
 - count: 1
   email: stoeckrt@pennmedicine.upenn.edu
   github: cstoeckert
   label: Chris Stoeckert
-  last_active: 2022-01-14 20:21:25
+  last_active: 2022-01-17 16:03:15
   last_active_recent: true
   ontologies:
   - eupath
@@ -664,7 +664,7 @@
   email: rbca.jackson@gmail.com
   github: beckyjackson
   label: Rebecca Jackson
-  last_active: 2022-01-15 16:11:35
+  last_active: 2022-01-18 00:59:45
   last_active_recent: true
   ontologies:
   - gecko
@@ -764,7 +764,7 @@
   email: karr@mssm.edu
   github: jonrkarr
   label: Jonathan Karr
-  last_active: 2022-01-16 22:25:03
+  last_active: 2022-01-18 07:44:41
   last_active_recent: true
   ontologies:
   - kisao
@@ -868,8 +868,8 @@
   last_active_recent: true
   ontologies:
   - ogms
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-1346-1327
+  wikidata: Q102405308
 - count: 1
   email: linikujp@gmail.com
   github: linikujp
@@ -878,13 +878,13 @@
   last_active_recent: true
   ontologies:
   - ogsf
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-5379-5359
+  wikidata: Q61054524
 - count: 1
   email: alanruttenberg@gmail.com
   github: alanruttenberg
   label: Alan Ruttenberg
-  last_active: 2022-01-17 01:49:35
+  last_active: 2022-01-18 01:33:26
   last_active_recent: true
   ontologies:
   - ohd
@@ -984,7 +984,7 @@
   email: dan5@georgetown.edu
   github: nataled
   label: Darren Natale
-  last_active: 2022-01-13 19:37:46
+  last_active: 2022-01-17 21:22:30
   last_active_recent: true
   ontologies:
   - pr
@@ -1094,12 +1094,12 @@
   email: allyson.lister@oerc.ox.ac.uk
   github: allysonlister
   label: Allyson Lister
-  last_active: 2022-01-17 13:39:28
+  last_active: 2022-01-17 18:25:47
   last_active_recent: true
   ontologies:
   - swo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-7702-4495
+  wikidata: Q41050709
 - count: 1
   email: y-yamagata@nibiohn.go.jp
   github: yuki-yamagata

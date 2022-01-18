@@ -28,6 +28,7 @@ DOCS = HERE.joinpath("docs")
 DOCS.mkdir(exist_ok=True, parents=True)
 INDEX = DOCS.joinpath("index.html")
 CONTACTS_PATH = DOCS.joinpath("contacts.html")
+CONTACTS_CURATION_PATH = DOCS.joinpath("contacts_curation.html")
 
 PATH_PICKLE = DATA.joinpath("data.pkl")
 PATH_TSV = DATA.joinpath("data.tsv")
@@ -545,7 +546,7 @@ def main(force: bool, test: bool, path):
 
     rows = get_data(contacts=contacts, force=force, test=test, path=path)
 
-    # Author responsiblity histogram
+    # Author responsibility histogram
     counts = [contact["count"] for contact in contacts.values()]
     responsible_one, responsible_multiple, responsible_multiple_sum = 0, 0, 0
     for count in counts:
@@ -648,8 +649,15 @@ def main(force: bool, test: bool, path):
     with INDEX.open("w") as file:
         print(index_html, file=file)
 
-    contacts_html = contacts_template.render(rows=list(contacts.values()))
-    CONTACTS_PATH.write_text(contacts_html)
+    CONTACTS_PATH.write_text(
+        contacts_template.render(show_activity=True, rows=list(contacts.values()))
+    )
+    CONTACTS_CURATION_PATH.write_text(
+        contacts_template.render(
+            show_activity=False,
+            rows=[row for row in contacts.values() if not row.get("wikidata")],
+        )
+    )
 
     # for row in rows:
     #     ontology_html = ontology_template.render(row=row)
