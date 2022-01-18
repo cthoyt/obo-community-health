@@ -13,15 +13,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 import yaml
-from bioregistry import (get_bioportal_prefix, get_ols_prefix,
-                         get_registry_invmap)
+from bioregistry import get_bioportal_prefix, get_ols_prefix, get_registry_invmap
 from dataclasses_json import dataclass_json
 from jinja2 import Environment, FileSystemLoader
 from more_click import force_option, verbose_option
 from tqdm import tqdm
 
-from utils import (CONTACTS_YAML_PATH, DATA, ONE_YEAR_AGO, get_github,
-                   get_ontologies)
+from utils import CONTACTS_YAML_PATH, DATA, ONE_YEAR_AGO, get_github, get_ontologies
 
 HERE = Path(__file__).parent.resolve()
 TEMPLATES = HERE.joinpath("templates")
