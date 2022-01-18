@@ -33,12 +33,12 @@
             <th>#</th>
             <th>Name</th>
             <th>GitHub</th>
+            {% if not curation %}
             <th>ORCiD</th>
             <th>Wikidata</th>
-            {% if show_activity %}
             <th>Recently Active</th>
-            <th>Ontologies</th>
             {% endif %}
+            <th>Ontologies</th>
         </tr>
         </thead>
         <tbody>
@@ -47,12 +47,12 @@
             <td align="right">{{ row.ontologies|length }}</td>
             <td><a href="mailto:{{ row.email }}">{{ row.label }}</a></td>
             <td><a href="https://github.com/{{ row.github }}">{{ row.github }}</a></td>
+            {% if not curation %}
             <td>{% if row.orcid %}<a href="https://orcid.org/{{ row.orcid }}" data-toggle="tooltip" title="orcid:{{ row.orcid }}">🟢</a>{% endif %}</td>
             <td>{% if row.wikidata %}<a href="https://bioregistry.io/wikidata:{{ row.wikidata }}" data-toggle="tooltip" title="wikidata:{{ row.wikidata }}">🟢</a>{% endif %}</td>
-            {% if show_activity %}
             <td>{{ row.last_active or "" }} {% if row.last_active_recent %}🟢{% else %}🔴{% endif %}</td>
-            <td>{% for prefix in row.ontologies %}<a href="https://obofoundry.org/ontology/{{ prefix }}">{{ prefix }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</td>
             {% endif %}
+            <td>{% for prefix in row.ontologies %}<a href="https://obofoundry.org/ontology/{{ prefix }}" data-toggle="tooltip" data-html="true"  title="<strong>{{ bioregistry.get_name(prefix) }}</strong><br />{{ bioregistry.get_description(prefix) }}">{{ prefix }}</a>{% if not loop.last %}, {% endif %} {% endfor %}</td>
         </tr>
         {% endfor %}
         </tbody>

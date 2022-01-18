@@ -7,6 +7,7 @@ from operator import attrgetter, itemgetter
 from pathlib import Path
 from typing import Iterable, Optional, TypeVar, Union
 
+import bioregistry
 import click
 import dateparser
 import matplotlib.pyplot as plt
@@ -559,8 +560,12 @@ def main(force: bool, test: bool, path):
     print(f"People: {len(counts)}")
     has_github = sum(contact.get("github") is not None for contact in contacts.values())
     print(f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github/len(contacts):.2%})")
-    has_wikidata = sum(contact.get("wikidata") is not None for contact in contacts.values())
-    print(f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata/len(contacts):.2%})")
+    has_wikidata = sum(
+        contact.get("wikidata") is not None for contact in contacts.values()
+    )
+    print(
+        f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata/len(contacts):.2%})"
+    )
     has_orcid = sum(contact.get("orcid") is not None for contact in contacts.values())
     print(f"  w/ ORCID: {has_orcid}/{len(contacts)} ({has_orcid/len(contacts):.2%})")
     print(
@@ -659,11 +664,14 @@ def main(force: bool, test: bool, path):
     INDEX.write_text(index_template.render(rows=rows))
 
     CONTACTS_PATH.write_text(
-        contacts_template.render(show_activity=True, rows=list(contacts.values()))
+        contacts_template.render(
+            bioregistry=bioregistry, curation=False, rows=list(contacts.values())
+        )
     )
     CONTACTS_CURATION_PATH.write_text(
         contacts_template.render(
-            show_activity=False,
+            bioregistry=bioregistry,
+            curation=True,
             rows=[row for row in contacts.values() if not row.get("wikidata")],
         )
     )

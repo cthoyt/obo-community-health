@@ -331,7 +331,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-18 12:20:19
+  last_active: 2022-01-18 12:54:07
   last_active_recent: true
   ontologies:
   - fao
@@ -615,8 +615,8 @@
   last_active_recent: true
   ontologies:
   - exo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-4642-1738
+  wikidata: Q110610822
 - count: 1
   email: wawong@gmail.com
   github: wawong
@@ -705,8 +705,8 @@
   last_active_recent: true
   ontologies:
   - gsso
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-8397-8810
+  wikidata: Q89057451
 - count: 1
   email: danielle.welter@uni.lu
   github: daniwelter
@@ -715,8 +715,8 @@
   last_active_recent: true
   ontologies:
   - hancestro
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-1058-2668
+  wikidata: Q55473247
 - count: 1
   email: dr.sebastian.koehler@gmail.com
   github: drseb
@@ -795,8 +795,8 @@
   last_active_recent: false
   ontologies:
   - mco
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-0142-5591
+  wikidata: Q58314966
 - count: 1
   email: druzinsk@uic.edu
   github: RDruzinsky
@@ -905,8 +905,8 @@
   last_active_recent: false
   ontologies:
   - ohpi
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-5159-414X
+  wikidata: Q56879078
 - count: 1
   email: jimhu@tamu.edu
   github: jimhu-tamu
@@ -985,8 +985,8 @@
   last_active_recent: false
   ontologies:
   - poro
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9654-0073
+  wikidata: Q61601010
 - count: 1
   email: dan5@georgetown.edu
   github: nataled
@@ -1035,8 +1035,8 @@
   last_active_recent: true
   ontologies:
   - rbo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-4312-9552
+  wikidata: Q110610825
 - count: 1
   email: sjwang@mcw.edu
   github: shurjenw
@@ -1125,8 +1125,8 @@
   last_active_recent: true
   ontologies:
   - upa
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1216-2969
+  wikidata: Q56604104
 - count: 1
   email: caripark@iastate.edu
   github: caripark
