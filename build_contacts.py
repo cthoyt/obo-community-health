@@ -71,12 +71,14 @@ def main(path: Optional[Path]):
     ontologies = defaultdict(list)
     it = tqdm(sorted(get_ontologies(path=path).items()))
     for obo_id, record in it:
-        if record.get("is_obsolete") or record.get("activity_status") != "active":
-            continue
         it.set_postfix(ontology=obo_id)
-        contact = record["contact"]
+        contact = record.get("contact", {})
         github_id = contact.get("github")
         if github_id is None:
+            if record.get("is_obsolete") or record.get("activity_status") != "active":
+                pass  # no need to worry about old/outdated content
+            else:
+                it.write(f"Missing GitHub for {obo_id}: {contact}")
             continue
         counter[github_id.casefold()] += 1
         ontologies[github_id.casefold()].append(obo_id)

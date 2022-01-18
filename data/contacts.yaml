@@ -17,6 +17,22 @@
   orcid: 0000-0001-9189-9661
   wikidata: Q30512667
 - count: 7
+  email: cjmungall@lbl.gov
+  github: cmungall
+  label: Chris Mungall
+  last_active: 2022-01-17 16:01:00
+  last_active_recent: true
+  ontologies:
+  - bspo
+  - ceph
+  - cteno
+  - oba
+  - omo
+  - ro
+  - uberon
+  orcid: 0000-0002-6601-2165
+  wikidata: Q20746118
+- count: 7
   email: frederic.bastian@unil.ch
   github: fbastian
   label: Frédéric Bastian
@@ -32,21 +48,48 @@
   - pdumdv
   orcid: 0000-0002-9415-5104
   wikidata: Q96209982
-- count: 6
-  email: cjmungall@lbl.gov
-  github: cmungall
-  label: Chris Mungall
-  last_active: 2022-01-17 16:01:00
+- count: 5
+  email: lynn.schriml@gmail.com
+  github: lschriml
+  label: Lynn Schriml
+  last_active: 2022-01-14 21:32:21
   last_active_recent: true
   ontologies:
-  - bspo
-  - cteno
-  - oba
-  - omo
-  - ro
-  - uberon
-  orcid: 0000-0002-6601-2165
-  wikidata: Q20746118
+  - disdriv
+  - doid
+  - gaz
+  - symp
+  - trans
+  orcid: 0000-0001-8910-9851
+  wikidata: Q28913673
+- count: 5
+  email: cp390@cam.ac.uk
+  github: Clare72
+  label: Clare Pilgrim
+  last_active: 2022-01-17 09:23:49
+  last_active_recent: true
+  ontologies:
+  - dpo
+  - fbbt
+  - fbcv
+  - fbdv
+  - fbsp
+  orcid: 0000-0002-1373-1705
+  wikidata: Q91739788
+- count: 5
+  email: jaiswalp@science.oregonstate.edu
+  github: jaiswalp
+  label: Pankaj Jaiswal
+  last_active: 2021-11-04 18:02:12
+  last_active_recent: true
+  ontologies:
+  - eo
+  - pao
+  - peco
+  - po
+  - to
+  orcid: 0000-0002-1005-8383
+  wikidata: Q41294868
 - count: 4
   email: mbrochhausen@gmail.com
   github: mbrochhausen
@@ -61,6 +104,19 @@
   orcid: 0000-0003-1834-3856
   wikidata: Q57161944
 - count: 4
+  email: jiezheng@pennmedicine.upenn.edu
+  github: zhengj2007
+  label: Jie Zheng
+  last_active: 2022-01-18 03:22:14
+  last_active_recent: true
+  ontologies:
+  - bcgo
+  - iao
+  - obcs
+  - obib
+  orcid: null
+  wikidata: null
+- count: 4
   email: balhoff@renci.org
   github: balhoff
   label: Jim Balhoff
@@ -73,32 +129,6 @@
   - vto
   orcid: 0000-0002-8688-6599
   wikidata: Q37649212
-- count: 4
-  email: lynn.schriml@gmail.com
-  github: lschriml
-  label: Lynn Schriml
-  last_active: 2022-01-14 21:32:21
-  last_active_recent: true
-  ontologies:
-  - disdriv
-  - doid
-  - symp
-  - trans
-  orcid: 0000-0001-8910-9851
-  wikidata: Q28913673
-- count: 4
-  email: cp390@cam.ac.uk
-  github: Clare72
-  label: Clare Pilgrim
-  last_active: 2022-01-17 09:23:49
-  last_active_recent: true
-  ontologies:
-  - dpo
-  - fbbt
-  - fbcv
-  - fbdv
-  orcid: 0000-0002-1373-1705
-  wikidata: Q91739788
 - count: 3
   email: rlwalls2008@gmail.com
   github: ramonawalls
@@ -184,6 +214,18 @@
   orcid: 0000-0002-9881-1017
   wikidata: Q56590169
 - count: 3
+  email: Terry.Hayamizu@jax.org
+  github: tfhayamizu
+  label: Terry Hayamizu
+  last_active: null
+  last_active_recent: false
+  ontologies:
+  - emap
+  - emapa
+  - ma
+  orcid: 0000-0002-0956-8634
+  wikidata: Q110610432
+- count: 3
   email: mjyoder@illinois.edu
   github: mjy
   label: Matt Yoder
@@ -195,18 +237,6 @@
   - oarcs
   orcid: 0000-0002-5640-5491
   wikidata: Q90728410
-- count: 3
-  email: jiezheng@pennmedicine.upenn.edu
-  github: zhengj2007
-  label: Jie Zheng
-  last_active: 2022-01-18 03:22:14
-  last_active_recent: true
-  ontologies:
-  - iao
-  - obcs
-  - obib
-  orcid: null
-  wikidata: null
 - count: 3
   email: janna.hastings@gmail.com
   github: jannahastings
@@ -231,18 +261,6 @@
   - uo
   orcid: 0000-0002-2061-091X
   wikidata: Q54303216
-- count: 3
-  email: jaiswalp@science.oregonstate.edu
-  github: jaiswalp
-  label: Pankaj Jaiswal
-  last_active: 2021-11-04 18:02:12
-  last_active_recent: true
-  ontologies:
-  - peco
-  - po
-  - to
-  orcid: 0000-0002-1005-8383
-  wikidata: Q41294868
 - count: 2
   email: entiminae@gmail.com
   github: JCGiron
@@ -310,21 +328,10 @@
   orcid: 0000-0002-4366-3088
   wikidata: Q41566750
 - count: 2
-  email: Terry.Hayamizu@jax.org
-  github: tfhayamizu
-  label: Terry Hayamizu
-  last_active: null
-  last_active_recent: false
-  ontologies:
-  - emapa
-  - ma
-  orcid: 0000-0002-0956-8634
-  wikidata: Q110610432
-- count: 2
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-18 12:08:02
+  last_active: 2022-01-18 12:20:19
   last_active_recent: true
   ontologies:
   - fao
@@ -1108,6 +1115,16 @@
   last_active_recent: false
   ontologies:
   - txpo
+  orcid: null
+  wikidata: null
+- count: 1
+  email: Anne.Morgat@sib.swiss
+  github: amorgat
+  label: Anne Morgat
+  last_active: 2021-12-22 13:01:17
+  last_active_recent: true
+  ontologies:
+  - upa
   orcid: null
   wikidata: null
 - count: 1
