@@ -324,7 +324,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-18 08:57:34
+  last_active: 2022-01-18 11:36:26
   last_active_recent: true
   ontologies:
   - fao
@@ -438,8 +438,8 @@
   last_active_recent: true
   ontologies:
   - agro
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8461-9745
+  wikidata: Q63389961
 - count: 1
   email: hescriva@obs-banyuls.fr
   github: hescriva
@@ -488,8 +488,8 @@
   last_active_recent: true
   ontologies:
   - cdno
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-7696-731X
+  wikidata: Q110610182
 - count: 1
   email: amalik@ebi.ac.uk
   github: amalik01
@@ -504,7 +504,7 @@
   email: egon.willighagen@gmail.com
   github: egonw
   label: Egon Willighagen
-  last_active: 2022-01-18 10:33:20
+  last_active: 2022-01-18 10:44:38
   last_active_recent: true
   ontologies:
   - cheminf
@@ -538,8 +538,8 @@
   last_active_recent: false
   ontologies:
   - clyh
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-7440-0467
+  wikidata: Q83382941
 - count: 1
   email: whimar@ohsu.edu
   github: marijane
@@ -568,8 +568,8 @@
   last_active_recent: false
   ontologies:
   - ecao
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-3625-0955
+  wikidata: Q89326600
 - count: 1
   email: mgiglio@som.umaryland.edu
   github: mgiglio99
@@ -598,8 +598,8 @@
   last_active_recent: true
   ontologies:
   - eupath
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-5714-991X
+  wikidata: Q67220657
 - count: 1
   email: cjgrondin@ncsu.edu
   github: cjgrondin
@@ -618,8 +618,8 @@
   last_active_recent: true
   ontologies:
   - fbbi
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8841-5870
+  wikidata: Q57679070
 - count: 1
   email: georgeta.bordea@u-bordeaux.fr
   github: getbordea
@@ -638,8 +638,8 @@
   last_active_recent: true
   ontologies:
   - flopo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-8149-5890
+  wikidata: Q28913647
 - count: 1
   email: polcaes@gmail.com
   github: pcastellanoescuder
@@ -658,8 +658,8 @@
   last_active_recent: true
   ontologies:
   - fovt
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-2699-3066
+  wikidata: Q59763318
 - count: 1
   email: rbca.jackson@gmail.com
   github: beckyjackson
@@ -688,8 +688,8 @@
   last_active_recent: true
   ontologies:
   - go
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-6787-2901
+  wikidata: Q110610002
 - count: 1
   email: kronkcj@mail.uc.edu
   github: Superraptor
@@ -758,8 +758,8 @@
   last_active_recent: false
   ontologies:
   - ido
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-1617-8244
+  wikidata: Q89259560
 - count: 1
   email: karr@mssm.edu
   github: jonrkarr
@@ -768,8 +768,8 @@
   last_active_recent: true
   ontologies:
   - kisao
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-2605-5080
+  wikidata: Q38545088
 - count: 1
   email: Leigh.Carmody@jax.org
   github: LCCarmody
@@ -778,8 +778,8 @@
   last_active_recent: true
   ontologies:
   - maxo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-7941-2961
+  wikidata: Q43155252
 - count: 1
   email: citlalli.mejiaalmonte@gmail.com
   github: citmejia
@@ -828,8 +828,8 @@
   last_active_recent: false
   ontologies:
   - micro
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-2100-6351
+  wikidata: Q83663133
 - count: 1
   email: pierre-alain.binz@chuv.ch
   github: pabinz
@@ -848,8 +848,8 @@
   last_active_recent: true
   ontologies:
   - mp
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-4606-0597
+  wikidata: Q57965947
 - count: 1
   email: pns12@hermes.cam.ac.uk
   github: PaulNSchofield
@@ -908,8 +908,8 @@
   last_active_recent: false
   ontologies:
   - omp
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9016-2684
+  wikidata: Q59749279
 - count: 1
   email: chen.yang@ugent.be
   github: cyang0128
@@ -988,8 +988,8 @@
   last_active_recent: true
   ontologies:
   - pr
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-5809-9523
+  wikidata: Q99552327
 - count: 1
   email: zachll@umich.edu
   github: zachll
@@ -998,8 +998,8 @@
   last_active_recent: true
   ontologies:
   - psdo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9117-9338
+  wikidata: Q88354460
 - count: 1
   email: cooperl@science.oregonstate.edu
   github: cooperl09
@@ -1008,8 +1008,8 @@
   last_active_recent: true
   ontologies:
   - pso
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-6379-8932
+  wikidata: Q89869027
 - count: 1
   email: gthayman@mcw.edu
   github: gthayman
@@ -1068,8 +1068,8 @@
   last_active_recent: false
   ontologies:
   - so
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-0831-6427
+  wikidata: Q56925500
 - count: 1
   email: ramirez@macn.gov.ar
   github: martinjramirez
