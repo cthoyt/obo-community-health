@@ -2,10 +2,10 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 9	yongqunh	Yongqunh He	yongqunh@med.umich.edu	Q30512667	0000-0001-9189-9661	2022-01-17 03:41:06	True
 7	cmungall	Chris Mungall	cjmungall@lbl.gov	Q20746118	0000-0002-6601-2165	2022-01-17 16:01:00	True
 7	fbastian	Frédéric Bastian	frederic.bastian@unil.ch	Q96209982	0000-0002-9415-5104	2022-01-17 11:50:08	True
-5	Clare72	Clare Pilgrim	cp390@cam.ac.uk	Q91739788	0000-0002-1373-1705	2022-01-17 09:23:49	True
+5	Clare72	Clare Pilgrim	cp390@cam.ac.uk	Q91739788	0000-0002-1373-1705	2022-01-18 13:17:23	True
 5	jaiswalp	Pankaj Jaiswal	jaiswalp@science.oregonstate.edu	Q41294868	0000-0002-1005-8383	2021-11-04 18:02:12	True
 5	lschriml	Lynn Schriml	lynn.schriml@gmail.com	Q28913673	0000-0001-8910-9851	2022-01-14 21:32:21	True
-4	balhoff	Jim Balhoff	balhoff@renci.org	Q37649212	0000-0002-8688-6599	2022-01-14 21:19:12	True
+4	balhoff	Jim Balhoff	balhoff@renci.org	Q37649212	0000-0002-8688-6599	2022-01-18 15:10:06	True
 4	mbrochhausen	Mathias Brochhausen	mbrochhausen@gmail.com	Q57161944	0000-0003-1834-3856	2021-12-08 13:35:34	True
 4	zhengj2007	Jie Zheng	jiezheng@pennmedicine.upenn.edu			2022-01-18 03:22:14	True
 3	batchelorc	Colin Batchelor	batchelorc@rsc.org	Q28923515	0000-0001-5985-7429	2021-12-16 16:28:42	True
@@ -21,7 +21,7 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 3	tfhayamizu	Terry Hayamizu	Terry.Hayamizu@jax.org	Q110610432	0000-0002-0956-8634		False
 2	Huang-OMIT	Jingshan Huang	huang@southalabama.edu	Q88033382	0000-0003-2408-2883		False
 2	JCGiron	Jennifer C. Giron	entiminae@gmail.com	Q28859986	0000-0002-0851-6883	2022-01-04 01:05:35	True
-2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2022-01-18 12:54:07	True
+2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2022-01-18 14:11:50	True
 2	akodamullil	Alpha Tom Kodamullil	alpha.tom.kodamullil@scai.fraunhofer.de	Q30002211	0000-0001-9896-3531		False
 2	cerivs	Ceri Van Slyke	van_slyke@zfin.org	Q58034214	0000-0002-2244-7917	2021-12-09 18:17:17	True
 2	chris-grove	Chris Grove	cgrove@caltech.edu	Q55915095	0000-0001-9076-6015	2022-01-13 13:49:26	True
@@ -38,25 +38,25 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 1	BAevermann	Brian Aevermann	baeverma@jcvi.org	Q102405308	0000-0003-1346-1327	2022-01-07 18:47:13	True
 1	CuzickA	Alayne Cuzick	alayne.cuzick@rothamsted.ac.uk	Q92917957	0000-0001-8941-3984	2022-01-10 12:02:14	True
 1	DanBerrios	Daniel C. Berrios	daniel.c.berrios@nasa.gov	Q110610825	0000-0003-4312-9552	2022-01-14 23:10:08	True
-1	FernandaFarinelli	Fernanda Farinelli	fernanda.farinelli@gmail.com			2021-11-15 22:15:38	True
-1	FrancescoVit	Francesco Vitali	francesco.vitali@ibba.cnr.it			2022-01-11 13:20:20	True
-1	JadeHotchkiss	Jade Hotchkiss	giant.plankton@gmail.com				False
+1	FernandaFarinelli	Fernanda Farinelli	fernanda.farinelli@gmail.com	Q110610945	0000-0003-2338-8872	2021-11-15 22:15:38	True
+1	FrancescoVit	Francesco Vitali	francesco.vitali@ibba.cnr.it	Q86943233	0000-0001-9125-4337	2022-01-11 13:20:20	True
+1	JadeHotchkiss	Jade Hotchkiss	giant.plankton@gmail.com	Q110611760	0000-0002-2193-0704		False
 1	L-Leclere	Lucas Leclere	lucas.leclere@obs-vlfr.fr	Q83382941	0000-0002-7440-0467		False
 1	LCCarmody	Leigh Carmody	Leigh.Carmody@jax.org	Q43155252	0000-0001-7941-2961	2022-01-07 14:51:47	True
 1	Lemon-Liu	Meng LIU	liumeng94@sjtu.edu.cn			2022-01-03 07:11:16	True
 1	LilyAndres	Liliana Andres Hernandez	l.andres.hernandez.18@student.scu.edu.au	Q110610182	0000-0002-7696-731X	2022-01-10 06:49:46	True
-1	PaulNSchofield	Paul Schofield	pns12@hermes.cam.ac.uk			2021-11-23 00:02:59	True
-1	RDruzinsky	Robert Druzinsky	druzinsk@uic.edu				False
+1	PaulNSchofield	Paul Schofield	pns12@hermes.cam.ac.uk	Q56958202	0000-0002-5111-7263	2021-11-23 00:02:59	True
+1	RDruzinsky	Robert Druzinsky	druzinsk@uic.edu	Q56986004	0000-0002-1572-1316		False
 1	Superraptor	Clair Kronk	kronkcj@mail.uc.edu	Q89057451	0000-0001-8397-8810	2021-12-22 21:09:55	True
 1	addiehl	Alexander Diehl	addiehl@buffalo.edu	Q47502183	0000-0001-9990-8331	2022-01-17 18:43:51	True
 1	aellenhicks	Amanda Hicks	aellenhicks@gmail.com				False
 1	agbeltran	Alejandra Gonzalez-Beltran	alejandra.gonzalez.beltran@gmail.com	Q27824575	0000-0003-3499-8262	2022-01-17 10:03:41	True
 1	agmcarthur	Andrew G. McArthur	mcarthua@mcmaster.ca	Q47503094	0000-0002-1142-3063	2021-12-15 15:28:25	True
 1	alanruttenberg	Alan Ruttenberg	alanruttenberg@gmail.com	Q30508557	0000-0002-1604-3078	2022-01-18 01:33:26	True
-1	allysonlister	Allyson Lister	allyson.lister@oerc.ox.ac.uk	Q41050709	0000-0002-7702-4495	2022-01-17 18:25:47	True
+1	allysonlister	Allyson Lister	allyson.lister@oerc.ox.ac.uk	Q41050709	0000-0002-7702-4495	2022-01-18 15:03:30	True
 1	amalik01	Adnan Malik	amalik@ebi.ac.uk			2022-01-17 09:10:23	True
 1	amorgat	Anne Morgat	Anne.Morgat@sib.swiss	Q56604104	0000-0002-1216-2969	2021-12-22 13:01:17	True
-1	beckyjackson	Rebecca Jackson	rbca.jackson@gmail.com			2022-01-18 00:59:45	True
+1	beckyjackson	Rebecca Jackson	rbca.jackson@gmail.com	Q59539088	0000-0003-4871-5569	2022-01-18 00:59:45	True
 1	bobthacker	Bob Thacker	robert.thacker@stonybrook.edu	Q61601010	0000-0002-9654-0073		False
 1	caripark	Carissa Park	caripark@iastate.edu				False
 1	carrineblank	Carrine Blank	carrine.blank@umontana.edu	Q83663133	0000-0002-2100-6351		False
@@ -69,13 +69,13 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 1	diatomsRcool	Anne Thessen	annethessen@gmail.com	Q47503085	0000-0002-2908-3327	2022-01-06 20:38:35	True
 1	drseb	Sebastian Koehler	dr.sebastian.koehler@gmail.com	Q52804485	0000-0002-5316-1399	2021-10-22 05:19:06	True
 1	e4ong1031	Edison Ong	edong@umich.edu	Q56879078	0000-0002-5159-414X		False
-1	edwardsnj	Nathan Edwards	nje5@georgetown.edu			2022-01-10 02:27:39	True
+1	edwardsnj	Nathan Edwards	nje5@georgetown.edu	Q108555432	0000-0001-5168-3196	2022-01-10 02:27:39	True
 1	egonw	Egon Willighagen	egon.willighagen@gmail.com	Q20895241	0000-0001-7542-0286	2022-01-18 10:44:38	True
 1	ettensohn	Charles Ettensohn	ettensohn@cmu.edu	Q89326600	0000-0002-3625-0955		False
-1	getbordea	Georgeta Bordea	georgeta.bordea@u-bordeaux.fr				False
-1	gthayman	G. Thomas Hayman	gthayman@mcw.edu			2021-12-29 02:49:44	True
-1	hescriva	Hector Escriva	hescriva@obs-banyuls.fr				False
-1	hlapp	Hilmar Lapp	hilmar.lapp@duke.edu			2022-01-11 19:52:53	True
+1	getbordea	Georgeta Bordea	georgeta.bordea@u-bordeaux.fr	Q110610955	0000-0001-9921-8234		False
+1	gthayman	G. Thomas Hayman	gthayman@mcw.edu	Q110610928	0000-0002-9553-7227	2021-12-29 02:49:44	True
+1	hescriva	Hector Escriva	hescriva@obs-banyuls.fr	Q57209043	0000-0001-7577-5028		False
+1	hlapp	Hilmar Lapp	hilmar.lapp@duke.edu	Q28913645	0000-0001-9107-0714	2022-01-11 19:52:53	True
 1	jimhu-tamu	James C. Hu	jimhu@tamu.edu	Q59749279	0000-0001-9016-2684		False
 1	jonrkarr	Jonathan Karr	karr@mssm.edu	Q38545088	0000-0002-2605-5080	2022-01-18 07:44:41	True
 1	keilbeck	Karen Eilbeck	keilbeck@genetics.utah.edu	Q56925500	0000-0002-0831-6427		False
@@ -83,26 +83,26 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 1	lgcowell	Lindsay Cowell	Lindsay.Cowell@utsouthwestern.edu	Q89259560	0000-0003-1617-8244		False
 1	linikujp	Asiyah Yu Lin	linikujp@gmail.com	Q61054524	0000-0002-5379-5359	2022-01-13 15:00:44	True
 1	marieALaporte	Marie-Angélique Laporte	m.a.laporte@cgiar.org	Q63389961	0000-0002-8461-9745	2022-01-11 14:13:29	True
-1	marijane	Marijane White	whimar@ohsu.edu			2022-01-04 16:15:44	True
-1	martinjramirez	Martin Ramirez	ramirez@macn.gov.ar				False
-1	mcourtot	Melanie Courtot	mcourtot@gmail.com			2021-12-02 15:37:43	True
+1	marijane	Marijane White	whimar@ohsu.edu	Q63775795	0000-0001-5059-4132	2022-01-04 16:15:44	True
+1	martinjramirez	Martin Ramirez	ramirez@macn.gov.ar	Q91241307	0000-0002-0358-0130		False
+1	mcourtot	Melanie Courtot	mcourtot@gmail.com	Q23809262	0000-0002-9551-6370	2021-12-02 15:37:43	True
 1	megbalk	Meghan Balk	meghan.balk@gmail.com	Q59763318	0000-0003-2699-3066	2022-01-15 00:44:55	True
-1	mgiglio99	Michelle Giglio	mgiglio@som.umaryland.edu			2021-12-22 18:39:41	True
-1	miguelfortuna	Miguel A. Fortuna	fortuna@ebd.csic.es			2021-12-02 10:22:16	True
-1	nandadorea	Fernanda Dorea	fernanda.dorea@sva.se	Q55475730	0000-0001-8638-8525	2022-01-06 11:25:53	True
+1	mgiglio99	Michelle Giglio	mgiglio@som.umaryland.edu	Q58870112	0000-0001-7628-5565	2021-12-22 18:39:41	True
+1	miguelfortuna	Miguel A. Fortuna	fortuna@ebd.csic.es	Q37380021	0000-0002-8374-1941	2021-12-02 10:22:16	True
+1	nandadorea	Fernanda Dorea	fernanda.dorea@sva.se	Q55475730	0000-0001-8638-8525	2022-01-18 14:21:29	True
 1	nataled	Darren Natale	dan5@georgetown.edu	Q99552327	0000-0001-5809-9523	2022-01-17 21:22:30	True
-1	pabinz	Pierre-Alain Binz	pierre-alain.binz@chuv.ch			2022-01-11 07:46:53	True
-1	pcastellanoescuder	Pol Castellano Escuder	polcaes@gmail.com			2022-01-16 21:08:36	True
+1	pabinz	Pierre-Alain Binz	pierre-alain.binz@chuv.ch	Q48767863	0000-0002-0045-7698	2022-01-11 07:46:53	True
+1	pcastellanoescuder	Pol Castellano Escuder	polcaes@gmail.com	Q110611014	0000-0001-6466-877X	2022-01-16 21:08:36	True
 1	phismith	Barry Smith	phismith@buffalo.edu	Q809101	0000-0003-1384-116X		False
-1	pporrasebi	Pablo Porras Millán	pporras@ebi.ac.uk				False
-1	raymond91125	Raymond Lee	raymond@caltech.edu			2021-12-20 17:47:24	True
-1	rsmsheriff	Rahuman Sheriff	sheriff@ebi.ac.uk			2021-11-25 16:32:40	True
+1	pporrasebi	Pablo Porras Millán	pporras@ebi.ac.uk	Q57209160	0000-0002-8429-8793		False
+1	raymond91125	Raymond Lee	raymond@caltech.edu	Q57334470	0000-0002-8151-7479	2021-12-20 17:47:24	True
+1	rsmsheriff	Rahuman Sheriff	sheriff@ebi.ac.uk	Q64019189	0000-0003-0705-9809	2021-11-25 16:32:40	True
 1	safisher	Stephen Fisher	safisher@upenn.edu			2021-12-16 22:28:11	True
 1	sbello	Sue Bello	drsbello@gmail.com	Q57965947	0000-0003-4606-0597	2022-01-13 17:17:49	True
-1	shurjenw	Shur-Jen Wang	sjwang@mcw.edu				False
-1	siiraa	Sirarat Sarntivijai	siiraa@umich.edu			2021-11-11 11:07:08	True
-1	srengel	Stacia R Engel	stacia@stanford.edu			2022-01-14 16:55:32	True
+1	shurjenw	Shur-Jen Wang	sjwang@mcw.edu	Q110611093	0000-0001-5256-8683		False
+1	siiraa	Sirarat Sarntivijai	siiraa@umich.edu	Q48519898	0000-0002-2548-641X	2021-11-11 11:07:08	True
+1	srengel	Stacia R Engel	stacia@stanford.edu	Q42775665	0000-0001-5472-917X	2022-01-14 16:55:32	True
 1	suzialeksander	Suzi Aleksander	suzia@stanford.edu	Q110610002	0000-0001-6787-2901	2022-01-06 18:34:29	True
 1	wawong	Willy Wong	wawong@gmail.com	Q57679070	0000-0002-8841-5870	2021-11-11 00:59:20	True
-1	yuki-yamagata	Yuki Yamagata	y-yamagata@nibiohn.go.jp				False
+1	yuki-yamagata	Yuki Yamagata	y-yamagata@nibiohn.go.jp	Q95976403	0000-0002-9673-1283		False
 1	zachll	Zach Landis-Lewis	zachll@umich.edu	Q88354460	0000-0002-9117-9338	2021-12-28 15:05:48	True

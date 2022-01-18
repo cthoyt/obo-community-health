@@ -66,7 +66,7 @@
   email: cp390@cam.ac.uk
   github: Clare72
   label: Clare Pilgrim
-  last_active: 2022-01-17 09:23:49
+  last_active: 2022-01-18 13:17:23
   last_active_recent: true
   ontologies:
   - dpo
@@ -120,7 +120,7 @@
   email: balhoff@renci.org
   github: balhoff
   label: Jim Balhoff
-  last_active: 2022-01-14 21:19:12
+  last_active: 2022-01-18 15:10:06
   last_active_recent: true
   ontologies:
   - cdao
@@ -331,7 +331,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-18 12:54:07
+  last_active: 2022-01-18 14:11:50
   last_active_recent: true
   ontologies:
   - fao
@@ -455,8 +455,8 @@
   last_active_recent: false
   ontologies:
   - amphx
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-7577-5028
+  wikidata: Q57209043
 - count: 1
   email: stacia@stanford.edu
   github: srengel
@@ -465,8 +465,8 @@
   last_active_recent: true
   ontologies:
   - apo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-5472-917X
+  wikidata: Q42775665
 - count: 1
   email: mcarthua@mcmaster.ca
   github: agmcarthur
@@ -535,8 +535,8 @@
   last_active_recent: true
   ontologies:
   - clo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-2548-641X
+  wikidata: Q48519898
 - count: 1
   email: lucas.leclere@obs-vlfr.fr
   github: L-Leclere
@@ -555,8 +555,8 @@
   last_active_recent: true
   ontologies:
   - cro
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-5059-4132
+  wikidata: Q63775795
 - count: 1
   email: mcourtot@gmail.com
   github: mcourtot
@@ -565,8 +565,8 @@
   last_active_recent: true
   ontologies:
   - duo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9551-6370
+  wikidata: Q23809262
 - count: 1
   email: ettensohn@cmu.edu
   github: ettensohn
@@ -585,8 +585,8 @@
   last_active_recent: true
   ontologies:
   - eco
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-7628-5565
+  wikidata: Q58870112
 - count: 1
   email: annethessen@gmail.com
   github: diatomsRcool
@@ -635,8 +635,8 @@
   last_active_recent: false
   ontologies:
   - fideo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9921-8234
+  wikidata: Q110610955
 - count: 1
   email: robert.hoehndorf@kaust.edu.sa
   github: leechuck
@@ -655,8 +655,8 @@
   last_active_recent: true
   ontologies:
   - fobi
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-6466-877X
+  wikidata: Q110611014
 - count: 1
   email: meghan.balk@gmail.com
   github: megbalk
@@ -675,8 +675,8 @@
   last_active_recent: true
   ontologies:
   - gecko
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-4871-5569
+  wikidata: Q59539088
 - count: 1
   email: nje5@georgetown.edu
   github: edwardsnj
@@ -685,8 +685,8 @@
   last_active_recent: true
   ontologies:
   - gno
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-5168-3196
+  wikidata: Q108555432
 - count: 1
   email: suzia@stanford.edu
   github: suzialeksander
@@ -731,7 +731,7 @@
   email: fernanda.dorea@sva.se
   github: nandadorea
   label: Fernanda Dorea
-  last_active: 2022-01-06 11:25:53
+  last_active: 2022-01-18 14:21:29
   last_active_recent: true
   ontologies:
   - hso
@@ -805,8 +805,8 @@
   last_active_recent: false
   ontologies:
   - mfmo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1572-1316
+  wikidata: Q56986004
 - count: 1
   email: pporras@ebi.ac.uk
   github: pporrasebi
@@ -815,8 +815,8 @@
   last_active_recent: false
   ontologies:
   - mi
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8429-8793
+  wikidata: Q57209160
 - count: 1
   email: hilmar.lapp@duke.edu
   github: hlapp
@@ -825,8 +825,8 @@
   last_active_recent: true
   ontologies:
   - miapa
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9107-0714
+  wikidata: Q28913645
 - count: 1
   email: carrine.blank@umontana.edu
   github: carrineblank
@@ -845,8 +845,8 @@
   last_active_recent: true
   ontologies:
   - mod
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-0045-7698
+  wikidata: Q48767863
 - count: 1
   email: drsbello@gmail.com
   github: sbello
@@ -865,8 +865,8 @@
   last_active_recent: true
   ontologies:
   - mpath
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-5111-7263
+  wikidata: Q56958202
 - count: 1
   email: baeverma@jcvi.org
   github: BAevermann
@@ -935,8 +935,8 @@
   last_active_recent: true
   ontologies:
   - ons
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9125-4337
+  wikidata: Q86943233
 - count: 1
   email: fortuna@ebd.csic.es
   github: miguelfortuna
@@ -945,8 +945,8 @@
   last_active_recent: true
   ontologies:
   - ontoavida
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8374-1941
+  wikidata: Q37380021
 - count: 1
   email: fernanda.farinelli@gmail.com
   github: FernandaFarinelli
@@ -955,8 +955,8 @@
   last_active_recent: true
   ontologies:
   - ontoneo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-2338-8872
+  wikidata: Q110610945
 - count: 1
   email: safisher@upenn.edu
   github: safisher
@@ -1025,8 +1025,8 @@
   last_active_recent: true
   ontologies:
   - pw
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9553-7227
+  wikidata: Q110610928
 - count: 1
   email: daniel.c.berrios@nasa.gov
   github: DanBerrios
@@ -1045,8 +1045,8 @@
   last_active_recent: false
   ontologies:
   - rs
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-5256-8683
+  wikidata: Q110611093
 - count: 1
   email: sheriff@ebi.ac.uk
   github: rsmsheriff
@@ -1055,8 +1055,8 @@
   last_active_recent: true
   ontologies:
   - sbo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-0705-9809
+  wikidata: Q64019189
 - count: 1
   email: giant.plankton@gmail.com
   github: JadeHotchkiss
@@ -1065,8 +1065,8 @@
   last_active_recent: false
   ontologies:
   - scdo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-2193-0704
+  wikidata: Q110611760
 - count: 1
   email: keilbeck@genetics.utah.edu
   github: keilbeck
@@ -1085,8 +1085,8 @@
   last_active_recent: false
   ontologies:
   - spd
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-0358-0130
+  wikidata: Q91241307
 - count: 1
   email: alejandra.gonzalez.beltran@gmail.com
   github: agbeltran
@@ -1101,7 +1101,7 @@
   email: allyson.lister@oerc.ox.ac.uk
   github: allysonlister
   label: Allyson Lister
-  last_active: 2022-01-17 18:25:47
+  last_active: 2022-01-18 15:03:30
   last_active_recent: true
   ontologies:
   - swo
@@ -1115,8 +1115,8 @@
   last_active_recent: false
   ontologies:
   - txpo
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9673-1283
+  wikidata: Q95976403
 - count: 1
   email: Anne.Morgat@sib.swiss
   github: amorgat
@@ -1145,5 +1145,5 @@
   last_active_recent: true
   ontologies:
   - wbbt
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-8151-7479
+  wikidata: Q57334470

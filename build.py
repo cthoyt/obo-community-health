@@ -676,6 +676,12 @@ def main(force: bool, test: bool, path):
         )
     )
 
+    emails = ", ".join(
+        sorted(row["email"] for row in contacts.values() if not row.get("wikidata"))
+    )
+    click.echo("These people don't have ORCID annotations:")
+    click.echo(emails)
+
     # for row in rows:
     #     ontology_html = ontology_template.render(row=row)
     #     directory = DOCS.joinpath(row.prefix)
