@@ -20,7 +20,7 @@
   email: cjmungall@lbl.gov
   github: cmungall
   label: Chris Mungall
-  last_active: 2022-01-17 16:01:00
+  last_active: 2022-01-18 18:00:04
   last_active_recent: true
   ontologies:
   - bspo
@@ -49,6 +49,20 @@
   orcid: 0000-0002-9415-5104
   wikidata: Q96209982
 - count: 5
+  email: jiezheng@pennmedicine.upenn.edu
+  github: zhengj2007
+  label: Jie Zheng
+  last_active: 2022-01-18 17:32:18
+  last_active_recent: true
+  ontologies:
+  - bcgo
+  - iao
+  - obcs
+  - obib
+  - opl
+  orcid: 0000-0002-2999-0103
+  wikidata: Q90780528
+- count: 5
   email: lynn.schriml@gmail.com
   github: lschriml
   label: Lynn Schriml
@@ -66,7 +80,7 @@
   email: cp390@cam.ac.uk
   github: Clare72
   label: Clare Pilgrim
-  last_active: 2022-01-18 13:17:23
+  last_active: 2022-01-18 15:33:12
   last_active_recent: true
   ontologies:
   - dpo
@@ -104,23 +118,10 @@
   orcid: 0000-0003-1834-3856
   wikidata: Q57161944
 - count: 4
-  email: jiezheng@pennmedicine.upenn.edu
-  github: zhengj2007
-  label: Jie Zheng
-  last_active: 2022-01-18 03:22:14
-  last_active_recent: true
-  ontologies:
-  - bcgo
-  - iao
-  - obcs
-  - obib
-  orcid: null
-  wikidata: null
-- count: 4
   email: balhoff@renci.org
   github: balhoff
   label: Jim Balhoff
-  last_active: 2022-01-18 15:10:06
+  last_active: 2022-01-18 17:55:59
   last_active_recent: true
   ontologies:
   - cdao
@@ -145,7 +146,7 @@
   email: vasilevs@ohsu.edu
   github: nicolevasilevsky
   label: Nicole Vasilevsky
-  last_active: 2022-01-17 17:57:20
+  last_active: 2022-01-18 16:51:57
   last_active_recent: true
   ontologies:
   - chiro
@@ -229,7 +230,7 @@
   email: mjyoder@illinois.edu
   github: mjy
   label: Matt Yoder
-  last_active: 2022-01-14 23:40:02
+  last_active: 2022-01-18 15:56:23
   last_active_recent: true
   ontologies:
   - hao
@@ -309,7 +310,7 @@
   email: pfey@northwestern.edu
   github: pfey03
   label: Petra Fey
-  last_active: 2022-01-15 00:20:48
+  last_active: 2022-01-18 15:42:29
   last_active_recent: true
   ontologies:
   - ddanat
@@ -331,7 +332,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-18 14:11:50
+  last_active: 2022-01-18 15:47:47
   last_active_recent: true
   ontologies:
   - fao
@@ -501,12 +502,12 @@
   email: amalik@ebi.ac.uk
   github: amalik01
   label: Adnan Malik
-  last_active: 2022-01-17 09:10:23
+  last_active: 2022-01-18 16:51:35
   last_active_recent: true
   ontologies:
   - chebi
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-8123-5351
+  wikidata: Q110611768
 - count: 1
   email: egon.willighagen@gmail.com
   github: egonw
@@ -601,7 +602,7 @@
   email: stoeckrt@pennmedicine.upenn.edu
   github: cstoeckert
   label: Chris Stoeckert
-  last_active: 2022-01-17 16:03:15
+  last_active: 2022-01-18 17:40:58
   last_active_recent: true
   ontologies:
   - eupath
@@ -771,7 +772,7 @@
   email: karr@mssm.edu
   github: jonrkarr
   label: Jonathan Karr
-  last_active: 2022-01-18 07:44:41
+  last_active: 2022-01-18 17:05:54
   last_active_recent: true
   ontologies:
   - kisao
@@ -801,8 +802,8 @@
   email: druzinsk@uic.edu
   github: RDruzinsky
   label: Robert Druzinsky
-  last_active: null
-  last_active_recent: false
+  last_active: 2022-01-18 17:41:18
+  last_active_recent: true
   ontologies:
   - mfmo
   orcid: 0000-0002-1572-1316
@@ -891,7 +892,7 @@
   email: alanruttenberg@gmail.com
   github: alanruttenberg
   label: Alan Ruttenberg
-  last_active: 2022-01-18 01:33:26
+  last_active: 2022-01-18 17:38:34
   last_active_recent: true
   ontologies:
   - ohd
@@ -918,7 +919,7 @@
   orcid: 0000-0001-9016-2684
   wikidata: Q59749279
 - count: 1
-  email: chen.yang@ugent.be
+  email: chenyangnutrition@gmail.com
   github: cyang0128
   label: Chen Yang
   last_active: null
@@ -931,7 +932,7 @@
   email: francesco.vitali@ibba.cnr.it
   github: FrancescoVit
   label: Francesco Vitali
-  last_active: 2022-01-11 13:20:20
+  last_active: 2022-01-18 15:56:00
   last_active_recent: true
   ontologies:
   - ons
@@ -991,7 +992,7 @@
   email: dan5@georgetown.edu
   github: nataled
   label: Darren Natale
-  last_active: 2022-01-17 21:22:30
+  last_active: 2022-01-18 17:48:43
   last_active_recent: true
   ontologies:
   - pr
@@ -1108,7 +1109,7 @@
   orcid: 0000-0002-7702-4495
   wikidata: Q41050709
 - count: 1
-  email: y-yamagata@nibiohn.go.jp
+  email: yuki.yamagata@riken.jp
   github: yuki-yamagata
   label: Yuki Yamagata
   last_active: null
