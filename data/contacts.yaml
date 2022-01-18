@@ -274,8 +274,8 @@
   ontologies:
   - clao
   - lepao
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9136-9932
+  wikidata: Q110610618
 - count: 2
   email: alpha.tom.kodamullil@scai.fraunhofer.de
   github: akodamullil
@@ -318,13 +318,13 @@
   ontologies:
   - emapa
   - ma
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-0956-8634
+  wikidata: Q110610432
 - count: 2
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-01-18 11:36:26
+  last_active: 2022-01-18 12:08:02
   last_active_recent: true
   ontologies:
   - fao
@@ -362,8 +362,8 @@
   ontologies:
   - ms
   - xlmod
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-1767-2343
+  wikidata: Q53584882
 - count: 2
   email: huang@southalabama.edu
   github: Huang-OMIT
@@ -373,8 +373,8 @@
   ontologies:
   - ncro
   - omit
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-2408-2883
+  wikidata: Q88033382
 - count: 2
   email: smr@stowers.org
   github: srobb1
@@ -384,8 +384,8 @@
   ontologies:
   - plana
   - planp
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-3528-5267
+  wikidata: Q63977883
 - count: 2
   email: cgrove@caltech.edu
   github: chris-grove
@@ -417,8 +417,8 @@
   ontologies:
   - zeco
   - zp
-  orcid: null
-  wikidata: null
+  orcid: 0000-0002-9900-7880
+  wikidata: Q37649111
 - count: 2
   email: van_slyke@zfin.org
   github: cerivs
@@ -518,8 +518,8 @@
   last_active_recent: true
   ontologies:
   - cl
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-9990-8331
+  wikidata: Q47502183
 - count: 1
   email: siiraa@umich.edu
   github: siiraa

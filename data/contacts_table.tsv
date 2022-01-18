@@ -18,23 +18,23 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 3	pfabry	Paul Fabry	paul.fabry@usherbrooke.ca	Q108555457	0000-0002-3336-2476	2021-11-04 14:56:58	True
 3	ramonawalls	Ramona Walls	rlwalls2008@gmail.com	Q63240627	0000-0001-8815-0078	2022-01-18 01:17:55	True
 3	zhengj2007	Jie Zheng	jiezheng@pennmedicine.upenn.edu			2022-01-18 03:22:14	True
-2	Huang-OMIT	Jingshan Huang	huang@southalabama.edu				False
+2	Huang-OMIT	Jingshan Huang	huang@southalabama.edu	Q88033382	0000-0003-2408-2883		False
 2	JCGiron	Jennifer C. Giron	entiminae@gmail.com	Q28859986	0000-0002-0851-6883	2022-01-04 01:05:35	True
-2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2022-01-18 11:36:26	True
+2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2022-01-18 12:08:02	True
 2	akodamullil	Alpha Tom Kodamullil	alpha.tom.kodamullil@scai.fraunhofer.de	Q30002211	0000-0001-9896-3531		False
 2	cerivs	Ceri Van Slyke	van_slyke@zfin.org	Q58034214	0000-0002-2244-7917	2021-12-09 18:17:17	True
 2	chris-grove	Chris Grove	cgrove@caltech.edu	Q55915095	0000-0001-9076-6015	2022-01-13 13:49:26	True
 2	ddooley	Damion Dooley	damion_dooley@sfu.ca	Q91868864	0000-0002-8844-9165	2022-01-18 05:55:15	True
-2	germa	Gerhard Mayer	gerhard.mayer@rub.de				False
-2	luis-gonzalez-m	Luis A. Gonzalez-Montana	lagonzalezmo@unal.edu.co			2021-12-15 14:54:44	True
+2	germa	Gerhard Mayer	gerhard.mayer@rub.de	Q53584882	0000-0002-1767-2343		False
+2	luis-gonzalez-m	Luis A. Gonzalez-Montana	lagonzalezmo@unal.edu.co	Q110610618	0000-0002-9136-9932	2021-12-15 14:54:44	True
 2	mbrush	Matthew Brush	mhb120@gmail.com	Q88110949	0000-0002-1048-5019	2022-01-13 20:13:39	True
 2	mellybelly	Melissa Haendel	haendel@ohsu.edu	Q28368079	0000-0001-9114-8737	2021-11-13 20:14:00	True
 2	pbuttigieg	Pier Luigi Buttigieg	p.buttigieg@gmail.com	Q41566750	0000-0002-4366-3088	2021-12-16 10:53:23	True
 2	pfey03	Petra Fey	pfey@northwestern.edu	Q71564910	0000-0002-4532-2703	2022-01-15 00:20:48	True
 2	seger	Erik Segerdell	esegerd3@gmail.com	Q54303422	0000-0002-9611-1279	2021-11-19 21:08:28	True
-2	srobb1	Sofia Robb	smr@stowers.org			2021-12-08 16:14:54	True
-2	tfhayamizu	Terry Hayamizu	Terry.Hayamizu@jax.org				False
-2	ybradford	Yvonne Bradford	ybradford@zfin.org			2021-12-09 21:38:54	True
+2	srobb1	Sofia Robb	smr@stowers.org	Q63977883	0000-0002-3528-5267	2021-12-08 16:14:54	True
+2	tfhayamizu	Terry Hayamizu	Terry.Hayamizu@jax.org	Q110610432	0000-0002-0956-8634		False
+2	ybradford	Yvonne Bradford	ybradford@zfin.org	Q37649111	0000-0002-9900-7880	2021-12-09 21:38:54	True
 1	BAevermann	Brian Aevermann	baeverma@jcvi.org	Q102405308	0000-0003-1346-1327	2022-01-07 18:47:13	True
 1	CuzickA	Alayne Cuzick	alayne.cuzick@rothamsted.ac.uk	Q92917957	0000-0001-8941-3984	2022-01-10 12:02:14	True
 1	DanBerrios	Daniel C. Berrios	daniel.c.berrios@nasa.gov			2022-01-14 23:10:08	True
@@ -48,7 +48,7 @@ count	github	label	email	wikidata	orcid	last_active	last_active_recent
 1	PaulNSchofield	Paul Schofield	pns12@hermes.cam.ac.uk			2021-11-23 00:02:59	True
 1	RDruzinsky	Robert Druzinsky	druzinsk@uic.edu				False
 1	Superraptor	Clair Kronk	kronkcj@mail.uc.edu			2021-12-22 21:09:55	True
-1	addiehl	Alexander Diehl	addiehl@buffalo.edu			2022-01-17 18:43:51	True
+1	addiehl	Alexander Diehl	addiehl@buffalo.edu	Q47502183	0000-0001-9990-8331	2022-01-17 18:43:51	True
 1	aellenhicks	Amanda Hicks	aellenhicks@gmail.com				False
 1	agbeltran	Alejandra Gonzalez-Beltran	alejandra.gonzalez.beltran@gmail.com	Q27824575	0000-0003-3499-8262	2022-01-17 10:03:41	True
 1	agmcarthur	Andrew G. McArthur	mcarthua@mcmaster.ca	Q47503094	0000-0002-1142-3063	2021-12-15 15:28:25	True

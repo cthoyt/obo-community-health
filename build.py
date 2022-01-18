@@ -556,44 +556,55 @@ def main(force: bool, test: bool, path):
             responsible_multiple += 1
             responsible_multiple_sum += count
 
-    print(f"Number of responsible people: {len(counts)}")
+    print(f"People: {len(counts)}")
+    has_github = sum(contact.get("github") is not None for contact in contacts.values())
+    print(f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github/len(contacts):.2%})")
+    has_wikidata = sum(contact.get("wikidata") is not None for contact in contacts.values())
+    print(f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata/len(contacts):.2%})")
+    has_orcid = sum(contact.get("orcid") is not None for contact in contacts.values())
+    print(f"  w/ ORCID: {has_orcid}/{len(contacts)} ({has_orcid/len(contacts):.2%})")
     print(
-        f"Number of people that are responsible for only a single ontology:"
+        f"  responsible for one ontology:"
         f" {responsible_one}/{len(counts)} ({responsible_one/len(counts):.2%})"
     )
     print(
-        f"Number people that are responsible for multiple ontologies:"
+        f"  responsible for two or more ontologies:"
         f" {responsible_multiple}/{len(counts)} ({responsible_multiple/len(counts):.2%})"
     )
-    print(
-        f"Number of non-inactive, non-obsolete, non-orphaned ontologies whose"
-        f" responsible person has a GitHub handle: {len(rows)}"
-    )
-    print(
-        f"Ontologies with a responsible person who is only responsible for a"
-        f" single ontology: {responsible_one}/{sum(counts)} ({responsible_one/sum(counts):.2%})"
-    )
-    print(
-        f"Ontologies with a responsible person who is responsible for"
-        f" multiple ontologies: {responsible_multiple_sum}/{sum(counts)} ({responsible_multiple_sum/sum(counts):.2%})"
-    )
-
     active_contacts = sum(
         contact["last_active_recent"] for contact in contacts.values()
     )
-    inactive_contacts = len(contacts) - active_contacts
+    print(
+        f"  active on GitHub (last year):"
+        f" {active_contacts}/{has_github} ({active_contacts/has_github:.2%})"
+    )
+    inactive_contacts = has_github - active_contacts
+    print(
+        f"  inactive on GitHub (last year):"
+        f" {inactive_contacts}/{has_github} ({inactive_contacts/has_github:.2%})"
+    )
+
+    print(
+        f"Ontologies (non-inactive, non-obsolete, non-orphaned, w/ GitHub): {len(rows)}"
+    )
+    print(
+        f"  w/ responsible person who's responsible for one ontology:"
+        f" {responsible_one}/{sum(counts)} ({responsible_one/sum(counts):.2%})"
+    )
+    print(
+        f"  w/ responsible person who's responsible for two or more ontologies:"
+        f" {responsible_multiple_sum}/{sum(counts)} ({responsible_multiple_sum/sum(counts):.2%})"
+    )
+
     active_ontologies = sum(
         len(contact["ontologies"])
         for contact in contacts.values()
         if contact["last_active_recent"]
     )
     inactive_ontologies = sum(counts) - active_ontologies
+
     print(
-        f"Number of responsible people that are inactive on GitHub (last year):"
-        f" {inactive_contacts}/{len(contacts)} ({inactive_contacts/len(contacts):.2%})"
-    )
-    print(
-        f"Number of ontologies with responsible people that are inactive on GitHub (last year):"
+        f"  w/ responsible person who's inactive on GitHub (last year):"
         f" {inactive_ontologies}/{len(rows)} ({inactive_contacts/len(rows):.2%})"
     )
 
@@ -645,9 +656,7 @@ def main(force: bool, test: bool, path):
     fig.tight_layout()
     fig.savefig(ISSUE_SCATTER, dpi=300)
 
-    index_html = index_template.render(rows=rows)
-    with INDEX.open("w") as file:
-        print(index_html, file=file)
+    INDEX.write_text(index_template.render(rows=rows))
 
     CONTACTS_PATH.write_text(
         contacts_template.render(show_activity=True, rows=list(contacts.values()))
