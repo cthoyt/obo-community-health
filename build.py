@@ -20,7 +20,16 @@ from jinja2 import Environment, FileSystemLoader
 from more_click import force_option, verbose_option
 from tqdm import tqdm
 
-from utils import CONTACTS_YAML_PATH, DATA, ONE_YEAR_AGO, get_github, get_ontologies
+from utils import (
+    CONTACTS_YAML_PATH,
+    DATA,
+    EMAIL_GITHUB_MAP,
+    EMAIL_ORCID_MAP,
+    EMAIL_WIKIDATA_MAP,
+    ONE_YEAR_AGO,
+    get_github,
+    get_ontologies,
+)
 
 HERE = Path(__file__).parent.resolve()
 TEMPLATES = HERE.joinpath("templates")
@@ -262,7 +271,7 @@ class Result:
             self.homepage is not None,
             errors,
             "missing homepage",
-            punishment=3,  # seriously?
+            punishment=5,  # seriously?
         )
         score = adjust(
             score,
@@ -348,7 +357,7 @@ class GithubResult(Result):
 
         stars = self.stars
         if not stars:
-            score += fslog10(stars, 2)
+            score += fslog10(stars, 3)
 
         contributions = self.lifetime_total_contributions
         if contributions:
@@ -381,11 +390,15 @@ def get_data(
         description = record["description"]
         homepage = record.get("homepage")
         contact = record["contact"]
-        contact_github = contact.get("github")
         contact_label = contact["label"]
         contact_email = contact["email"]
-        contact_wikidata = contacts.get(contact_github, {}).get("wikidata")
-        contact_orcid = contacts.get(contact_github, {}).get("orcid")
+        contact_github = contact.get("github") or EMAIL_GITHUB_MAP.get(contact_email)
+        contact_wikidata = contacts.get(contact_github, {}).get(
+            "wikidata"
+        ) or EMAIL_WIKIDATA_MAP.get(contact_email)
+        contact_orcid = contacts.get(contact_github, {}).get(
+            "orcid"
+        ) or EMAIL_ORCID_MAP.get(contact_email)
         contact_recent = contacts.get(contact_github, {}).get(
             "last_active_recent", False
         )

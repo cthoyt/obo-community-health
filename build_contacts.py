@@ -16,7 +16,11 @@ from tqdm import tqdm
 from utils import (
     CONTACTS_TSV_PATH,
     CONTACTS_YAML_PATH,
+    EMAIL_GITHUB_MAP,
+    EMAIL_ORCID_MAP,
+    EMAIL_WIKIDATA_MAP,
     ONE_YEAR_AGO,
+    SKIP_EMAILS,
     get_github,
     get_ontologies,
     query_wikidata,
@@ -74,20 +78,27 @@ def main(path: Optional[Path]):
         it.set_postfix(ontology=obo_id)
         contact = record.get("contact", {})
         github_id = contact.get("github")
-        if github_id is None:
-            if record.get("is_obsolete") or record.get("activity_status") != "active":
-                pass  # no need to worry about old/outdated content
-            else:
-                it.write(f"Missing GitHub for {obo_id}: {contact}")
+        email = contact.get("email")
+        if github_id is None and email is not None:
+            github_id = EMAIL_GITHUB_MAP.get(email)
+        if github_id is not None:
+            key = "github", github_id.casefold()
+            wikidata_id, orcid_id = get_wikidata_from_github(github_id)
+            last_active = get_last_event(github_id)
+        elif email is None or email in SKIP_EMAILS:
             continue
-        counter[github_id.casefold()] += 1
-        ontologies[github_id.casefold()].append(obo_id)
-        wikidata_id, orcid_id = get_wikidata_from_github(github_id)
-        last_active = get_last_event(github_id)
-        data[github_id.casefold()] = {
+        else:
+            key = "email", email.casefold()
+            orcid_id = EMAIL_ORCID_MAP.get(email)
+            wikidata_id = EMAIL_WIKIDATA_MAP.get(email)
+            last_active = None
+
+        counter[key] += 1
+        ontologies[key].append(obo_id)
+        data[key] = {
             "github": github_id,
             "label": contact["label"],
-            "email": contact["email"],
+            "email": email,
             "wikidata": wikidata_id,
             "orcid": orcid_id,
             "last_active": last_active,
@@ -95,20 +106,18 @@ def main(path: Optional[Path]):
         }
 
     # Output TSV
-    df_rows = [
-        dict(
-            count=count,
-            **data[github_id.casefold()],
-        )
-        for github_id, count in counter.most_common()
-    ]
+    df_rows = [dict(count=count, **data[key]) for key, count in counter.most_common()]
     df = pd.DataFrame(df_rows).sort_values(["count", "github"], ascending=[False, True])
     df.to_csv(CONTACTS_TSV_PATH, sep="\t", index=False)
 
     # Output YAML
     yaml_rows = [
         dict(
-            ontologies=ontologies[row["github"].casefold()],
+            ontologies=ontologies[
+                ("github", row["github"].casefold())
+                if row["github"]
+                else ("email", row["email"].casefold())
+            ],
             **row,
         )
         for row in df_rows

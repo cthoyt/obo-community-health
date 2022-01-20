@@ -42,6 +42,35 @@ NOW = datetime.datetime.now()
 ONE_YEAR_AGO = NOW - datetime.timedelta(weeks=52)
 
 
+EMAIL_GITHUB_MAP = {
+    "peteremidford@yahoo.com": "pmidford",
+    "cjmungall@lbl.gov": "cmungall",
+    "wasila.dahdul@usd.edu": "wdahdul",
+    "mcourtot@gmail.com": "mcourtot",
+    "a.chang@tu-bs.de": "BRENDA-Enzymes",
+    "engelsta@ohsu.edu": "markengelstad",
+    "Lindsay.Cowell@utsouthwestern.edu": "lgcowell",
+    "n.lenovere@gmail.com": "gambardella",
+    "mbrochhausen@gmail.com": "mbrochhausen",
+    "cherry@genome.stanford.edu": "jmcherry-zz",
+    "BatchelorC@rsc.org": "batchelorc",
+    "stoeckrt@pcbi.upenn.edu": "cstoeckert",
+}
+EMAIL_ORCID_MAP = {
+    "Leszek@missouri.edu": "0000-0002-9316-2919",
+}
+EMAIL_WIKIDATA_MAP = {"Leszek@missouri.edu": "Q110623916"}
+#: These emails are skipped, mostly because they are group emails.
+SKIP_EMAILS = {
+    "evoc@sanbi.ac.za",
+    "adw_geeks@umich.edu",
+    "po-discuss@plantontology.org",
+    "curator@inoh.org",
+    "interhelp@ebi.ac.uk",
+    "psidev-gps-dev@lists.sourceforge.net",
+}
+
+
 @rate_limited(calls=5_000, period=60 * 60)
 def get_github(
     url: str, accept: Optional[str] = None, params: Optional[dict[str, any]] = None

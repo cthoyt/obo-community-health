@@ -46,7 +46,7 @@
         <tr>
             <td align="right">{{ row.ontologies|length }}</td>
             <td><a href="mailto:{{ row.email }}">{{ row.label }}</a></td>
-            <td><a href="https://github.com/{{ row.github }}">{{ row.github }}</a></td>
+            <td>{% if row.github %}<a href="https://github.com/{{ row.github }}">{{ row.github }}</a>{% endif %}</td>
             {% if not curation %}
             <td>{% if row.orcid %}<a href="https://orcid.org/{{ row.orcid }}" data-toggle="tooltip" title="orcid:{{ row.orcid }}">🟢</a>{% endif %}</td>
             <td>{% if row.wikidata %}<a href="https://bioregistry.io/wikidata:{{ row.wikidata }}" data-toggle="tooltip" title="wikidata:{{ row.wikidata }}">🟢</a>{% endif %}</td>

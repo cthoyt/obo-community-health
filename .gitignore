@@ -2,3 +2,4 @@
 data.pkl
 .tox
 *.pyc
+.venv
