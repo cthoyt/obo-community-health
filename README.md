@@ -77,8 +77,7 @@ How divided is responsibility across all ontologies?
 
 The [Bioregistry](https://bioregistry.io) provides a wrapper around the
 [Shields.io](https://shields.io/) badge generation service to make beautiful
-badges showing off the community health of your ontology, like
-<object data="https://bioregistry.io/health/go"></object>.
+badges showing off the community health of your ontology, like [![GO OBO Community Health Score](https://bioregistry.io/health/go)](https://cthoyt.github.io/obo-community-health):
 
 You can embed the score of your resource using the following HTML using
 your prefix (e.g., `go`) in place of `<YOUR PREFIX HERE>`:
