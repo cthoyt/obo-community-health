@@ -543,9 +543,6 @@ def get_data(
     pd.DataFrame(rows).to_csv(PATH_TSV, sep="\t", index=False)
     with PATH_PICKLE.open("wb") as file:
         pickle.dump(rows, file)
-    # with PATH_JSON.open("w") as file:
-    #     json.dump(rows, file)
-
     return rows
 
 
@@ -559,6 +556,21 @@ def main(force: bool, test: bool, path):
         contacts = {record["github"]: record for record in yaml.safe_load(file)}
 
     rows = get_data(contacts=contacts, force=force, test=test, path=path)
+    with PATH_JSON.open("w") as file:
+        json.dump(
+            {
+                row.prefix: {
+                    **dict(zip(("score", "messages"), row.get_score())),
+                    **row.to_dict(),
+                }
+                for row in rows
+            },
+            file,
+            indent=2,
+            default=str,
+            ensure_ascii=False,
+            sort_keys=True,
+        )
 
     # Author responsibility histogram
     counts = [contact["count"] for contact in contacts.values()]
