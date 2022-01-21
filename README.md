@@ -72,3 +72,25 @@ of the distribution of scores across the OBO Foundry
 How divided is responsibility across all ontologies?
 
 ![Responsibilities](docs/responsibility_histogram.png)
+
+## Embed
+
+The [Bioregistry](https://bioregistry.io) provides a wrapper around the
+[Shields.io](https://shields.io/) badge generation service to make beautiful
+badges showing off the community health of your ontology, like
+<object data="https://bioregistry.io/health/go"></object>.
+
+You can embed the score of your resource using the following HTML using
+your prefix (e.g., `go`) in place of `<YOUR PREFIX HERE>`:
+
+```html
+
+<object data="https://bioregistry.io/health/<YOUR PREFIX HERE>"></object>
+```
+
+More simply, it can be embedded as an image, but this doesn't auto-generate a
+link:
+
+```html
+<img src="https://bioregistry.io/health/<YOUR PREFIX HERE>"/>
+```
