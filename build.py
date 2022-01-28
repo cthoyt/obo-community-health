@@ -26,6 +26,7 @@ from utils import (
     EMAIL_GITHUB_MAP,
     EMAIL_ORCID_MAP,
     EMAIL_WIKIDATA_MAP,
+    ODK_REPOS_PATH,
     ONE_YEAR_AGO,
     get_github,
     get_ontologies,
@@ -147,17 +148,6 @@ def get_topics(owner: str, repo: str):
         accept="application/vnd.github.mercy-preview+json",
     )
     return rv["names"]
-
-
-def has_odk_config(owner: str, repo: str) -> bool:
-    rv = get_github(
-        f"https://api.github.com/search/code?q=repo:{owner}/{repo}+filename:odk.yaml",
-    )
-    try:
-        return 0 < rv["total_count"]
-    except KeyError:
-        print(f"failed to search ODK config for {owner}/{repo}:", rv)
-        return False
 
 
 def iterate_repos(
@@ -314,7 +304,7 @@ class GithubResult(Result):
     most_recent_datetime: datetime.datetime
     most_recent_number: str
     most_recent_last_year: bool
-    # has_odk: bool
+    has_odk: bool
     # lifetime
     lifetime_total_contributions: int
     lifetime_unique_contributors: int
@@ -338,6 +328,13 @@ class GithubResult(Result):
             punishment=5,  # severe - means no engagement with community
         )
         score = adjust(
+            score,
+            self.has_odk,
+            errors=errors,
+            msg="not using ODK",
+            punishment=3,
+        )
+        score = adjust(
             score, self.pushed_last_year, errors=errors, msg="not recently pushed"
         )
         # rv = j(rv, self.has_odk)
@@ -347,13 +344,13 @@ class GithubResult(Result):
             score -= 2
             errors.append("no LICENSE on GitHub")
         elif self.license == "other":
-            score -= 1
+            score -= 2
             errors.append("non-standard LICENSE given on GitHub")
         elif self.license in SOFTWARE_LICENSES:
-            score -= 1
+            score -= 3
             errors.append("inappropriate software LICENSE given on GitHub")
         else:  # Reward using well-recognized licenses.
-            score += 1
+            score += 2
 
         stars = self.stars
         if not stars:
@@ -371,7 +368,12 @@ class GithubResult(Result):
 
 
 def get_data(
-    contacts, force: bool = False, test: bool = False, path: Optional[Path] = None
+    *,
+    contacts,
+    odk_repos,
+    force: bool = False,
+    test: bool = False,
+    path: Optional[Path] = None,
 ) -> list[Result]:
     if PATH_PICKLE.is_file() and not force and not test:
         with PATH_PICKLE.open("rb") as file:
@@ -521,10 +523,10 @@ def get_data(
                 pushed_at=pushed_at,
                 pushed_last_year=pushed_last_year,
                 has_obofoundry_topic=has_obofoundry_topic,
+                has_odk=f"{owner}/{repo}" in odk_repos,
                 most_recent_datetime=most_recent_datetime,
                 most_recent_number=most_recent_updated_number,
                 most_recent_last_year=update_last_year,
-                # has_odk=has_odk_config(owner, repo),
                 # lifetime
                 lifetime_total_contributions=lifetime_total_contributions,
                 lifetime_unique_contributors=lifetime_unique_contributors,
@@ -555,7 +557,12 @@ def main(force: bool, test: bool, path):
     with CONTACTS_YAML_PATH.open() as file:
         contacts = {record["github"]: record for record in yaml.safe_load(file)}
 
-    rows = get_data(contacts=contacts, force=force, test=test, path=path)
+    with ODK_REPOS_PATH.open() as file:
+        odk_repos = yaml.safe_load(file)
+
+    rows = get_data(
+        contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path
+    )
     with PATH_JSON.open("w") as file:
         json.dump(
             {

@@ -25,6 +25,8 @@ DATA.mkdir(exist_ok=True, parents=True)
 CONTACTS_TSV_PATH = DATA.joinpath("contacts_table.tsv")
 CONTACTS_YAML_PATH = DATA.joinpath("contacts.yaml")
 
+ODK_REPOS_PATH = DATA.joinpath("odk_repos.yaml")
+
 # Load the GitHub access token via PyStow. We'll
 # need it so we don't hit the rate limit
 TOKEN = pystow.get_config("github", "token", raise_on_missing=True)
