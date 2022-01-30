@@ -304,7 +304,7 @@ class GithubResult(Result):
     most_recent_datetime: datetime.datetime
     most_recent_number: str
     most_recent_last_year: bool
-    has_odk: bool
+    odk_version: Optional[str]
     # lifetime
     lifetime_total_contributions: int
     lifetime_unique_contributors: int
@@ -329,7 +329,7 @@ class GithubResult(Result):
         )
         score = adjust(
             score,
-            self.has_odk,
+            self.odk_version is not None,
             errors=errors,
             msg="not using ODK",
             punishment=3,
@@ -337,7 +337,6 @@ class GithubResult(Result):
         score = adjust(
             score, self.pushed_last_year, errors=errors, msg="not recently pushed"
         )
-        # rv = j(rv, self.has_odk)
 
         # License
         if self.license is None:
@@ -523,7 +522,7 @@ def get_data(
                 pushed_at=pushed_at,
                 pushed_last_year=pushed_last_year,
                 has_obofoundry_topic=has_obofoundry_topic,
-                has_odk=f"{owner}/{repo}" in odk_repos,
+                odk_version=odk_repos.get(f"{owner}/{repo}"),
                 most_recent_datetime=most_recent_datetime,
                 most_recent_number=most_recent_updated_number,
                 most_recent_last_year=update_last_year,
@@ -558,8 +557,9 @@ def main(force: bool, test: bool, path):
         contacts = {record["github"]: record for record in yaml.safe_load(file)}
 
     with ODK_REPOS_PATH.open() as file:
-        odk_repos = yaml.safe_load(file)
-
+        odk_repos = {
+            record["repository"]: record["version"] for record in yaml.safe_load(file)
+        }
     rows = get_data(
         contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path
     )
@@ -591,34 +591,36 @@ def main(force: bool, test: bool, path):
 
     print(f"People: {len(counts)}")
     has_github = sum(contact.get("github") is not None for contact in contacts.values())
-    print(f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github/len(contacts):.2%})")
+    print(
+        f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github / len(contacts):.2%})"
+    )
     has_wikidata = sum(
         contact.get("wikidata") is not None for contact in contacts.values()
     )
     print(
-        f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata/len(contacts):.2%})"
+        f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata / len(contacts):.2%})"
     )
     has_orcid = sum(contact.get("orcid") is not None for contact in contacts.values())
-    print(f"  w/ ORCID: {has_orcid}/{len(contacts)} ({has_orcid/len(contacts):.2%})")
+    print(f"  w/ ORCID: {has_orcid}/{len(contacts)} ({has_orcid / len(contacts):.2%})")
     print(
         f"  responsible for one ontology:"
-        f" {responsible_one}/{len(counts)} ({responsible_one/len(counts):.2%})"
+        f" {responsible_one}/{len(counts)} ({responsible_one / len(counts):.2%})"
     )
     print(
         f"  responsible for two or more ontologies:"
-        f" {responsible_multiple}/{len(counts)} ({responsible_multiple/len(counts):.2%})"
+        f" {responsible_multiple}/{len(counts)} ({responsible_multiple / len(counts):.2%})"
     )
     active_contacts = sum(
         contact["last_active_recent"] for contact in contacts.values()
     )
     print(
         f"  active on GitHub (last year):"
-        f" {active_contacts}/{has_github} ({active_contacts/has_github:.2%})"
+        f" {active_contacts}/{has_github} ({active_contacts / has_github:.2%})"
     )
     inactive_contacts = has_github - active_contacts
     print(
         f"  inactive on GitHub (last year):"
-        f" {inactive_contacts}/{has_github} ({inactive_contacts/has_github:.2%})"
+        f" {inactive_contacts}/{has_github} ({inactive_contacts / has_github:.2%})"
     )
 
     print(
@@ -626,11 +628,11 @@ def main(force: bool, test: bool, path):
     )
     print(
         f"  w/ responsible person who's responsible for one ontology:"
-        f" {responsible_one}/{sum(counts)} ({responsible_one/sum(counts):.2%})"
+        f" {responsible_one}/{sum(counts)} ({responsible_one / sum(counts):.2%})"
     )
     print(
         f"  w/ responsible person who's responsible for two or more ontologies:"
-        f" {responsible_multiple_sum}/{sum(counts)} ({responsible_multiple_sum/sum(counts):.2%})"
+        f" {responsible_multiple_sum}/{sum(counts)} ({responsible_multiple_sum / sum(counts):.2%})"
     )
 
     active_ontologies = sum(
@@ -642,7 +644,7 @@ def main(force: bool, test: bool, path):
 
     print(
         f"  w/ responsible person who's inactive on GitHub (last year):"
-        f" {inactive_ontologies}/{len(rows)} ({inactive_contacts/len(rows):.2%})"
+        f" {inactive_ontologies}/{len(rows)} ({inactive_contacts / len(rows):.2%})"
     )
 
     CONTACT_TRIVIA_PATH.write_text(

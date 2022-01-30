@@ -84,7 +84,7 @@
             <td align="right">{{ row.stars }}</td>
             <td align="right">{{ row.open_issues }}</td>
             <td>{% if row.has_obofoundry_topic %}Yes 🟢{% else %}No 🔴{% endif %}</td>
-            <td>{% if row.has_odk %}Yes 🟢{% else %}No 🔴{% endif %}</td>
+            <td>{% if row.odk_version %}🟢 {{ row.odk_version }}{% else %}🔴 None{% endif %}</td>
             <td>{% if row.pushed_at %}{{ row.pushed_at.strftime("%Y-%m-%d") }}{% endif %}</td>
             <td>{% if row.most_recent_datetime %}{{ row.most_recent_datetime.strftime("%Y-%m-%d") }}{% endif %}</td>
             {% if row.last_year_total_contributions > 0 %}
