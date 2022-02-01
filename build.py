@@ -556,10 +556,9 @@ def main(force: bool, test: bool, path):
     with CONTACTS_YAML_PATH.open() as file:
         contacts = {record["github"]: record for record in yaml.safe_load(file)}
 
-    with ODK_REPOS_PATH.open() as file:
-        odk_repos = {
-            record["repository"]: record["version"] for record in yaml.safe_load(file)
-        }
+    odk_repos_df = pd.read_csv(ODK_REPOS_PATH, sep="\t")
+    odk_repos = dict(odk_repos_df[["repository", "version"]].values)
+
     rows = get_data(
         contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path
     )

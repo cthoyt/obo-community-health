@@ -3,27 +3,27 @@
 import json
 from itertools import islice
 
+import click
+import pandas as pd
 import requests
-import yaml
 from tqdm import tqdm
 
 from utils import ODK_REPOS_PATH, get_github
 
 
+@click.command()
 def main():
     per_page = 100
     page = 1
     rows = set()
     total = _xxx(rows, per_page, page)
+    click.echo(f"Got {total} rows")
     while per_page * page < total:
         page += 1
         _xxx(rows, per_page, page)
 
-    with ODK_REPOS_PATH.open("w") as file:
-        yaml.safe_dump(
-            [dict(zip(("repository", "name", "version"), row)) for row in sorted(rows)],
-            file,
-        )
+    df = pd.DataFrame(sorted(rows), columns=["repository", "name", "version"])
+    df.to_csv(ODK_REPOS_PATH, sep="\t", index=False)
 
 
 def _xxx(rows, per_page, page):
@@ -49,7 +49,7 @@ def _xxx(rows, per_page, page):
             version = line.removeprefix("# ODK Version: v")
         except ValueError:
             tqdm.write(f"Could not get ODK version for {name} in {repository}")
-            version = None
+            version = "unknown"
         rows.add((repository, name, version))
     return res["total_count"]
 
