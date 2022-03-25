@@ -694,11 +694,16 @@ def main(force: bool, test: bool, path):
     fig.tight_layout()
     fig.savefig(ISSUE_SCATTER, dpi=300)
 
-    INDEX.write_text(index_template.render(rows=rows))
+    today = datetime.date.today()
+
+    INDEX.write_text(index_template.render(rows=rows, today=today))
 
     CONTACTS_PATH.write_text(
         contacts_template.render(
-            bioregistry=bioregistry, curation=False, rows=list(contacts.values())
+            bioregistry=bioregistry,
+            curation=False,
+            rows=list(contacts.values()),
+            today=today,
         )
     )
     CONTACTS_CURATION_PATH.write_text(
@@ -706,14 +711,16 @@ def main(force: bool, test: bool, path):
             bioregistry=bioregistry,
             curation=True,
             rows=[row for row in contacts.values() if not row.get("wikidata")],
+            today=today,
         )
     )
 
-    emails = ", ".join(
+    no_orcid_emails = ", ".join(
         sorted(row["email"] for row in contacts.values() if not row.get("wikidata"))
     )
-    click.echo("These people don't have ORCID annotations:")
-    click.echo(emails)
+    if no_orcid_emails:
+        click.echo("These people don't have ORCID annotations:")
+        click.echo(no_orcid_emails)
 
     # for row in rows:
     #     ontology_html = ontology_template.render(row=row)

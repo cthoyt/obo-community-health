@@ -2,6 +2,7 @@
 
 import json
 from itertools import islice
+from typing import NamedTuple
 
 import click
 import pandas as pd
@@ -11,13 +12,19 @@ from tqdm import tqdm
 from utils import ODK_REPOS_PATH, get_github
 
 
+class Row(NamedTuple):
+    repository: str
+    name: str
+    version: str
+
+
 @click.command()
 def main():
     per_page = 100
     page = 1
-    rows = set()
+    rows: set[Row] = set()
     total = _xxx(rows, per_page, page)
-    click.echo(f"Got {total} rows")
+    click.echo(f"Got {total} rows. Already put in {len(rows)}")
     while per_page * page < total:
         page += 1
         _xxx(rows, per_page, page)
@@ -26,14 +33,26 @@ def main():
     df.to_csv(ODK_REPOS_PATH, sep="\t", index=False)
 
 
-def _xxx(rows, per_page, page):
+#: Users who have many test ODK files
+#: or other reasons to not be considered
+SKIP_USERS = [
+    "INCATools",
+    "matentzn",
+    "one-acre-fund",
+]
+
+#: Build the GitHub query for skipping certain users
+SKIP_Q = " ".join(f"-user:{user}" for user in SKIP_USERS)
+
+
+def _xxx(rows: set[Row], per_page: int, page: int) -> int:
     res = get_github(
         f"https://api.github.com/search/code",
         params={
             "per_page": per_page,
             "page": page,
             # "sort": "indexed",
-            "q": "filename:odk.yaml -user:INCATools -user:matentzn -user:one-acre-fund",
+            "q": f"filename:odk.yaml {SKIP_Q}",
         },
     )
     if "items" not in res:
@@ -50,7 +69,7 @@ def _xxx(rows, per_page, page):
         except ValueError:
             tqdm.write(f"Could not get ODK version for {name} in {repository}")
             version = "unknown"
-        rows.add((repository, name, version))
+        rows.add(Row(repository=repository, name=name, version=version))
     return res["total_count"]
 
 

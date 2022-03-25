@@ -1,7 +1,9 @@
 """Build the contacts data table."""
 
+from __future__ import annotations
+
+import datetime
 from collections import Counter, defaultdict
-from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
 from textwrap import dedent
@@ -28,7 +30,9 @@ from utils import (
 
 
 @lru_cache(maxsize=None)
-def get_wikidata_from_github(github_id: str) -> tuple[str, Optional[str]]:
+def get_wikidata_from_github(
+    github_id: str,
+) -> tuple[None, None] | tuple[str, None] | tuple[str, str]:
     """Lookup bibliometric data from Wikidata using a GitHub handle."""
     query = dedent(
         f"""\
@@ -49,12 +53,12 @@ def get_wikidata_from_github(github_id: str) -> tuple[str, Optional[str]]:
     )
     orcid_id = record.get("orcid", {}).get("value")
     if orcid_id is None:
-        print(f"No ORCID for https://bioregistry.io/wikidata:{wikidata_id}")
+        tqdm.write(f"No ORCID for https://bioregistry.io/wikidata:{wikidata_id}")
     return wikidata_id, orcid_id
 
 
 @lru_cache(maxsize=None)
-def get_last_event(user: str) -> Optional[datetime]:
+def get_last_event(user: str) -> Optional[datetime.datetime]:
     """Get the date and time of the most recent action for this user."""
     events = get_github(f"https://api.github.com/users/{user}/events")
     if not events:
