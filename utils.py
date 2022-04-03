@@ -21,6 +21,11 @@ HERE = Path(__file__).parent.resolve()
 DATA = HERE.joinpath("data")
 DATA.mkdir(exist_ok=True, parents=True)
 
+# Repo data
+REPO_DATA_PICKLE = DATA.joinpath("data.pkl")
+REPO_DATA_TSV = DATA.joinpath("data.tsv")
+REPO_DATA_JSON = DATA.joinpath("data.json")
+
 # Contacts data
 CONTACTS_TSV_PATH = DATA.joinpath("contacts_table.tsv")
 CONTACTS_YAML_PATH = DATA.joinpath("contacts.yaml")
@@ -42,6 +47,7 @@ WIKIDATA_HEADERS = {
 
 NOW = datetime.datetime.now()
 ONE_YEAR_AGO = NOW - datetime.timedelta(weeks=52)
+FIVE_YEARS_AGO = NOW - datetime.timedelta(weeks=52 * 5)
 
 
 EMAIL_GITHUB_MAP = {

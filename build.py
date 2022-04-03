@@ -26,8 +26,12 @@ from utils import (
     EMAIL_GITHUB_MAP,
     EMAIL_ORCID_MAP,
     EMAIL_WIKIDATA_MAP,
+    FIVE_YEARS_AGO,
     ODK_REPOS_PATH,
     ONE_YEAR_AGO,
+    REPO_DATA_JSON,
+    REPO_DATA_PICKLE,
+    REPO_DATA_TSV,
     get_github,
     get_ontologies,
 )
@@ -41,9 +45,6 @@ INDEX = DOCS.joinpath("index.html")
 CONTACTS_PATH = DOCS.joinpath("contacts.html")
 CONTACTS_CURATION_PATH = DOCS.joinpath("contacts_curation.html")
 
-PATH_PICKLE = DATA.joinpath("data.pkl")
-PATH_TSV = DATA.joinpath("data.tsv")
-PATH_JSON = DATA.joinpath("data.json")
 CONTACT_TRIVIA_PATH = DATA.joinpath("contacts_trivia.yaml")
 PATH_HIST = DOCS.joinpath("score_histogram.png")
 RESPONSIBILITY_HIST = DOCS.joinpath("responsibility_histogram.png")
@@ -300,6 +301,7 @@ class GithubResult(Result):
     repo_homepage: str
     pushed_at: datetime.datetime
     pushed_last_year: bool
+    pushed_last_five_years: bool
     has_obofoundry_topic: bool
     most_recent_datetime: datetime.datetime
     most_recent_number: str
@@ -374,8 +376,8 @@ def get_data(
     test: bool = False,
     path: Optional[Path] = None,
 ) -> list[Result]:
-    if PATH_PICKLE.is_file() and not force and not test:
-        with PATH_PICKLE.open("rb") as file:
+    if REPO_DATA_PICKLE.is_file() and not force and not test:
+        with REPO_DATA_PICKLE.open("rb") as file:
             return pickle.load(file)
 
     repos = sorted(iterate_repos(path=path))
@@ -442,6 +444,7 @@ def get_data(
         repo_homepage = info["homepage"]
         pushed_at = dateparser.parse(info["pushed_at"]).replace(tzinfo=None)
         pushed_last_year = ONE_YEAR_AGO < pushed_at
+        pushed_last_five_years = FIVE_YEARS_AGO < pushed_at
         topics = get_topics(owner, repo)
         has_obofoundry_topic = "obofoundry" in topics
         if (
@@ -521,6 +524,7 @@ def get_data(
                 repo_homepage=repo_homepage,
                 pushed_at=pushed_at,
                 pushed_last_year=pushed_last_year,
+                pushed_last_five_years=pushed_last_five_years,
                 has_obofoundry_topic=has_obofoundry_topic,
                 odk_version=odk_repos.get(f"{owner}/{repo}"),
                 most_recent_datetime=most_recent_datetime,
@@ -541,8 +545,8 @@ def get_data(
 
     rows = sorted(rows, key=attrgetter("prefix"))
 
-    pd.DataFrame(rows).to_csv(PATH_TSV, sep="\t", index=False)
-    with PATH_PICKLE.open("wb") as file:
+    pd.DataFrame(rows).to_csv(REPO_DATA_TSV, sep="\t", index=False)
+    with REPO_DATA_PICKLE.open("wb") as file:
         pickle.dump(rows, file)
     return rows
 
@@ -562,7 +566,7 @@ def main(force: bool, test: bool, path):
     rows = get_data(
         contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path
     )
-    with PATH_JSON.open("w") as file:
+    with REPO_DATA_JSON.open("w") as file:
         json.dump(
             {
                 row.prefix: {
