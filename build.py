@@ -18,6 +18,7 @@ from bioregistry import get_bioportal_prefix, get_ols_prefix, get_registry_invma
 from dataclasses_json import dataclass_json
 from jinja2 import Environment, FileSystemLoader
 from more_click import force_option, verbose_option
+from rich import print
 from tqdm import tqdm
 
 from utils import (
@@ -296,6 +297,7 @@ class GithubResult(Result):
     repo: str
     repo_description: str
     stars: int
+    default_branch: str
     license: str
     open_issues: int
     repo_homepage: str
@@ -354,8 +356,8 @@ class GithubResult(Result):
             score += 2
 
         stars = self.stars
-        if not stars:
-            score += fslog10(stars, 3)
+        if stars:
+            score += fslog10(stars, 3.0)
 
         contributions = self.lifetime_total_contributions
         if contributions:
@@ -438,6 +440,7 @@ def get_data(
             continue
         info = get_info(owner, repo)
         repo_description = info["description"]
+        default_branch = info["default_branch"]
         stars = info["stargazers_count"]
         license = info["license"]
         open_issues = info["open_issues"]
@@ -519,6 +522,7 @@ def get_data(
                 repo=repo,
                 repo_description=repo_description,
                 stars=stars,
+                default_branch=default_branch,
                 license=license["key"] if license else None,
                 open_issues=open_issues,
                 repo_homepage=repo_homepage,
@@ -557,6 +561,7 @@ def get_data(
 @click.option("--test", is_flag=True)
 @click.option("--path", help="Path to local metadata", type=Path)
 def main(force: bool, test: bool, path):
+    force = True
     with CONTACTS_YAML_PATH.open() as file:
         contacts = {record["github"]: record for record in yaml.safe_load(file)}
 
