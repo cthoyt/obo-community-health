@@ -23,10 +23,7 @@ jobs:
           tox -e buildf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Check environment
-        run: echo ${{ steps.update.outputs.BR_UPDATED }}
       - name: Commit files
-        if: steps.update.outputs.BR_UPDATED == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
