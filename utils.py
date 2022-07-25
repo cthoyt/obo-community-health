@@ -66,8 +66,12 @@ EMAIL_GITHUB_MAP = {
 }
 EMAIL_ORCID_MAP = {
     "Leszek@missouri.edu": "0000-0002-9316-2919",
+    "nicolas@ascistance.co.uk": "0000-0002-6309-7327",
 }
-EMAIL_WIKIDATA_MAP = {"Leszek@missouri.edu": "Q110623916"}
+EMAIL_WIKIDATA_MAP = {
+    "Leszek@missouri.edu": "Q110623916",
+    "nicolas@ascistance.co.uk": "Q21055156",
+}
 #: These emails are skipped, mostly because they are group emails.
 SKIP_EMAILS = {
     "evoc@sanbi.ac.za",
