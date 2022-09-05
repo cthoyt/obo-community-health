@@ -134,6 +134,10 @@
   path: src/ontology/lepao-odk.yaml
   repository: luis-gonzalez-m/lepao-original-version
   version: 1.2.23
+- name: testonto-odk.yaml
+  path: src/ontology/testonto-odk.yaml
+  repository: luisenriqueramos1977/testontoodk
+  version: 1.3.0
 - name: hp-odk.yaml
   path: src/metadata/hp-odk.yaml
   repository: meng-ma-biomedical-AI/F29_HPO
@@ -210,6 +214,10 @@
   path: src/ontology/bspo-odk.yaml
   repository: obophenotype/biological-spatial-ontology
   version: 1.3.1
+- name: bdso-odk.yaml
+  path: src/ontology/bdso-odk.yaml
+  repository: obophenotype/brain_data_standards_ontologies
+  version: 1.2.32
 - name: wbls-odk.yaml
   path: src/ontology/wbls-odk.yaml
   repository: obophenotype/c-elegans-development-ontology
@@ -219,7 +227,7 @@
   repository: obophenotype/c-elegans-gross-anatomy-ontology
   version: 1.2.22
 - name: wbphenotype-odk.yaml
-  path: src/ontology/wbphenotype-odk.yaml
+  path: src/update_repo/wbphenotype-odk.yaml
   repository: obophenotype/c-elegans-phenotype-ontology
   version: 1.3.1
 - name: caro-odk.yaml
@@ -234,6 +242,10 @@
   path: src/ontology/ddpheno-odk.yaml
   repository: obophenotype/dicty-phenotype-ontology
   version: 1.3.0
+- name: hp-odk.yaml
+  path: src/ontology/hp-odk.yaml
+  repository: obophenotype/human-phenotype-ontology
+  version: 1.3.1
 - name: plana-odk.yaml
   path: src/ontology/plana-odk.yaml
   repository: obophenotype/planaria-ontology
@@ -246,6 +258,10 @@
   path: src/ontology/pcl-odk.yaml
   repository: obophenotype/provisional_cell_ontology
   version: 1.3.0
+- name: uberon-odk.yaml
+  path: src/ontology/uberon-odk.yaml
+  repository: obophenotype/uberon
+  version: 1.3.1
 - name: upheno-odk.yaml
   path: src/ontology/upheno-odk.yaml
   repository: obophenotype/upheno

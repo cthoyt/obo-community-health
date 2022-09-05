@@ -31,15 +31,16 @@ def main(per_page: int):
         for record in yaml.safe_load(ODK_REPOS_YAML_PATH.read_text())
     }
 
-    tqdm.write("loading page 1 of size")
-    total = _paginate(data, per_page, 1)
-    tqdm.write(f"after page 1, found that there are {total} rows.")
+    page = 1
+    tqdm.write(f"loading page {page} of size {per_page}")
+    total = _paginate(data, per_page, page)
+    tqdm.write(f"after page {page}, found that there are {total} rows.")
 
-    page = 2
     while per_page * page < total:
+        page += 1
         tqdm.write(f"loading page {page} of size {per_page}")
         _paginate(data, per_page, page)
-        page += 1
+
 
     _rows = sorted(data.values(), key=lambda row: row["repository"].casefold())
 
@@ -61,6 +62,7 @@ SKIP_USERS = [
     "kirana-ks",  # kirana-ks/aether-infrastructure-provisioning is not related to ODK
     "ferjavrec",  # projects in odk-central are not related to our ODK
     "acevesp",
+    "cthoyt",  # self reference
 ]
 
 #: Build the GitHub query for skipping certain users

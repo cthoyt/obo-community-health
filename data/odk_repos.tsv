@@ -33,6 +33,7 @@ kharchenkolab/cap_ontology	capo-odk.yaml	src/ontology/capo-odk.yaml	1.3.1
 laurenechan/chemical-mixture-ontology	cmixo-odk.yaml	src/scripts/cmixo-odk.yaml	1.2.23
 luis-gonzalez-m/Collembola	clao-odk.yaml	src/ontology/clao-odk.yaml	1.2.29
 luis-gonzalez-m/lepao-original-version	lepao-odk.yaml	src/ontology/lepao-odk.yaml	1.2.23
+luisenriqueramos1977/testontoodk	testonto-odk.yaml	src/ontology/testonto-odk.yaml	1.3.0
 meng-ma-biomedical-AI/F29_HPO	hp-odk.yaml	src/metadata/hp-odk.yaml	1.2.19
 mgijax/mammalian-phenotype-ontology	mp-odk.yaml	src/ontology/mp-odk.yaml	1.3.1
 microbial-conditions-ontology/Microbial-Conditions-Ontology	mco-odk.yaml	src/ontology/mco-odk.yaml	1.2.24
@@ -52,15 +53,18 @@ obo-behavior/behavior-ontology	nbo-odk.yaml	src/ontology/nbo-odk.yaml	1.3.0
 OBOFoundry/COB	cob-odk.yaml	src/ontology/cob-odk.yaml	1.3.1
 obophenotype/bio-attribute-ontology	oba-odk.yaml	src/ontology/oba-odk.yaml	1.3.1
 obophenotype/biological-spatial-ontology	bspo-odk.yaml	src/ontology/bspo-odk.yaml	1.3.1
+obophenotype/brain_data_standards_ontologies	bdso-odk.yaml	src/ontology/bdso-odk.yaml	1.2.32
 obophenotype/c-elegans-development-ontology	wbls-odk.yaml	src/ontology/wbls-odk.yaml	1.3.1
 obophenotype/c-elegans-gross-anatomy-ontology	wbbt-odk.yaml	src/ontology/wbbt-odk.yaml	1.2.22
-obophenotype/c-elegans-phenotype-ontology	wbphenotype-odk.yaml	src/ontology/wbphenotype-odk.yaml	1.3.1
+obophenotype/c-elegans-phenotype-ontology	wbphenotype-odk.yaml	src/update_repo/wbphenotype-odk.yaml	1.3.1
 obophenotype/caro	caro-odk.yaml	src/ontology/caro-odk.yaml	1.3.0
 obophenotype/cell-ontology	cl-odk.yaml	src/metadata/cl-odk.yaml	1.3.1
 obophenotype/dicty-phenotype-ontology	ddpheno-odk.yaml	src/ontology/ddpheno-odk.yaml	1.3.0
+obophenotype/human-phenotype-ontology	hp-odk.yaml	src/ontology/hp-odk.yaml	1.3.1
 obophenotype/planaria-ontology	plana-odk.yaml	src/ontology/plana-odk.yaml	1.3.0
 obophenotype/planarian-phenotype-ontology	planp-odk.yaml	src/ontology/planp-odk.yaml	1.2.20
 obophenotype/provisional_cell_ontology	pcl-odk.yaml	src/ontology/pcl-odk.yaml	1.3.0
+obophenotype/uberon	uberon-odk.yaml	src/ontology/uberon-odk.yaml	1.3.1
 obophenotype/upheno	upheno-odk.yaml	src/ontology/upheno-odk.yaml	1.3.0
 obophenotype/upheno-dev	upheno-odk.yaml	src/ontology/upheno-odk.yaml	1.2.20
 obophenotype/xenopus-phenotype-ontology	xpo-odk.yaml	src/ontology/xpo-odk.yaml	1.3.0
