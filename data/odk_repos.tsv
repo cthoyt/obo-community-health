@@ -1,45 +1,86 @@
-repository	name	version
-BICCN/TMN	TMN-odk.yaml	1.2.30
-BRENDA-Enzymes/BTO	bto-odk.yaml	1.2.19
-EBISPOT/scatlas_ontology	scatlas-odk.yaml	1.2.25
-EcologicalSemantics/ecocore	ecocore-odk.yaml	1.2.26
-EnvironmentOntology/environmental-exposure-ontology	ecto-odk.yaml	1.2.30
-FlyBase/drosophila-anatomy-developmental-ontology	fbbt-odk.yaml	1.2.32
-FlyBase/drosophila-phenotype-ontology	dpo-odk.yaml	1.2.32
-OBOFoundry/COB	cob-odk.yaml	1.2.30
-PHI-base/phipo	phipo-odk.yaml	1.2.28
-PennTURBO/turbo-ontology	turbo-odk.yaml	1.2.32
-PopulationAndCommunityOntology/pco	pco-odk.yaml	1.2.21
-Radiobiology-Informatics-Consortium/RBO	rbo-odk.yaml	1.2.25
-StroemPhi/odktest	odktest-odk.yaml	1.2.32
-VirtualFlyBrain/vfb-driver-ontology	VFB_drivers-odk.yaml	1.2.31
-agustincharry/kafkaK8sTests	odk-kafka.yaml	unknown
-echinoderm-ontology/ecao_ontology	ecao-odk.yaml	1.2.22
-futres/fovt	fovt-odk.yaml	1.2.32
-hboutemy/mcmm-yaml	odk-test-framework.yaml	unknown
-insect-morphology/aism	aism-odk.yaml	1.2.31
-insect-morphology/lepao	lepao-odk.yaml	1.2.30
-kirana-ks/aether-infrastructure-provisioning	odk.yaml	unknown
-laurenechan/chemical-mixture-ontology	cmixo-odk.yaml	1.2.23
-luis-gonzalez-m/Collembola	clao-odk.yaml	1.2.29
-luis-gonzalez-m/lepao-original-version	lepao-odk.yaml	1.2.23
-mgijax/mammalian-phenotype-ontology	mp-odk.yaml	1.2.31
-microbial-conditions-ontology/Microbial-Conditions-Ontology	mco-odk.yaml	1.2.24
-mjklep/AISM	aism-odk.yaml	1.2.27
-mjklep/LepAO	lepao-odk.yaml	1.2.25
-monarch-initiative/GENO-ontology	geno-odk.yaml	unknown
-monarch-initiative/MAxO	maxo-odk.yaml	1.2.26
-monarch-initiative/monochrom	chr-odk.yaml	1.2.29
-nicolevasilevsky/omia	omia-odk.yaml	1.2.26
-obo-behavior/behavior-ontology	nbo-odk.yaml	1.2.26
-obophenotype/c-elegans-development-ontology	wbls-odk.yaml	1.2.31
-obophenotype/c-elegans-gross-anatomy-ontology	wbbt-odk.yaml	1.2.22
-obophenotype/c-elegans-phenotype-ontology	wbphenotype-odk.yaml	1.2.32
-obophenotype/cell-ontology	cl-odk.yaml	1.2.31
-obophenotype/planarian-phenotype-ontology	planp-odk.yaml	1.2.20
-obophenotype/upheno-dev	upheno-odk.yaml	1.2.20
-obophenotype/xenopus-phenotype-ontology	xpo-odk.yaml	1.2.27
-obophenotype/zebrafish-phenotype-ontology	zp-odk.yaml	1.2.31
-pombase/fypo	fypo-odk.yaml	1.2.30
-ufbmi/dron	dron-odk.yaml	1.2.27
-ybradford/zebrafish-experimental-conditions-ontology	zeco-odk.yaml	1.2.23
+repository	name	path	version
+AurInt/agro	agro-odk.yaml	src/ontology/agro-odk.yaml	1.2.32
+berkeleybop/bero	bero-odk.yaml	src/ontology/bero-odk.yaml	1.3.0
+BICCN/TMN	TMN-odk.yaml	src/ontology/TMN-odk.yaml	1.3.1
+BiodiversityOntologies/bco	bco-odk.yaml	src/ontology/bco-odk.yaml	1.2.30
+BRENDA-Enzymes/BTO	bto-odk.yaml	src/ontology/bto-odk.yaml	1.2.19
+BridgetSquidget/gombo	gombo-odk.yaml	src/ontology/gombo-odk.yaml	1.3.0
+Buffalo-Ontology-Group/MRI_Ontology	MRIO-odk.yaml	src/ontology/MRIO-odk.yaml	1.2.27
+cerivs/zebrafish-anatomical-ontology	zfa-odk.yaml	src/ontology/zfa-odk.yaml	1.3.0
+cmconnor/childwelfare	childwelfare-odk.yaml	src/ontology/childwelfare-odk.yaml	1.2.29
+criticalpathinstitute/biolink_sdtm_owl	biolink_sdtm_owl-odk.yaml	src/ontology/biolink_sdtm_owl-odk.yaml	1.2.32
+dillerm/Health-Related-Exposure-Ontology	hero-odk.yaml	src/ontology/hero-odk.yaml	1.3.1
+EBISPOT/ontology_editor_training	wine-odk.yaml	src/ontology/target/wine/src/ontology/wine-odk.yaml	1.3.1
+EBISPOT/scatlas_ontology	scatlas-odk.yaml	src/ontology/scatlas-odk.yaml	1.3.1
+echinoderm-ontology/ecao_ontology	ecao-odk.yaml	src/ontology/ecao-odk.yaml	1.2.22
+EcologicalSemantics/ecocore	ecocore-odk.yaml	src/ontology/ecocore-odk.yaml	1.3.0
+elisapappagallo1/anatomical-atlas-ontology	aao-odk.yaml	src/ontology/aao-odk.yaml	1.3.1
+EnvironmentOntology/environmental-exposure-ontology	ecto-odk.yaml	src/ontology/ecto-odk.yaml	1.3.1
+FlyBase/drosophila-anatomy-developmental-ontology	fbbt-odk.yaml	src/ontology/fbbt-odk.yaml	1.3.1
+FlyBase/drosophila-developmental-ontology	fbdv-odk.yaml	src/ontology/fbdv-odk.yaml	1.3.1
+FlyBase/drosophila-phenotype-ontology	dpo-odk.yaml	src/ontology/dpo-odk.yaml	1.3.1
+FlyBase/flybase-controlled-vocabulary	fbcv-odk.yaml	src/ontology/fbcv-odk.yaml	1.3.1
+futres/fovt	fovt-odk.yaml	src/ontology/fovt-odk.yaml	1.3.1
+futres/uberonfovt	uberonfovt-odk.yaml	src/ontology/uberonfovt-odk.yaml	1.2.32
+hubmapconsortium/ccf-ontology	ccf-odk.yaml	src/ontology/ccf-odk.yaml	1.3.0
+information-artifact-ontology/ontology-metadata	omo-odk.yaml	omo-odk.yaml	1.3.0
+insect-morphology/aism	aism-odk.yaml	src/ontology/aism-odk.yaml	1.3.1
+insect-morphology/colao	colao-odk.yaml	src/ontology/target/colao/src/ontology/colao-odk.yaml	1.3.1
+insect-morphology/lepao	lepao-odk.yaml	src/ontology/lepao-odk.yaml	1.2.30
+jmillanacosta/eNMO	enmo-odk.yaml	src/ontology/enmo-odk.yaml	1.3.1
+jmillanacosta/ontojavi	test-odk.yaml	src/ontology/test-odk.yaml	1.3.1
+kharchenkolab/cap_ontology	capo-odk.yaml	src/ontology/capo-odk.yaml	1.3.1
+laurenechan/chemical-mixture-ontology	cmixo-odk.yaml	src/scripts/cmixo-odk.yaml	1.2.23
+luis-gonzalez-m/Collembola	clao-odk.yaml	src/ontology/clao-odk.yaml	1.2.29
+luis-gonzalez-m/lepao-original-version	lepao-odk.yaml	src/ontology/lepao-odk.yaml	1.2.23
+meng-ma-biomedical-AI/F29_HPO	hp-odk.yaml	src/metadata/hp-odk.yaml	1.2.19
+mgijax/mammalian-phenotype-ontology	mp-odk.yaml	src/ontology/mp-odk.yaml	1.3.1
+microbial-conditions-ontology/Microbial-Conditions-Ontology	mco-odk.yaml	src/ontology/mco-odk.yaml	1.2.24
+mjklep/AISM	aism-odk.yaml	src/ontology/aism-odk.yaml	1.2.27
+mjklep/LepAO	lepao-odk.yaml	src/ontology/lepao-odk.yaml	1.2.25
+monarch-initiative/GENO-ontology	geno-odk.yaml	src/ontology/geno-odk.yaml	unknown
+monarch-initiative/MAxO	maxo-odk.yaml	src/ontology/maxo-odk.yaml	1.3.0
+monarch-initiative/mondo-ingest	mondo-ingest-odk.yaml	src/ontology/mondo-ingest-odk.yaml	1.3.2
+monarch-initiative/monochrom	chr-odk.yaml	src/ontology/chr-odk.yaml	1.2.31
+monarch-initiative/phenio	phenio-odk.yaml	src/ontology/phenio-odk.yaml	1.3.0
+monarch-initiative/vertebrate-breed-ontology	vbo-odk.yaml	src/ontology/vbo-odk.yaml	1.3.1
+NASA-IMPACT/sddo	sddo-odk.yaml	src/ontology/sddo-odk.yaml	1.3.0
+nasa/LSDAO	lsdao-odk.yaml	lsdao-odk.yaml	1.3.1
+NFDI4Chem/VibrationSpectroscopyOntology	vispro-odk.yaml	src/ontology/vispro-odk.yaml	1.3.1
+nicolevasilevsky/omia	omia-odk.yaml	src/ontology/omia-odk.yaml	1.2.26
+obo-behavior/behavior-ontology	nbo-odk.yaml	src/ontology/nbo-odk.yaml	1.3.0
+OBOFoundry/COB	cob-odk.yaml	src/ontology/cob-odk.yaml	1.3.1
+obophenotype/bio-attribute-ontology	oba-odk.yaml	src/ontology/oba-odk.yaml	1.3.1
+obophenotype/biological-spatial-ontology	bspo-odk.yaml	src/ontology/bspo-odk.yaml	1.3.1
+obophenotype/c-elegans-development-ontology	wbls-odk.yaml	src/ontology/wbls-odk.yaml	1.3.1
+obophenotype/c-elegans-gross-anatomy-ontology	wbbt-odk.yaml	src/ontology/wbbt-odk.yaml	1.2.22
+obophenotype/c-elegans-phenotype-ontology	wbphenotype-odk.yaml	src/ontology/wbphenotype-odk.yaml	1.3.1
+obophenotype/caro	caro-odk.yaml	src/ontology/caro-odk.yaml	1.3.0
+obophenotype/cell-ontology	cl-odk.yaml	src/metadata/cl-odk.yaml	1.3.1
+obophenotype/dicty-phenotype-ontology	ddpheno-odk.yaml	src/ontology/ddpheno-odk.yaml	1.3.0
+obophenotype/planaria-ontology	plana-odk.yaml	src/ontology/plana-odk.yaml	1.3.0
+obophenotype/planarian-phenotype-ontology	planp-odk.yaml	src/ontology/planp-odk.yaml	1.2.20
+obophenotype/provisional_cell_ontology	pcl-odk.yaml	src/ontology/pcl-odk.yaml	1.3.0
+obophenotype/upheno	upheno-odk.yaml	src/ontology/upheno-odk.yaml	1.3.0
+obophenotype/upheno-dev	upheno-odk.yaml	src/ontology/upheno-odk.yaml	1.2.20
+obophenotype/xenopus-phenotype-ontology	xpo-odk.yaml	src/ontology/xpo-odk.yaml	1.3.0
+obophenotype/zebrafish-phenotype-ontology	zp-odk.yaml	src/metadata/zp-odk.yaml	1.2.31
+pato-ontology/pato	pato-odk.yaml	src/ontology/pato-odk.yaml	1.3.1
+PennTURBO/turbo-ontology	turbo-odk.yaml	src/ontology/target/turbo/src/ontology/turbo-odk.yaml	1.3.0
+PHI-base/phipo	phipo-odk.yaml	src/ontology/phipo-odk.yaml	1.2.28
+pombase/fypo	fypo-odk.yaml	src/ontology/fypo-odk.yaml	1.3.1
+PopulationAndCommunityOntology/pco	pco-odk.yaml	src/ontology/pco-odk.yaml	1.2.21
+Radiobiology-Informatics-Consortium/RBO	rbo-odk.yaml	src/ontology/rbo-odk.yaml	1.3.0
+StroemPhi/odktest	odktest-odk.yaml	src/ontology/odktest-odk.yaml	1.2.32
+tibonto/aeon	aeon-odk.yaml	src/ontology/aeon-odk.yaml	1.3.1
+UA-SRC-data/srpdio	srpdio-odk.yaml	src/ontology/srpdio-odk.yaml	1.3.0
+ubyndr/uberon	uberon-odk.yaml	src/ontology/uberon-odk.yaml	1.2.32
+ufbmi/dron	dron-odk.yaml	src/ontology/dron-odk.yaml	1.2.27
+ufbmi/OMRSE	omrse-odk.yaml	src/ontology/omrse-odk.yaml	1.3.0
+ufbmi/ORCS	orcs-odk.yaml	src/ontology/target/orcs/src/ontology/orcs-odk.yaml	1.3.0
+VirtualFlyBrain/vfb-driver-ontology	VFB_drivers-odk.yaml	src/ontology/VFB_drivers-odk.yaml	1.3.1
+VirtualFlyBrain/vfb-extension-ontology	vfbext-odk.yaml	src/ontology/vfbext-odk.yaml	1.3.1
+VirtualFlyBrain/vfb-scRNAseq-gene-annotations	VFB_scRNAseq_genes-odk.yaml	src/ontology/VFB_scRNAseq_genes-odk.yaml	1.3.1
+VirtualFlyBrain/vfb-scRNAseq-ontology	VFB_scRNAseq-odk.yaml	src/ontology/VFB_scRNAseq-odk.yaml	1.3.1
+ybradford/zebrafish-experimental-conditions-ontology	zeco-odk.yaml	src/ontology/zeco-odk.yaml	1.2.23
+zmanalo/gombo	gombo-odk.yaml	src/ontology/gombo-odk.yaml	1.3.0
