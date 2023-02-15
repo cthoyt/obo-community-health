@@ -2,7 +2,7 @@
   email: cjmungall@lbl.gov
   github: cmungall
   label: Chris Mungall
-  last_active: 2022-09-03 02:21:29
+  last_active: 2023-02-14 16:12:40
   last_active_recent: true
   ontologies:
   - bspo
@@ -20,7 +20,7 @@
   email: yongqunh@med.umich.edu
   github: yongqunh
   label: Yongqunh He
-  last_active: 2022-09-03 17:12:48
+  last_active: 2023-02-14 02:56:57
   last_active_recent: true
   ontologies:
   - cido
@@ -38,7 +38,7 @@
   email: frederic.bastian@unil.ch
   github: fbastian
   label: Frédéric Bastian
-  last_active: 2022-07-31 13:20:35
+  last_active: 2023-02-09 15:45:14
   last_active_recent: true
   ontologies:
   - cio
@@ -54,7 +54,7 @@
   email: jiezheng@pennmedicine.upenn.edu
   github: zhengj2007
   label: Jie Zheng
-  last_active: 2022-09-02 19:15:01
+  last_active: 2023-02-14 21:39:57
   last_active_recent: true
   ontologies:
   - bcgo
@@ -83,7 +83,7 @@
   email: lynn.schriml@gmail.com
   github: lschriml
   label: Lynn Schriml
-  last_active: 2022-08-30 14:19:59
+  last_active: 2023-02-13 18:59:39
   last_active_recent: true
   ontologies:
   - disdriv
@@ -97,7 +97,7 @@
   email: cp390@cam.ac.uk
   github: Clare72
   label: Clare Pilgrim
-  last_active: 2022-09-05 08:32:40
+  last_active: 2023-02-03 18:19:19
   last_active_recent: true
   ontologies:
   - dpo
@@ -111,8 +111,8 @@
   email: jaiswalp@science.oregonstate.edu
   github: jaiswalp
   label: Pankaj Jaiswal
-  last_active: null
-  last_active_recent: false
+  last_active: 2023-01-11 00:16:05
+  last_active_recent: true
   ontologies:
   - eo
   - pao
@@ -125,7 +125,7 @@
   email: hoganwr@gmail.com
   github: hoganwr
   label: Bill Hogan
-  last_active: 2022-09-02 12:12:39
+  last_active: 2023-01-26 16:48:28
   last_active_recent: true
   ontologies:
   - apollo_sv
@@ -138,7 +138,7 @@
   email: balhoff@renci.org
   github: balhoff
   label: Jim Balhoff
-  last_active: 2022-09-02 19:59:04
+  last_active: 2023-02-14 20:02:36
   last_active_recent: true
   ontologies:
   - cdao
@@ -151,7 +151,7 @@
   email: batchelorc@rsc.org
   github: batchelorc
   label: Colin Batchelor
-  last_active: 2022-08-12 16:08:22
+  last_active: 2022-12-13 11:16:56
   last_active_recent: true
   ontologies:
   - chmo
@@ -164,8 +164,8 @@
   email: mbrochhausen@gmail.com
   github: mbrochhausen
   label: Mathias Brochhausen
-  last_active: 2022-08-29 15:06:16
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - dideo
   - mpio
@@ -189,7 +189,7 @@
   email: rlwalls2008@gmail.com
   github: ramonawalls
   label: Ramona Walls
-  last_active: 2022-08-25 18:30:40
+  last_active: 2023-02-13 17:04:19
   last_active_recent: true
   ontologies:
   - bco
@@ -201,7 +201,7 @@
   email: vasilevs@ohsu.edu
   github: nicolevasilevsky
   label: Nicole Vasilevsky
-  last_active: 2022-09-02 22:52:22
+  last_active: 2023-02-15 02:36:01
   last_active_recent: true
   ontologies:
   - chiro
@@ -213,7 +213,7 @@
   email: jrsmith@mcw.edu
   github: jrsjrs
   label: Jennifer Smith
-  last_active: 2022-08-31 19:09:35
+  last_active: 2022-12-15 02:25:44
   last_active_recent: true
   ontologies:
   - cmo
@@ -225,7 +225,7 @@
   email: bpeters@lji.org
   github: bpeters42
   label: Bjoern Peters
-  last_active: 2022-08-29 16:44:15
+  last_active: 2023-02-07 16:54:16
   last_active_recent: true
   ontologies:
   - cob
@@ -237,7 +237,7 @@
   email: paul.fabry@usherbrooke.ca
   github: pfabry
   label: Paul Fabry
-  last_active: 2022-08-31 15:19:26
+  last_active: 2023-02-14 15:44:03
   last_active_recent: true
   ontologies:
   - cvdo
@@ -249,7 +249,7 @@
   email: Terry.Hayamizu@jax.org
   github: tfhayamizu
   label: Terry Hayamizu
-  last_active: 2022-09-02 15:29:51
+  last_active: 2022-11-17 22:43:27
   last_active_recent: true
   ontologies:
   - emap
@@ -261,7 +261,7 @@
   email: mjyoder@illinois.edu
   github: mjy
   label: Matt Yoder
-  last_active: 2022-09-04 16:50:46
+  last_active: 2023-02-15 02:49:29
   last_active_recent: true
   ontologies:
   - hao
@@ -285,7 +285,7 @@
   email: janna.hastings@gmail.com
   github: jannahastings
   label: Janna Hastings
-  last_active: 2022-08-29 19:30:24
+  last_active: 2023-02-10 10:35:38
   last_active_recent: true
   ontologies:
   - mf
@@ -297,7 +297,7 @@
   email: g.gkoutos@gmail.com
   github: gkoutos
   label: George Gkoutos
-  last_active: 2022-08-02 17:28:46
+  last_active: 2023-02-05 22:48:43
   last_active_recent: true
   ontologies:
   - nbo
@@ -332,7 +332,7 @@
   email: mcourtot@gmail.com
   github: mcourtot
   label: Melanie Courtot
-  last_active: 2022-08-23 13:33:52
+  last_active: 2023-02-14 21:21:48
   last_active_recent: true
   ontologies:
   - aero
@@ -343,7 +343,7 @@
   email: entiminae@gmail.com
   github: JCGiron
   label: Jennifer C. Giron
-  last_active: 2022-08-25 03:33:38
+  last_active: 2023-02-06 03:45:53
   last_active_recent: true
   ontologies:
   - aism
@@ -365,7 +365,7 @@
   email: haendel@ohsu.edu
   github: mellybelly
   label: Melissa Haendel
-  last_active: 2022-08-27 14:04:31
+  last_active: 2023-02-08 21:15:32
   last_active_recent: true
   ontologies:
   - caro
@@ -376,8 +376,8 @@
   email: lagonzalezmo@unal.edu.co
   github: luis-gonzalez-m
   label: Luis A. Gonzalez-Montana
-  last_active: null
-  last_active_recent: false
+  last_active: 2023-01-16 00:48:26
+  last_active_recent: true
   ontologies:
   - clao
   - lepao
@@ -387,7 +387,7 @@
   email: Lindsay.Cowell@utsouthwestern.edu
   github: lgcowell
   label: Lindsay Cowell
-  last_active: 2022-06-16 01:02:50
+  last_active: 2022-12-23 00:35:02
   last_active_recent: true
   ontologies:
   - dc_cl
@@ -398,7 +398,7 @@
   email: pfey@northwestern.edu
   github: pfey03
   label: Petra Fey
-  last_active: 2022-09-02 16:57:22
+  last_active: 2023-02-14 19:52:59
   last_active_recent: true
   ontologies:
   - ddanat
@@ -406,10 +406,10 @@
   orcid: 0000-0002-4532-2703
   wikidata: Q71564910
 - count: 2
-  email: p.buttigieg@gmail.com
+  email: pier.buttigieg@awi.de
   github: pbuttigieg
   label: Pier Luigi Buttigieg
-  last_active: 2022-09-01 15:41:49
+  last_active: 2023-02-13 15:25:06
   last_active_recent: true
   ontologies:
   - ecocore
@@ -420,7 +420,7 @@
   email: annethessen@gmail.com
   github: diatomsRcool
   label: Anne Thessen
-  last_active: 2022-08-25 20:23:14
+  last_active: 2023-02-13 13:59:29
   last_active_recent: true
   ontologies:
   - ecto
@@ -431,7 +431,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2022-09-05 10:13:31
+  last_active: 2023-02-15 14:40:39
   last_active_recent: true
   ontologies:
   - fao
@@ -442,7 +442,7 @@
   email: damion_dooley@sfu.ca
   github: ddooley
   label: Damion Dooley
-  last_active: 2022-09-05 02:55:50
+  last_active: 2023-02-15 00:03:33
   last_active_recent: true
   ontologies:
   - foodon
@@ -453,7 +453,7 @@
   email: mhb120@gmail.com
   github: mbrush
   label: Matthew Brush
-  last_active: 2022-09-02 16:58:46
+  last_active: 2023-02-08 02:41:12
   last_active_recent: true
   ontologies:
   - geno
@@ -464,8 +464,8 @@
   email: peteremidford@yahoo.com
   github: pmidford
   label: Peter Midford
-  last_active: null
-  last_active_recent: false
+  last_active: 2023-02-11 14:31:29
+  last_active_recent: true
   ontologies:
   - habronattus
   - loggerhead
@@ -486,7 +486,7 @@
   email: linikujp@gmail.com
   github: linikujp
   label: Asiyah Yu Lin
-  last_active: 2022-08-31 15:14:38
+  last_active: 2023-02-11 02:12:39
   last_active_recent: true
   ontologies:
   - ogi
@@ -497,13 +497,24 @@
   email: smr@stowers.org
   github: srobb1
   label: Sofia Robb
-  last_active: null
-  last_active_recent: false
+  last_active: 2023-02-14 20:08:58
+  last_active_recent: true
   ontologies:
   - plana
   - planp
   orcid: 0000-0002-3528-5267
   wikidata: Q63977883
+- count: 2
+  email: allyson.lister@oerc.ox.ac.uk
+  github: allysonlister
+  label: Allyson Lister
+  last_active: 2023-02-09 16:41:50
+  last_active_recent: true
+  ontologies:
+  - swo
+  - t4fs
+  orcid: 0000-0002-7702-4495
+  wikidata: Q41050709
 - count: 2
   email: pierre.sprumont@unifr.ch
   github: null
@@ -519,7 +530,7 @@
   email: wasila.dahdul@usd.edu
   github: wdahdul
   label: Wasila Dahdul
-  last_active: 2022-06-28 20:44:22
+  last_active: 2023-01-24 14:29:10
   last_active_recent: true
   ontologies:
   - tao
@@ -530,7 +541,7 @@
   email: cgrove@caltech.edu
   github: chris-grove
   label: Chris Grove
-  last_active: 2022-09-02 00:15:37
+  last_active: 2023-02-06 13:04:37
   last_active_recent: true
   ontologies:
   - wbls
@@ -541,7 +552,7 @@
   email: Erik.Segerdell@cchmc.org
   github: seger
   label: Erik Segerdell
-  last_active: 2022-08-31 17:18:41
+  last_active: 2023-02-06 23:45:42
   last_active_recent: true
   ontologies:
   - xao
@@ -552,7 +563,7 @@
   email: ybradford@zfin.org
   github: ybradford
   label: Yvonne Bradford
-  last_active: 2022-08-11 16:42:34
+  last_active: 2022-12-13 17:01:09
   last_active_recent: true
   ontologies:
   - zeco
@@ -563,7 +574,7 @@
   email: van_slyke@zfin.org
   github: cerivs
   label: Ceri Van Slyke
-  last_active: 2022-08-11 00:43:36
+  last_active: 2023-02-08 00:16:21
   last_active_recent: true
   ontologies:
   - zfa
@@ -574,7 +585,7 @@
   email: m.a.laporte@cgiar.org
   github: marieALaporte
   label: Marie-Angélique Laporte
-  last_active: 2022-09-02 08:43:04
+  last_active: 2023-01-19 13:23:32
   last_active_recent: true
   ontologies:
   - agro
@@ -594,7 +605,7 @@
   email: stacia@stanford.edu
   github: srengel
   label: Stacia R Engel
-  last_active: 2022-08-25 23:52:15
+  last_active: 2023-01-27 23:46:55
   last_active_recent: true
   ontologies:
   - apo
@@ -604,7 +615,7 @@
   email: mcarthua@mcmaster.ca
   github: agmcarthur
   label: Andrew G. McArthur
-  last_active: 2022-08-30 15:11:13
+  last_active: 2023-02-02 23:08:22
   last_active_recent: true
   ontologies:
   - aro
@@ -614,7 +625,7 @@
   email: phismith@buffalo.edu
   github: phismith
   label: Barry Smith
-  last_active: 2022-08-29 15:14:19
+  last_active: 2022-11-30 17:45:32
   last_active_recent: true
   ontologies:
   - bfo
@@ -634,8 +645,8 @@
   email: c.dudek@tu-braunschweig.de
   github: chdudek
   label: Christian-Alexander Dudek
-  last_active: null
-  last_active_recent: false
+  last_active: 2022-11-29 10:37:58
+  last_active_recent: true
   ontologies:
   - bto
   orcid: 0000-0001-9117-7909
@@ -644,7 +655,7 @@
   email: l.andres.hernandez.18@student.scu.edu.au
   github: LilyAndres
   label: Liliana Andres Hernandez
-  last_active: 2022-08-11 04:46:02
+  last_active: 2023-01-13 17:30:13
   last_active_recent: true
   ontologies:
   - cdno
@@ -654,7 +665,7 @@
   email: amalik@ebi.ac.uk
   github: amalik01
   label: Adnan Malik
-  last_active: 2022-08-31 13:26:39
+  last_active: 2023-02-09 09:47:04
   last_active_recent: true
   ontologies:
   - chebi
@@ -664,7 +675,7 @@
   email: egon.willighagen@gmail.com
   github: egonw
   label: Egon Willighagen
-  last_active: 2022-09-05 13:28:02
+  last_active: 2023-02-15 08:21:13
   last_active_recent: true
   ontologies:
   - cheminf
@@ -674,7 +685,7 @@
   email: addiehl@buffalo.edu
   github: addiehl
   label: Alexander Diehl
-  last_active: 2022-08-29 14:21:15
+  last_active: 2023-02-14 05:06:59
   last_active_recent: true
   ontologies:
   - cl
@@ -704,7 +715,7 @@
   email: engelsta@ohsu.edu
   github: markengelstad
   label: Mark Engelstad
-  last_active: 2022-08-23 16:08:28
+  last_active: 2023-01-13 00:32:05
   last_active_recent: true
   ontologies:
   - cmf
@@ -714,7 +725,7 @@
   email: whimar@ohsu.edu
   github: marijane
   label: Marijane White
-  last_active: 2022-09-01 23:36:40
+  last_active: 2023-01-14 22:55:47
   last_active_recent: true
   ontologies:
   - cro
@@ -744,7 +755,7 @@
   email: mgiglio@som.umaryland.edu
   github: mgiglio99
   label: Michelle Giglio
-  last_active: 2022-08-31 15:45:53
+  last_active: 2023-02-14 21:50:48
   last_active_recent: true
   ontologies:
   - eco
@@ -764,7 +775,7 @@
   email: wawong@gmail.com
   github: wawong
   label: Willy Wong
-  last_active: 2022-08-30 04:40:20
+  last_active: 2023-01-27 00:00:41
   last_active_recent: true
   ontologies:
   - fbbi
@@ -774,8 +785,8 @@
   email: georgeta.bordea@u-bordeaux.fr
   github: getbordea
   label: Georgeta Bordea
-  last_active: null
-  last_active_recent: false
+  last_active: 2022-11-17 06:37:04
+  last_active_recent: true
   ontologies:
   - fideo
   orcid: 0000-0001-9921-8234
@@ -784,7 +795,7 @@
   email: robert.hoehndorf@kaust.edu.sa
   github: leechuck
   label: Robert Hoehndorf
-  last_active: 2022-08-01 10:09:22
+  last_active: 2023-02-11 13:23:58
   last_active_recent: true
   ontologies:
   - flopo
@@ -814,7 +825,7 @@
   email: polcaes@gmail.com
   github: pcastellanoescuder
   label: Pol Castellano Escuder
-  last_active: 2022-08-31 18:24:06
+  last_active: 2023-02-13 17:43:44
   last_active_recent: true
   ontologies:
   - fobi
@@ -824,7 +835,7 @@
   email: meghan.balk@gmail.com
   github: megbalk
   label: Meghan Balk
-  last_active: 2022-09-03 17:06:35
+  last_active: 2023-02-10 23:27:40
   last_active_recent: true
   ontologies:
   - fovt
@@ -834,7 +845,7 @@
   email: rbca.jackson@gmail.com
   github: beckyjackson
   label: Rebecca Jackson
-  last_active: 2022-08-29 16:13:38
+  last_active: 2023-01-30 22:46:04
   last_active_recent: true
   ontologies:
   - gecko
@@ -844,7 +855,7 @@
   email: nje5@georgetown.edu
   github: edwardsnj
   label: Nathan Edwards
-  last_active: 2022-09-02 13:58:18
+  last_active: 2023-02-15 13:39:52
   last_active_recent: true
   ontologies:
   - gno
@@ -854,17 +865,17 @@
   email: suzia@stanford.edu
   github: suzialeksander
   label: Suzi Aleksander
-  last_active: 2022-08-29 22:52:28
+  last_active: 2023-02-10 20:52:49
   last_active_recent: true
   ontologies:
   - go
-  orcid: 0000-0001-6787-2901
-  wikidata: Q110610002
+  orcid: 0000-0002-8343-612X
+  wikidata: Q7650732
 - count: 1
   email: kronkcj@mail.uc.edu
   github: Superraptor
   label: Clair Kronk
-  last_active: 2022-07-24 16:41:28
+  last_active: 2023-01-23 20:47:43
   last_active_recent: true
   ontologies:
   - gsso
@@ -874,7 +885,7 @@
   email: danielle.welter@uni.lu
   github: daniwelter
   label: Danielle Welter
-  last_active: 2022-09-05 10:09:24
+  last_active: 2023-02-10 15:29:29
   last_active_recent: true
   ontologies:
   - hancestro
@@ -884,7 +895,7 @@
   email: dr.sebastian.koehler@gmail.com
   github: drseb
   label: Sebastian Koehler
-  last_active: 2022-08-31 03:10:52
+  last_active: 2023-01-23 14:56:28
   last_active_recent: true
   ontologies:
   - hp
@@ -894,7 +905,7 @@
   email: fernanda.dorea@sva.se
   github: nandadorea
   label: Fernanda Dorea
-  last_active: 2022-08-24 14:02:25
+  last_active: 2023-01-28 14:03:55
   last_active_recent: true
   ontologies:
   - hso
@@ -914,8 +925,8 @@
   email: liumeng94@sjtu.edu.cn
   github: Lemon-Liu
   label: Meng LIU
-  last_active: 2022-07-11 06:09:27
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - iceo
   orcid: 0000-0003-3781-6962
@@ -924,7 +935,7 @@
   email: jonrkarr@gmail.com
   github: jonrkarr
   label: Jonathan Karr
-  last_active: 2022-08-31 19:15:18
+  last_active: 2022-12-22 17:19:02
   last_active_recent: true
   ontologies:
   - kisao
@@ -933,7 +944,7 @@
 - count: 1
   email: bakerc@unb.ca
   github: null
-  label: Christipher Baker
+  label: Christopher Baker
   last_active: null
   last_active_recent: false
   ontologies:
@@ -954,7 +965,7 @@
   email: Leigh.Carmody@jax.org
   github: LCCarmody
   label: Leigh Carmody
-  last_active: 2022-08-29 15:31:19
+  last_active: 2023-02-10 21:28:25
   last_active_recent: true
   ontologies:
   - maxo
@@ -974,8 +985,8 @@
   email: druzinsk@uic.edu
   github: RDruzinsky
   label: Robert Druzinsky
-  last_active: 2022-08-23 16:25:01
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - mfmo
   orcid: 0000-0002-1572-1316
@@ -1004,7 +1015,7 @@
   email: hilmar.lapp@duke.edu
   github: hlapp
   label: Hilmar Lapp
-  last_active: 2022-09-03 22:06:33
+  last_active: 2023-02-05 22:02:45
   last_active_recent: true
   ontologies:
   - miapa
@@ -1034,7 +1045,7 @@
   email: stoeckrt@pcbi.upenn.edu
   github: cstoeckert
   label: Chris Stoeckert
-  last_active: 2022-09-01 21:35:27
+  last_active: 2023-02-15 14:15:57
   last_active_recent: true
   ontologies:
   - mo
@@ -1054,7 +1065,7 @@
   email: drsbello@gmail.com
   github: sbello
   label: Sue Bello
-  last_active: 2022-09-02 14:23:19
+  last_active: 2023-02-13 20:46:37
   last_active_recent: true
   ontologies:
   - mp
@@ -1064,7 +1075,7 @@
   email: pns12@hermes.cam.ac.uk
   github: PaulNSchofield
   label: Paul Schofield
-  last_active: 2022-09-05 10:04:34
+  last_active: 2023-01-19 16:09:51
   last_active_recent: true
   ontologies:
   - mpath
@@ -1081,6 +1092,16 @@
   orcid: 0000-0002-1767-2343
   wikidata: Q53584882
 - count: 1
+  email: dal.alghamdi92@gmail.com
+  github: dalalghamdi
+  label: Dalia Alghamdi
+  last_active: 2023-02-01 11:19:25
+  last_active_recent: true
+  ontologies:
+  - ngbo
+  orcid: null
+  wikidata: null
+- count: 1
   email: schober@imbi.uni-freiburg.de
   github: null
   label: Schober Daniel
@@ -1094,7 +1115,7 @@
   email: baeverma@jcvi.org
   github: BAevermann
   label: Brian Aevermann
-  last_active: 2022-08-29 23:58:31
+  last_active: 2023-02-06 02:37:14
   last_active_recent: true
   ontologies:
   - ogms
@@ -1104,7 +1125,7 @@
   email: wdduncan@gmail.com
   github: wdduncan
   label: Bill Duncan
-  last_active: 2022-09-04 23:42:30
+  last_active: 2023-02-10 18:05:07
   last_active_recent: true
   ontologies:
   - ohd
@@ -1144,7 +1165,7 @@
   email: francesco.vitali@ibba.cnr.it
   github: FrancescoVit
   label: Francesco Vitali
-  last_active: 2022-09-02 15:04:27
+  last_active: 2023-02-15 10:11:15
   last_active_recent: true
   ontologies:
   - ons
@@ -1154,7 +1175,7 @@
   email: fortuna@ebd.csic.es
   github: miguelfortuna
   label: Miguel A. Fortuna
-  last_active: 2022-08-24 10:01:55
+  last_active: 2023-01-10 12:53:45
   last_active_recent: true
   ontologies:
   - ontoavida
@@ -1164,7 +1185,7 @@
   email: fernanda.farinelli@gmail.com
   github: FernandaFarinelli
   label: Fernanda Farinelli
-  last_active: 2022-06-05 14:35:08
+  last_active: 2023-01-12 14:27:00
   last_active_recent: true
   ontologies:
   - ontoneo
@@ -1174,8 +1195,8 @@
   email: safisher@upenn.edu
   github: safisher
   label: Stephen Fisher
-  last_active: 2022-08-04 19:32:39
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - ornaseq
   orcid: 0000-0001-8034-7685
@@ -1184,7 +1205,7 @@
   email: davidos@ebi.ac.uk
   github: dosumis
   label: David Osumi-Sutherland
-  last_active: 2022-09-05 13:37:47
+  last_active: 2023-02-14 15:56:27
   last_active_recent: true
   ontologies:
   - pcl
@@ -1194,7 +1215,7 @@
   email: alayne.cuzick@rothamsted.ac.uk
   github: CuzickA
   label: Alayne Cuzick
-  last_active: 2022-08-25 11:56:59
+  last_active: 2023-02-08 15:21:30
   last_active_recent: true
   ontologies:
   - phipo
@@ -1224,7 +1245,7 @@
   email: dan5@georgetown.edu
   github: nataled
   label: Darren Natale
-  last_active: 2022-09-01 22:25:35
+  last_active: 2023-02-15 14:57:06
   last_active_recent: true
   ontologies:
   - pr
@@ -1234,8 +1255,8 @@
   email: wes_schafer@merck.com
   github: schaferw
   label: Wes Schafer
-  last_active: 2022-08-30 16:41:59
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - proco
   orcid: 0000-0002-8786-1756
@@ -1254,8 +1275,8 @@
   email: zachll@umich.edu
   github: zachll
   label: Zach Landis-Lewis
-  last_active: null
-  last_active_recent: false
+  last_active: 2023-02-05 15:09:03
+  last_active_recent: true
   ontologies:
   - psdo
   orcid: 0000-0002-9117-9338
@@ -1264,7 +1285,7 @@
   email: cooperl@oregonstate.edu
   github: cooperl09
   label: Laurel Cooper
-  last_active: 2022-08-11 21:14:30
+  last_active: 2023-02-14 23:40:34
   last_active_recent: true
   ontologies:
   - pso
@@ -1274,7 +1295,7 @@
   email: gthayman@mcw.edu
   github: gthayman
   label: G. Thomas Hayman
-  last_active: 2022-07-22 01:24:08
+  last_active: 2023-02-01 19:30:12
   last_active_recent: true
   ontologies:
   - pw
@@ -1284,7 +1305,7 @@
   email: daniel.c.berrios@nasa.gov
   github: DanBerrios
   label: Daniel C. Berrios
-  last_active: 2022-09-01 16:38:45
+  last_active: 2023-01-31 02:55:08
   last_active_recent: true
   ontologies:
   - rbo
@@ -1304,8 +1325,8 @@
   email: sjwang@mcw.edu
   github: shurjenw
   label: Shur-Jen Wang
-  last_active: 2022-08-30 21:55:03
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - rs
   orcid: 0000-0001-5256-8683
@@ -1324,8 +1345,8 @@
   email: sheriff@ebi.ac.uk
   github: rsmsheriff
   label: Rahuman Sheriff
-  last_active: 2022-08-15 14:40:09
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - sbo
   orcid: 0000-0003-0705-9809
@@ -1334,8 +1355,8 @@
   email: giant.plankton@gmail.com
   github: JadeHotchkiss
   label: Jade Hotchkiss
-  last_active: 2022-08-04 09:10:17
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - scdo
   orcid: 0000-0002-2193-0704
@@ -1344,8 +1365,8 @@
   email: keilbeck@genetics.utah.edu
   github: keilbeck
   label: Karen Eilbeck
-  last_active: 2022-08-31 19:03:26
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - so
   orcid: 0000-0002-0831-6427
@@ -1374,22 +1395,12 @@
   email: alejandra.gonzalez.beltran@gmail.com
   github: agbeltran
   label: Alejandra Gonzalez-Beltran
-  last_active: 2022-09-04 19:53:52
+  last_active: 2023-02-13 17:40:48
   last_active_recent: true
   ontologies:
   - stato
   orcid: 0000-0003-3499-8262
   wikidata: Q27824575
-- count: 1
-  email: allyson.lister@oerc.ox.ac.uk
-  github: allysonlister
-  label: Allyson Lister
-  last_active: 2022-09-04 10:35:52
-  last_active_recent: true
-  ontologies:
-  - swo
-  orcid: 0000-0002-7702-4495
-  wikidata: Q41050709
 - count: 1
   email: dsonensh@odu.edu
   github: null
@@ -1404,8 +1415,8 @@
   email: yuki.yamagata@riken.jp
   github: yuki-yamagata
   label: Yuki Yamagata
-  last_active: null
-  last_active_recent: false
+  last_active: 2023-01-24 11:14:32
+  last_active_recent: true
   ontologies:
   - txpo
   orcid: 0000-0002-9673-1283
@@ -1414,7 +1425,7 @@
   email: Anne.Morgat@sib.swiss
   github: amorgat
   label: Anne Morgat
-  last_active: 2022-09-05 12:51:08
+  last_active: 2023-01-27 10:59:45
   last_active_recent: true
   ontologies:
   - upa
@@ -1434,7 +1445,7 @@
   email: Sabrina@tislab.org
   github: sabrinatoro
   label: Sabrina Toro
-  last_active: 2022-09-02 17:39:04
+  last_active: 2023-02-14 19:11:10
   last_active_recent: true
   ontologies:
   - vbo
@@ -1444,8 +1455,8 @@
   email: caripark@iastate.edu
   github: caripark
   label: Carissa Park
-  last_active: 2022-08-02 21:13:37
-  last_active_recent: true
+  last_active: null
+  last_active_recent: false
   ontologies:
   - vt
   orcid: 0000-0002-2346-5201
@@ -1454,7 +1465,7 @@
   email: raymond@caltech.edu
   github: raymond91125
   label: Raymond Lee
-  last_active: 2022-08-31 18:36:54
+  last_active: 2023-02-14 19:03:32
   last_active_recent: true
   ontologies:
   - wbbt
@@ -1464,7 +1475,7 @@
   email: lutz.fischer@tu-berlin.de
   github: lutzfischer
   label: Lutz Fischer
-  last_active: 2022-09-05 07:40:35
+  last_active: 2023-02-15 15:09:32
   last_active_recent: true
   ontologies:
   - xlmod
