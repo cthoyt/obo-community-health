@@ -206,7 +206,7 @@
   - bila
   - mfo
   - pd_st
-  orcid: null
+  orcid: 0000-0002-1548-3290
   wikidata: null
 - count: 3
   email: vasilevs@ohsu.edu
@@ -326,7 +326,7 @@
   - nif_cell
   - nif_dysfunction
   - nif_grossanatomy
-  orcid: null
+  orcid: 0000-0003-4752-543X
   wikidata: null
 - count: 2
   email: david.c.blackburn@gmail.com
@@ -337,7 +337,7 @@
   ontologies:
   - aao
   - ato
-  orcid: null
+  orcid: 0000-0002-1810-9886
   wikidata: null
 - count: 2
   email: mcourtot@gmail.com
@@ -431,7 +431,7 @@
   email: vw253@cam.ac.uk
   github: ValWood
   label: Val Wood
-  last_active: 2023-11-12 10:29:31
+  last_active: 2023-11-13 08:32:14
   last_active_recent: true
   ontologies:
   - fao
@@ -869,7 +869,7 @@
   last_active_recent: true
   ontologies:
   - go
-  orcid: 0000-0002-8343-612X
+  orcid: 0000-0001-6787-2901
   wikidata: Q7650732
 - count: 1
   email: kronkcj@mail.uc.edu
@@ -949,7 +949,7 @@
   last_active_recent: false
   ontologies:
   - lipro
-  orcid: null
+  orcid: 0000-0003-4004-6479
   wikidata: null
 - count: 1
   email: julie@igbmc.u-strasbg.fr
@@ -989,7 +989,7 @@
   last_active_recent: true
   ontologies:
   - mcro
-  orcid: null
+  orcid: 0000-0003-4333-1857
   wikidata: null
 - count: 1
   email: druzinsk@uic.edu
@@ -1099,7 +1099,7 @@
   last_active_recent: false
   ontologies:
   - ngbo
-  orcid: null
+  orcid: 0000-0002-2801-0767
   wikidata: null
 - count: 1
   email: schober@imbi.uni-freiburg.de
@@ -1119,7 +1119,7 @@
   last_active_recent: true
   ontologies:
   - obib
-  orcid: null
+  orcid: 0009-0003-4268-6207
   wikidata: null
 - count: 1
   email: baeverma@jcvi.org
@@ -1329,7 +1329,7 @@
   last_active_recent: false
   ontologies:
   - resid
-  orcid: null
+  orcid: 0000-0002-4131-735X
   wikidata: null
 - count: 1
   email: sjwang@mcw.edu
@@ -1449,7 +1449,7 @@
   last_active_recent: false
   ontologies:
   - vario
-  orcid: null
+  orcid: 0000-0002-9614-7976
   wikidata: null
 - count: 1
   email: Sabrina@tislab.org

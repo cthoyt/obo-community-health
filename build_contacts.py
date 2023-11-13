@@ -83,17 +83,17 @@ def main(path: Optional[Path]):
         contact = record.get("contact", {})
         github_id = contact.get("github")
         email = contact.get("email")
+        orcid_id = contact.get("orcid") or EMAIL_ORCID_MAP.get(email)
         if github_id is None and email is not None:
             github_id = EMAIL_GITHUB_MAP.get(email)
         if github_id is not None:
             key = "github", github_id.casefold()
-            wikidata_id, orcid_id = get_wikidata_from_github(github_id)
+            wikidata_id, _ = get_wikidata_from_github(github_id)
             last_active = get_last_event(github_id)
         elif email is None or email in SKIP_EMAILS:
             continue
         else:
             key = "email", email.casefold()
-            orcid_id = EMAIL_ORCID_MAP.get(email)
             wikidata_id = EMAIL_WIKIDATA_MAP.get(email)
             last_active = None
 

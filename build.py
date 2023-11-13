@@ -250,7 +250,7 @@ class Result:
             score,
             self.contact_wikidata is not None,
             errors,
-            "could not look up contact on WikiData via GitHub",
+            "could not look up contact on Wikidata via GitHub",
         )
         score = adjust(
             score,
@@ -401,7 +401,7 @@ def get_data(
         contact_wikidata = contacts.get(contact_github, {}).get(
             "wikidata"
         ) or EMAIL_WIKIDATA_MAP.get(contact_email)
-        contact_orcid = contacts.get(contact_github, {}).get(
+        contact_orcid = contact.get("orcid") or contacts.get(contact_github, {}).get(
             "orcid"
         ) or EMAIL_ORCID_MAP.get(contact_email)
         contact_recent = contacts.get(contact_github, {}).get(
