@@ -41,7 +41,6 @@ def main(per_page: int):
         tqdm.write(f"loading page {page} of size {per_page}")
         _paginate(data, per_page, page)
 
-
     _rows = sorted(data.values(), key=lambda row: row["repository"].casefold())
 
     df = pd.DataFrame(_rows)
