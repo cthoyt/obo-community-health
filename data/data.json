@@ -2345,12 +2345,12 @@
     "messages": [
       "not using ODK"
     ],
-    "most_recent_datetime": "2023-12-21 22:35:02",
+    "most_recent_datetime": "2023-12-27 12:29:17",
     "most_recent_last_year": true,
-    "most_recent_number": 291,
+    "most_recent_number": 292,
     "odk_version": null,
     "ols_prefix": "foodon",
-    "open_issues": 66,
+    "open_issues": 67,
     "owner": "FoodOntology",
     "prefix": "foodon",
     "pushed_at": "2023-12-18 19:35:41",
@@ -2908,12 +2908,12 @@
     "messages": [
       "non-standard LICENSE given on GitHub"
     ],
-    "most_recent_datetime": "2023-12-26 17:46:49",
+    "most_recent_datetime": "2023-12-27 15:23:58",
     "most_recent_last_year": true,
-    "most_recent_number": 10266,
+    "most_recent_number": 10149,
     "odk_version": "1.3.1",
     "ols_prefix": "hp",
-    "open_issues": 1527,
+    "open_issues": 1524,
     "owner": "obophenotype",
     "prefix": "hp",
     "pushed_at": "2023-12-14 12:08:24",
@@ -3878,10 +3878,10 @@
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/obophenotype/developmental-stage-ontologies/wiki/MmusDv",
     "last_year_total_contributions": 0,
-    "last_year_unique_contributors": 10,
+    "last_year_unique_contributors": 0,
     "license": null,
-    "lifetime_total_contributions": 305,
-    "lifetime_unique_contributors": 10,
+    "lifetime_total_contributions": 0,
+    "lifetime_unique_contributors": 0,
     "messages": [
       "not using ODK",
       "no LICENSE on GitHub"
@@ -3900,13 +3900,13 @@
     "repo": "developmental-stage-ontologies",
     "repo_description": "Source files for various species-specific stage ontologies",
     "repo_homepage": "",
-    "score": 18,
+    "score": 16,
     "stars": 10,
     "title": "Mouse Developmental Stages",
-    "top_last_year_contributions": 8,
-    "top_last_year_contributor": "ANiknejad",
-    "top_lifetime_contributions": 102,
-    "top_lifetime_contributor": "fbastian"
+    "top_last_year_contributions": null,
+    "top_last_year_contributor": null,
+    "top_lifetime_contributions": null,
+    "top_lifetime_contributor": null
   },
   "mod": {
     "bioportal_prefix": "PSIMOD",
@@ -5589,7 +5589,7 @@
     "description": "An ontology of phenotypic qualities (properties, attributes or characteristics)",
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/pato-ontology/pato/",
-    "last_year_total_contributions": 0,
+    "last_year_total_contributions": 9,
     "last_year_unique_contributors": 0,
     "license": "bsd-3-clause",
     "lifetime_total_contributions": 0,
