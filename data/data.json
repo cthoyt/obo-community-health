@@ -2957,15 +2957,15 @@
     "messages": [
       "non-standard LICENSE given on GitHub"
     ],
-    "most_recent_datetime": "2024-04-05 20:21:38",
+    "most_recent_datetime": "2024-04-07 23:22:55",
     "most_recent_last_year": true,
-    "most_recent_number": 10431,
+    "most_recent_number": 10447,
     "odk_version": "1.3.1",
     "ols_prefix": "hp",
-    "open_issues": 571,
+    "open_issues": 573,
     "owner": "obophenotype",
     "prefix": "hp",
-    "pushed_at": "2024-04-04 20:47:56",
+    "pushed_at": "2024-04-07 14:58:22",
     "pushed_last_five_years": true,
     "pushed_last_year": true,
     "repo": "human-phenotype-ontology",
@@ -3485,10 +3485,10 @@
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/obophenotype/mouse-anatomy-ontology",
     "last_year_total_contributions": 0,
-    "last_year_unique_contributors": 0,
+    "last_year_unique_contributors": 5,
     "license": "other",
-    "lifetime_total_contributions": 0,
-    "lifetime_unique_contributors": 0,
+    "lifetime_total_contributions": 518,
+    "lifetime_unique_contributors": 5,
     "messages": [
       "not using ODK",
       "non-standard LICENSE given on GitHub"
@@ -3507,13 +3507,13 @@
     "repo": "mouse-anatomy-ontology",
     "repo_description": "Ontologies for mouse anatomy and development",
     "repo_homepage": "",
-    "score": 15,
+    "score": 17,
     "stars": 5,
     "title": "Mouse adult gross anatomy",
-    "top_last_year_contributions": null,
-    "top_last_year_contributor": null,
-    "top_lifetime_contributions": null,
-    "top_lifetime_contributor": null
+    "top_last_year_contributions": 5,
+    "top_last_year_contributor": "tfhayamizu",
+    "top_lifetime_contributions": 320,
+    "top_lifetime_contributor": "tfhayamizu"
   },
   "maxo": {
     "bioportal_prefix": "MAXO",
@@ -3754,10 +3754,10 @@
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/jannahastings/mental-functioning-ontology",
     "last_year_total_contributions": 0,
-    "last_year_unique_contributors": 3,
+    "last_year_unique_contributors": 0,
     "license": "other",
-    "lifetime_total_contributions": 86,
-    "lifetime_unique_contributors": 3,
+    "lifetime_total_contributions": 0,
+    "lifetime_unique_contributors": 0,
     "messages": [
       "not using ODK",
       "not recently pushed",
@@ -3777,13 +3777,13 @@
     "repo": "mental-functioning-ontology",
     "repo_description": "Ontology for all aspects of human mental functioning",
     "repo_homepage": "",
-    "score": 15,
+    "score": 16,
     "stars": 23,
     "title": "Mental Disease Ontology",
-    "top_last_year_contributions": 0,
-    "top_last_year_contributor": "sneakers-the-rat",
-    "top_lifetime_contributions": 84,
-    "top_lifetime_contributor": "jannahastings"
+    "top_last_year_contributions": null,
+    "top_last_year_contributor": null,
+    "top_lifetime_contributions": null,
+    "top_lifetime_contributor": null
   },
   "mi": {
     "bioportal_prefix": "MI",
@@ -3931,10 +3931,10 @@
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/obophenotype/developmental-stage-ontologies/wiki/MmusDv",
     "last_year_total_contributions": 0,
-    "last_year_unique_contributors": 0,
+    "last_year_unique_contributors": 9,
     "license": null,
-    "lifetime_total_contributions": 0,
-    "lifetime_unique_contributors": 0,
+    "lifetime_total_contributions": 306,
+    "lifetime_unique_contributors": 9,
     "messages": [
       "not using ODK",
       "no LICENSE on GitHub"
@@ -3953,13 +3953,13 @@
     "repo": "developmental-stage-ontologies",
     "repo_description": "Source files for various species-specific stage ontologies",
     "repo_homepage": "",
-    "score": 16,
+    "score": 18,
     "stars": 10,
     "title": "Mouse Developmental Stages",
-    "top_last_year_contributions": null,
-    "top_last_year_contributor": null,
-    "top_lifetime_contributions": null,
-    "top_lifetime_contributor": null
+    "top_last_year_contributions": 6,
+    "top_last_year_contributor": "matentzn",
+    "top_lifetime_contributions": 102,
+    "top_lifetime_contributor": "fbastian"
   },
   "mod": {
     "bioportal_prefix": "PSIMOD",
@@ -6639,7 +6639,7 @@
   },
   "slso": {
     "bioportal_prefix": null,
-    "bioregistry_prefix": null,
+    "bioregistry_prefix": "slso",
     "contact_email": "daniel.c.berrios@nasa.gov",
     "contact_github": "DanBerrios",
     "contact_label": "Dan Berrios",
@@ -6656,7 +6656,6 @@
     "lifetime_total_contributions": 0,
     "lifetime_unique_contributors": 0,
     "messages": [
-      "missing Bioregistry mapping",
       "missing BioPortal mapping",
       "missing OLS mapping",
       "missing obofoundry GitHub topic",
@@ -6676,7 +6675,7 @@
     "repo": "LSDAO",
     "repo_description": null,
     "repo_homepage": null,
-    "score": 1,
+    "score": 7,
     "stars": 1,
     "title": "Space Life Sciences Ontology",
     "top_last_year_contributions": null,
@@ -7877,10 +7876,10 @@
     "has_obofoundry_topic": false,
     "homepage": "https://wiki.zfin.org/display/general/Anatomy+Atlases+and+Resources",
     "last_year_total_contributions": 0,
-    "last_year_unique_contributors": 6,
+    "last_year_unique_contributors": 0,
     "license": "other",
-    "lifetime_total_contributions": 37,
-    "lifetime_unique_contributors": 6,
+    "lifetime_total_contributions": 0,
+    "lifetime_unique_contributors": 0,
     "messages": [
       "missing obofoundry GitHub topic",
       "non-standard LICENSE given on GitHub"
@@ -7902,10 +7901,10 @@
     "score": 13,
     "stars": 6,
     "title": "Zebrafish developmental stages ontology",
-    "top_last_year_contributions": 4,
-    "top_last_year_contributor": "cthoyt",
-    "top_lifetime_contributions": 12,
-    "top_lifetime_contributor": "cerivs"
+    "top_last_year_contributions": null,
+    "top_last_year_contributor": null,
+    "top_lifetime_contributions": null,
+    "top_lifetime_contributor": null
   },
   "zp": {
     "bioportal_prefix": "ZP",
