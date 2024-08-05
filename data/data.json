@@ -71,7 +71,7 @@
       "not using ODK",
       "no LICENSE on GitHub"
     ],
-    "most_recent_datetime": "2024-08-02 16:13:20",
+    "most_recent_datetime": "2024-08-04 18:44:20",
     "most_recent_last_year": true,
     "most_recent_number": 55,
     "odk_version": null,
@@ -1986,7 +1986,7 @@
     "messages": [
       "not using ODK"
     ],
-    "most_recent_datetime": "2024-08-02 17:29:23",
+    "most_recent_datetime": "2024-08-04 20:02:23",
     "most_recent_last_year": true,
     "most_recent_number": 1529,
     "odk_version": null,
@@ -3007,15 +3007,15 @@
     "messages": [
       "non-standard LICENSE given on GitHub"
     ],
-    "most_recent_datetime": "2024-08-03 17:18:18",
+    "most_recent_datetime": "2024-08-04 10:23:30",
     "most_recent_last_year": true,
-    "most_recent_number": 10653,
+    "most_recent_number": 10664,
     "odk_version": "1.3.1",
     "ols_prefix": "hp",
-    "open_issues": 102,
+    "open_issues": 94,
     "owner": "obophenotype",
     "prefix": "hp",
-    "pushed_at": "2024-08-03 18:14:09",
+    "pushed_at": "2024-08-04 11:28:37",
     "pushed_last_five_years": true,
     "pushed_last_year": true,
     "repo": "human-phenotype-ontology",
@@ -3535,10 +3535,10 @@
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/obophenotype/mouse-anatomy-ontology",
     "last_year_total_contributions": 0,
-    "last_year_unique_contributors": 0,
+    "last_year_unique_contributors": 5,
     "license": "other",
-    "lifetime_total_contributions": 0,
-    "lifetime_unique_contributors": 0,
+    "lifetime_total_contributions": 518,
+    "lifetime_unique_contributors": 5,
     "messages": [
       "not using ODK",
       "non-standard LICENSE given on GitHub"
@@ -3557,13 +3557,13 @@
     "repo": "mouse-anatomy-ontology",
     "repo_description": "Ontologies for mouse anatomy and development",
     "repo_homepage": "",
-    "score": 15,
+    "score": 17,
     "stars": 5,
     "title": "Mouse adult gross anatomy",
-    "top_last_year_contributions": null,
-    "top_last_year_contributor": null,
-    "top_lifetime_contributions": null,
-    "top_lifetime_contributor": null
+    "top_last_year_contributions": 2,
+    "top_last_year_contributor": "tfhayamizu",
+    "top_lifetime_contributions": 320,
+    "top_lifetime_contributor": "tfhayamizu"
   },
   "maxo": {
     "bioportal_prefix": "MAXO",
@@ -4077,12 +4077,12 @@
     "messages": [
       "not using ODK"
     ],
-    "most_recent_datetime": "2024-08-02 22:22:00",
+    "most_recent_datetime": "2024-08-04 07:32:18",
     "most_recent_last_year": true,
-    "most_recent_number": 7879,
+    "most_recent_number": 8028,
     "odk_version": null,
     "ols_prefix": "mondo",
-    "open_issues": 412,
+    "open_issues": 414,
     "owner": "monarch-initiative",
     "prefix": "mondo",
     "pushed_at": "2024-08-02 21:59:47",
@@ -6306,7 +6306,7 @@
     "description": "The Plant Stress Ontology describes biotic and abiotic stresses that a plant may encounter.",
     "has_obofoundry_topic": true,
     "homepage": "https://github.com/Planteome/plant-stress-ontology",
-    "last_year_total_contributions": 313,
+    "last_year_total_contributions": 0,
     "last_year_unique_contributors": 0,
     "license": null,
     "lifetime_total_contributions": 0,
@@ -7242,9 +7242,9 @@
     "messages": [
       "non-standard LICENSE given on GitHub"
     ],
-    "most_recent_datetime": "2024-08-02 02:01:36",
+    "most_recent_datetime": "2024-08-04 02:06:16",
     "most_recent_last_year": true,
-    "most_recent_number": 3295,
+    "most_recent_number": 3005,
     "odk_version": "1.3.1",
     "ols_prefix": "uberon",
     "open_issues": 283,
