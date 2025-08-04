@@ -1,129 +1,132 @@
 count	github	label	email	wikidata	orcid	last_active	last_active_recent
-9	cmungall	Chris Mungall	cjmungall@lbl.gov	Q20746118	0000-0002-6601-2165	2023-11-12 18:05:43	True
-9	yongqunh	Yongqunh He	yongqunh@med.umich.edu	Q30512667	0000-0001-9189-9661	2023-11-04 18:16:49	True
-7	fbastian	Frédéric Bastian	frederic.bastian@unil.ch	Q96209982	0000-0002-9415-5104	2023-11-03 09:00:15	True
-5	Clare72	Clare Pilgrim	cp390@cam.ac.uk	Q91739788	0000-0002-1373-1705	2023-11-10 16:49:40	True
-5	jaiswalp	Pankaj Jaiswal	jaiswalp@science.oregonstate.edu	Q41294868	0000-0002-1005-8383	2023-09-05 20:28:48	True
-5	lschriml	Lynn Schriml	lynn.schriml@gmail.com	Q28913673	0000-0001-8910-9851	2023-11-09 20:20:40	True
-5	zhengj2007	Jie Zheng	jiezheng@pennmedicine.upenn.edu	Q90780528	0000-0002-2999-0103	2023-11-10 16:51:45	True
+9	cmungall	Chris Mungall	cjmungall@lbl.gov	Q20746118	0000-0002-6601-2165	2025-08-03 20:07:57	True
+9	yongqunh	Yongqunh He	yongqunh@med.umich.edu	Q30512667	0000-0001-9189-9661	2025-07-08 18:02:20	True
+7	fbastian	Frédéric Bastian	frederic.bastian@unil.ch	Q96209982	0000-0002-9415-5104		False
+7	zhengj2007	Jie Zheng	zhengj2007@gmail.com	Q90780528	0000-0002-2999-0103	2025-07-31 19:44:54	True
+5	Clare72	Clare Pilgrim	cp390@cam.ac.uk	Q91739788	0000-0002-1373-1705	2025-07-30 14:24:22	True
+5	jaiswalp	Pankaj Jaiswal	jaiswalp@science.oregonstate.edu	Q41294868	0000-0002-1005-8383		False
+5	lschriml	Lynn Schriml	lynn.schriml@gmail.com	Q28913673	0000-0001-8910-9851	2025-07-21 16:02:56	True
 5		Jonathan Bard	j.bard@ed.ac.uk				False
-4	balhoff	Jim Balhoff	balhoff@renci.org	Q37649212	0000-0002-8688-6599	2023-11-10 19:25:09	True
-4	batchelorc	Colin Batchelor	batchelorc@rsc.org	Q28923515	0000-0001-5985-7429	2023-09-20 10:20:49	True
-4	hoganwr	Bill Hogan	hoganwr@gmail.com	Q56590169	0000-0002-9881-1017	2023-11-05 18:02:34	True
-4	mbrochhausen	Mathias Brochhausen	mbrochhausen@gmail.com	Q57161944	0000-0003-1834-3856	2023-10-25 20:45:16	True
+4	akodamullil	Alpha Tom Kodamullil	alpha.tom.kodamullil@scai.fraunhofer.de	Q30002211	0000-0001-9896-3531		False
+4	balhoff	Jim Balhoff	balhoff@renci.org	Q37649212	0000-0002-8688-6599	2025-07-31 16:51:20	True
+4	batchelorc	Colin Batchelor	batchelorc@rsc.org	Q28923515	0000-0001-5985-7429		False
+4	hoganwr	Bill Hogan	hoganwr@gmail.com	Q56590169	0000-0002-9881-1017	2025-07-30 15:56:08	True
+4	mbrochhausen	Mathias Brochhausen	mbrochhausen@gmail.com	Q57161944	0000-0003-1834-3856		False
 3	ThorstenHen	Thorsten Henrich	henrich@embl.de		0000-0002-1548-3290		False
-3	akodamullil	Alpha Tom Kodamullil	alpha.tom.kodamullil@scai.fraunhofer.de	Q30002211	0000-0001-9896-3531		False
-3	bpeters42	Bjoern Peters	bpeters@lji.org	Q60541156	0000-0002-8457-6693	2023-11-11 02:43:11	True
-3	gkoutos	George Gkoutos	g.gkoutos@gmail.com	Q54303216	0000-0002-2061-091X	2023-10-20 10:17:45	True
-3	jannahastings	Janna Hastings	janna.hastings@gmail.com	Q27902110	0000-0002-3469-4923	2023-11-10 14:08:40	True
-3	jrsjrs	Jennifer Smith	jrsmith@mcw.edu	Q110616111	0000-0002-6443-9376	2023-11-09 18:28:22	True
-3	mjy	Matt Yoder	mjyoder@illinois.edu	Q21387534	0000-0002-5640-5491	2023-11-10 21:25:16	True
-3	nicolevasilevsky	Nicole Vasilevsky	vasilevs@ohsu.edu	Q42763131	0000-0001-5208-3432	2023-11-09 23:46:00	True
-3	pfabry	Paul Fabry	paul.fabry@usherbrooke.ca	Q108555457	0000-0002-3336-2476	2023-11-10 15:51:26	True
-3	ramonawalls	Ramona Walls	rlwalls2008@gmail.com	Q63240627	0000-0001-8815-0078	2023-11-09 22:21:38	True
-3	tfhayamizu	Terry Hayamizu	Terry.Hayamizu@jax.org	Q110610432	0000-0002-0956-8634	2023-10-25 19:51:40	True
+3	bpeters42	Bjoern Peters	bpeters@lji.org	Q60541156	0000-0002-8457-6693		False
+3	gkoutos	George Gkoutos	g.gkoutos@gmail.com	Q54303216	0000-0002-2061-091X		False
+3	jannahastings	Janna Hastings	janna.hastings@gmail.com	Q27902110	0000-0002-3469-4923		False
+3	jrsjrs	Jennifer Smith	jrsmith@mcw.edu	Q110616111	0000-0002-6443-9376		False
+3	mjy	Matt Yoder	mjyoder@illinois.edu	Q21387534	0000-0002-5640-5491	2025-08-01 20:32:48	True
+3	pfabry	Paul Fabry	paul.fabry@usherbrooke.ca	Q108555457	0000-0002-3336-2476	2025-08-02 21:30:54	True
+3	ramonawalls	Ramona Walls	rlwalls2008@gmail.com	Q63240627	0000-0001-8815-0078	2025-07-27 21:31:07	True
+3	tfhayamizu	Terry Hayamizu	Terry.Hayamizu@jax.org	Q110610432	0000-0002-0956-8634		False
 3		Pantelis Topalis	topalis@imbb.forth.gr				False
 3		Fahim Imam	smtifahim@gmail.com		0000-0003-4752-543X		False
+2	DanBerrios	Dan Berrios	daniel.c.berrios@nasa.gov	Q110610825	0000-0003-4312-9552	2025-07-31 16:46:14	True
 2	Huang-OMIT	Jingshan Huang	huang@southalabama.edu	Q88033382	0000-0003-2408-2883		False
-2	JCGiron	Jennifer C. Giron	entiminae@gmail.com	Q28859986	0000-0002-0851-6883		False
-2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2023-11-13 08:32:14	True
-2	allysonlister	Allyson Lister	allyson.lister@oerc.ox.ac.uk	Q41050709	0000-0002-7702-4495	2023-11-09 13:39:19	True
-2	cerivs	Ceri Van Slyke	van_slyke@zfin.org	Q58034214	0000-0002-2244-7917	2023-10-30 21:57:51	True
-2	chris-grove	Chris Grove	cgrove@caltech.edu	Q55915095	0000-0001-9076-6015	2023-11-09 17:01:18	True
-2	ddooley	Damion Dooley	damion_dooley@sfu.ca	Q91868864	0000-0002-8844-9165	2023-11-10 17:54:13	True
-2	diatomsRcool	Anne Thessen	annethessen@gmail.com	Q47503085	0000-0002-2908-3327	2023-11-03 13:33:24	True
+2	JCGiron	Jennifer C. Giron	entiminae@gmail.com	Q28859986	0000-0002-0851-6883	2025-08-04 06:12:22	True
+2	ValWood	Val Wood	vw253@cam.ac.uk	Q41048908	0000-0001-6330-7526	2025-08-03 20:29:21	True
+2	allysonlister	Allyson Lister	allyson.lister@oerc.ox.ac.uk	Q41050709	0000-0002-7702-4495	2025-08-01 11:25:19	True
+2	cerivs	Ceri Van Slyke	van_slyke@zfin.org	Q58034214	0000-0002-2244-7917	2025-07-25 18:38:28	True
+2	chris-grove	Chris Grove	cgrove@caltech.edu	Q55915095	0000-0001-9076-6015	2025-08-02 18:33:09	True
+2	ddooley	Damion Dooley	damion_dooley@sfu.ca	Q91868864	0000-0002-8844-9165	2025-08-01 16:50:58	True
+2	diatomsRcool	Anne Thessen	annethessen@gmail.com	Q47503085	0000-0002-2908-3327		False
 2	lgcowell	Lindsay Cowell	Lindsay.Cowell@utsouthwestern.edu	Q89259560	0000-0003-1617-8244		False
-2	linikujp	Asiyah Yu Lin	linikujp@gmail.com	Q61054524	0000-0002-5379-5359	2023-11-03 18:19:09	True
+2	linikujp	Asiyah Yu Lin	linikujp@gmail.com	Q61054524	0000-0002-5379-5359	2025-07-23 14:49:53	True
 2	luis-gonzalez-m	Luis A. Gonzalez-Montana	lagonzalezmo@unal.edu.co	Q110610618	0000-0002-9136-9932		False
-2	mbrush	Matthew Brush	mhb120@gmail.com	Q88110949	0000-0002-1048-5019	2023-11-04 00:09:36	True
-2	mcourtot	Melanie Courtot	mcourtot@gmail.com	Q23809262	0000-0002-9551-6370	2023-11-03 22:29:58	True
-2	mellybelly	Melissa Haendel	haendel@ohsu.edu	Q28368079	0000-0001-9114-8737		False
-2	pbuttigieg	Pier Luigi Buttigieg	pier.buttigieg@awi.de	Q41566750	0000-0002-4366-3088	2023-11-03 14:02:11	True
-2	pfey03	Petra Fey	pfey@northwestern.edu	Q71564910	0000-0002-4532-2703	2023-10-29 03:40:14	True
-2	pmidford	Peter Midford	peteremidford@yahoo.com	Q47502208	0000-0001-6512-3296	2023-11-12 14:25:11	True
-2	seger	Erik Segerdell	Erik.Segerdell@cchmc.org	Q54303422	0000-0002-9611-1279	2023-11-03 22:18:20	True
-2	srobb1	Sofia Robb	smr@stowers.org	Q63977883	0000-0002-3528-5267	2023-10-30 19:57:00	True
-2	wdahdul	Wasila Dahdul	wasila.dahdul@usd.edu	Q37649170	0000-0003-3162-7490	2023-11-10 00:41:59	True
-2	ybradford	Yvonne Bradford	ybradford@zfin.org	Q37649111	0000-0002-9900-7880	2023-11-06 18:57:13	True
+2	mbrush	Matthew Brush	mhb120@gmail.com	Q88110949	0000-0002-1048-5019	2025-08-03 15:48:25	True
+2	mcourtot	Melanie Courtot	mcourtot@gmail.com	Q23809262	0000-0002-9551-6370		False
+2	nicolevasilevsky	Nicole Vasilevsky	nicole@tislab.org	Q42763131	0000-0001-5208-3432	2025-07-22 16:45:31	True
+2	pbuttigieg	Pier Luigi Buttigieg	pier.buttigieg@awi.de	Q41566750	0000-0002-4366-3088		False
+2	pfey03	Petra Fey	pfey@northwestern.edu	Q71564910	0000-0002-4532-2703		False
+2	pmidford	Peter Midford	peteremidford@yahoo.com	Q47502208	0000-0001-6512-3296	2025-07-06 16:42:06	True
+2	seger	Erik Segerdell	Erik.Segerdell@cchmc.org	Q54303422	0000-0002-9611-1279	2025-07-25 20:58:18	True
+2	srobb1	Sofia Robb	smr@stowers.org	Q63977883	0000-0002-3528-5267		False
+2	wdahdul	Wasila Dahdul	wasila.dahdul@usd.edu	Q37649170	0000-0003-3162-7490		False
+2	ybradford	Yvonne Bradford	ybradford@zfin.org	Q37649111	0000-0002-9900-7880	2025-07-21 23:22:59	True
 2		David Blackburn	david.c.blackburn@gmail.com		0000-0002-1810-9886		False
 2		Pierre Sprumont	pierre.sprumont@unifr.ch				False
-1	BAevermann	Brian Aevermann	baeverma@jcvi.org	Q102405308	0000-0003-1346-1327	2023-11-02 00:10:31	True
-1	CuzickA	Alayne Cuzick	alayne.cuzick@rothamsted.ac.uk	Q92917957	0000-0001-8941-3984	2023-11-08 09:18:17	True
-1	DanBerrios	Daniel C. Berrios	daniel.c.berrios@nasa.gov	Q110610825	0000-0003-4312-9552	2023-11-06 19:37:06	True
-1	FernandaFarinelli	Fernanda Farinelli	fernanda.farinelli@gmail.com	Q110610945	0000-0003-2338-8872	2023-08-27 23:22:08	True
-1	FrancescoVit	Francesco Vitali	francesco.vitali@ibba.cnr.it	Q86943233	0000-0001-9125-4337		False
+1	BAevermann	Brian Aevermann	baeverma@jcvi.org	Q102405308	0000-0003-1346-1327		False
+1	CuzickA	Alayne Cuzick	alayne.cuzick@rothamsted.ac.uk	Q92917957	0000-0001-8941-3984		False
+1	FernandaFarinelli	Fernanda Farinelli	fernanda.farinelli@gmail.com	Q110610945	0000-0003-2338-8872		False
+1	FrancescoVit	Francesco Vitali	francesco.vitali@ibba.cnr.it	Q86943233	0000-0001-9125-4337	2025-07-31 09:12:22	True
 1	JadeHotchkiss	Jade Hotchkiss	giant.plankton@gmail.com	Q110611760	0000-0002-2193-0704		False
-1	L-Leclere	Lucas Leclere	lucas.leclere@obs-vlfr.fr	Q83382941	0000-0002-7440-0467		False
-1	LCCarmody	Leigh Carmody	Leigh.Carmody@jax.org	Q43155252	0000-0001-7941-2961	2023-11-09 22:04:24	True
-1	Lemon-Liu	Meng LIU	liumeng94@sjtu.edu.cn	Q110694748	0000-0003-3781-6962	2023-10-09 19:34:18	True
-1	LilyAndres	Liliana Andres Hernandez	l.andres.hernandez.18@student.scu.edu.au	Q110610182	0000-0002-7696-731X	2023-10-25 23:55:30	True
-1	PaulNSchofield	Paul Schofield	pns12@hermes.cam.ac.uk	Q56958202	0000-0002-5111-7263	2023-11-09 15:12:41	True
-1	ProfTuan	Tuan Amith	muamith@utmb.edu		0000-0003-4333-1857	2023-11-12 18:15:36	True
-1	RDruzinsky	Robert Druzinsky	druzinsk@uic.edu	Q56986004	0000-0002-1572-1316	2023-10-31 16:04:25	True
-1	Superraptor	Clair Kronk	kronkcj@mail.uc.edu	Q89057451	0000-0001-8397-8810	2023-10-25 02:48:17	True
-1	addiehl	Alexander Diehl	addiehl@buffalo.edu	Q47502183	0000-0001-9990-8331	2023-11-08 19:39:55	True
+1	LCCarmody	Leigh Carmody	Leigh.Carmody@jax.org	Q43155252	0000-0001-7941-2961		False
+1	Leclere-L	Lucas Leclere	lucas.leclere@obs-banyuls.fr		0000-0002-7440-0467		False
+1	Lemon-Liu	Meng LIU	liumeng94@sjtu.edu.cn	Q110694748	0000-0003-3781-6962		False
+1	LilyAndres	Liliana Andres Hernandez	landreshdz@gmail.com	Q110610182	0000-0002-7696-731X	2025-08-04 01:05:57	True
+1	Melek-C	Melek Chaouch	mcmelek@msn.com		0000-0001-5868-4204	2025-07-28 12:09:46	True
+1	PaulNSchofield	Paul Schofield	pns12@hermes.cam.ac.uk	Q56958202	0000-0002-5111-7263	2025-07-31 15:34:20	True
+1	ProfTuan	Tuan Amith	muamith@utmb.edu		0000-0003-4333-1857	2025-07-31 00:07:42	True
+1	RDruzinsky	Robert Druzinsky	druzinsk@uic.edu	Q56986004	0000-0002-1572-1316		False
+1	Superraptor	Clair Kronk	kronkcj@mail.uc.edu	Q89057451	0000-0001-8397-8810	2025-07-23 17:59:01	True
+1	addiehl	Alexander Diehl	addiehl@buffalo.edu	Q47502183	0000-0001-9990-8331	2025-07-28 14:36:40	True
+1	adeans	Andy Deans	adeans@psu.edu		0000-0002-2119-4663		False
 1	aellenhicks	Amanda Hicks	aellenhicks@gmail.com	Q110848989	0000-0002-1795-5570		False
-1	agbeltran	Alejandra Gonzalez-Beltran	alejandra.gonzalez.beltran@gmail.com	Q27824575	0000-0003-3499-8262	2023-11-08 13:57:31	True
-1	agmcarthur	Andrew G. McArthur	mcarthua@mcmaster.ca	Q47503094	0000-0002-1142-3063	2023-11-12 16:55:22	True
-1	amalik01	Adnan Malik	amalik@ebi.ac.uk	Q110611768	0000-0001-8123-5351	2023-11-08 10:58:12	True
-1	amorgat	Anne Morgat	Anne.Morgat@sib.swiss	Q56604104	0000-0002-1216-2969	2023-08-21 10:15:56	True
+1	agmcarthur	Andrew G. McArthur	mcarthua@mcmaster.ca	Q47503094	0000-0002-1142-3063	2025-07-07 14:53:08	True
+1	amalik01	Adnan Malik	amalik@ebi.ac.uk	Q110611768	0000-0001-8123-5351	2025-07-24 14:37:56	True
+1	amorgat	Anne Morgat	Anne.Morgat@sib.swiss	Q56604104	0000-0002-1216-2969		False
 1	beckyjackson	Rebecca Jackson	rbca.jackson@gmail.com	Q59539088	0000-0003-4871-5569		False
-1	bobthacker	Bob Thacker	robert.thacker@stonybrook.edu	Q61601010	0000-0002-9654-0073		False
+1	bobthacker	Bob Thacker	robert.thacker@stonybrook.edu	Q61601010	0000-0002-9654-0073	2025-07-21 17:28:18	True
 1	caripark	Carissa Park	caripark@iastate.edu	Q110623830	0000-0002-2346-5201		False
 1	carrineblank	Carrine Blank	carrine.blank@umontana.edu	Q83663133	0000-0002-2100-6351		False
-1	chdudek	Christian-Alexander Dudek	c.dudek@tu-braunschweig.de	Q64784897	0000-0001-9117-7909	2023-10-03 10:55:08	True
-1	citmejia	Citlalli Mejía-Almonte	citlalli.mejiaalmonte@gmail.com	Q58314966	0000-0002-0142-5591	2023-11-08 22:19:46	True
-1	cooperl09	Laurel Cooper	cooperl@oregonstate.edu	Q89869027	0000-0002-6379-8932	2023-11-10 16:30:12	True
-1	cstoeckert	Chris Stoeckert	stoeckrt@pcbi.upenn.edu	Q67220657	0000-0002-5714-991X	2023-10-01 01:50:36	True
+1	chdudek	Christian-Alexander Dudek	c.dudek@tu-braunschweig.de	Q64784897	0000-0001-9117-7909		False
+1	citmejia	Citlalli Mejía-Almonte	citlalli.mejiaalmonte@gmail.com	Q58314966	0000-0002-0142-5591	2025-08-03 18:53:01	True
+1	cooperl09	Laurel Cooper	cooperl@oregonstate.edu	Q89869027	0000-0002-6379-8932	2025-08-03 17:25:16	True
+1	cstoeckert	Chris Stoeckert	stoeckrt@pcbi.upenn.edu	Q67220657	0000-0002-5714-991X		False
 1	cyang0128	Chen Yang	chenyangnutrition@gmail.com	Q87909789	0000-0001-9202-5309		False
-1	dalalghamdi	Dalia Alghamdi	dal.alghamdi92@gmail.com		0000-0002-2801-0767		False
-1	daniwelter	Danielle Welter	dwelter.ontologist@gmail.com	Q55473247	0000-0003-1058-2668	2023-10-23 13:18:00	True
-1	dosumis	David Osumi-Sutherland	davidos@ebi.ac.uk	Q54303418	0000-0002-7073-9172	2023-11-10 18:03:38	True
-1	drseb	Sebastian Koehler	dr.sebastian.koehler@gmail.com	Q52804485	0000-0002-5316-1399	2023-10-09 14:18:07	True
+1	dalalghamdi	Dalia Alghamdi	dal.alghamdi92@gmail.com		0000-0002-2801-0767	2025-07-14 09:41:26	True
+1	daniwelter	Danielle Welter	dwelter.ontologist@gmail.com	Q55473247	0000-0003-1058-2668		False
+1	dosumis	David Osumi-Sutherland	davidos@ebi.ac.uk	Q54303418	0000-0002-7073-9172	2025-08-03 08:09:29	True
+1	drseb	Sebastian Koehler	dr.sebastian.koehler@gmail.com	Q52804485	0000-0002-5316-1399		False
 1	e4ong1031	Edison Ong	edong@umich.edu	Q56879078	0000-0002-5159-414X		False
-1	edwardsnj	Nathan Edwards	nje5@georgetown.edu	Q108555432	0000-0001-5168-3196	2023-11-13 01:54:54	True
-1	egonw	Egon Willighagen	egon.willighagen@gmail.com	Q20895241	0000-0001-7542-0286	2023-11-12 18:37:08	True
+1	edwardsnj	Nathan Edwards	nje5@georgetown.edu	Q108555432	0000-0001-5168-3196	2025-07-31 19:57:32	True
+1	egonw	Egon Willighagen	egon.willighagen@gmail.com	Q20895241	0000-0001-7542-0286	2025-08-04 09:34:38	True
 1	ettensohn	Charles Ettensohn	ettensohn@cmu.edu	Q89326600	0000-0002-3625-0955		False
-1	germa	Gerhard Mayer	gerhard.mayer@rub.de	Q53584882	0000-0002-1767-2343		False
 1	getbordea	Georgeta Bordea	georgeta.bordea@u-bordeaux.fr	Q110610955	0000-0001-9921-8234		False
-1	gthayman	G. Thomas Hayman	gthayman@mcw.edu	Q110610928	0000-0002-9553-7227	2023-10-23 23:26:38	True
+1	ghost	None	noreply@example.com		0000-0000-0000-0000	2025-07-21 15:46:41	True
+1	gthayman	G. Thomas Hayman	gthayman@mcw.edu	Q110610928	0000-0002-9553-7227		False
 1	hescriva	Hector Escriva	hescriva@obs-banyuls.fr	Q57209043	0000-0001-7577-5028		False
-1	hlapp	Hilmar Lapp	hilmar.lapp@duke.edu	Q28913645	0000-0001-9107-0714	2023-11-12 02:04:53	True
+1	hlapp	Hilmar Lapp	hilmar.lapp@duke.edu	Q28913645	0000-0001-9107-0714	2025-08-01 20:46:41	True
+1	jamesamcl	James McLaughlin	jmcl@ebi.ac.uk		0000-0002-8361-2795	2025-08-02 22:54:24	True
 1	jimhu-tamu	James C. Hu	jimhu@tamu.edu	Q59749279	0000-0001-9016-2684		False
 1	jmcherry-zz	Mike Cherry	cherry@genome.stanford.edu	Q56955001	0000-0001-9163-5180		False
-1	jmwhorton	Justin Whorton	jmwhorton@uams.edu		0009-0003-4268-6207	2023-11-03 19:16:44	True
+1	jmwhorton	Justin Whorton	jmwhorton@uams.edu		0009-0003-4268-6207	2025-07-31 13:52:27	True
 1	jonrkarr	Jonathan Karr	jonrkarr@gmail.com	Q38545088	0000-0002-2605-5080		False
-1	keilbeck	Karen Eilbeck	keilbeck@genetics.utah.edu	Q56925500	0000-0002-0831-6427	2023-09-07 01:08:04	True
-1	leechuck	Robert Hoehndorf	robert.hoehndorf@kaust.edu.sa	Q28913647	0000-0001-8149-5890	2023-10-03 14:44:21	True
-1	luanalicata	Luana Licata	luana.licata@gmail.com	Q30158411	0000-0001-5084-9000	2023-10-18 10:00:50	True
-1	lutzfischer	Lutz Fischer	lutz.fischer@tu-berlin.de	Q55143758	0000-0003-4978-0864	2023-11-01 10:53:08	True
-1	marieALaporte	Marie-Angélique Laporte	m.a.laporte@cgiar.org	Q63389961	0000-0002-8461-9745	2023-11-10 08:11:12	True
-1	marijane	Marijane White	whimar@ohsu.edu	Q63775795	0000-0001-5059-4132	2023-11-10 00:44:48	True
+1	keilbeck	Karen Eilbeck	keilbeck@genetics.utah.edu	Q56925500	0000-0002-0831-6427		False
+1	leechuck	Robert Hoehndorf	robert.hoehndorf@kaust.edu.sa	Q28913647	0000-0001-8149-5890	2025-07-27 13:24:10	True
+1	luanalicata	Luana Licata	luana.licata@gmail.com	Q30158411	0000-0001-5084-9000		False
+1	lutzfischer	Lutz Fischer	lutz.fischer@tu-berlin.de	Q55143758	0000-0003-4978-0864	2025-07-24 16:55:27	True
+1	marieALaporte	Marie-Angélique Laporte	m.a.laporte@cgiar.org	Q63389961	0000-0002-8461-9745		False
+1	marijane	Marijane White	whimar@ohsu.edu	Q63775795	0000-0001-5059-4132	2025-07-19 16:30:03	True
 1	markengelstad	Mark Engelstad	engelsta@ohsu.edu	Q57081970	0000-0001-5889-4463		False
-1	martinjramirez	Martin Ramirez	ramirez@macn.gov.ar	Q22113298	0000-0002-0358-0130	2023-09-04 14:57:18	True
+1	martinjramirez	Martin Ramirez	ramirez@macn.gov.ar	Q22113298	0000-0002-0358-0130		False
 1	maunov	Mauno Vihinen	mauno.vihinen@med.lu.se		0000-0002-9614-7976		False
-1	megbalk	Meghan Balk	meghan.balk@gmail.com	Q59763318	0000-0003-2699-3066	2023-11-07 14:17:50	True
-1	mgiglio99	Michelle Giglio	mgiglio@som.umaryland.edu	Q58870112	0000-0001-7628-5565	2023-10-12 16:14:34	True
-1	miguelfortuna	Miguel A. Fortuna	fortuna@ebd.csic.es	Q37380021	0000-0002-8374-1941	2023-09-25 08:02:06	True
+1	megbalk	Meghan Balk	meghan.balk@gmail.com	Q59763318	0000-0003-2699-3066		False
+1	mellybelly	Melissa Haendel	haendel@ohsu.edu	Q28368079	0000-0001-9114-8737	2025-07-29 20:46:05	True
+1	mgiglio99	Michelle Giglio	mgiglio@som.umaryland.edu	Q58870112	0000-0001-7628-5565		False
+1	miguelfortuna	Miguel A. Fortuna	fortuna@ebd.csic.es	Q37380021	0000-0002-8374-1941		False
+1	mobiusklein	Joshua Klein	joshua.adam.klein@gmail.com	Q57070150	0000-0003-1279-6838	2025-08-03 22:57:41	True
 1	nandadorea	Fernanda Dorea	fernanda.dorea@sva.se	Q55475730	0000-0001-8638-8525		False
-1	nataled	Darren Natale	dan5@georgetown.edu	Q99552327	0000-0001-5809-9523	2023-11-06 15:19:54	True
+1	nataled	Darren Natale	dan5@georgetown.edu	Q99552327	0000-0001-5809-9523	2025-07-29 16:34:57	True
 1	pabinz	Pierre-Alain Binz	pierre-alain.binz@chuv.ch	Q48767863	0000-0002-0045-7698		False
-1	pcastellanoescuder	Pol Castellano Escuder	polcaes@gmail.com	Q110611014	0000-0001-6466-877X	2023-11-09 17:16:54	True
+1	pcastellanoescuder	Pol Castellano Escuder	polcaes@gmail.com	Q110611014	0000-0001-6466-877X		False
 1	phismith	Barry Smith	phismith@buffalo.edu	Q809101	0000-0003-1384-116X		False
-1	raymond91125	Raymond Lee	raymond@caltech.edu	Q57334470	0000-0002-8151-7479	2023-11-10 20:03:16	True
-1	rsmsheriff	Rahuman Sheriff	sheriff@ebi.ac.uk	Q64019189	0000-0003-0705-9809	2023-10-30 10:55:13	True
-1	sabrinatoro	Sabrina Toro	Sabrina@tislab.org	Q108416351	0000-0002-4142-7153	2023-11-03 23:00:54	True
-1	safisher	Stephen Fisher	safisher@upenn.edu	Q110613369	0000-0001-8034-7685		False
-1	sbello	Sue Bello	drsbello@gmail.com	Q57965947	0000-0003-4606-0597	2023-11-09 17:21:16	True
+1	proccaserra	Philippe Rocca-Serra	proccaserra@gmail.com	Q28364404	0000-0001-9853-5668	2025-07-30 14:04:58	True
+1	raymond91125	Raymond Lee	raymond@caltech.edu	Q57334470	0000-0002-8151-7479	2025-08-01 02:04:44	True
+1	rsmsheriff	Rahuman Sheriff	sheriff@ebi.ac.uk	Q64019189	0000-0003-0705-9809		False
+1	sabrinatoro	Sabrina Toro	Sabrina@tislab.org	Q108416351	0000-0002-4142-7153	2025-08-02 00:37:29	True
+1	safisher	Stephen Fisher	safisher@upenn.edu	Q110613369	0000-0001-8034-7685	2025-07-16 13:32:49	True
+1	sbello	Sue Bello	pheno@jax.org	Q57965947	0000-0003-4606-0597	2025-08-01 19:23:20	True
 1	schaferw	Wes Schafer	wes_schafer@merck.com	Q113275693	0000-0002-8786-1756		False
-1	shurjenw	Shur-Jen Wang	sjwang@mcw.edu	Q110611093	0000-0001-5256-8683		False
-1	siiraa	Sirarat Sarntivijai	siiraa@umich.edu	Q48519898	0000-0002-2548-641X		False
-1	srengel	Stacia R Engel	stacia@stanford.edu	Q42775665	0000-0001-5472-917X	2023-11-09 21:21:06	True
-1	suzialeksander	Suzi Aleksander	suzia@stanford.edu	Q7650732	0000-0001-6787-2901	2023-10-25 17:04:50	True
-1	wawong	Willy Wong	wawong@gmail.com	Q57679070	0000-0002-8841-5870	2023-10-18 19:08:34	True
-1	wdduncan	Bill Duncan	wdduncan@gmail.com	Q89881908	0000-0001-9625-1899	2023-11-11 12:58:46	True
+1	shurjenw	Shur-Jen Wang	sjwang@mcw.edu	Q110611093	0000-0001-5256-8683	2025-07-22 15:52:13	True
+1	srengel	Stacia R Engel	stacia@stanford.edu	Q42775665	0000-0001-5472-917X		False
+1	suzialeksander	Suzi Aleksander	suzia@stanford.edu	Q7650732	0000-0001-6787-2901	2025-07-25 21:35:17	True
+1	wawong	Willy Wong	wawong@gmail.com	Q57679070	0000-0002-8841-5870		False
+1	wdduncan	Bill Duncan	wdduncan@gmail.com	Q89881908	0000-0001-9625-1899	2025-08-02 23:41:26	True
 1	yuki-yamagata	Yuki Yamagata	yuki.yamagata@riken.jp	Q95976403	0000-0002-9673-1283		False
-1	zachll	Zach Landis-Lewis	zachll@umich.edu	Q88354460	0000-0002-9117-9338	2023-11-10 15:40:13	True
+1	zachll	Zach Landis-Lewis	zachll@umich.edu	Q88354460	0000-0002-9117-9338		False
 1		Vivian Lee	vlee@ebi.ac.uk				False
 1		Maria Herrero	maria.herrero@kcl.ac.uk				False
 1		Marc Ciriello	Marc_Ciriello@hms.harvard.edu				False
