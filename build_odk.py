@@ -2,15 +2,17 @@
 
 import json
 from itertools import islice
+from pathlib import Path
 from typing import TypedDict
 
+import bioregistry
 import click
 import pandas as pd
 import requests
 import yaml
 from tqdm import tqdm
 
-from utils import ODK_REPOS_PATH, ODK_REPOS_YAML_PATH, get_github
+from utils import ODK_REPOS_YAML_PATH, get_github
 
 
 class Row(TypedDict):
@@ -18,36 +20,47 @@ class Row(TypedDict):
     name: str
     path: str
     version: str
+    prefix: str | None
 
 
-COLUMNS = ["repository", "name", "path", "version"]
+COLUMNS = ["repository", "name", "path", "version", "prefix"]
 
 
 @click.command()
 @click.option("--per-page", type=int, default=40)
-def main(per_page: int):
-    data: dict[str, Row] = {
-        record["repository"]: record
-        for record in yaml.safe_load(ODK_REPOS_YAML_PATH.read_text())
-    }
+@click.option("--path", default=ODK_REPOS_YAML_PATH, type=Path)
+def main(per_page: int, path: Path):
+    data: dict[str, Row]
+    if path.is_file():
+        data = {record["repository"]: record for record in yaml.safe_load(path.read_text())}
+    else:
+        data = {}
+
+    repository_to_bioregistry = get_repository_to_bioregistry()
 
     page = 1
     tqdm.write(f"loading page {page} of size {per_page}")
-    total = _paginate(data, per_page, page)
+    total = paginate_github_search(
+        data, per_page, page, repository_to_bioregistry=repository_to_bioregistry
+    )
     tqdm.write(f"after page {page}, found that there are {total} rows.")
 
     while per_page * page < total:
         page += 1
         tqdm.write(f"loading page {page} of size {per_page}")
-        _paginate(data, per_page, page)
+        paginate_github_search(
+            data, per_page, page, repository_to_bioregistry=repository_to_bioregistry
+        )
 
-    _rows = sorted(data.values(), key=lambda row: row["repository"].casefold())
+    rows = sorted(data.values(), key=lambda row: row["repository"].casefold())
 
-    df = pd.DataFrame(_rows)
+    tsv_path = path.with_suffix(".tsv")
+
+    df = pd.DataFrame(rows)
     df = df[COLUMNS]
-    df.to_csv(ODK_REPOS_PATH, sep="\t", index=False)
+    df.to_csv(tsv_path, sep="\t", index=False)
 
-    ODK_REPOS_YAML_PATH.write_text(yaml.safe_dump(_rows))
+    path.write_text(yaml.safe_dump(rows))
 
 
 #: Users who have many test ODK files
@@ -62,15 +75,21 @@ SKIP_USERS = [
     "ferjavrec",  # projects in odk-central are not related to our ODK
     "acevesp",
     "cthoyt",  # self reference
+    "OBOAcademy",  # teaching material
 ]
 
 #: Build the GitHub query for skipping certain users
 SKIP_Q = " ".join(f"-user:{user}" for user in SKIP_USERS)
 
 
-def _paginate(data: dict[str, Row], per_page: int, page: int) -> int:
+def paginate_github_search(
+    data: dict[str, Row],
+    per_page: int,
+    page: int,
+    repository_to_bioregistry: dict[str, str],
+) -> int:
     res = get_github(
-        f"https://api.github.com/search/code",
+        "https://api.github.com/search/code",
         params={
             "per_page": per_page,
             "page": page,
@@ -87,17 +106,29 @@ def _paginate(data: dict[str, Row], per_page: int, page: int) -> int:
         repository = item["repository"]["full_name"]
         url = f"https://raw.githubusercontent.com/{repository}/{branch}/src/ontology/Makefile"
         try:
-            line, *_ = islice(
-                requests.get(url, stream=True).iter_lines(decode_unicode=True), 3, 4
-            )
+            line, *_ = islice(requests.get(url, stream=True).iter_lines(decode_unicode=True), 3, 4)
             version = line.removeprefix("# ODK Version: v")
         except ValueError:
             tqdm.write(f"Could not get ODK version in {path} in {repository}")
             version = "unknown"
         data[repository] = Row(
-            repository=repository, name=name, version=version, path=path
+            repository=repository,
+            name=name,
+            version=version,
+            path=path,
+            prefix=repository_to_bioregistry.get(repository.casefold()),
         )
     return res["total_count"]
+
+
+def get_repository_to_bioregistry() -> dict[str, str]:
+    rv = {}
+    for resource in bioregistry.resources():
+        repository = resource.get_repository()
+        if not repository or not repository.startswith("https://github.com/"):
+            continue
+        rv[repository.removeprefix("https://github.com/").casefold()] = resource.prefix
+    return rv
 
 
 if __name__ == "__main__":
