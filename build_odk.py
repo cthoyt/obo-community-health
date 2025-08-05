@@ -94,7 +94,7 @@ def paginate_github_search(
             "per_page": per_page,
             "page": page,
             "sort": "indexed",
-            "q": f"filename:odk.yaml {SKIP_Q}",
+            "q": f"filename:odk.yaml {SKIP_Q} -is:fork",
         },
     )
     if "items" not in res:
