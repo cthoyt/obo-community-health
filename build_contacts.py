@@ -4,10 +4,9 @@ from __future__ import annotations
 
 import datetime
 from collections import Counter, defaultdict
-from functools import lru_cache
+from functools import cache
 from pathlib import Path
 from textwrap import dedent
-from typing import Optional
 
 import click
 import dateparser
@@ -29,15 +28,15 @@ from utils import (
 )
 
 
-@lru_cache(maxsize=None)
+@cache
 def get_wikidata_from_github(
     github_id: str,
 ) -> tuple[None, None] | tuple[str, None] | tuple[str, str]:
     """Lookup bibliometric data from Wikidata using a GitHub handle."""
     query = dedent(
         f"""\
-        SELECT ?item ?orcid 
-        WHERE 
+        SELECT ?item ?orcid
+        WHERE
         {{
             ?item wdt:P2037 "{github_id}" .
             OPTIONAL {{ ?item wdt:P496 ?orcid }} .
@@ -48,17 +47,15 @@ def get_wikidata_from_github(
     if not records:
         return None, None
     record = records[0]
-    wikidata_id = record["item"]["value"].removeprefix(
-        "http://www.wikidata.org/entity/"
-    )
+    wikidata_id = record["item"]["value"].removeprefix("http://www.wikidata.org/entity/")
     orcid_id = record.get("orcid", {}).get("value")
     if orcid_id is None:
         tqdm.write(f"No ORCID for https://bioregistry.io/wikidata:{wikidata_id}")
     return wikidata_id, orcid_id
 
 
-@lru_cache(maxsize=None)
-def get_last_event(user: str) -> Optional[datetime.datetime]:
+@cache
+def get_last_event(user: str) -> datetime.datetime | None:
     """Get the date and time of the most recent action for this user."""
     events = get_github(f"https://api.github.com/users/{user}/events")
     if not events:
@@ -72,7 +69,7 @@ def get_last_event(user: str) -> Optional[datetime.datetime]:
 
 @click.command()
 @click.option("--path", help="Path to local metadata", type=Path)
-def main(path: Optional[Path]):
+def main(path: Path | None):
     """Generate the contact table."""
     counter = Counter()
     data = {}

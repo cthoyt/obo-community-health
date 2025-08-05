@@ -43,7 +43,7 @@ URL = "https://raw.githubusercontent.com/OBOFoundry/OBOFoundry.github.io/master/
 #: WikiData SPARQL endpoint. See https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service#Interfacing
 WIKIDATA_SPARQL = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
 WIKIDATA_HEADERS = {
-    "User-Agent": f"obo-community-health/1.0",
+    "User-Agent": "obo-community-health/1.0",
 }
 
 NOW = datetime.datetime.now()
@@ -85,9 +85,7 @@ SKIP_EMAILS = {
 
 
 @rate_limited(calls=5_000, period=60 * 60)
-def get_github(
-    url: str, accept: Optional[str] = None, params: Optional[dict[str, any]] = None
-):
+def get_github(url: str, accept: Optional[str] = None, params: Optional[dict[str, any]] = None):
     headers = {
         "Authorization": f"token {TOKEN}",
     }

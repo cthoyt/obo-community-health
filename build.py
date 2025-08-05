@@ -2,10 +2,11 @@ import datetime
 import json
 import math
 import pickle
+from collections.abc import Iterable
 from dataclasses import dataclass
 from operator import attrgetter, itemgetter
 from pathlib import Path
-from typing import Iterable, Optional, TypeVar, Union
+from typing import Optional, TypeVar, Union
 
 import bioregistry
 import click
@@ -51,9 +52,7 @@ PATH_HIST = DOCS.joinpath("score_histogram.png")
 RESPONSIBILITY_HIST = DOCS.joinpath("responsibility_histogram.png")
 ISSUE_SCATTER = DOCS.joinpath("score_issue_scatter.png")
 
-environment = Environment(
-    autoescape=True, loader=FileSystemLoader(TEMPLATES), trim_blocks=False
-)
+environment = Environment(autoescape=True, loader=FileSystemLoader(TEMPLATES), trim_blocks=False)
 index_template = environment.get_template("index.html")
 contacts_template = environment.get_template("contacts.html")
 # ontology_template = environment.get_template("ontology.html")
@@ -67,7 +66,7 @@ SOFTWARE_LICENSES = {"mit", "bsd-3-clause", "apache-2.0"}  # TODO
 
 
 def floor(x: float) -> int:
-    return int(math.floor(x))
+    return math.floor(x)
 
 
 def slog10(x: float) -> float:
@@ -133,9 +132,7 @@ def get_last_year_contributions(owner: str, repo: str, params=None):
 
 
 def get_issues(owner: str, repo: str, params=None):
-    return get_github(
-        f"https://api.github.com/repos/{owner}/{repo}/issues", params=params
-    )
+    return get_github(f"https://api.github.com/repos/{owner}/{repo}/issues", params=params)
 
 
 def get_info(owner: str, repo: str):
@@ -154,9 +151,7 @@ def get_topics(owner: str, repo: str):
 
 def iterate_repos(
     path: Optional[Path] = None,
-) -> Iterable[
-    tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, any]]
-]:
+) -> Iterable[tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, any]]]:
     ontologies = get_ontologies(path=path)
 
     for obo_id, record in tqdm(sorted(ontologies.items()), desc="Processing OBO conf"):
@@ -171,17 +166,17 @@ def iterate_repos(
                 owner, repo, *_ = repository[len(PREFIX) :].split("/")
                 yield obo_id, record["title"], (owner, repo), record
             else:
-                tqdm.write(f'no github repository for {record["id"]}: {tracker}')
+                tqdm.write(f"no github repository for {record['id']}: {tracker}")
                 yield obo_id, record["title"], (None, None), record
         else:
             # All active ontologies have trackers. Most of them
             # have GitHub, but not all. Don't consider the non-GitHub
             # ones
             if not tracker:
-                tqdm.write(f'no tracker for {record["id"]}')
+                tqdm.write(f"no tracker for {record['id']}")
                 yield obo_id, record["title"], (None, None), record
             elif not tracker.startswith(PREFIX):
-                tqdm.write(f'no github tracker for {record["id"]}: {tracker}')
+                tqdm.write(f"no github tracker for {record['id']}: {tracker}")
                 yield obo_id, record["title"], (None, None), record
             else:
                 # Since we assume it's a GitHub link, slice out the prefix then
@@ -338,9 +333,7 @@ class GithubResult(Result):
             msg="not using ODK",
             punishment=3,
         )
-        score = adjust(
-            score, self.pushed_last_year, errors=errors, msg="not recently pushed"
-        )
+        score = adjust(score, self.pushed_last_year, errors=errors, msg="not recently pushed")
 
         # License
         if self.license is None:
@@ -385,9 +378,7 @@ def get_data(
     repos = sorted(iterate_repos(path=path))
     if test:
         c = 0
-        repos = [
-            r for r in repos if r[3] is None or (c := c + int(r[3] is not None)) <= 3
-        ]
+        repos = [r for r in repos if r[3] is None or (c := c + int(r[3] is not None)) <= 3]
     rows: list[Result] = []
     repos = tqdm(repos, desc="Repositories")
     for prefix, title, (owner, repo), record in repos:
@@ -401,12 +392,12 @@ def get_data(
         contact_wikidata = contacts.get(contact_github, {}).get(
             "wikidata"
         ) or EMAIL_WIKIDATA_MAP.get(contact_email)
-        contact_orcid = contact.get("orcid") or contacts.get(contact_github, {}).get(
-            "orcid"
-        ) or EMAIL_ORCID_MAP.get(contact_email)
-        contact_recent = contacts.get(contact_github, {}).get(
-            "last_active_recent", False
+        contact_orcid = (
+            contact.get("orcid")
+            or contacts.get(contact_github, {}).get("orcid")
+            or EMAIL_ORCID_MAP.get(contact_email)
         )
+        contact_recent = contacts.get(contact_github, {}).get("last_active_recent", False)
 
         # External
         pp = record["preferredPrefix"]
@@ -450,12 +441,10 @@ def get_data(
         pushed_last_five_years = FIVE_YEARS_AGO < pushed_at
         topics = get_topics(owner, repo)
         has_obofoundry_topic = "obofoundry" in topics
-        if (
-            most_recent_updated := get_most_recent_updated_issue(owner, repo)
-        ) is not None:
-            most_recent_datetime = dateparser.parse(
-                most_recent_updated["updated_at"]
-            ).replace(tzinfo=None)
+        if (most_recent_updated := get_most_recent_updated_issue(owner, repo)) is not None:
+            most_recent_datetime = dateparser.parse(most_recent_updated["updated_at"]).replace(
+                tzinfo=None
+            )
             most_recent_updated_number = most_recent_updated["number"]
             update_last_year = ONE_YEAR_AGO < most_recent_datetime
         else:
@@ -465,8 +454,7 @@ def get_data(
 
         lifetime_contributions_ = get_contributions(owner, repo)
         lifetime_contributions = {
-            entry["author"]["login"]: entry["total"]
-            for entry in lifetime_contributions_
+            entry["author"]["login"]: entry["total"] for entry in lifetime_contributions_
         }
 
         if lifetime_contributions:
@@ -498,9 +486,7 @@ def get_data(
         # last year contributions
         # https://docs.github.com/en/rest/reference/repos#get-the-last-year-of-commit-activity
         last_year_contributions = get_last_year_contributions(owner, repo)
-        last_year_total_contributions = sum(
-            entry["total"] for entry in last_year_contributions
-        )
+        last_year_total_contributions = sum(entry["total"] for entry in last_year_contributions)
 
         # when was the last issue closed?
         rows.append(
@@ -568,9 +554,7 @@ def main(force: bool, test: bool, path):
     odk_repos_df = pd.read_csv(ODK_REPOS_PATH, sep="\t")
     odk_repos = dict(odk_repos_df[["repository", "version"]].values)
 
-    rows = get_data(
-        contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path
-    )
+    rows = get_data(contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path)
     with REPO_DATA_JSON.open("w") as file:
         json.dump(
             {
@@ -599,15 +583,9 @@ def main(force: bool, test: bool, path):
 
     print(f"People: {len(counts)}")
     has_github = sum(contact.get("github") is not None for contact in contacts.values())
-    print(
-        f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github / len(contacts):.2%})"
-    )
-    has_wikidata = sum(
-        contact.get("wikidata") is not None for contact in contacts.values()
-    )
-    print(
-        f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata / len(contacts):.2%})"
-    )
+    print(f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github / len(contacts):.2%})")
+    has_wikidata = sum(contact.get("wikidata") is not None for contact in contacts.values())
+    print(f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata / len(contacts):.2%})")
     has_orcid = sum(contact.get("orcid") is not None for contact in contacts.values())
     print(f"  w/ ORCID: {has_orcid}/{len(contacts)} ({has_orcid / len(contacts):.2%})")
     print(
@@ -618,9 +596,7 @@ def main(force: bool, test: bool, path):
         f"  responsible for two or more ontologies:"
         f" {responsible_multiple}/{len(counts)} ({responsible_multiple / len(counts):.2%})"
     )
-    active_contacts = sum(
-        contact["last_active_recent"] for contact in contacts.values()
-    )
+    active_contacts = sum(contact["last_active_recent"] for contact in contacts.values())
     print(
         f"  active on GitHub (last year):"
         f" {active_contacts}/{has_github} ({active_contacts / has_github:.2%})"
@@ -631,9 +607,7 @@ def main(force: bool, test: bool, path):
         f" {inactive_contacts}/{has_github} ({inactive_contacts / has_github:.2%})"
     )
 
-    print(
-        f"Ontologies (non-inactive, non-obsolete, non-orphaned, w/ GitHub): {len(rows)}"
-    )
+    print(f"Ontologies (non-inactive, non-obsolete, non-orphaned, w/ GitHub): {len(rows)}")
     print(
         f"  w/ responsible person who's responsible for one ontology:"
         f" {responsible_one}/{sum(counts)} ({responsible_one / sum(counts):.2%})"
@@ -644,9 +618,7 @@ def main(force: bool, test: bool, path):
     )
 
     active_ontologies = sum(
-        len(contact["ontologies"])
-        for contact in contacts.values()
-        if contact["last_active_recent"]
+        len(contact["ontologies"]) for contact in contacts.values() if contact["last_active_recent"]
     )
     inactive_ontologies = sum(counts) - active_ontologies
 
@@ -690,11 +662,7 @@ def main(force: bool, test: bool, path):
     # Correlation between score and number of issues
     fig, ax = plt.subplots(figsize=(8, 3))
     x, y = zip(
-        *(
-            (row.get_score()[0], row.open_issues)
-            for row in rows
-            if isinstance(row, GithubResult)
-        )
+        *((row.get_score()[0], row.open_issues) for row in rows if isinstance(row, GithubResult))
     )
     sns.scatterplot(x=x, y=y, ax=ax)
     ax.set_xlabel("Score")
