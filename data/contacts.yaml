@@ -210,7 +210,7 @@
   - mfo
   - pd_st
   orcid: 0000-0002-1548-3290
-  wikidata: null
+  wikidata: Q136402341
 - count: 3
   email: jrsmith@mcw.edu
   github: jrsjrs
@@ -318,7 +318,7 @@
   - nif_dysfunction
   - nif_grossanatomy
   orcid: 0000-0003-4752-543X
-  wikidata: null
+  wikidata: Q57678362
 - count: 2
   email: david.c.blackburn@gmail.com
   github: null
@@ -329,7 +329,7 @@
   - aao
   - ato
   orcid: 0000-0002-1810-9886
-  wikidata: null
+  wikidata: Q19978490
 - count: 2
   email: mcourtot@gmail.com
   github: mcourtot
@@ -592,7 +592,7 @@
   ontologies:
   - afpo
   orcid: 0000-0001-5868-4204
-  wikidata: null
+  wikidata: Q58853917
 - count: 1
   email: m.a.laporte@cgiar.org
   github: marieALaporte
@@ -697,7 +697,7 @@
   email: egon.willighagen@gmail.com
   github: egonw
   label: Egon Willighagen
-  last_active: 2025-09-29 11:37:16
+  last_active: 2025-09-29 13:51:25
   last_active_recent: true
   ontologies:
   - cheminf
@@ -722,7 +722,7 @@
   ontologies:
   - clyh
   orcid: 0000-0002-7440-0467
-  wikidata: null
+  wikidata: Q83382941
 - count: 1
   email: engelsta@ohsu.edu
   github: markengelstad
@@ -751,8 +751,8 @@
   last_active_recent: false
   ontologies:
   - dinto
-  orcid: null
-  wikidata: null
+  orcid: 0000-0001-7793-3296
+  wikidata: Q91270494
 - count: 1
   email: ettensohn@cmu.edu
   github: ettensohn
@@ -792,7 +792,7 @@
   ontologies:
   - exmo
   orcid: 0000-0002-9295-2767
-  wikidata: null
+  wikidata: Q136324764
 - count: 1
   email: wawong@gmail.com
   github: wawong
@@ -831,7 +831,7 @@
   last_active_recent: false
   ontologies:
   - flu
-  orcid: null
+  orcid: 0000-0001-9666-6285
   wikidata: null
 - count: 1
   email: mejino@u.washington.edu
@@ -862,7 +862,7 @@
   ontologies:
   - fovt
   orcid: 0000-0003-2699-3066
-  wikidata: null
+  wikidata: Q59763318
 - count: 1
   email: adeans@psu.edu
   github: adeans
@@ -872,7 +872,7 @@
   ontologies:
   - gallont
   orcid: 0000-0002-2119-4663
-  wikidata: null
+  wikidata: Q21073927
 - count: 1
   email: rbca.jackson@gmail.com
   github: beckyjackson
@@ -982,7 +982,7 @@
   ontologies:
   - lipro
   orcid: 0000-0003-4004-6479
-  wikidata: null
+  wikidata: Q59389381
 - count: 1
   email: julie@igbmc.u-strasbg.fr
   github: null
@@ -991,8 +991,8 @@
   last_active_recent: false
   ontologies:
   - mao
-  orcid: null
-  wikidata: null
+  orcid: 0000-0003-4893-3478
+  wikidata: Q91782245
 - count: 1
   email: Leigh.Carmody@jax.org
   github: LCCarmody
@@ -1022,7 +1022,7 @@
   ontologies:
   - mcro
   orcid: 0000-0003-4333-1857
-  wikidata: null
+  wikidata: Q61126869
 - count: 1
   email: druzinsk@uic.edu
   github: RDruzinsky
@@ -1124,16 +1124,6 @@
   orcid: 0000-0003-1279-6838
   wikidata: Q57070150
 - count: 1
-  email: noreply@example.com
-  github: ghost
-  label: None
-  last_active: 2025-09-28 19:57:28
-  last_active_recent: true
-  ontologies:
-  - ncit
-  orcid: 0000-0000-0000-0000
-  wikidata: null
-- count: 1
   email: dal.alghamdi92@gmail.com
   github: dalalghamdi
   label: Dalia Alghamdi
@@ -1142,7 +1132,7 @@
   ontologies:
   - ngbo
   orcid: 0000-0002-2801-0767
-  wikidata: null
+  wikidata: Q136402381
 - count: 1
   email: schober@imbi.uni-freiburg.de
   github: null
@@ -1162,7 +1152,7 @@
   ontologies:
   - obib
   orcid: 0009-0003-4268-6207
-  wikidata: null
+  wikidata: Q136402411
 - count: 1
   email: baeverma@jcvi.org
   github: BAevermann
@@ -1362,7 +1352,7 @@
   ontologies:
   - resid
   orcid: 0000-0002-4131-735X
-  wikidata: null
+  wikidata: Q56949596
 - count: 1
   email: sjwang@mcw.edu
   github: shurjenw
@@ -1477,12 +1467,12 @@
   email: jmcl@ebi.ac.uk
   github: jamesamcl
   label: James McLaughlin
-  last_active: 2025-09-29 09:45:38
+  last_active: 2025-09-29 12:10:10
   last_active_recent: true
   ontologies:
   - upheno
   orcid: 0000-0002-8361-2795
-  wikidata: null
+  wikidata: Q92202696
 - count: 1
   email: mauno.vihinen@med.lu.se
   github: maunov
@@ -1492,7 +1482,7 @@
   ontologies:
   - vario
   orcid: 0000-0002-9614-7976
-  wikidata: null
+  wikidata: Q38591073
 - count: 1
   email: Sabrina@tislab.org
   github: sabrinatoro

@@ -58,14 +58,14 @@ def main(path: Path | None):
         it.set_postfix(ontology=obo_id)
         contact = record.get("contact", {})
         if not contact:
-            tqdm.write(f"[{obo_id}] contact is missing")
+            # only the case for deprecated ontologies
             continue
 
         email = contact.get("email")
         if email in SKIP_EMAILS:
             continue
         if email is None:
-            tqdm.write(f"[{obo_id}] email is missing: {contact}")
+            # this is only the case for REX
             continue
 
         github_id = contact.get("github") or EMAIL_GITHUB_MAP.get(email)
@@ -74,14 +74,10 @@ def main(path: Path | None):
 
         orcid_id = contact.get("orcid") or EMAIL_ORCID_MAP.get(email)
 
-        if github_id is None and email is not None:
-            github_id = EMAIL_GITHUB_MAP.get(email)
         if github_id is not None:
             key = "github", github_id.casefold()
-            wikidata_id = get_entity_by_github(github_id)
+            wikidata_id = EMAIL_WIKIDATA_MAP.get(email) or get_entity_by_github(github_id)
             last_active = get_last_event(github_id)
-        elif email is None or email in SKIP_EMAILS:
-            continue
         else:
             key = "email", email.casefold()
             wikidata_id = EMAIL_WIKIDATA_MAP.get(email)

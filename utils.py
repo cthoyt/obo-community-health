@@ -71,14 +71,31 @@ GITHUB_REMAP = {
     "megbalk": "meghalithic",
 }
 EMAIL_ORCID_MAP = {
+    "julie@igbmc.u-strasbg.fr": "0000-0003-4893-3478",
     "Leszek@missouri.edu": "0000-0002-9316-2919",
     "nicolas@ascistance.co.uk": "0000-0002-6309-7327",
     "dal.alghamdi92@gmail.com": "0000-0002-2801-0767",
     "jmcl@ebi.ac.uk": "0000-0002-8361-2795",
+    "maria.herrero@kcl.ac.uk": "0000-0001-7793-3296",
+    "burkesquires@gmail.com": "0000-0001-9666-6285",
 }
 EMAIL_WIKIDATA_MAP = {
+    "smtifahim@gmail.com": "Q57678362",
+    "julie@igbmc.u-strasbg.fr": "Q91782245",
+    "maria.herrero@kcl.ac.uk": "Q91270494",
     "Leszek@missouri.edu": "Q110623916",
     "nicolas@ascistance.co.uk": "Q21055156",
+    "david.c.blackburn@gmail.com": "Q19978490",
+    "lucas.leclere@obs-banyuls.fr": "Q83382941",
+    "mcmelek@msn.com": "Q58853917",
+    "muamith@utmb.edu": "Q61126869",
+    "adeans@psu.edu": "Q21073927",
+    "dal.alghamdi92@gmail.com": "Q136402381",
+    "jmcl@ebi.ac.uk": "Q92202696",
+    "john.garavelli@ebi.ac.uk": "Q56949596",
+    "bakerc@unb.ca": "Q59389381",
+    "meghan.balk@gmail.com": "Q59763318",
+    "mauno.vihinen@med.lu.se": "Q38591073",
 }
 #: These emails are skipped, mostly because they are group emails.
 SKIP_EMAILS = {
