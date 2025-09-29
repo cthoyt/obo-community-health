@@ -106,7 +106,9 @@ def paginate_github_search(
         repository = item["repository"]["full_name"]
         url = f"https://raw.githubusercontent.com/{repository}/{branch}/src/ontology/Makefile"
         try:
-            line, *_ = islice(requests.get(url, stream=True).iter_lines(decode_unicode=True), 3, 4)
+            line, *_ = islice(
+                requests.get(url, stream=True, timeout=15).iter_lines(decode_unicode=True), 3, 4
+            )
             version = line.removeprefix("# ODK Version: v")
         except ValueError:
             tqdm.write(f"Could not get ODK version in {path} in {repository}")

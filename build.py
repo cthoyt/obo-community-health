@@ -1,3 +1,5 @@
+"""Compile community health statistics."""
+
 import datetime
 import json
 import math
@@ -6,13 +8,14 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from operator import attrgetter, itemgetter
 from pathlib import Path
-from typing import Optional, TypeVar, Union
+from typing import Any, Optional, TypeVar, Union
 
 import bioregistry
 import click
 import dateparser
 import matplotlib.pyplot as plt
 import pandas as pd
+import pystow.github
 import seaborn as sns
 import yaml
 from bioregistry import get_bioportal_prefix, get_ols_prefix, get_registry_invmap
@@ -34,7 +37,6 @@ from utils import (
     REPO_DATA_JSON,
     REPO_DATA_PICKLE,
     REPO_DATA_TSV,
-    get_github,
     get_ontologies,
 )
 
@@ -113,45 +115,22 @@ def get_oldest_open_issue(owner: str, repo: str) -> Optional[Issue]:
 
 
 def get_first_issue(owner: str, repo: str, params) -> Optional[Issue]:
-    issues = get_issues(owner=owner, repo=repo, params=params)
+    issues = pystow.github.get_issues(owner=owner, repo=repo, params=params).json()
     if issues:
         return issues[0]
-
-
-def get_contributions(owner: str, repo: str, params=None):
-    return get_github(
-        f"https://api.github.com/repos/{owner}/{repo}/stats/contributors", params=params
-    )
-
-
-def get_last_year_contributions(owner: str, repo: str, params=None):
-    return get_github(
-        f"https://api.github.com/repos/{owner}/{repo}/stats/commit_activity",
-        params=params,
-    )
-
-
-def get_issues(owner: str, repo: str, params=None):
-    return get_github(f"https://api.github.com/repos/{owner}/{repo}/issues", params=params)
-
-
-def get_info(owner: str, repo: str):
-    return get_github(f"https://api.github.com/repos/{owner}/{repo}")
+    return None
 
 
 def get_topics(owner: str, repo: str):
     # Get all topics from the repository. See more information on the GH docs:
     # https://docs.github.com/en/rest/reference/repos#get-all-repository-topics
-    rv = get_github(
-        f"https://api.github.com/repos/{owner}/{repo}/topics",
-        accept="application/vnd.github.mercy-preview+json",
-    )
+    rv = pystow.github.get_github(f"repos/{owner}/{repo}/topics", preview=True).json()
     return rv["names"]
 
 
 def iterate_repos(
     path: Optional[Path] = None,
-) -> Iterable[tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, any]]]:
+) -> Iterable[tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, Any]]]:
     ontologies = get_ontologies(path=path)
 
     for obo_id, record in tqdm(sorted(ontologies.items()), desc="Processing OBO conf"):
@@ -429,7 +408,7 @@ def get_data(
                 )
             )
             continue
-        info = get_info(owner, repo)
+        info = pystow.github.get_repository(owner, repo).json()
         repo_description = info["description"]
         default_branch = info["default_branch"]
         stars = info["stargazers_count"]
@@ -452,10 +431,13 @@ def get_data(
             most_recent_updated_number = None
             update_last_year = False
 
-        lifetime_contributions_ = get_contributions(owner, repo)
-        lifetime_contributions = {
-            entry["author"]["login"]: entry["total"] for entry in lifetime_contributions_
-        }
+        lifetime_contributions_ = pystow.github.get_contributions(owner, repo).json()
+        lifetime_contributions = {}
+        for entry in lifetime_contributions_:
+            if author := entry["author"]:
+                lifetime_contributions[author["login"]] = entry["total"]
+            else:
+                tqdm.write(f"[{prefix}] missing author")
 
         if lifetime_contributions:
             top_lifetime_contributor, top_lifetime_contributions = max(
@@ -473,6 +455,7 @@ def get_data(
                 if ONE_YEAR_AGO < datetime.datetime.utcfromtimestamp(week["w"])
             )
             for entry in lifetime_contributions_
+            if entry["author"]
         }
 
         if last_year_contributions:
@@ -485,7 +468,9 @@ def get_data(
 
         # last year contributions
         # https://docs.github.com/en/rest/reference/repos#get-the-last-year-of-commit-activity
-        last_year_contributions = get_last_year_contributions(owner, repo)
+        last_year_contributions = pystow.github.get_github(
+            f"repos/{owner}/{repo}/stats/commit_activity"
+        ).json()
         last_year_total_contributions = sum(entry["total"] for entry in last_year_contributions)
 
         # when was the last issue closed?

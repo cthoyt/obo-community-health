@@ -4,14 +4,15 @@ from __future__ import annotations
 
 import datetime
 from collections import Counter, defaultdict
-from functools import cache
 from pathlib import Path
-from textwrap import dedent
 
 import click
 import dateparser
 import pandas as pd
+import wikidata_client
 import yaml
+from cachier import cachier
+from pystow.github import get_user_events
 from tqdm import tqdm
 
 from utils import (
@@ -20,44 +21,17 @@ from utils import (
     EMAIL_GITHUB_MAP,
     EMAIL_ORCID_MAP,
     EMAIL_WIKIDATA_MAP,
+    GITHUB_REMAP,
     ONE_YEAR_AGO,
     SKIP_EMAILS,
-    get_github,
     get_ontologies,
-    query_wikidata,
 )
 
 
-@cache
-def get_wikidata_from_github(
-    github_id: str,
-) -> tuple[None, None] | tuple[str, None] | tuple[str, str]:
-    """Lookup bibliometric data from Wikidata using a GitHub handle."""
-    query = dedent(
-        f"""\
-        SELECT ?item ?orcid
-        WHERE
-        {{
-            ?item wdt:P2037 "{github_id}" .
-            OPTIONAL {{ ?item wdt:P496 ?orcid }} .
-        }}
-    """
-    )
-    records = query_wikidata(query)
-    if not records:
-        return None, None
-    record = records[0]
-    wikidata_id = record["item"]["value"].removeprefix("http://www.wikidata.org/entity/")
-    orcid_id = record.get("orcid", {}).get("value")
-    if orcid_id is None:
-        tqdm.write(f"No ORCID for https://bioregistry.io/wikidata:{wikidata_id}")
-    return wikidata_id, orcid_id
-
-
-@cache
+@cachier(stale_after=datetime.timedelta(days=1), allow_none=False)
 def get_last_event(user: str) -> datetime.datetime | None:
     """Get the date and time of the most recent action for this user."""
-    events = get_github(f"https://api.github.com/users/{user}/events")
+    events = get_user_events(user).json()
     if not events:
         return None
     try:
@@ -65,6 +39,11 @@ def get_last_event(user: str) -> datetime.datetime | None:
     except KeyError:
         tqdm.write(f"[{user}] error: {events}")
         return None
+
+
+get_entity_by_github = cachier(stale_after=datetime.timedelta(days=30))(
+    wikidata_client.get_entity_by_github
+)
 
 
 @click.command()
@@ -78,14 +57,28 @@ def main(path: Path | None):
     for obo_id, record in it:
         it.set_postfix(ontology=obo_id)
         contact = record.get("contact", {})
-        github_id = contact.get("github")
+        if not contact:
+            tqdm.write(f"[{obo_id}] contact is missing")
+            continue
+
         email = contact.get("email")
+        if email in SKIP_EMAILS:
+            continue
+        if email is None:
+            tqdm.write(f"[{obo_id}] email is missing: {contact}")
+            continue
+
+        github_id = contact.get("github") or EMAIL_GITHUB_MAP.get(email)
+        if github_id:
+            github_id = GITHUB_REMAP.get(github_id, github_id)
+
         orcid_id = contact.get("orcid") or EMAIL_ORCID_MAP.get(email)
+
         if github_id is None and email is not None:
             github_id = EMAIL_GITHUB_MAP.get(email)
         if github_id is not None:
             key = "github", github_id.casefold()
-            wikidata_id, _ = get_wikidata_from_github(github_id)
+            wikidata_id = get_entity_by_github(github_id)
             last_active = get_last_event(github_id)
         elif email is None or email in SKIP_EMAILS:
             continue

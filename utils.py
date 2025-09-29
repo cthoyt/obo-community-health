@@ -3,17 +3,16 @@
 import datetime
 from functools import lru_cache
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional
 
 import pystow
 import requests
 import yaml
-from ratelimit import rate_limited
+from pystow.github import get_github
 
 __all__ = [
     "get_github",
     "get_ontologies",
-    "query_wikidata",
 ]
 
 HERE = Path(__file__).parent.resolve()
@@ -50,7 +49,10 @@ NOW = datetime.datetime.now()
 ONE_YEAR_AGO = NOW - datetime.timedelta(weeks=52)
 FIVE_YEARS_AGO = NOW - datetime.timedelta(weeks=52 * 5)
 
-
+# TODO
+#  adeans@psu.edu, dal.alghamdi92@gmail.com, henrich@embl.de, jmcl@ebi.ac.uk, jmwhorton@uams.edu,
+#  lucas.leclere@obs-banyuls.fr, mauno.vihinen@med.lu.se, mcmelek@msn.com, meghan.balk@gmail.com,
+#  muamith@utmb.edu, noreply@example.com, xyz19940216@163.com
 EMAIL_GITHUB_MAP = {
     "peteremidford@yahoo.com": "pmidford",
     "cjmungall@lbl.gov": "cmungall",
@@ -65,9 +67,14 @@ EMAIL_GITHUB_MAP = {
     "BatchelorC@rsc.org": "batchelorc",
     "stoeckrt@pcbi.upenn.edu": "cstoeckert",
 }
+GITHUB_REMAP = {
+    "megbalk": "meghalithic",
+}
 EMAIL_ORCID_MAP = {
     "Leszek@missouri.edu": "0000-0002-9316-2919",
     "nicolas@ascistance.co.uk": "0000-0002-6309-7327",
+    "dal.alghamdi92@gmail.com": "0000-0002-2801-0767",
+    "jmcl@ebi.ac.uk": "0000-0002-8361-2795",
 }
 EMAIL_WIKIDATA_MAP = {
     "Leszek@missouri.edu": "Q110623916",
@@ -81,20 +88,12 @@ SKIP_EMAILS = {
     "curator@inoh.org",
     "interhelp@ebi.ac.uk",
     "psidev-gps-dev@lists.sourceforge.net",
+    "noreply@example.com",
 }
 
 
-@rate_limited(calls=5_000, period=60 * 60)
-def get_github(url: str, accept: Optional[str] = None, params: Optional[dict[str, any]] = None):
-    headers = {
-        "Authorization": f"token {TOKEN}",
-    }
-    if accept:
-        headers["Accept"] = accept
-    return requests.get(url, headers=headers, params=params).json()
-
-
-def get_ontologies(path: Optional[Path] = None) -> dict[str, dict[str, any]]:
+def get_ontologies(path: Optional[Path] = None) -> dict[str, dict[str, Any]]:
+    """Get the ontology dict."""
     if path is None:
         return get_cached_ontologies()
     with path.open() as file:
@@ -102,24 +101,13 @@ def get_ontologies(path: Optional[Path] = None) -> dict[str, dict[str, any]]:
 
 
 @lru_cache
-def get_cached_ontologies() -> dict[str, dict[str, any]]:
+def get_cached_ontologies() -> dict[str, dict[str, Any]]:
+    """Get the ontology dict."""
     # List of ontologies and associated metadata from OBO Foundry
-    res = requests.get(URL)
+    res = requests.get(URL, timeout=15)
     return _get_ontology_helper(res.content)
 
 
 def _get_ontology_helper(content):
     parsed_res = yaml.safe_load(content)
     return {entry["id"]: entry for entry in parsed_res["ontologies"]}
-
-
-def query_wikidata(query: str):
-    """Query the Wikidata SPARQL endpoint and return JSON."""
-    res = requests.get(
-        WIKIDATA_SPARQL,
-        params={"query": query, "format": "json"},
-        headers=WIKIDATA_HEADERS,
-    )
-    res.raise_for_status()
-    res_json = res.json()
-    return res_json["results"]["bindings"]
