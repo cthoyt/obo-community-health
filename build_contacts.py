@@ -1,3 +1,19 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "cachier",
+#     "click",
+#     "dateparser",
+#     "pandas",
+#     "pystow",
+#     "pyyaml",
+#     "ratelimit",
+#     "requests",
+#     "tqdm",
+#     "wikidata-client",
+# ]
+# ///
+
 """Build the contacts data table."""
 
 from __future__ import annotations

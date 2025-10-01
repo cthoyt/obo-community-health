@@ -1,3 +1,24 @@
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "bioregistry",
+#     "click",
+#     "dataclasses-json",
+#     "dateparser",
+#     "jinja2",
+#     "matplotlib",
+#     "more-click",
+#     "pandas",
+#     "pystow",
+#     "pyyaml",
+#     "ratelimit",
+#     "requests",
+#     "rich",
+#     "seaborn",
+#     "tqdm",
+# ]
+# ///
+
 """Compile community health statistics."""
 
 import datetime
@@ -124,7 +145,7 @@ def get_first_issue(owner: str, repo: str, params) -> Optional[Issue]:
 def get_topics(owner: str, repo: str):
     # Get all topics from the repository. See more information on the GH docs:
     # https://docs.github.com/en/rest/reference/repos#get-all-repository-topics
-    rv = pystow.github.get_github(f"repos/{owner}/{repo}/topics", preview=True).json()
+    rv = pystow.github.get_topics(owner, repo).json()
     return rv["names"]
 
 
@@ -343,8 +364,8 @@ class GithubResult(Result):
 
 
 def get_data(
+    contact_records,
     *,
-    contacts,
     odk_repos,
     force: bool = False,
     test: bool = False,
@@ -353,6 +374,8 @@ def get_data(
     if REPO_DATA_PICKLE.is_file() and not force and not test:
         with REPO_DATA_PICKLE.open("rb") as file:
             return pickle.load(file)
+
+    email_to_contact = {record["email"]: record for record in contact_records}
 
     repos = sorted(iterate_repos(path=path))
     if test:
@@ -368,15 +391,15 @@ def get_data(
         contact_label = contact["label"]
         contact_email = contact["email"]
         contact_github = contact.get("github") or EMAIL_GITHUB_MAP.get(contact_email)
-        contact_wikidata = contacts.get(contact_github, {}).get(
+        contact_wikidata = email_to_contact.get(contact_email, {}).get(
             "wikidata"
         ) or EMAIL_WIKIDATA_MAP.get(contact_email)
         contact_orcid = (
             contact.get("orcid")
-            or contacts.get(contact_github, {}).get("orcid")
+            or email_to_contact.get(contact_email, {}).get("orcid")
             or EMAIL_ORCID_MAP.get(contact_email)
         )
-        contact_recent = contacts.get(contact_github, {}).get("last_active_recent", False)
+        contact_recent = email_to_contact.get(contact_github, {}).get("last_active_recent", False)
 
         # External
         pp = record["preferredPrefix"]
@@ -468,9 +491,7 @@ def get_data(
 
         # last year contributions
         # https://docs.github.com/en/rest/reference/repos#get-the-last-year-of-commit-activity
-        last_year_contributions = pystow.github.get_github(
-            f"repos/{owner}/{repo}/stats/commit_activity"
-        ).json()
+        last_year_contributions = pystow.github.get_repository_commit_activity(owner, repo).json()
         last_year_total_contributions = sum(entry["total"] for entry in last_year_contributions)
 
         # when was the last issue closed?
@@ -534,12 +555,13 @@ def get_data(
 def main(force: bool, test: bool, path):
     force = True
     with CONTACTS_YAML_PATH.open() as file:
-        contacts = {record["github"]: record for record in yaml.safe_load(file)}
+        contact_records = yaml.safe_load(file)
+        n_contacts = len(contact_records)
 
     odk_repos_df = pd.read_csv(ODK_REPOS_PATH, sep="\t")
     odk_repos = dict(odk_repos_df[["repository", "version"]].values)
 
-    rows = get_data(contacts=contacts, odk_repos=odk_repos, force=force, test=test, path=path)
+    rows = get_data(contact_records, odk_repos=odk_repos, force=force, test=test, path=path)
     with REPO_DATA_JSON.open("w") as file:
         json.dump(
             {
@@ -557,7 +579,7 @@ def main(force: bool, test: bool, path):
         )
 
     # Author responsibility histogram
-    counts = [contact["count"] for contact in contacts.values()]
+    counts = [contact_record["count"] for contact_record in contact_records]
     responsible_one, responsible_multiple, responsible_multiple_sum = 0, 0, 0
     for count in counts:
         if count == 1:
@@ -567,12 +589,12 @@ def main(force: bool, test: bool, path):
             responsible_multiple_sum += count
 
     print(f"People: {len(counts)}")
-    has_github = sum(contact.get("github") is not None for contact in contacts.values())
-    print(f"  w/ GitHub: {has_github}/{len(contacts)} ({has_github / len(contacts):.2%})")
-    has_wikidata = sum(contact.get("wikidata") is not None for contact in contacts.values())
-    print(f"  w/ Wikidata: {has_wikidata}/{len(contacts)} ({has_wikidata / len(contacts):.2%})")
-    has_orcid = sum(contact.get("orcid") is not None for contact in contacts.values())
-    print(f"  w/ ORCID: {has_orcid}/{len(contacts)} ({has_orcid / len(contacts):.2%})")
+    has_github = sum(contact.get("github") is not None for contact in contact_records)
+    print(f"  w/ GitHub: {has_github}/{n_contacts} ({has_github / n_contacts:.2%})")
+    has_wikidata = sum(contact.get("wikidata") is not None for contact in contact_records)
+    print(f"  w/ Wikidata: {has_wikidata}/{n_contacts} ({has_wikidata / n_contacts:.2%})")
+    has_orcid = sum(contact.get("orcid") is not None for contact in contact_records)
+    print(f"  w/ ORCID: {has_orcid}/{n_contacts} ({has_orcid / n_contacts:.2%})")
     print(
         f"  responsible for one ontology:"
         f" {responsible_one}/{len(counts)} ({responsible_one / len(counts):.2%})"
@@ -581,7 +603,7 @@ def main(force: bool, test: bool, path):
         f"  responsible for two or more ontologies:"
         f" {responsible_multiple}/{len(counts)} ({responsible_multiple / len(counts):.2%})"
     )
-    active_contacts = sum(contact["last_active_recent"] for contact in contacts.values())
+    active_contacts = sum(contact["last_active_recent"] for contact in contact_records)
     print(
         f"  active on GitHub (last year):"
         f" {active_contacts}/{has_github} ({active_contacts / has_github:.2%})"
@@ -603,7 +625,7 @@ def main(force: bool, test: bool, path):
     )
 
     active_ontologies = sum(
-        len(contact["ontologies"]) for contact in contacts.values() if contact["last_active_recent"]
+        len(contact["ontologies"]) for contact in contact_records if contact["last_active_recent"]
     )
     inactive_ontologies = sum(counts) - active_ontologies
 
@@ -622,7 +644,7 @@ def main(force: bool, test: bool, path):
                 "single_ontologies": responsible_one,
                 "multiple_ontologies": responsible_multiple_sum,
                 "active_responsibles": active_contacts,
-                "inactive_responeibles": len(contacts) - active_contacts,
+                "inactive_responeibles": n_contacts - active_contacts,
                 "active_ontologies": active_ontologies,
                 "inactive_ontologies": inactive_ontologies,
             }
@@ -664,7 +686,7 @@ def main(force: bool, test: bool, path):
         contacts_template.render(
             bioregistry=bioregistry,
             curation=False,
-            rows=list(contacts.values()),
+            rows=contact_records,
             today=today,
         )
     )
@@ -672,17 +694,22 @@ def main(force: bool, test: bool, path):
         contacts_template.render(
             bioregistry=bioregistry,
             curation=True,
-            rows=[row for row in contacts.values() if not row.get("wikidata")],
+            rows=[row for row in contact_records if not row.get("wikidata")],
             today=today,
         )
     )
 
+    no_wikidata_emails = ", ".join(
+        sorted(row["email"] for row in contact_records if not row.get("wikidata"))
+    )
+    if no_wikidata_emails:
+        click.echo(f"These people don't have Wikidata annotations:\n{no_wikidata_emails}")
+
     no_orcid_emails = ", ".join(
-        sorted(row["email"] for row in contacts.values() if not row.get("wikidata"))
+        sorted(row["email"] for row in contact_records if not row.get("orcid"))
     )
     if no_orcid_emails:
-        click.echo("These people don't have ORCID annotations:")
-        click.echo(no_orcid_emails)
+        click.echo(f"These people don't have ORCiD annotations:\n{no_orcid_emails}")
 
     # for row in rows:
     #     ontology_html = ontology_template.render(row=row)

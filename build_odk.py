@@ -12,8 +12,9 @@ import requests
 import yaml
 from tqdm import tqdm
 
-from utils import ODK_REPOS_YAML_PATH, get_github
+from utils import ODK_REPOS_YAML_PATH
 
+from pystow.github import requests_get_github
 
 class Row(TypedDict):
     repository: str
@@ -88,7 +89,7 @@ def paginate_github_search(
     page: int,
     repository_to_bioregistry: dict[str, str],
 ) -> int:
-    res = get_github(
+    res = requests_get_github(
         "https://api.github.com/search/code",
         params={
             "per_page": per_page,

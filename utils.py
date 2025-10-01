@@ -8,10 +8,8 @@ from typing import Any, Optional
 import pystow
 import requests
 import yaml
-from pystow.github import get_github
 
 __all__ = [
-    "get_github",
     "get_ontologies",
 ]
 
@@ -78,6 +76,7 @@ EMAIL_ORCID_MAP = {
     "jmcl@ebi.ac.uk": "0000-0002-8361-2795",
     "maria.herrero@kcl.ac.uk": "0000-0001-7793-3296",
     "burkesquires@gmail.com": "0000-0001-9666-6285",
+    "dsonensh@odu.edu": "0000-0001-9370-918X",
 }
 EMAIL_WIKIDATA_MAP = {
     "smtifahim@gmail.com": "Q57678362",
