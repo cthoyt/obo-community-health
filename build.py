@@ -87,7 +87,7 @@ TITLE = "Add obofoundry topic to repo metadata"
 
 GITHUB_BONUS = 3
 Issue = TypeVar("Issue")
-SOFTWARE_LICENSES = {"mit", "bsd-3-clause", "apache-2.0"}  # TODO
+SOFTWARE_LICENSES = {"mit", "bsd-3-clause", "apache-2.0", "artistic-2.0", "unlicense"}
 
 
 def floor(x: float) -> int:
