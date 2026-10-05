@@ -51,7 +51,14 @@
             {% if not curation %}
             <td style="text-align: center;">{% if row.orcid %}<a href="https://orcid.org/{{ row.orcid }}" data-toggle="tooltip" title="orcid:{{ row.orcid }}">🟢</a>{% endif %}</td>
             <td style="text-align: center;">{% if row.wikidata %}<a href="https://bioregistry.io/wikidata:{{ row.wikidata }}" data-toggle="tooltip" title="wikidata:{{ row.wikidata }}">🟢</a>{% endif %}</td>
-            <td>{{ row.last_active.isoformat() }} {% if row.last_active_recent %}🟢{% else %}🔴{% endif %}</td>
+            <td>
+                {% if row.last_active %}
+                {{ row.last_active.isoformat() }}
+                    {% if row.last_active_recent %}🟢{% else %}🔴{% endif %}
+                {% else %}
+                    🔴
+                {% endif %}             
+            </td>
             {% endif %}
             <td>
                 {% for prefix in row.ontologies %}
