@@ -429,9 +429,7 @@ def _get_row(
     contact_github = contact.get("github") or EMAIL_GITHUB_MAP.get(contact_email)
     contact_wikidata = contact_metadata.get("wikidata") or EMAIL_WIKIDATA_MAP.get(contact_email)
     contact_orcid = (
-        contact.get("orcid")
-        or contact_metadata.get("orcid")
-        or EMAIL_ORCID_MAP.get(contact_email)
+        contact.get("orcid") or contact_metadata.get("orcid") or EMAIL_ORCID_MAP.get(contact_email)
     )
     contact_recent = contact_metadata.get("last_active_recent", False)
 
