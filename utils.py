@@ -3,9 +3,8 @@
 import datetime
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
-import pystow
 import requests
 import yaml
 
@@ -30,18 +29,8 @@ CONTACTS_YAML_PATH = DATA.joinpath("contacts.yaml")
 ODK_REPOS_PATH = DATA.joinpath("odk_repos.tsv")
 ODK_REPOS_YAML_PATH = DATA.joinpath("odk_repos.yaml")
 
-# Load the GitHub access token via PyStow. We'll
-# need it so we don't hit the rate limit
-TOKEN = pystow.get_config("github", "token", raise_on_missing=True)
-
 #: URL for downloading OBO Foundry metatada
 URL = "https://raw.githubusercontent.com/OBOFoundry/OBOFoundry.github.io/master/_config.yml"
-
-#: WikiData SPARQL endpoint. See https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service#Interfacing
-WIKIDATA_SPARQL = "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
-WIKIDATA_HEADERS = {
-    "User-Agent": "obo-community-health/1.0",
-}
 
 NOW = datetime.datetime.now()
 ONE_YEAR_AGO = NOW - datetime.timedelta(weeks=52)
@@ -108,7 +97,7 @@ SKIP_EMAILS = {
 }
 
 
-def get_ontologies(path: Optional[Path] = None) -> dict[str, dict[str, Any]]:
+def get_ontologies(path: Path | None = None) -> dict[str, dict[str, Any]]:
     """Get the ontology dict."""
     if path is None:
         return get_cached_ontologies()

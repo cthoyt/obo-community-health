@@ -1,5 +1,7 @@
+#!/usr/bin/env -S uv run --script
+
 # /// script
-# requires-python = ">=3.12"
+# requires-python = ">=3.14"
 # dependencies = [
 #     "cachier",
 #     "click",
@@ -11,6 +13,7 @@
 #     "requests",
 #     "tqdm",
 #     "wikidata-client",
+#     "dateparser",
 # ]
 # ///
 
@@ -20,6 +23,7 @@ from __future__ import annotations
 
 import datetime
 from collections import Counter, defaultdict
+from functools import partial
 from pathlib import Path
 
 import click
@@ -58,7 +62,7 @@ def get_last_event(user: str) -> datetime.datetime | None:
 
 
 get_entity_by_github = cachier(stale_after=datetime.timedelta(days=30))(
-    wikidata_client.get_entity_by_github
+    partial(wikidata_client.get_entity_by_github, timeout=60)
 )
 
 
@@ -69,7 +73,9 @@ def main(path: Path | None):
     counter = Counter()
     data = {}
     ontologies = defaultdict(list)
-    it = tqdm(sorted(get_ontologies(path=path).items()))
+    it = tqdm(
+        sorted(get_ontologies(path=path).items()), unit="ontology", desc="Generating contacts table"
+    )
     for obo_id, record in it:
         it.set_postfix(ontology=obo_id)
         contact = record.get("contact", {})

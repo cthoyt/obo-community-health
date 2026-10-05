@@ -44,22 +44,22 @@ could be written.
 
 Check the OBO Foundry repositories to see what's going on. To run this, you'll
 need either the `GITHUB_TOKEN`
-environment variable set up with a github token, or any other valid way to
+environment variable set up with a GitHub token, or any other valid way to
 specify the `token` key in the `github`
 namespace via [`pystow`](https://github.com/cthoyt/pystow). Installation and
-running is handled with `tox`. Run with the following lines in your shell:
+running is handled with `just`. Run with the following lines in your shell:
 
-```shell
-$ pip install tox
-$ tox
+```console
+$ uv tool install rust-just
+$ just rebuild
 ```
 
 For a non-standard build using a bleeding edge build of the OBO Foundry config,
 use:
 
-```shell
-python build_contacts.py --path ~/dev/OBOFoundry.github.io/_config.yml
-python build.py --path ~/dev/OBOFoundry.github.io/_config.yml --force 
+```console
+$ uv run --script build_contacts.py --path ~/dev/OBOFoundry.github.io/_config.yml
+$ uv run --script build.py --path ~/dev/OBOFoundry.github.io/_config.yml --force 
 ```
 
 ## Charts
@@ -83,7 +83,6 @@ You can embed the score of your resource using the following HTML using
 your prefix (e.g., `go`) in place of `<YOUR PREFIX HERE>`:
 
 ```html
-
 <object data="https://bioregistry.io/health/<YOUR PREFIX HERE>"></object>
 ```
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env -S uv run --script
+
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
@@ -29,7 +31,7 @@ from collections.abc import Iterable
 from dataclasses import dataclass
 from operator import attrgetter, itemgetter
 from pathlib import Path
-from typing import Any, Optional, TypeVar, Union
+from typing import Any, TypeVar
 
 import bioregistry
 import click
@@ -119,7 +121,7 @@ def adjust(
     return score
 
 
-def get_most_recent_updated_issue(owner: str, repo: str) -> Optional[Issue]:
+def get_most_recent_updated_issue(owner: str, repo: str) -> Issue | None:
     return get_first_issue(
         owner=owner,
         repo=repo,
@@ -127,7 +129,7 @@ def get_most_recent_updated_issue(owner: str, repo: str) -> Optional[Issue]:
     )
 
 
-def get_oldest_open_issue(owner: str, repo: str) -> Optional[Issue]:
+def get_oldest_open_issue(owner: str, repo: str) -> Issue | None:
     return get_first_issue(
         owner=owner,
         repo=repo,
@@ -135,7 +137,7 @@ def get_oldest_open_issue(owner: str, repo: str) -> Optional[Issue]:
     )
 
 
-def get_first_issue(owner: str, repo: str, params) -> Optional[Issue]:
+def get_first_issue(owner: str, repo: str, params) -> Issue | None:
     issues = pystow.github.get_issues(owner=owner, repo=repo, params=params).json()
     if issues:
         return issues[0]
@@ -150,8 +152,8 @@ def get_topics(owner: str, repo: str):
 
 
 def iterate_repos(
-    path: Optional[Path] = None,
-) -> Iterable[tuple[str, str, Union[tuple[str, str], tuple[None, None]], dict[str, Any]]]:
+    path: Path | None = None,
+) -> Iterable[tuple[str, str, tuple[str, str] | tuple[None, None], dict[str, Any]]]:
     ontologies = get_ontologies(path=path)
 
     for obo_id, record in tqdm(sorted(ontologies.items()), desc="Processing OBO conf"):
@@ -191,35 +193,35 @@ class Result:
     prefix: str
     title: str
     description: str
-    homepage: Optional[str]
+    homepage: str | None
     contact_label: str
     contact_email: str
-    contact_github: Optional[str]
-    contact_wikidata: Optional[str]
-    contact_orcid: Optional[str]
+    contact_github: str | None
+    contact_wikidata: str | None
+    contact_orcid: str | None
     contact_recent: bool
     bioregistry_prefix: str
-    bioportal_prefix: Optional[str]
-    ols_prefix: Optional[str]
+    bioportal_prefix: str | None
+    ols_prefix: str | None
 
     def get_score(self) -> tuple[int, list[str]]:
         score = 0
         errors = []
         # Bad naming
-        if f"({self.prefix.lower()})" in self.title.lower():
-            score -= 5
-            errors.append("title contains prefix")
-        elif f"{self.prefix.lower()}:" in self.title.lower():
+        if (
+            f"({self.prefix.lower()})" in self.title.lower()
+            or f"{self.prefix.lower()}:" in self.title.lower()
+        ):
             score -= 5
             errors.append("title contains prefix")
         elif f"{self.prefix.lower()} -" in self.title.lower():
             score -= 5
             errors.append("title contains prefix")
             score -= 5
-        elif f"{self.prefix.lower} ontology" == self.title.lower():
-            score -= 5
-            errors.append("title is redundant of prefix")
-        elif self.prefix.casefold() == self.title.casefold():
+        elif (
+            f"{self.prefix.lower} ontology" == self.title.lower()
+            or self.prefix.casefold() == self.title.casefold()
+        ):
             score -= 5
             errors.append("title is redundant of prefix")
         else:
@@ -303,7 +305,7 @@ class GithubResult(Result):
     most_recent_datetime: datetime.datetime
     most_recent_number: str
     most_recent_last_year: bool
-    odk_version: Optional[str]
+    odk_version: str | None
     # lifetime
     lifetime_total_contributions: int
     lifetime_unique_contributors: int
@@ -369,7 +371,7 @@ def get_data(
     odk_repos,
     force: bool = False,
     test: bool = False,
-    path: Optional[Path] = None,
+    path: Path | None = None,
 ) -> list[Result]:
     if REPO_DATA_PICKLE.is_file() and not force and not test:
         with REPO_DATA_PICKLE.open("rb") as file:
@@ -385,159 +387,19 @@ def get_data(
     repos = tqdm(repos, desc="Repositories")
     for prefix, title, (owner, repo), record in repos:
         repos.set_postfix(repo=f"{owner}/{repo}")
-        description = record["description"]
-        homepage = record.get("homepage")
-        contact = record["contact"]
-        contact_label = contact["label"]
-        contact_email = contact["email"]
-        contact_github = contact.get("github") or EMAIL_GITHUB_MAP.get(contact_email)
-        contact_wikidata = email_to_contact.get(contact_email, {}).get(
-            "wikidata"
-        ) or EMAIL_WIKIDATA_MAP.get(contact_email)
-        contact_orcid = (
-            contact.get("orcid")
-            or email_to_contact.get(contact_email, {}).get("orcid")
-            or EMAIL_ORCID_MAP.get(contact_email)
-        )
-        contact_recent = email_to_contact.get(contact_github, {}).get("last_active_recent", False)
-
-        # External
-        pp = record["preferredPrefix"]
-        bioregistry_prefix = get_registry_invmap("obofoundry").get(pp)
-        if bioregistry_prefix is None:
-            tqdm.write(f"No bioregistry prefix for {pp}")
-            bioportal_prefix = None
-            ols_prefix = None
-        else:
-            bioportal_prefix = get_bioportal_prefix(bioregistry_prefix)
-            ols_prefix = get_ols_prefix(bioregistry_prefix)
-
-        if owner is None:
-            rows.append(
-                Result(
-                    prefix=prefix,
-                    title=title,
-                    description=description,
-                    homepage=homepage,
-                    contact_github=contact_github,
-                    contact_email=contact_email,
-                    contact_label=contact_label,
-                    contact_wikidata=contact_wikidata,
-                    contact_orcid=contact_orcid,
-                    contact_recent=contact_recent,
-                    bioregistry_prefix=bioregistry_prefix,
-                    bioportal_prefix=bioportal_prefix,
-                    ols_prefix=ols_prefix,
-                )
-            )
-            continue
-        info = pystow.github.get_repository(owner, repo).json()
-        repo_description = info["description"]
-        default_branch = info["default_branch"]
-        stars = info["stargazers_count"]
-        license = info["license"]
-        open_issues = info["open_issues"]
-        repo_homepage = info["homepage"]
-        pushed_at = dateparser.parse(info["pushed_at"]).replace(tzinfo=None)
-        pushed_last_year = ONE_YEAR_AGO < pushed_at
-        pushed_last_five_years = FIVE_YEARS_AGO < pushed_at
-        topics = get_topics(owner, repo)
-        has_obofoundry_topic = "obofoundry" in topics
-        if (most_recent_updated := get_most_recent_updated_issue(owner, repo)) is not None:
-            most_recent_datetime = dateparser.parse(most_recent_updated["updated_at"]).replace(
-                tzinfo=None
-            )
-            most_recent_updated_number = most_recent_updated["number"]
-            update_last_year = ONE_YEAR_AGO < most_recent_datetime
-        else:
-            most_recent_datetime = None
-            most_recent_updated_number = None
-            update_last_year = False
-
-        lifetime_contributions_ = pystow.github.get_contributions(owner, repo).json()
-        lifetime_contributions = {}
-        for entry in lifetime_contributions_:
-            if author := entry["author"]:
-                lifetime_contributions[author["login"]] = entry["total"]
-            else:
-                tqdm.write(f"[{prefix}] missing author")
-
-        if lifetime_contributions:
-            top_lifetime_contributor, top_lifetime_contributions = max(
-                lifetime_contributions.items(), key=itemgetter(1)
-            )
-        else:
-            top_lifetime_contributor, top_lifetime_contributions = None, None
-        lifetime_total_contributions = sum(lifetime_contributions.values())
-        lifetime_unique_contributors = len(lifetime_contributions)
-
-        last_year_contributions = {
-            entry["author"]["login"]: sum(
-                week["c"]
-                for week in entry["weeks"]
-                if ONE_YEAR_AGO < datetime.datetime.utcfromtimestamp(week["w"])
-            )
-            for entry in lifetime_contributions_
-            if entry["author"]
-        }
-
-        if last_year_contributions:
-            top_last_year_contributor, top_last_year_contributions = max(
-                last_year_contributions.items(), key=itemgetter(1)
-            )
-        else:
-            top_last_year_contributor, top_last_year_contributions = None, None
-        last_year_unique_contributors = len(last_year_contributions)
-
-        # last year contributions
-        # https://docs.github.com/en/rest/reference/repos#get-the-last-year-of-commit-activity
-        last_year_contributions = pystow.github.get_repository_commit_activity(owner, repo).json()
-        last_year_total_contributions = sum(entry["total"] for entry in last_year_contributions)
-
-        # when was the last issue closed?
-        rows.append(
-            GithubResult(
+        try:
+            row = _get_row(
                 prefix=prefix,
                 title=title,
-                description=description,
-                homepage=homepage,
-                contact_github=contact_github,
-                contact_email=contact_email,
-                contact_label=contact_label,
-                contact_wikidata=contact_wikidata,
-                contact_orcid=contact_orcid,
-                contact_recent=contact_recent,
-                bioregistry_prefix=bioregistry_prefix,
-                bioportal_prefix=bioportal_prefix,
-                ols_prefix=ols_prefix,
+                record=record,
                 owner=owner,
                 repo=repo,
-                repo_description=repo_description,
-                stars=stars,
-                default_branch=default_branch,
-                license=license["key"] if license else None,
-                open_issues=open_issues,
-                repo_homepage=repo_homepage,
-                pushed_at=pushed_at,
-                pushed_last_year=pushed_last_year,
-                pushed_last_five_years=pushed_last_five_years,
-                has_obofoundry_topic=has_obofoundry_topic,
-                odk_version=odk_repos.get(f"{owner}/{repo}"),
-                most_recent_datetime=most_recent_datetime,
-                most_recent_number=most_recent_updated_number,
-                most_recent_last_year=update_last_year,
-                # lifetime
-                lifetime_total_contributions=lifetime_total_contributions,
-                lifetime_unique_contributors=lifetime_unique_contributors,
-                top_lifetime_contributor=top_lifetime_contributor,
-                top_lifetime_contributions=top_lifetime_contributions,
-                # last year
-                last_year_total_contributions=last_year_total_contributions,
-                last_year_unique_contributors=last_year_unique_contributors,
-                top_last_year_contributor=top_last_year_contributor,
-                top_last_year_contributions=top_last_year_contributions,
+                email_to_contact=email_to_contact,
             )
-        )
+        except Exception as e:
+            tqdm.write(f"[{prefix}] failed: {e}")
+        else:
+            rows.append(row)
 
     rows = sorted(rows, key=attrgetter("prefix"))
 
@@ -547,13 +409,171 @@ def get_data(
     return rows
 
 
+def _get_row(
+    *,
+    prefix,
+    title,
+    record,
+    owner,
+    repo,
+    email_to_contact,
+) -> Result:
+    description = record["description"]
+    homepage = record.get("homepage")
+    contact = record["contact"]
+    contact_label = contact["label"]
+    contact_email = contact["email"]
+    contact_github = contact.get("github") or EMAIL_GITHUB_MAP.get(contact_email)
+    contact_wikidata = email_to_contact.get(contact_email, {}).get(
+        "wikidata"
+    ) or EMAIL_WIKIDATA_MAP.get(contact_email)
+    contact_orcid = (
+        contact.get("orcid")
+        or email_to_contact.get(contact_email, {}).get("orcid")
+        or EMAIL_ORCID_MAP.get(contact_email)
+    )
+    contact_recent = email_to_contact.get(contact_github, {}).get("last_active_recent", False)
+
+    # External
+    pp = record["preferredPrefix"]
+    bioregistry_prefix = get_registry_invmap("obofoundry").get(pp.lower())
+    if bioregistry_prefix is None:
+        tqdm.write(f"No bioregistry prefix for {pp}")
+        bioportal_prefix = None
+        ols_prefix = None
+    else:
+        bioportal_prefix = get_bioportal_prefix(bioregistry_prefix)
+        ols_prefix = get_ols_prefix(bioregistry_prefix)
+
+    if owner is None:
+        return Result(
+            prefix=prefix,
+            title=title,
+            description=description,
+            homepage=homepage,
+            contact_github=contact_github,
+            contact_email=contact_email,
+            contact_label=contact_label,
+            contact_wikidata=contact_wikidata,
+            contact_orcid=contact_orcid,
+            contact_recent=contact_recent,
+            bioregistry_prefix=bioregistry_prefix,
+            bioportal_prefix=bioportal_prefix,
+            ols_prefix=ols_prefix,
+        )
+    info = pystow.github.get_repository(owner, repo).json()
+    repo_description = info["description"]
+    default_branch = info["default_branch"]
+    stars = info["stargazers_count"]
+    license = info["license"]
+    open_issues = info["open_issues"]
+    repo_homepage = info["homepage"]
+    pushed_at = dateparser.parse(info["pushed_at"]).replace(tzinfo=None)
+    pushed_last_year = ONE_YEAR_AGO < pushed_at
+    pushed_last_five_years = FIVE_YEARS_AGO < pushed_at
+    topics = get_topics(owner, repo)
+    has_obofoundry_topic = "obofoundry" in topics
+    if (most_recent_updated := get_most_recent_updated_issue(owner, repo)) is not None:
+        most_recent_datetime = dateparser.parse(most_recent_updated["updated_at"]).replace(
+            tzinfo=None
+        )
+        most_recent_updated_number = most_recent_updated["number"]
+        update_last_year = ONE_YEAR_AGO < most_recent_datetime
+    else:
+        most_recent_datetime = None
+        most_recent_updated_number = None
+        update_last_year = False
+
+    lifetime_contributions_ = pystow.github.get_contributions(owner, repo).json()
+    lifetime_contributions = {}
+    for entry in lifetime_contributions_:
+        if author := entry["author"]:
+            lifetime_contributions[author["login"]] = entry["total"]
+        else:
+            tqdm.write(f"[{prefix}] missing author")
+
+    if lifetime_contributions:
+        top_lifetime_contributor, top_lifetime_contributions = max(
+            lifetime_contributions.items(), key=itemgetter(1)
+        )
+    else:
+        top_lifetime_contributor, top_lifetime_contributions = None, None
+    lifetime_total_contributions = sum(lifetime_contributions.values())
+    lifetime_unique_contributors = len(lifetime_contributions)
+
+    last_year_contributions = {
+        entry["author"]["login"]: sum(
+            week["c"]
+            for week in entry["weeks"]
+            if ONE_YEAR_AGO < datetime.datetime.utcfromtimestamp(week["w"])
+        )
+        for entry in lifetime_contributions_
+        if entry["author"]
+    }
+
+    if last_year_contributions:
+        top_last_year_contributor, top_last_year_contributions = max(
+            last_year_contributions.items(), key=itemgetter(1)
+        )
+    else:
+        top_last_year_contributor, top_last_year_contributions = None, None
+    last_year_unique_contributors = len(last_year_contributions)
+
+    # last year contributions
+    # https://docs.github.com/en/rest/reference/repos#get-the-last-year-of-commit-activity
+    last_year_contributions = pystow.github.get_repository_commit_activity(owner, repo).json()
+    last_year_total_contributions = sum(entry["total"] for entry in last_year_contributions)
+
+    # when was the last issue closed?
+    return GithubResult(
+        prefix=prefix,
+        title=title,
+        description=description,
+        homepage=homepage,
+        contact_github=contact_github,
+        contact_email=contact_email,
+        contact_label=contact_label,
+        contact_wikidata=contact_wikidata,
+        contact_orcid=contact_orcid,
+        contact_recent=contact_recent,
+        bioregistry_prefix=bioregistry_prefix,
+        bioportal_prefix=bioportal_prefix,
+        ols_prefix=ols_prefix,
+        owner=owner,
+        repo=repo,
+        repo_description=repo_description,
+        stars=stars,
+        default_branch=default_branch,
+        license=license["key"] if license else None,
+        open_issues=open_issues,
+        repo_homepage=repo_homepage,
+        pushed_at=pushed_at,
+        pushed_last_year=pushed_last_year,
+        pushed_last_five_years=pushed_last_five_years,
+        has_obofoundry_topic=has_obofoundry_topic,
+        odk_version=odk_repos.get(f"{owner}/{repo}"),
+        most_recent_datetime=most_recent_datetime,
+        most_recent_number=most_recent_updated_number,
+        most_recent_last_year=update_last_year,
+        # lifetime
+        lifetime_total_contributions=lifetime_total_contributions,
+        lifetime_unique_contributors=lifetime_unique_contributors,
+        top_lifetime_contributor=top_lifetime_contributor,
+        top_lifetime_contributions=top_lifetime_contributions,
+        # last year
+        last_year_total_contributions=last_year_total_contributions,
+        last_year_unique_contributors=last_year_unique_contributors,
+        top_last_year_contributor=top_last_year_contributor,
+        top_last_year_contributions=top_last_year_contributions,
+    )
+
+
 @click.command()
 @force_option
 @verbose_option
 @click.option("--test", is_flag=True)
 @click.option("--path", help="Path to local metadata", type=Path)
 def main(force: bool, test: bool, path):
-    force = True
     with CONTACTS_YAML_PATH.open() as file:
         contact_records = yaml.safe_load(file)
         n_contacts = len(contact_records)
@@ -566,7 +586,7 @@ def main(force: bool, test: bool, path):
         json.dump(
             {
                 row.prefix: {
-                    **dict(zip(("score", "messages"), row.get_score())),
+                    **dict(zip(("score", "messages"), row.get_score(), strict=False)),
                     **row.to_dict(),
                 }
                 for row in rows
@@ -669,7 +689,8 @@ def main(force: bool, test: bool, path):
     # Correlation between score and number of issues
     fig, ax = plt.subplots(figsize=(8, 3))
     x, y = zip(
-        *((row.get_score()[0], row.open_issues) for row in rows if isinstance(row, GithubResult))
+        *((row.get_score()[0], row.open_issues) for row in rows if isinstance(row, GithubResult)),
+        strict=False,
     )
     sns.scatterplot(x=x, y=y, ax=ax)
     ax.set_xlabel("Score")
