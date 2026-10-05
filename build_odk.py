@@ -1,3 +1,5 @@
+#!/usr/bin/env -S uv run --script
+
 """Build an ODK summary file."""
 
 import json
@@ -10,11 +12,11 @@ import click
 import pandas as pd
 import requests
 import yaml
+from pystow.github import requests_get_github
 from tqdm import tqdm
 
 from utils import ODK_REPOS_YAML_PATH
 
-from pystow.github import requests_get_github
 
 class Row(TypedDict):
     repository: str

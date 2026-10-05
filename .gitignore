@@ -3,3 +3,4 @@ data.pkl
 .tox
 *.pyc
 .venv
+.DS_Store
