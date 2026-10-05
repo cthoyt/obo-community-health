@@ -29,7 +29,7 @@ jobs:
       - name: Update repository statistics
         id: update
         run: |
-          just buildf
+          just rebuild
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
