@@ -395,6 +395,7 @@ def get_data(
                 owner=owner,
                 repo=repo,
                 email_to_contact=email_to_contact,
+                odk_repos=odk_repos,
             )
         except Exception as e:
             tqdm.write(f"[{prefix}] failed: {e}")
@@ -417,6 +418,7 @@ def _get_row(
     owner,
     repo,
     email_to_contact,
+    odk_repos,
 ) -> Result:
     description = record["description"]
     homepage = record.get("homepage")
