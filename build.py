@@ -425,22 +425,21 @@ def _get_row(
     contact = record["contact"]
     contact_label = contact["label"]
     contact_email = contact["email"]
+    contact_metadata = email_to_contact.get(contact_email, {})
     contact_github = contact.get("github") or EMAIL_GITHUB_MAP.get(contact_email)
-    contact_wikidata = email_to_contact.get(contact_email, {}).get(
-        "wikidata"
-    ) or EMAIL_WIKIDATA_MAP.get(contact_email)
+    contact_wikidata = contact_metadata.get("wikidata") or EMAIL_WIKIDATA_MAP.get(contact_email)
     contact_orcid = (
         contact.get("orcid")
-        or email_to_contact.get(contact_email, {}).get("orcid")
+        or contact_metadata.get("orcid")
         or EMAIL_ORCID_MAP.get(contact_email)
     )
-    contact_recent = email_to_contact.get(contact_github, {}).get("last_active_recent", False)
+    contact_recent = contact_metadata.get("last_active_recent", False)
 
     # External
     pp = record["preferredPrefix"]
     bioregistry_prefix = get_registry_invmap("obofoundry").get(pp.lower())
     if bioregistry_prefix is None:
-        tqdm.write(f"No bioregistry prefix for {pp}")
+        tqdm.write(f"No Bioregistry prefix for {pp}")
         bioportal_prefix = None
         ols_prefix = None
     else:

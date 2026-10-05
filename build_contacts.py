@@ -114,7 +114,7 @@ def main(path: Path | None):
             "wikidata": wikidata_id,
             "orcid": orcid_id,
             "last_active": last_active,
-            "last_active_recent": ONE_YEAR_AGO < last_active if last_active else False,
+            "last_active_recent": last_active is not None and ONE_YEAR_AGO < last_active,
         }
 
     # Output TSV
