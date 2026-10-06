@@ -397,7 +397,7 @@ def get_data(
                 email_to_contact=email_to_contact,
                 odk_repos=odk_repos,
             )
-        except Exception as e:
+        except Exception as e: # noqa:BLE001
             tqdm.write(f"[{prefix}] failed: {e}")
         else:
             rows.append(row)
@@ -504,7 +504,7 @@ def _get_row(
         entry["author"]["login"]: sum(
             week["c"]
             for week in entry["weeks"]
-            if ONE_YEAR_AGO < datetime.datetime.utcfromtimestamp(week["w"])
+            if ONE_YEAR_AGO < datetime.datetime.utcfromtimestamp(week["w"]) # noqa:DTZ004
         )
         for entry in lifetime_contributions_
         if entry["author"]
@@ -698,7 +698,7 @@ def main(force: bool, test: bool, path):
     fig.tight_layout()
     fig.savefig(ISSUE_SCATTER, dpi=300)
 
-    today = datetime.date.today()
+    today = datetime.date.today() # noqa:DTZ011
 
     INDEX.write_text(index_template.render(rows=rows, today=today))
 

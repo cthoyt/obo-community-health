@@ -32,7 +32,7 @@ ODK_REPOS_YAML_PATH = DATA.joinpath("odk_repos.yaml")
 #: URL for downloading OBO Foundry metatada
 URL = "https://raw.githubusercontent.com/OBOFoundry/OBOFoundry.github.io/master/_config.yml"
 
-NOW = datetime.datetime.now()
+NOW = datetime.datetime.now() # noqa:DTZ005
 ONE_YEAR_AGO = NOW - datetime.timedelta(weeks=52)
 FIVE_YEARS_AGO = NOW - datetime.timedelta(weeks=52 * 5)
 

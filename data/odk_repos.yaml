@@ -1,3 +1,13 @@
+- name: config-v12qkodk.yaml
+  path: wandb/sweep-g1x8g8xi/config-v12qkodk.yaml
+  prefix: null
+  repository: 0Chris5R/StanfordCS336-Own-Transformer
+  version: unknown
+- name: testp-odk.yaml
+  path: src/ontology/testp-odk.yaml
+  prefix: null
+  repository: a-botas/testPprotege
+  version: 1.6.1
 - name: rto-odk.yaml
   path: src/ontology/rto-odk.yaml
   prefix: null
@@ -13,6 +23,11 @@
   prefix: null
   repository: AgriculturalSemantics/seont_test
   version: 1.2.22
+- name: go-odk.yaml
+  path: src/ontology/go-odk.yaml
+  prefix: null
+  repository: ai4curation/icbo-ai-tutorial
+  version: 1.5.2
 - name: ak-ontology-odk.yaml
   path: src/ontology/ak-ontology-odk.yaml
   prefix: null
@@ -32,10 +47,10 @@
   path: src/ontology/apollo_sv-odk.yaml
   prefix: apollosv
   repository: ApolloDev/apollo-sv
-  version: 1.5.2
+  version: 1.6.1
 - name: mobio-odk.yaml
   path: src/ontology/mobio-odk.yaml
-  prefix: null
+  prefix: mobio
   repository: arpcard/mobio
   version: '1.4'
 - name: csonto-odk.yaml
@@ -43,20 +58,26 @@
   prefix: null
   repository: ASHS21/csonto
   version: 1.4.3
-- name: agro-odk.yaml
-  path: src/ontology/agro-odk.yaml
-  repository: AurInt/agro
-  version: 1.2.32
+- name: wcso-odk.yaml
+  path: src/ontology/wcso-odk.yaml
+  prefix: null
+  repository: BAMresearch/wcso
+  version: '1.6'
 - name: geocore-odk.yaml
   path: src/ontology/geocore-odk.yaml
   prefix: null
   repository: BDI-UFRGS/GeoCoreOntology
   version: '1.5'
+- name: odk.yaml
+  path: odk.yaml
+  prefix: null
+  repository: bedri/open-directory-crawler
+  version: unknown
 - name: aio-odk.yaml
   path: src/ontology/aio-odk.yaml
-  prefix: null
+  prefix: aio
   repository: berkeleybop/artificial-intelligence-ontology
-  version: 1.5.2
+  version: 1.6.1
 - name: bero-odk.yaml
   path: src/ontology/bero-odk.yaml
   prefix: null
@@ -64,9 +85,9 @@
   version: '1.5'
 - name: metpo-odk.yaml
   path: src/ontology/metpo-odk.yaml
-  prefix: null
+  prefix: metpo
   repository: berkeleybop/metpo
-  version: 1.5.4
+  version: 1.6.1
 - name: TMN-odk.yaml
   path: src/ontology/TMN-odk.yaml
   prefix: null
@@ -76,7 +97,12 @@
   path: src/ontology/uo-odk.yaml
   prefix: uo
   repository: bio-ontology-research-group/unit-ontology
-  version: '1.4'
+  version: '1.6'
+- name: idpo-odk.yaml
+  path: src/ontology/idpo-odk.yaml
+  prefix: idpo
+  repository: BioComputingUP/idpo
+  version: 1.6.1
 - name: bco-odk.yaml
   path: src/ontology/bco-odk.yaml
   prefix: bco
@@ -84,9 +110,14 @@
   version: 1.2.30
 - name: bervo-odk.yaml
   path: src/ontology/bervo-odk.yaml
-  prefix: null
+  prefix: bervo
   repository: bioepic-data/bervo
   version: '1.6'
+- name: bdon-odk.yaml
+  path: src/ontology/bdon-odk.yaml
+  prefix: null
+  repository: Bipolar-Disorder-Ontology/BDON
+  version: 1.6.1
 - name: dhmo-odk.yaml
   path: src/ontology/dhmo-odk.yaml
   prefix: null
@@ -107,6 +138,11 @@
   prefix: null
   repository: bmir-radx/radx-study-analysis-vocab
   version: '1.5'
+- name: broiler-production-ontology-odk.yaml
+  path: src/ontology/broiler-production-ontology-odk.yaml
+  prefix: null
+  repository: bojet051/broiler-production-ontology
+  version: 1.6.1
 - name: bicano-odk.yaml
   path: src/ontology/bicano-odk.yaml
   prefix: null
@@ -114,27 +150,27 @@
   version: '1.6'
 - name: dhbao-odk.yaml
   path: src/ontology/dhbao-odk.yaml
-  prefix: null
+  prefix: dhba
   repository: brain-bican/developing_human_brain_atlas_ontology
   version: '1.4'
 - name: dmbao-odk.yaml
   path: src/ontology/dmbao-odk.yaml
-  prefix: null
+  prefix: dmba
   repository: brain-bican/developing_mouse_brain_atlas_ontology
   version: '1.4'
 - name: hbao-odk.yaml
   path: src/ontology/hbao-odk.yaml
-  prefix: null
+  prefix: hba
   repository: brain-bican/human_brain_atlas_ontology
   version: '1.4'
 - name: mbao-odk.yaml
   path: src/ontology/mbao-odk.yaml
-  prefix: null
+  prefix: mba
   repository: brain-bican/mouse_brain_atlas_ontology
   version: '1.4'
 - name: pbao-odk.yaml
   path: src/ontology/pbao-odk.yaml
-  prefix: null
+  prefix: pba
   repository: brain-bican/primate_brain_atlas_ontology
   version: '1.4'
 - name: bito-odk.yaml
@@ -147,20 +183,21 @@
   prefix: bto
   repository: BRENDA-Enzymes/BTO
   version: 1.2.19
-- name: gombo-odk.yaml
-  path: src/ontology/gombo-odk.yaml
-  repository: BridgetSquidget/gombo
-  version: 1.3.0
 - name: MRIO-odk.yaml
   path: src/ontology/target/MRIO/src/ontology/MRIO-odk.yaml
   prefix: null
   repository: Buffalo-Ontology-Group/MRI_Ontology
-  version: 1.5.2
+  version: 1.5.4
 - name: u32akse7wtb53erc5jskyezo6ff5nodk.yaml
   path: data/spec_files/errors/u32akse7wtb53erc5jskyezo6ff5nodk.yaml
   prefix: null
   repository: buildsi/error-analysis
   version: unknown
+- name: example-odk.yaml
+  path: src/ontology/example-odk.yaml
+  prefix: null
+  repository: ccyid/example
+  version: 1.6.1
 - name: capo-odk.yaml
   path: src/ontology/capo-odk.yaml
   prefix: null
@@ -171,6 +208,11 @@
   prefix: clm
   repository: Cellular-Semantics/CellMark
   version: 1.5.2
+- name: bgo-odk.yaml
+  path: src/ontology/bgo-odk.yaml
+  prefix: null
+  repository: Cellular-Semantics/hmba_basal_ganglia_ontology
+  version: '1.6'
 - name: whbo-odk.yaml
   path: src/ontology/whbo-odk.yaml
   prefix: null
@@ -181,38 +223,71 @@
   prefix: null
   repository: Cellular-Semantics/whole_mouse_brain_ontology
   version: 1.5.2
-- name: zfa-odk.yaml
-  path: src/ontology/zfa-odk.yaml
-  repository: cerivs/zebrafish-anatomical-ontology
-  version: 1.3.0
 - name: radx-odk.yaml
   path: src/ontology/radx-odk.yaml
   prefix: null
   repository: ckindermann/radx
   version: '1.5'
-- name: childwelfare-odk.yaml
-  path: src/ontology/childwelfare-odk.yaml
-  repository: cmconnor/childwelfare
-  version: 1.2.29
+- name: project-odk.yaml
+  path: project-odk.yaml
+  prefix: null
+  repository: cmllezr/NOES-Onto
+  version: '1.6'
 - name: chemessence-odk.yaml
   path: src/ontology/chemessence-odk.yaml
   prefix: null
   repository: cmungall/chemessence
   version: 1.5.2
+- name: fix-odk.yaml
+  path: src/ontology/fix-odk.yaml
+  prefix: fix
+  repository: cmungall/fix
+  version: '1.6'
 - name: lsfo-odk.yaml
   path: src/ontology/lsfo-odk.yaml
   prefix: null
   repository: cmungall/lsfo
   version: 1.5.2
-- name: geodatainfodk.yaml
-  path: data/scheduled/DK/geo/geodatainfodk.yaml
+- name: mamo-odk.yaml
+  path: src/ontology/mamo-odk.yaml
+  prefix: mamo
+  repository: cmungall/mamo
+  version: '1.6'
+- name: rex-odk.yaml
+  path: src/ontology/rex-odk.yaml
+  prefix: rex
+  repository: cmungall/rex
+  version: '1.6'
+- name: vario-odk.yaml
+  path: src/ontology/vario-odk.yaml
   prefix: null
-  repository: commondataio/dataportals-registry
+  repository: cmungall/vario
+  version: '1.6'
+- name: molsim-odk.yaml
+  path: src/ontology/molsim-odk.yaml
+  prefix: molsim
+  repository: CPCLab/molsim-ontology
+  version: 1.6.1
+- name: foodon-odk.yaml
+  path: .hidden/archive/foodon-master/src/ontology/foodon-odk.yaml
+  prefix: null
+  repository: crunchdomo/cooking-conversation-thesis
   version: unknown
-- name: biolink_sdtm_owl-odk.yaml
-  path: src/ontology/biolink_sdtm_owl-odk.yaml
-  repository: criticalpathinstitute/biolink_sdtm_owl
-  version: 1.2.32
+- name: foodon-odk.yaml
+  path: .hidden/archive/foodon-master/src/ontology/foodon-odk.yaml
+  prefix: null
+  repository: crunchdomo/thesis-cooking-conversation-final
+  version: unknown
+- name: qw14b_waodk.yaml
+  path: examples/training/configs/qw14b_waodk.yaml
+  prefix: null
+  repository: cupkk/agentrl
+  version: unknown
+- name: metocforsvaretfcoodk.yaml
+  path: data/entities/DK/Federal/scientific/metocforsvaretfcoodk.yaml
+  prefix: null
+  repository: datenoio/dataportals-registry
+  version: unknown
 - name: install_odk.yaml
   path: openg2p/iac/roles/spar_oke_deploy/tasks/install_odk.yaml
   prefix: null
@@ -228,19 +303,20 @@
   prefix: null
   repository: denniszielke/container_demos
   version: unknown
-- name: hero-odk.yaml
-  path: src/ontology/hero-odk.yaml
-  repository: dillerm/Health-Related-Exposure-Ontology
-  version: 1.3.1
 - name: lp-odk.yaml
   path: src/ontology/lp-odk.yaml
-  prefix: null
+  prefix: kim.lp
   repository: dini-ag-kim/school-curriculum-pg
-  version: 1.5.4
+  version: '1.6'
 - name: memon-odk.yaml
   path: src/ontology/memon-odk.yaml
   prefix: null
   repository: DominikMartinat/membrane_ontology
+  version: 1.5.2
+- name: go-odk.yaml
+  path: src/ontology/go-odk.yaml
+  prefix: null
+  repository: dragon-ai-agent/icbo-ai-tutorial
   version: 1.5.2
 - name: covoc-odk.yaml
   path: src/ontology/covoc-odk.yaml
@@ -249,7 +325,7 @@
   version: 1.3.1
 - name: ejp-rd-odk.yaml
   path: src/ontology/ejp-rd-odk.yaml
-  prefix: null
+  prefix: ejprd
   repository: EBISPOT/EJP-Ontology
   version: 1.2.19
 - name: hancestro-odk.yaml
@@ -276,16 +352,12 @@
   path: src/ontology/ecocore-odk.yaml
   prefix: ecocore
   repository: EcologicalSemantics/ecocore
-  version: 1.3.0
-- name: aao-odk.yaml
-  path: src/ontology/aao-odk.yaml
-  repository: elisapappagallo1/anatomical-atlas-ontology
-  version: 1.3.1
+  version: 1.6.1
 - name: ecto-odk.yaml
   path: src/ontology/ecto-odk.yaml
   prefix: ecto
   repository: EnvironmentOntology/environmental-exposure-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: parco-odk.yaml
   path: src/ontology/parco-odk.yaml
   prefix: null
@@ -296,14 +368,9 @@
   prefix: null
   repository: eu-parc/parco-ca
   version: '1.4'
-- name: parco-hbm-odk.yaml
-  path: src/ontology/parco-hbm-odk.yaml
-  prefix: null
-  repository: eu-parc/parco-hbm
-  version: '1.4'
 - name: DRAO-odk.yaml
-  path: src/ontology/DRAO-odk.yaml
-  prefix: null
+  path: src/ontology/target/DRAO/src/ontology/DRAO-odk.yaml
+  prefix: drao
   repository: FAIRsharing/domain-ontology
   version: '1.6'
 - name: SRAO-odk.yaml
@@ -320,27 +387,32 @@
   path: src/ontology/fbbt-odk.yaml
   prefix: fbbt
   repository: FlyBase/drosophila-anatomy-developmental-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: fbdv-odk.yaml
   path: src/ontology/fbdv-odk.yaml
   prefix: fbdv
   repository: FlyBase/drosophila-developmental-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: dpo-odk.yaml
   path: src/ontology/dpo-odk.yaml
   prefix: dpo
   repository: FlyBase/drosophila-phenotype-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: fbcv-odk.yaml
   path: src/ontology/fbcv-odk.yaml
   prefix: fbcv
   repository: FlyBase/flybase-controlled-vocabulary
-  version: '1.6'
+  version: 1.6.1
 - name: foodon-odk.yaml
   path: src/ontology/foodon-odk.yaml
   prefix: foodon
   repository: FoodOntology/foodon
-  version: 1.5.4
+  version: 1.6.1
+- name: fbbi-odk.yaml
+  path: src/ontology/fbbi-odk.yaml
+  prefix: fbbi
+  repository: foundingGIDE/fbbi
+  version: 1.6.1
 - name: fovt-odk.yaml
   path: src/ontology/fovt-odk.yaml
   prefix: fovt
@@ -351,6 +423,21 @@
   prefix: null
   repository: futres/uberonfovt
   version: 1.2.32
+- name: lp-odk.yaml
+  path: src/ontology/lp-odk.yaml
+  prefix: null
+  repository: FWU-DE/lehrplan-ontologie
+  version: '1.6'
+- name: sa-odk.yaml
+  path: src/ontology/sa-odk.yaml
+  prefix: null
+  repository: FWU-DE/schulart-ontologie
+  version: '1.6'
+- name: sf-odk.yaml
+  path: src/ontology/sf-odk.yaml
+  prefix: null
+  repository: FWU-DE/schulfach-ontologie
+  version: '1.6'
 - name: gcde-odk.yaml
   path: src/ontology/gcde-odk.yaml
   prefix: null
@@ -360,32 +447,62 @@
   path: src/ontology/genepio-odk.yaml
   prefix: genepio
   repository: GenEpiO/genepio
-  version: 1.5.4
+  version: 1.6.1
+- name: pizza-odk.yaml
+  path: src/ontology/pizza-odk.yaml
+  prefix: null
+  repository: GerhardBalz/pizza-ontology
+  version: 1.6.1
 - name: afpo-odk.yaml
   path: src/ontology/afpo-odk.yaml
   prefix: afpo
   repository: h3abionet/afpo
   version: 1.5.1
+- name: dashboards-hellodk.yaml
+  path: kubernetes/utilities/dashboards-hellodk.yaml
+  prefix: null
+  repository: hellodk/dumpyard
+  version: unknown
 - name: cdi4pan-odk.yaml
   path: src/ontology/cdi4pan-odk.yaml
   prefix: null
   repository: hgoerzig/cdi4pan
   version: 1.5.2
+- name: OM0ODK.yaml
+  path: db/sk/OM0ODK.yaml
+  prefix: null
+  repository: Hotel-Foxtrot-Tango-Echo/przemienniki-mapy73pl
+  version: unknown
+- name: compose.odk.yaml
+  path: deploy/compose.odk.yaml
+  prefix: null
+  repository: hotosm/field-tm
+  version: unknown
 - name: ccf-odk.yaml
   path: src/ontology/ccf-odk.yaml
   prefix: ccf
   repository: hubmapconsortium/ccf-ontology
   version: 1.3.0
+- name: copi-odk.yaml
+  path: src/ontology/copi-odk.yaml
+  prefix: null
+  repository: INF-UFRGS-Ontologies/COPI
+  version: 1.6.1
+- name: o3po-odk.yaml
+  path: src/ontology/o3po-odk.yaml
+  prefix: null
+  repository: INF-UFRGS-Ontologies/O3PO
+  version: '1.6'
 - name: omo-odk.yaml
   path: src/ontology/omo-odk.yaml
   prefix: omo
   repository: information-artifact-ontology/ontology-metadata
-  version: '1.6'
+  version: 1.6.1
 - name: aism-odk.yaml
   path: src/ontology/aism-odk.yaml
   prefix: aism
   repository: insect-morphology/aism
-  version: 1.5.4
+  version: '1.6'
 - name: colao-odk.yaml
   path: src/ontology/target/colao/src/ontology/colao-odk.yaml
   prefix: colao
@@ -397,33 +514,30 @@
   repository: insect-morphology/lepao
   version: '1.4'
 - name: pbpko-odk.yaml
-  path: odk-config/pbpko-odk.yaml
-  prefix: null
+  path: src/ontology/pbpko-odk.yaml
+  prefix: pbpko
   repository: InSilicoVida-Research-Lab/pbpko
-  version: unknown
+  version: '1.6'
+- name: memo-odk.yaml
+  path: src/ontology/memo-odk.yaml
+  prefix: null
+  repository: ISE-FIZKarlsruhe/memo
+  version: '1.6'
 - name: mwo-odk.yaml
   path: src/ontology/mwo-odk.yaml
-  prefix: null
+  prefix: mwo
   repository: ISE-FIZKarlsruhe/mwo
-  version: 1.5.4
+  version: '1.6'
 - name: cto-odk.yaml
   path: src/ontology/cto-odk.yaml
-  prefix: null
+  prefix: nfdi4culture.cto
   repository: ISE-FIZKarlsruhe/nfdi4culture
-  version: 1.5.4
+  version: '1.6'
 - name: nfdicore-odk.yaml
   path: src/ontology/nfdicore-odk.yaml
   prefix: nfdi.core
   repository: ISE-FIZKarlsruhe/nfdicore
-  version: 1.5.4
-- name: enmo-odk.yaml
-  path: src/ontology/enmo-odk.yaml
-  repository: jmillanacosta/eNMO
-  version: 1.3.1
-- name: test-odk.yaml
-  path: src/ontology/test-odk.yaml
-  repository: jmillanacosta/ontojavi
-  version: 1.3.1
+  version: '1.6'
 - name: feat_Commanding_Voice_wICEUtp8UQlBTODK.yaml
   path: src/packs/legendary-domains-abilities/feat_Commanding_Voice_wICEUtp8UQlBTODK.yaml
   prefix: null
@@ -439,83 +553,71 @@
   prefix: null
   repository: karanthpallavi/rosetta_statement_ontology
   version: '1.6'
-- name: capo-odk.yaml
-  path: src/ontology/capo-odk.yaml
-  repository: kharchenkolab/cap_ontology
-  version: 1.3.1
-- name: OM0ODK.yaml
-  path: db/sk/OM0ODK.yaml
+- name: immunotest-odk.yaml
+  path: src/ontology/immunotest-odk.yaml
   prefix: null
-  repository: Krusz-Beton/przemienniki-mapy73pl
-  version: unknown
-- name: cmixo-odk.yaml
-  path: src/scripts/cmixo-odk.yaml
-  repository: laurenechan/chemical-mixture-ontology
-  version: 1.2.23
-- name: clao-odk.yaml
-  path: src/ontology/clao-odk.yaml
-  repository: luis-gonzalez-m/Collembola
-  version: 1.2.29
-- name: lepao-odk.yaml
-  path: src/ontology/lepao-odk.yaml
-  repository: luis-gonzalez-m/lepao-original-version
-  version: 1.2.23
+  repository: KrishnaTO/immuno-test
+  version: '1.6'
 - name: DIGIT-RUBBER-odk.yaml
   path: src/ontology/DIGIT-RUBBER-odk.yaml
   prefix: null
   repository: luisenriqueramos1977/digitrubber
   version: 1.3.1
-- name: testonto-odk.yaml
-  path: src/ontology/testonto-odk.yaml
-  repository: luisenriqueramos1977/testontoodk
-  version: 1.3.0
+- name: project-odk.yaml
+  path: project-odk.yaml
+  prefix: null
+  repository: materialdigital/application-ontology-template
+  version: unknown
 - name: pmdco-odk.yaml
   path: src/ontology/pmdco-odk.yaml
-  prefix: null
+  prefix: pmdco
   repository: materialdigital/core-ontology
+  version: 1.6.1
+- name: cto-odk.yaml
+  path: src/ontology/cto-odk.yaml
+  prefix: null
+  repository: materialdigital/creep-testing-ontology
   version: '1.6'
 - name: hto-odk.yaml
   path: src/ontology/hto-odk.yaml
   prefix: null
   repository: materialdigital/heat-treatment-ontology
   version: '1.6'
-- name: TTO-odk.yaml
-  path: src/ontology/TTO-odk.yaml
+- name: project-odk.yaml
+  path: project-odk.yaml
+  prefix: null
+  repository: materialdigital/Mechanical-Testing-Ontology
+  version: '1.6'
+- name: tto-odk.yaml
+  path: src/ontology/tto-odk.yaml
   prefix: null
   repository: materialdigital/tensile-test-ontology
   version: '1.6'
 - name: dron-odk.yaml
   path: src/ontology/dron-odk.yaml
-  prefix: null
+  prefix: dron
   repository: mcwdsi/dron
-  version: 1.5.4
+  version: 1.6.1
 - name: omrse-odk.yaml
   path: src/ontology/omrse-odk.yaml
   prefix: omrse
   repository: mcwdsi/OMRSE
-  version: 1.5.4
-- name: hp-odk.yaml
-  path: src/metadata/hp-odk.yaml
-  repository: meng-ma-biomedical-AI/F29_HPO
-  version: 1.2.19
+  version: 1.6.1
+- name: rehabo-odk.yaml
+  path: src/ontology/rehabo-odk.yaml
+  prefix: rehabo
+  repository: mcwdsi/rehabo
+  version: 1.6.1
 - name: mp-odk.yaml
   path: src/ontology/mp-odk.yaml
   prefix: mp
   repository: mgijax/mammalian-phenotype-ontology
-  version: 1.5.4
+  version: '1.6'
 - name: mco-odk.yaml
   path: src/ontology/mco-odk.yaml
   prefix: mco
   repository: microbial-conditions-ontology/Microbial-Conditions-Ontology
   version: 1.2.24
-- name: aism-odk.yaml
-  path: src/ontology/aism-odk.yaml
-  repository: mjklep/AISM
-  version: 1.2.27
-- name: lepao-odk.yaml
-  path: src/ontology/lepao-odk.yaml
-  repository: mjklep/LepAO
-  version: 1.2.25
 - name: tco-odk.yaml
   path: src/ontology/tco-odk.yaml
   prefix: null
@@ -550,7 +652,7 @@
   path: src/ontology/phenio-odk.yaml
   prefix: null
   repository: monarch-initiative/phenio
-  version: 1.5.3
+  version: '1.6'
 - name: sepio-odk.yaml
   path: src/ontology/sepio-odk.yaml
   prefix: sepio
@@ -560,7 +662,12 @@
   path: src/ontology/vbo-odk.yaml
   prefix: vbo
   repository: monarch-initiative/vertebrate-breed-ontology
-  version: 1.5.1
+  version: '1.6'
+- name: prefer-odk.yaml
+  path: src/ontology/prefer-odk.yaml
+  prefix: null
+  repository: Multiomics-Analytics-Group/prefer_ontology
+  version: '1.6'
 - name: sddo-odk.yaml
   path: src/ontology/sddo-odk.yaml
   prefix: sddo
@@ -570,23 +677,15 @@
   path: src/ontology/slso-odk.yaml
   prefix: slso
   repository: nasa/LSDAO
-  version: 1.4.3
+  version: 1.5.4
 - name: vibso-odk.yaml
   path: src/ontology/vibso-odk.yaml
   prefix: vibso
   repository: NFDI4Chem/VibrationalSpectroscopyOntology
   version: 1.5.2
-- name: vispro-odk.yaml
-  path: src/ontology/vispro-odk.yaml
-  repository: NFDI4Chem/VibrationSpectroscopyOntology
-  version: 1.3.1
-- name: omia-odk.yaml
-  path: src/ontology/omia-odk.yaml
-  repository: nicolevasilevsky/omia
-  version: 1.2.26
 - name: nmrCV-odk.yaml
   path: src/ontology/nmrCV-odk.yaml
-  prefix: null
+  prefix: nmr
   repository: nmrML/nmrCV
   version: 1.5.4
 - name: nbo-odk.yaml
@@ -594,16 +693,16 @@
   prefix: nbo
   repository: obo-behavior/behavior-ontology
   version: '1.4'
-- name: cato-odk.yaml
-  path: docs/tutorial/odk_tutorial_2/cato-odk.yaml
-  prefix: null
-  repository: OBOAcademy/obook
-  version: unknown
 - name: cob-odk.yaml
   path: src/ontology/cob-odk.yaml
   prefix: cob
   repository: OBOFoundry/COB
   version: 1.5.2
+- name: ma-odk.yaml
+  path: src/ontology/ma-odk.yaml
+  prefix: ma
+  repository: obophenotype/adult-mouse-anatomy-ontology
+  version: '1.6'
 - name: oba-odk.yaml
   path: src/ontology/oba-odk.yaml
   prefix: oba
@@ -623,7 +722,7 @@
   path: src/ontology/wbls-odk.yaml
   prefix: wbls
   repository: obophenotype/c-elegans-development-ontology
-  version: 1.5.4
+  version: 1.6.1
 - name: wbbt-odk.yaml
   path: src/ontology/wbbt-odk.yaml
   prefix: wbbt
@@ -633,17 +732,17 @@
   path: src/update_repo/wbphenotype-odk.yaml
   prefix: wbphenotype
   repository: obophenotype/c-elegans-phenotype-ontology
-  version: 1.5.4
+  version: 1.6.1
 - name: caro-odk.yaml
   path: src/ontology/caro-odk.yaml
   prefix: caro
   repository: obophenotype/caro
-  version: '1.4'
+  version: '1.6'
 - name: cl-odk.yaml
   path: src/ontology/cl-odk.yaml
   prefix: cl
   repository: obophenotype/cell-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: life-stages-odk.yaml
   path: src/ontology/life-stages-odk.yaml
   prefix: pdumdv
@@ -669,6 +768,11 @@
   prefix: planp
   repository: obophenotype/planarian-phenotype-ontology
   version: 1.2.20
+- name: poro-odk.yaml
+  path: src/ontology/poro-odk.yaml
+  prefix: poro
+  repository: obophenotype/porifera-ontology
+  version: 1.6.1
 - name: pcl-odk.yaml
   path: src/ontology/pcl-odk.yaml
   prefix: pcl
@@ -678,16 +782,12 @@
   path: src/ontology/uberon-odk.yaml
   prefix: uberon
   repository: obophenotype/uberon
-  version: '1.6'
+  version: 1.6.1
 - name: upheno-odk.yaml
   path: src/ontology/upheno-odk.yaml
   prefix: upheno
   repository: obophenotype/upheno
   version: '1.6'
-- name: upheno-odk.yaml
-  path: src/ontology/upheno-odk.yaml
-  repository: obophenotype/upheno-dev
-  version: 1.2.20
 - name: vccf-odk.yaml
   path: src/ontology/vccf-odk.yaml
   prefix: null
@@ -702,7 +802,7 @@
   path: src/ontology/zp-odk.yaml
   prefix: zp
   repository: obophenotype/zebrafish-phenotype-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: ro-odk.yaml
   path: src/ontology/ro-odk.yaml
   prefix: ro
@@ -737,17 +837,17 @@
   path: src/ontology/HOSO-odk.yaml
   prefix: hoso
   repository: OpenLHS/HOSO
-  version: 1.5.1
+  version: '1.6'
 - name: IOIO-odk.yaml
   path: src/ontology/IOIO-odk.yaml
-  prefix: null
+  prefix: ioio
   repository: OpenLHS/IOIO
   version: 1.5.1
 - name: MPHPO-odk.yaml
   path: src/ontology/MPHPO-odk.yaml
   prefix: null
   repository: OpenLHS/MPHPO
-  version: 1.5.1
+  version: '1.6'
 - name: Ontorel-Core-odk.yaml
   path: src/ontology/Ontorel-Core-odk.yaml
   prefix: null
@@ -757,7 +857,7 @@
   path: src/ontology/OpenLHS-Core-odk.yaml
   prefix: null
   repository: OpenLHS/OpenLHS-Core
-  version: 1.5.1
+  version: '1.6'
 - name: ohd-odk.yaml
   path: src/ontology/ohd-odk.yaml
   prefix: ohd
@@ -767,7 +867,7 @@
   path: src/ontology/pato-odk.yaml
   prefix: pato
   repository: pato-ontology/pato
-  version: 1.5.2
+  version: 1.6.1
 - name: turbo-odk.yaml
   path: src/ontology/target/turbo/src/ontology/turbo-odk.yaml
   prefix: null
@@ -787,7 +887,7 @@
   path: src/ontology/phipo-odk.yaml
   prefix: phipo
   repository: PHI-base/phipo
-  version: 1.5.2
+  version: '1.6'
 - name: pso-odk.yaml
   path: src/ontology/pso-odk.yaml
   prefix: pso
@@ -802,7 +902,7 @@
   path: src/ontology/fypo-odk.yaml
   prefix: fypo
   repository: pombase/fypo
-  version: 1.4.1
+  version: '1.6'
 - name: pco-odk.yaml
   path: src/ontology/pco-odk.yaml
   prefix: pco
@@ -820,9 +920,14 @@
   version: 1.5.4
 - name: chmo-odk.yaml
   path: src/ontology/chmo-odk.yaml
-  prefix: chmo
-  repository: rsc-ontologies/rsc-cmo
-  version: 1.5.4
+  prefix: null
+  repository: rsc-ontology/rsc-cmo
+  version: 1.6.1
+- name: rxno-odk.yaml
+  path: src/ontology/rxno-odk.yaml
+  prefix: null
+  repository: rsc-ontology/rxno
+  version: 1.6.1
 - name: biocoreterms-odk.yaml
   path: src/ontology/biocoreterms-odk.yaml
   prefix: null
@@ -833,10 +938,21 @@
   prefix: null
   repository: samdus/EINS2023-EquipeBleuOntologie
   version: 1.4.1
-- name: odktest-odk.yaml
-  path: src/ontology/odktest-odk.yaml
-  repository: StroemPhi/odktest
-  version: 1.2.32
+- name: cheminf-odk.yaml
+  path: cheminf_ODK/src/ontology/cheminf-odk.yaml
+  prefix: cheminf
+  repository: semanticchemistry/semanticchemistry
+  version: unknown
+- name: qw14b_waodk.yaml
+  path: AgentRL/examples/training/configs/qw14b_waodk.yaml
+  prefix: null
+  repository: siwany/dbbench-checkpoint-exploration
+  version: unknown
+- name: ecto-odk.yaml
+  path: gaia/cv/sources/EnvironmentOntology_environmental-exposure-ontology@c5b17dff2ee222aaf1e775e095c1b95e48395981/environmental-exposure-ontology-c5b17dff2ee222aaf1e775e095c1b95e48395981/src/ontology/ecto-odk.yaml
+  prefix: null
+  repository: SocioProphet/gaia-world-model
+  version: unknown
 - name: semunit-odk.yaml
   path: src/ontology/semunit-odk.yaml
   prefix: null
@@ -844,7 +960,7 @@
   version: 1.5.2
 - name: cao-odk.yaml
   path: src/ontology/cao-odk.yaml
-  prefix: null
+  prefix: cao
   repository: stuchalk/chemical-analysis-ontology
   version: 1.4.1
 - name: t4fs-odk.yaml
@@ -852,9 +968,19 @@
   prefix: t4fs
   repository: terms4fairskills/FAIRterminology
   version: 1.5.4
+- name: quay-odk.yaml
+  path: src/ontology/quay-odk.yaml
+  prefix: null
+  repository: ThHanke/quay
+  version: '1.6'
+- name: qw14b_waodk.yaml
+  path: examples/training/configs/qw14b_waodk.yaml
+  prefix: null
+  repository: THUDM/AgentRL
+  version: unknown
 - name: digitrubber-odk.yaml
   path: src/ontology/digitrubber-odk.yaml
-  prefix: null
+  prefix: digitrubber
   repository: TIBHannover/DIGIT-RUBBER
   version: 1.5.4
 - name: aeon-odk.yaml
@@ -871,63 +997,57 @@
   path: src/ontology/toso-odk.yaml
   prefix: null
   repository: Tree-of-Sex/ToS-Ontology
-  version: 1.5.1
+  version: 1.6.1
 - name: srpdio-odk.yaml
   path: src/ontology/srpdio-odk.yaml
   prefix: null
   repository: UA-SRC-data/srpdio
   version: 1.3.0
-- name: uberon-odk.yaml
-  path: src/ontology/uberon-odk.yaml
-  repository: ubyndr/uberon
-  version: 1.2.32
-- name: dron-odk.yaml
-  path: src/ontology/dron-odk.yaml
-  repository: ufbmi/dron
-  version: 1.2.27
-- name: omrse-odk.yaml
-  path: src/ontology/omrse-odk.yaml
-  repository: ufbmi/OMRSE
-  version: 1.3.0
-- name: orcs-odk.yaml
-  path: src/ontology/target/orcs/src/ontology/orcs-odk.yaml
-  repository: ufbmi/ORCS
-  version: 1.3.0
+- name: emro-odk.yaml
+  path: src/ontology/emro-odk.yaml
+  prefix: emro
+  repository: uflcod/emotion-response-ontology
+  version: 1.3.1
 - name: pain-odk.yaml
   path: src/ontology/pain-odk.yaml
-  prefix: null
+  prefix: pain
   repository: uflcod/pain-ontology
   version: 1.3.1
 - name: VFB_drivers-odk.yaml
   path: src/ontology/VFB_drivers-odk.yaml
   prefix: null
   repository: VirtualFlyBrain/vfb-driver-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: VFB_EPseq-odk.yaml
   path: src/ontology/VFB_EPseq-odk.yaml
   prefix: null
   repository: VirtualFlyBrain/vfb-EPseq-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: vfbext-odk.yaml
   path: src/ontology/vfbext-odk.yaml
   prefix: null
   repository: VirtualFlyBrain/vfb-extension-ontology
-  version: '1.6'
+  version: 1.6.1
 - name: VFB_NT-odk.yaml
   path: src/ontology/VFB_NT-odk.yaml
   prefix: null
   repository: VirtualFlyBrain/vfb-neurotransmitter-predictions
-  version: '1.6'
+  version: 1.6.1
 - name: VFB_scRNAseq_genes-odk.yaml
   path: src/ontology/VFB_scRNAseq_genes-odk.yaml
   prefix: null
   repository: VirtualFlyBrain/vfb-scRNAseq-gene-annotations
-  version: '1.6'
+  version: 1.6.1
 - name: VFB_scRNAseq-odk.yaml
   path: src/ontology/VFB_scRNAseq-odk.yaml
   prefix: null
   repository: VirtualFlyBrain/vfb-scRNAseq-ontology
   version: '1.6'
+- name: vivotest-odk.yaml
+  path: src/ontology/vivotest-odk.yaml
+  prefix: null
+  repository: visoteeyy111/vivo-odk-test
+  version: 1.6.1
 - name: digitrubber-odk.yaml
   path: src/ontology/digitrubber-odk.yaml
   prefix: null
@@ -935,24 +1055,16 @@
   version: '1.4'
 - name: empty-odk.yaml
   path: src/ontology/empty-odk.yaml
-  prefix: null
+  prefix: empty
   repository: Waltham-Data-Science/empty-ontology
-  version: 1.5.4
+  version: '1.6'
 - name: hp-odk.yaml
   path: src/ontology/hp-odk.yaml
   prefix: null
   repository: yasuhide0802/Eye2
   version: 1.5.2
-- name: zeco-odk.yaml
-  path: src/ontology/zeco-odk.yaml
-  repository: ybradford/zebrafish-experimental-conditions-ontology
-  version: 1.2.23
 - name: zfa-odk.yaml
   path: src/ontology/zfa-odk.yaml
-  prefix: null
+  prefix: zfa
   repository: ZFIN/zebrafish-anatomical-ontology
-  version: 1.3.0
-- name: gombo-odk.yaml
-  path: src/ontology/gombo-odk.yaml
-  repository: zmanalo/gombo
-  version: 1.3.0
+  version: '1.6'
